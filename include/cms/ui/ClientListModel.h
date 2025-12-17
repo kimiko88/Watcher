@@ -1,42 +1,52 @@
 #ifndef CMS_UI_CLIENT_LIST_MODEL_H
 #define CMS_UI_CLIENT_LIST_MODEL_H
 
+#include "cms/MasterServer.h"
 #include <QAbstractTableModel>
 #include <vector>
-#include "cms/MasterServer.h"
 
 namespace cms {
 namespace ui {
 
-class ClientListModel : public QAbstractTableModel {
-    Q_OBJECT
+class ClientListModel : public QAbstractTableModel,
+                        public master::MasterServer::IServerObserver {
+  Q_OBJECT
 
 public:
-    enum ClientRoles {
-        IdRole = Qt::UserRole + 1,
-        HostnameRole,
-        IpRole,
-        StateRole,
-        ThumbnailRole,
-        LastHeartbeatRole
-    };
+  enum ClientRoles {
+    IdRole = Qt::UserRole + 1,
+    HostnameRole,
+    IpRole,
+    StateRole,
+    ThumbnailRole,
+    LastHeartbeatRole
+  };
 
-    explicit ClientListModel(QObject* parent = nullptr);
-    
-    // AbstractTableModel interface
-    int rowCount(const QModelIndex& parent = QModelIndex()) const override;
-    int columnCount(const QModelIndex& parent = QModelIndex()) const override;
-    QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const override;
-    QHash<int, QByteArray> roleNames() const override;
+  explicit ClientListModel(QObject *parent = nullptr);
 
-    // Data manipulation
-    void updateClients(const std::vector<master::ClientInfo>& clients);
-    void addClient(const master::ClientInfo& client);
-    void removeClient(const std::string& client_id);
-    master::ClientInfo getClient(int row) const;
+  // AbstractTableModel interface
+  int rowCount(const QModelIndex &parent = QModelIndex()) const override;
+  int columnCount(const QModelIndex &parent = QModelIndex()) const override;
+  QVariant data(const QModelIndex &index,
+                int role = Qt::DisplayRole) const override;
+  QHash<int, QByteArray> roleNames() const override;
+
+  // Data manipulation
+  void updateClients(const std::vector<master::ClientInfo> &clients);
+  void addClient(const master::ClientInfo &client);
+  void removeClient(const std::string &client_id);
+  master::ClientInfo getClient(int row) const;
+
+  // IServerObserver interface
+  void onClientConnected(const master::ClientInfo &client) override;
+  void onClientDisconnected(const std::string &client_id) override;
+  void onClientStateChanged(const std::string &client_id,
+                            master::ClientState new_state) override;
+  void onClientThumbnailUpdated(const std::string &client_id,
+                                const std::vector<uint8_t> &data) override;
 
 private:
-    std::vector<master::ClientInfo> clients_;
+  std::vector<master::ClientInfo> clients_;
 };
 
 } // namespace ui

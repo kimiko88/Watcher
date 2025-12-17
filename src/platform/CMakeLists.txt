@@ -7,10 +7,11 @@ set(PLATFORM_LIBS "")
 if(WIN32)
     message(STATUS "Building for Windows platform")
     list(APPEND PLATFORM_SOURCES WindowsPlatform.cpp)
+    list(APPEND PLATFORM_SOURCES WindowsService.cpp)
     list(APPEND PLATFORM_SOURCES ScreenCaptureService.cpp)
     list(APPEND PLATFORM_SOURCES InputLockManager.cpp)
     # Windows-specific libraries
-    set(PLATFORM_LIBS user32 gdi32 PowrProf)
+    set(PLATFORM_LIBS user32 gdi32 PowrProf Advapi32) # Added Advapi32 for Service API
 elseif(APPLE)
     message(STATUS "Building for macOS platform")
     list(APPEND PLATFORM_SOURCES MacOSPlatform.cpp)

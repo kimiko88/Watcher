@@ -1,0 +1,33 @@
+Versione di MSBuild 17.13.15+18b3035f6 per .NET Framework
+
+  cms_core.vcxproj -> C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\core\Release\cms_core.lib
+  cms_platform.vcxproj -> C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\Release\cms_platform.lib
+  ClientService.cpp
+C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\ClientService.h(107,8): error C3083: 'platform': the symbol to the left of a '::' must be a type [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\client\cms_client.vcxproj]
+  (compiling source file '../../../src/client/ClientService.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\ClientService.h(107,18): error C2039: 'Platform': is not a member of 'cms' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\client\cms_client.vcxproj]
+  (compiling source file '../../../src/client/ClientService.cpp')
+      C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\ClientService.h(14,11):
+      see declaration of 'cms'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\ClientService.h(107,27): error C2143: syntax error: missing ';' before '*' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\client\cms_client.vcxproj]
+  (compiling source file '../../../src/client/ClientService.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\ClientService.h(107,18): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\client\cms_client.vcxproj]
+  (compiling source file '../../../src/client/ClientService.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\ClientService.h(107,47): error C2238: unexpected token(s) preceding ';' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\client\cms_client.vcxproj]
+  (compiling source file '../../../src/client/ClientService.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(68,3): error C2065: 'platform_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\client\cms_client.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(91,11): error C2065: 'platform_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\client\cms_client.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(92,9): error C2065: 'platform_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\client\cms_client.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(96,11): error C2065: 'platform_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\client\cms_client.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(97,9): error C2065: 'platform_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\client\cms_client.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(113,23): error C2065: 'platform_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\client\cms_client.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(120,40): error C2065: 'platform_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\client\cms_client.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(160,7): error C2065: 'platform_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\client\cms_client.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(161,12): error C2065: 'platform_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\client\cms_client.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(161,5): error C2541: 'delete': cannot delete objects that are not pointers [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\client\cms_client.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(162,5): error C2065: 'platform_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\client\cms_client.vcxproj]

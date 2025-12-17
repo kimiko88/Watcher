@@ -1,35 +1,52 @@
 #ifndef CMS_UI_MASTER_WINDOW_H
 #define CMS_UI_MASTER_WINDOW_H
 
-#include <QMainWindow>
 #include "cms/MasterServer.h"
 #include "cms/ui/ClientListModel.h"
+#include <QMainWindow>
+#include <map>
+#include <string>
 
 class QListView;
+class QScrollArea;
 class QGridView; // Placeholder if we make a custom grid view
 
 namespace cms {
 namespace ui {
 
 class MasterWindow : public QMainWindow {
-    Q_OBJECT
+  Q_OBJECT
 
 public:
-    explicit MasterWindow(std::shared_ptr<master::MasterServer> server, QWidget* parent = nullptr);
-    ~MasterWindow();
+  explicit MasterWindow(std::shared_ptr<master::MasterServer> server,
+                        QWidget *parent = nullptr);
+  ~MasterWindow();
 
 private slots:
-    void onRefresh();
-    void onLockAll();
-    void onUnlockAll();
+  void onRefresh();
+  void onLockAll();
+  void onUnlockAll();
 
 private:
-    std::shared_ptr<master::MasterServer> server_;
-    ClientListModel* model_;
-    QWidget* central_widget_;
-    
-    void setupUi();
-    void setupToolbar();
+  std::shared_ptr<master::MasterServer> server_;
+  ClientListModel *model_;
+
+  // UI Elements
+  QWidget *central_widget_;
+  QScrollArea *scroll_area_;
+  QWidget *grid_container_;
+  // QLayout* grid_layout_; // Not strictly needed as member if we use local
+  // var, but good for cleanup logic if needed
+
+  void setupUi();
+  void setupToolbar();
+  void refreshGrid();
+
+private slots:
+  void onClientThumbnailClicked(const std::string &client_id);
+
+private:
+  std::map<std::string, class RemoteViewWindow *> remote_views_;
 };
 
 } // namespace ui

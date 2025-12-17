@@ -28,8 +28,8 @@ message(STATUS "Build type: ${CMAKE_BUILD_TYPE}")
 # Compiler flags for Debug and Release
 if(MSVC)
     # MSVC compiler flags - use variables directly
-    set(CMAKE_CXX_FLAGS_DEBUG "/W4 /Od /Zi /MDd")
-    set(CMAKE_CXX_FLAGS_RELEASE "/W3 /O2 /MD")
+    set(CMAKE_CXX_FLAGS_DEBUG "/W4 /Od /Zi /MDd /Zc:__cplusplus /permissive-")
+    set(CMAKE_CXX_FLAGS_RELEASE "/W3 /O2 /MD /Zc:__cplusplus /permissive-")
 else()
     # GCC/Clang compiler flags
     set(CMAKE_CXX_FLAGS_DEBUG "-Wall -Wextra -g -O0")

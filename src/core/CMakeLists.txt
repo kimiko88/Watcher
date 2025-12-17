@@ -4,6 +4,7 @@ set(CORE_SOURCES
     NetworkFilterManager.cpp
     RemoteControl.cpp
     Protocol.cpp
+    Core.cpp
 )
 
 # Core library

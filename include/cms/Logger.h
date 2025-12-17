@@ -2,87 +2,56 @@
 #define CMS_LOGGER_H
 
 #include "Common.h"
-#include <iostream>
-#include <sstream>
+#include <fstream>
 #include <mutex>
+#include <string>
+
 
 namespace cms {
 
 // Log severity levels
-enum class LogLevel {
-    Debug,
-    Info,
-    Warning,
-    Error
-};
+enum class LogLevel { Debug, Info, Warning, Error };
 
-// Simple console-based logger
+// Singleton Logger with file and console support
 class Logger {
 public:
-    static Logger& Instance() {
-        static Logger instance;
-        return instance;
-    }
+  static Logger &getInstance();
 
-    void SetLogLevel(LogLevel level) {
-        std::lock_guard<std::mutex> lock(mutex_);
-        minLevel_ = level;
-    }
+  // Initialize logger configuration
+  // Call this once at startup
+  void init(const std::string &logFilePath = "", bool enableConsole = true);
 
-    LogLevel GetLogLevel() const {
-        return minLevel_;
-    }
+  void SetLogLevel(LogLevel level);
+  LogLevel GetLogLevel() const;
 
-    void Log(LogLevel level, const String& message) {
-        if (level < minLevel_) {
-            return;
-        }
+  void Log(LogLevel level, const std::string &message);
 
-        std::lock_guard<std::mutex> lock(mutex_);
-        std::cout << "[" << LogLevelToString(level) << "] " << message << std::endl;
-    }
-
-    void Debug(const String& message) {
-        Log(LogLevel::Debug, message);
-    }
-
-    void Info(const String& message) {
-        Log(LogLevel::Info, message);
-    }
-
-    void Warning(const String& message) {
-        Log(LogLevel::Warning, message);
-    }
-
-    void Error(const String& message) {
-        Log(LogLevel::Error, message);
-    }
+  // Convenience methods
+  void Debug(const std::string &message);
+  void Info(const std::string &message);
+  void Warning(const std::string &message);
+  void Error(const std::string &message);
 
 private:
-    Logger() : minLevel_(LogLevel::Info) {}
-    ~Logger() = default;
-    Logger(const Logger&) = delete;
-    Logger& operator=(const Logger&) = delete;
+  Logger() : minLevel_(LogLevel::Info), enableConsole_(true) {}
+  ~Logger();
+  Logger(const Logger &) = delete;
+  Logger &operator=(const Logger &) = delete;
 
-    static const char* LogLevelToString(LogLevel level) {
-        switch (level) {
-            case LogLevel::Debug: return "DEBUG";
-            case LogLevel::Info: return "INFO";
-            case LogLevel::Warning: return "WARNING";
-            case LogLevel::Error: return "ERROR";
-            default: return "UNKNOWN";
-        }
-    }
+  static const char *LogLevelToString(LogLevel level);
 
-    LogLevel minLevel_;
-    std::mutex mutex_;
+  LogLevel minLevel_;
+  bool enableConsole_;
+  std::string logFilePath_;
+  std::ofstream fileStream_;
+  std::mutex mutex_;
 };
 
-// Convenience macros
-#define LOG_DEBUG(msg) cms::Logger::Instance().Debug(msg)
-#define LOG_INFO(msg) cms::Logger::Instance().Info(msg)
-#define LOG_WARNING(msg) cms::Logger::Instance().Warning(msg)
-#define LOG_ERROR(msg) cms::Logger::Instance().Error(msg)
+// Convenience macros using the correct singleton accessor
+#define LOG_DEBUG(msg) cms::Logger::getInstance().Debug(msg)
+#define LOG_INFO(msg) cms::Logger::getInstance().Info(msg)
+#define LOG_WARNING(msg) cms::Logger::getInstance().Warning(msg)
+#define LOG_ERROR(msg) cms::Logger::getInstance().Error(msg)
 
 } // namespace cms
 

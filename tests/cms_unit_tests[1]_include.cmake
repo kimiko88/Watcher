@@ -1,0 +1,5 @@
+if(EXISTS "C:/Users/chimi/Desktop/Programmazione/Watcher/tests/cms_unit_tests[1]_tests.cmake")
+  include("C:/Users/chimi/Desktop/Programmazione/Watcher/tests/cms_unit_tests[1]_tests.cmake")
+else()
+  add_test(cms_unit_tests_NOT_BUILT cms_unit_tests_NOT_BUILT)
+endif()

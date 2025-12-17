@@ -1,0 +1,10 @@
+^C:\USERS\CHIMI\DESKTOP\PROGRAMMAZIONE\WATCHER\CMAKEFILES\29455B0E4FAD981DA30AF5126CF3CFE1\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/chimi/Desktop/Programmazione/Watcher -BC:/Users/chimi/Desktop/Programmazione/Watcher --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/chimi/Desktop/Programmazione/Watcher/ClassroomControl.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

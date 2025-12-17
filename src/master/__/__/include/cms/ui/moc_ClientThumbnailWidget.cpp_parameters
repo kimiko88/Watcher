@@ -1,0 +1,9 @@
+-IC:/Users/chimi/Desktop/Programmazione/Watcher/include
+-DCMS_PLATFORM_WINDOWS
+-DWIN32
+--compiler-flavor=msvc
+-o
+C:/Users/chimi/Desktop/Programmazione/Watcher/src/master/__/__/include/cms/ui/moc_ClientThumbnailWidget.cpp
+C:/Users/chimi/Desktop/Programmazione/Watcher/include/cms/ui/ClientThumbnailWidget.h
+-DWIN32
+--compiler-flavor=msvc

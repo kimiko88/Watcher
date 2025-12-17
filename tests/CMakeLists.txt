@@ -18,12 +18,15 @@ set(TEST_SOURCES
 # Optional UI Tests Sources
 find_package(Qt6 COMPONENTS Widgets Test QUIET)
 
-if (Qt6_FOUND)
+    # Explicitly generate MOC for ClientListModel
+    find_package(Qt6 COMPONENTS Core REQUIRED)
+    qt6_wrap_cpp(TEST_MOC_SOURCES ${CMAKE_SOURCE_DIR}/include/cms/ui/ClientListModel.h)
+
     list(APPEND TEST_SOURCES
         unit/test_ui_model.cpp
         ${CMAKE_SOURCE_DIR}/src/master/ui/ClientListModel.cpp
+        ${TEST_MOC_SOURCES}
     )
-endif()
 
 # Unit tests executable
 add_executable(cms_unit_tests ${TEST_SOURCES})
