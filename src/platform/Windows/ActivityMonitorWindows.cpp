@@ -1,15 +1,19 @@
+// clang-format off
+#define WIN32_LEAN_AND_MEAN
+#include <winsock2.h>
+#include <ws2tcpip.h>
+#include <iphlpapi.h>
+#include <windows.h>
+#include <pdh.h>
+#include <psapi.h>
+#include <tlhelp32.h>
 #include "cms/ActivityMonitor.h"
 #include <atomic>
 #include <chrono>
 #include <iostream>
-#include <iphlpapi.h>
 #include <mutex>
-#include <pdh.h>
-#include <psapi.h>
 #include <thread>
-#include <tlhelp32.h>
-#include <windows.h>
-#include <winsock2.h>
+// clang-format on
 
 #pragma comment(lib, "iphlpapi.lib")
 #pragma comment(lib, "pdh.lib")

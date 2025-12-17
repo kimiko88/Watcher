@@ -6,6 +6,7 @@ set(CORE_SOURCES
     Protocol.cpp
     Core.cpp
     Socket.cpp
+    ScreenRecorder.cpp
 )
 
 # Core library

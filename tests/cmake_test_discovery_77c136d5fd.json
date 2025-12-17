@@ -1,0 +1,136 @@
+{
+  "tests": 20,
+  "name": "AllTests",
+  "testsuites": [
+    {
+      "name": "BuildIntegrationTest",
+      "tests": 6,
+      "testsuite": [
+        {
+          "name": "AllHeadersCompileTogether",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\integration\\test_build.cpp",
+          "line": 17
+        },
+        {
+          "name": "CommonAndLoggerIntegration",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\integration\\test_build.cpp",
+          "line": 22
+        },
+        {
+          "name": "ConfigAndCommonIntegration",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\integration\\test_build.cpp",
+          "line": 34
+        },
+        {
+          "name": "ConfigOperations",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\integration\\test_build.cpp",
+          "line": 50
+        },
+        {
+          "name": "RealisticScenario",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\integration\\test_build.cpp",
+          "line": 84
+        },
+        {
+          "name": "PlatformSpecificCode",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\integration\\test_build.cpp",
+          "line": 111
+        }
+      ]
+    },
+    {
+      "name": "InstallationTest",
+      "tests": 5,
+      "testsuite": [
+        {
+          "name": "DirectoriesExist",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\integration\\InstallationTest.cpp",
+          "line": 37
+        },
+        {
+          "name": "WindowsScriptExists",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\integration\\InstallationTest.cpp",
+          "line": 50
+        },
+        {
+          "name": "LinuxScriptExists",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\integration\\InstallationTest.cpp",
+          "line": 58
+        },
+        {
+          "name": "MacOsScriptExists",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\integration\\InstallationTest.cpp",
+          "line": 66
+        },
+        {
+          "name": "WindowsScriptSyntaxCheck",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\integration\\InstallationTest.cpp",
+          "line": 75
+        }
+      ]
+    },
+    {
+      "name": "EndToEndTest",
+      "tests": 5,
+      "testsuite": [
+        {
+          "name": "ClientStartupConnectToMaster",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\integration\\EndToEndTest.cpp",
+          "line": 31
+        },
+        {
+          "name": "TakeScreenshotAndVerify",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\integration\\EndToEndTest.cpp",
+          "line": 50
+        },
+        {
+          "name": "LockUnlockScreen",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\integration\\EndToEndTest.cpp",
+          "line": 68
+        },
+        {
+          "name": "BlockDomainOnClient",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\integration\\EndToEndTest.cpp",
+          "line": 82
+        },
+        {
+          "name": "SafeShutdown",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\integration\\EndToEndTest.cpp",
+          "line": 93
+        }
+      ]
+    },
+    {
+      "name": "PerformanceTest",
+      "tests": 3,
+      "testsuite": [
+        {
+          "name": "MasterBroadcastsScreen",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\integration\\PerformanceTest.cpp",
+          "line": 12
+        },
+        {
+          "name": "MultipleClientsMultipleCommands",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\integration\\PerformanceTest.cpp",
+          "line": 26
+        },
+        {
+          "name": "SustainedLoad30Clients",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\integration\\PerformanceTest.cpp",
+          "line": 34
+        }
+      ]
+    },
+    {
+      "name": "ResillienceTest",
+      "tests": 1,
+      "testsuite": [
+        {
+          "name": "ClientReconnectsAfterNetworkLoss",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\integration\\ResillienceTest.cpp",
+          "line": 11
+        }
+      ]
+    }
+  ]
+}

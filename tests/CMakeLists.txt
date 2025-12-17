@@ -13,7 +13,13 @@ set(TEST_SOURCES
     unit/test_network_filter.cpp
     unit/test_remote_control.cpp
     unit/ActivityMonitorTest.cpp
+    unit/MasterActivityAggregatorTest.cpp
+    unit/ApplicationManagerTest.cpp
+    unit/ScreenRecorderTest.cpp
+    unit/RecordingManagerTest.cpp
     ${CMAKE_SOURCE_DIR}/src/client/ClientService.cpp
+    ${CMAKE_SOURCE_DIR}/src/master/MasterActivityAggregator.cpp
+    ${CMAKE_SOURCE_DIR}/src/master/RecordingManager.cpp
 )
 
 # Optional UI Tests Sources

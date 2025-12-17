@@ -1,0 +1,66 @@
+^C:\USERS\CHIMI\DESKTOP\PROGRAMMAZIONE\WATCHER\CMAKEFILES\BCD4BF8338F38C1870203E09563BC577\MOC_CLIENTLISTMODEL.CPP.RULE
+setlocal
+cd C:\Users\chimi\Desktop\Programmazione\Watcher\src\master\__\__\include\cms\ui
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\6.10.1\msvc2022_64\bin\moc.exe @C:/Users/chimi/Desktop/Programmazione/Watcher/src/master/__/__/include/cms/ui/moc_ClientListModel.cpp_parameters
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\CHIMI\DESKTOP\PROGRAMMAZIONE\WATCHER\CMAKEFILES\BCD4BF8338F38C1870203E09563BC577\MOC_CLIENTTHUMBNAILWIDGET.CPP.RULE
+setlocal
+cd C:\Users\chimi\Desktop\Programmazione\Watcher\src\master\__\__\include\cms\ui
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\6.10.1\msvc2022_64\bin\moc.exe @C:/Users/chimi/Desktop/Programmazione/Watcher/src/master/__/__/include/cms/ui/moc_ClientThumbnailWidget.cpp_parameters
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\CHIMI\DESKTOP\PROGRAMMAZIONE\WATCHER\CMAKEFILES\BCD4BF8338F38C1870203E09563BC577\MOC_MASTERWINDOW.CPP.RULE
+setlocal
+cd C:\Users\chimi\Desktop\Programmazione\Watcher\src\master\__\__\include\cms\ui
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\6.10.1\msvc2022_64\bin\moc.exe @C:/Users/chimi/Desktop/Programmazione/Watcher/src/master/__/__/include/cms/ui/moc_MasterWindow.cpp_parameters
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\CHIMI\DESKTOP\PROGRAMMAZIONE\WATCHER\CMAKEFILES\BCD4BF8338F38C1870203E09563BC577\MOC_REMOTEVIEWWINDOW.CPP.RULE
+setlocal
+cd C:\Users\chimi\Desktop\Programmazione\Watcher\src\master\__\__\include\cms\ui
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\6.10.1\msvc2022_64\bin\moc.exe @C:/Users/chimi/Desktop/Programmazione/Watcher/src/master/__/__/include/cms/ui/moc_RemoteViewWindow.cpp_parameters
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\CHIMI\DESKTOP\PROGRAMMAZIONE\WATCHER\SRC\MASTER\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/chimi/Desktop/Programmazione/Watcher -BC:/Users/chimi/Desktop/Programmazione/Watcher --check-stamp-file C:/Users/chimi/Desktop/Programmazione/Watcher/src/master/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

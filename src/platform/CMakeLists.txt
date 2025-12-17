@@ -11,6 +11,7 @@ if(WIN32)
     list(APPEND PLATFORM_SOURCES ScreenCaptureService.cpp)
     list(APPEND PLATFORM_SOURCES InputLockManager.cpp)
     list(APPEND PLATFORM_SOURCES Windows/ActivityMonitorWindows.cpp)
+    list(APPEND PLATFORM_SOURCES Windows/ApplicationManagerWindows.cpp)
     # Windows-specific libraries
     set(PLATFORM_LIBS user32 gdi32 PowrProf Advapi32 pdh iphlpapi psapi) # Added networking/perf libs
 elseif(APPLE)

@@ -1,0 +1,24 @@
+^C:\USERS\CHIMI\DESKTOP\PROGRAMMAZIONE\WATCHER\CMAKEFILES\D58CF3F8587519D599F825AEF4943D63\MOC_CLIENTLISTMODEL.CPP.RULE
+setlocal
+cd C:\Users\chimi\Desktop\Programmazione\Watcher\tests\__\include\cms\ui
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\6.10.1\msvc2022_64\bin\moc.exe @C:/Users/chimi/Desktop/Programmazione/Watcher/tests/__/include/cms/ui/moc_ClientListModel.cpp_parameters
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\CHIMI\DESKTOP\PROGRAMMAZIONE\WATCHER\TESTS\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/chimi/Desktop/Programmazione/Watcher -BC:/Users/chimi/Desktop/Programmazione/Watcher --check-stamp-file C:/Users/chimi/Desktop/Programmazione/Watcher/tests/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

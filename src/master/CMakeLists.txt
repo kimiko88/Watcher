@@ -22,6 +22,7 @@ if (Qt6_FOUND)
 
     set(MASTER_SOURCES
         MasterServer.cpp
+        MasterActivityAggregator.cpp
         ui/ClientListModel.cpp
         ui/ClientThumbnailWidget.cpp
         ui/MasterWindow.cpp

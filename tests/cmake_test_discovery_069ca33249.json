@@ -1,0 +1,1280 @@
+{
+  "tests": 238,
+  "name": "AllTests",
+  "testsuites": [
+    {
+      "name": "CommonTest",
+      "tests": 6,
+      "testsuite": [
+        {
+          "name": "HeaderCompiles",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_common.cpp",
+          "line": 17
+        },
+        {
+          "name": "VersionConstants",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_common.cpp",
+          "line": 22
+        },
+        {
+          "name": "PlatformDetection",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_common.cpp",
+          "line": 30
+        },
+        {
+          "name": "StatusCodeEnum",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_common.cpp",
+          "line": 45
+        },
+        {
+          "name": "StatusCodeToString",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_common.cpp",
+          "line": 51
+        },
+        {
+          "name": "TypeAliases",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_common.cpp",
+          "line": 62
+        }
+      ]
+    },
+    {
+      "name": "LoggerTest",
+      "tests": 7,
+      "testsuite": [
+        {
+          "name": "HeaderCompiles",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_logger.cpp",
+          "line": 20
+        },
+        {
+          "name": "SingletonInstance",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_logger.cpp",
+          "line": 25
+        },
+        {
+          "name": "LogLevelGetSet",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_logger.cpp",
+          "line": 34
+        },
+        {
+          "name": "LoggingFunctionsExecute",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_logger.cpp",
+          "line": 51
+        },
+        {
+          "name": "LogLevelFiltering",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_logger.cpp",
+          "line": 63
+        },
+        {
+          "name": "LoggingMacros",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_logger.cpp",
+          "line": 77
+        },
+        {
+          "name": "ThreadSafety",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_logger.cpp",
+          "line": 87
+        }
+      ]
+    },
+    {
+      "name": "ProtocolTest",
+      "tests": 34,
+      "testsuite": [
+        {
+          "name": "CommandTypeToString",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_protocol.cpp",
+          "line": 24
+        },
+        {
+          "name": "StringToCommandType",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_protocol.cpp",
+          "line": 39
+        },
+        {
+          "name": "StringToCommandTypeInvalid",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_protocol.cpp",
+          "line": 54
+        },
+        {
+          "name": "CreateMessageWithAllFields",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_protocol.cpp",
+          "line": 64
+        },
+        {
+          "name": "CreateMessageFactory",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_protocol.cpp",
+          "line": 83
+        },
+        {
+          "name": "GenerateMessageIdNonEmpty",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_protocol.cpp",
+          "line": 105
+        },
+        {
+          "name": "GenerateMessageIdUnique",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_protocol.cpp",
+          "line": 111
+        },
+        {
+          "name": "GetCurrentTimestamp",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_protocol.cpp",
+          "line": 117
+        },
+        {
+          "name": "TimestampIncreases",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_protocol.cpp",
+          "line": 123
+        },
+        {
+          "name": "CRC32Calculation",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_protocol.cpp",
+          "line": 134
+        },
+        {
+          "name": "CRC32EmptyString",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_protocol.cpp",
+          "line": 148
+        },
+        {
+          "name": "SerializeHelloMessage",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_protocol.cpp",
+          "line": 158
+        },
+        {
+          "name": "SerializeAllCommandTypes",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_protocol.cpp",
+          "line": 178
+        },
+        {
+          "name": "SerializeVerifyJsonStructure",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_protocol.cpp",
+          "line": 207
+        },
+        {
+          "name": "DeserializeValidJson",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_protocol.cpp",
+          "line": 235
+        },
+        {
+          "name": "DeserializeExtractsChecksum",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_protocol.cpp",
+          "line": 264
+        },
+        {
+          "name": "SerializeDeserializeIdempotency",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_protocol.cpp",
+          "line": 287
+        },
+        {
+          "name": "IdempotencyAllCommandTypes",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_protocol.cpp",
+          "line": 312
+        },
+        {
+          "name": "ValidateValidChecksum",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_protocol.cpp",
+          "line": 335
+        },
+        {
+          "name": "ValidateInvalidChecksum",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_protocol.cpp",
+          "line": 351
+        },
+        {
+          "name": "ValidateDetectsPayloadModification",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_protocol.cpp",
+          "line": 370
+        },
+        {
+          "name": "ValidateDetectsHeaderModification",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_protocol.cpp",
+          "line": 386
+        },
+        {
+          "name": "DeserializeMalformedJson",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_protocol.cpp",
+          "line": 406
+        },
+        {
+          "name": "DeserializeMissingMessageId",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_protocol.cpp",
+          "line": 414
+        },
+        {
+          "name": "DeserializeMissingType",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_protocol.cpp",
+          "line": 431
+        },
+        {
+          "name": "DeserializeMissingTimestamp",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_protocol.cpp",
+          "line": 448
+        },
+        {
+          "name": "DeserializeMissingSource",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_protocol.cpp",
+          "line": 465
+        },
+        {
+          "name": "DeserializeMissingDestination",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_protocol.cpp",
+          "line": 482
+        },
+        {
+          "name": "DeserializeMissingChecksum",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_protocol.cpp",
+          "line": 499
+        },
+        {
+          "name": "DeserializeInvalidCommandType",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_protocol.cpp",
+          "line": 516
+        },
+        {
+          "name": "RealisticHelloHandshake",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_protocol.cpp",
+          "line": 538
+        },
+        {
+          "name": "RealisticScreenshotFlow",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_protocol.cpp",
+          "line": 562
+        },
+        {
+          "name": "RealisticDomainBlockCommand",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_protocol.cpp",
+          "line": 597
+        },
+        {
+          "name": "RealisticStatusUpdate",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_protocol.cpp",
+          "line": 617
+        }
+      ]
+    },
+    {
+      "name": "PlatformTest",
+      "tests": 22,
+      "testsuite": [
+        {
+          "name": "FactoryCreatesNonNullPlatform",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_platform.cpp",
+          "line": 25
+        },
+        {
+          "name": "FactoryCreatesCorrectPlatformType",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_platform.cpp",
+          "line": 29
+        },
+        {
+          "name": "PlatformDetection",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_platform.cpp",
+          "line": 43
+        },
+        {
+          "name": "GetPlatformNameReturnsNonEmpty",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_platform.cpp",
+          "line": 61
+        },
+        {
+          "name": "GetCPUInfoReturnsValidData",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_platform.cpp",
+          "line": 68
+        },
+        {
+          "name": "GetRAMInfoReturnsValidData",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_platform.cpp",
+          "line": 88
+        },
+        {
+          "name": "GetScreenResolutionReturnsValidData",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_platform.cpp",
+          "line": 105
+        },
+        {
+          "name": "GetScreenScaleFactorReturnsPositive",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_platform.cpp",
+          "line": 122
+        },
+        {
+          "name": "GetScreenDimensionsReturnsPositive",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_platform.cpp",
+          "line": 139
+        },
+        {
+          "name": "SupportedFormatsReturnsNonEmpty",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_platform.cpp",
+          "line": 153
+        },
+        {
+          "name": "CaptureScreenReturnsValidImage",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_platform.cpp",
+          "line": 172
+        },
+        {
+          "name": "InputLockStateTracking",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_platform.cpp",
+          "line": 195
+        },
+        {
+          "name": "LockUnlockKeyboard",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_platform.cpp",
+          "line": 202
+        },
+        {
+          "name": "LockUnlockMouse",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_platform.cpp",
+          "line": 222
+        },
+        {
+          "name": "GetPowerStatusReturnsValidData",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_platform.cpp",
+          "line": 246
+        },
+        {
+          "name": "PowerOperationsExist",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_platform.cpp",
+          "line": 265
+        },
+        {
+          "name": "GetCurrentRulesReturnsVector",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_platform.cpp",
+          "line": 277
+        },
+        {
+          "name": "SetFilterMode",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_platform.cpp",
+          "line": 287
+        },
+        {
+          "name": "BlockDomains",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_platform.cpp",
+          "line": 301
+        },
+        {
+          "name": "AllowDomains",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_platform.cpp",
+          "line": 314
+        },
+        {
+          "name": "AllInterfacesImplemented",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_platform.cpp",
+          "line": 331
+        },
+        {
+          "name": "MultipleInstancesAllowed",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_platform.cpp",
+          "line": 352
+        }
+      ]
+    },
+    {
+      "name": "ClientServiceTest",
+      "tests": 23,
+      "testsuite": [
+        {
+          "name": "ConstructionWithValidConfig",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_client_service.cpp",
+          "line": 89
+        },
+        {
+          "name": "ConstructionWithInvalidConfigThrows",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_client_service.cpp",
+          "line": 95
+        },
+        {
+          "name": "ConstructionWithNonExistentConfigThrows",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_client_service.cpp",
+          "line": 105
+        },
+        {
+          "name": "InitiallyNotRunning",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_client_service.cpp",
+          "line": 115
+        },
+        {
+          "name": "StartSetsRunningTrue",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_client_service.cpp",
+          "line": 120
+        },
+        {
+          "name": "StopSetsRunningFalse",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_client_service.cpp",
+          "line": 135
+        },
+        {
+          "name": "MultipleStartCallsIdempotent",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_client_service.cpp",
+          "line": 145
+        },
+        {
+          "name": "MultipleStopCallsSafe",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_client_service.cpp",
+          "line": 160
+        },
+        {
+          "name": "GetStatusReturnsValidStruct",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_client_service.cpp",
+          "line": 176
+        },
+        {
+          "name": "StatusReflectsConnectionState",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_client_service.cpp",
+          "line": 191
+        },
+        {
+          "name": "UptimeIncreasesWhileRunning",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_client_service.cpp",
+          "line": 207
+        },
+        {
+          "name": "ConnectToMasterAttempted",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_client_service.cpp",
+          "line": 226
+        },
+        {
+          "name": "HelloMessageFormatValid",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_client_service.cpp",
+          "line": 238
+        },
+        {
+          "name": "HeartbeatIntervalConfigurable",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_client_service.cpp",
+          "line": 272
+        },
+        {
+          "name": "LastHeartbeatTimestampUpdates",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_client_service.cpp",
+          "line": 280
+        },
+        {
+          "name": "ReconnectionOnDisconnect",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_client_service.cpp",
+          "line": 300
+        },
+        {
+          "name": "ReconnectionAttemptsLimited",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_client_service.cpp",
+          "line": 315
+        },
+        {
+          "name": "CommandQueueInitiallyEmpty",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_client_service.cpp",
+          "line": 327
+        },
+        {
+          "name": "CommandQueueProcessing",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_client_service.cpp",
+          "line": 333
+        },
+        {
+          "name": "ConcurrentStartStopSafe",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_client_service.cpp",
+          "line": 351
+        },
+        {
+          "name": "ConcurrentStatusQueriesSafe",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_client_service.cpp",
+          "line": 371
+        },
+        {
+          "name": "FullLifecycle",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_client_service.cpp",
+          "line": 399
+        },
+        {
+          "name": "MultipleLifecycles",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_client_service.cpp",
+          "line": 418
+        }
+      ]
+    },
+    {
+      "name": "ScreenCaptureTest",
+      "tests": 24,
+      "testsuite": [
+        {
+          "name": "ServiceInitialization",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_screen_capture.cpp",
+          "line": 63
+        },
+        {
+          "name": "ServiceRequiresPlatform",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_screen_capture.cpp",
+          "line": 67
+        },
+        {
+          "name": "CaptureScreenReturnsValidFrame",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_screen_capture.cpp",
+          "line": 77
+        },
+        {
+          "name": "FrameDimensionsMatchScreenResolution",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_screen_capture.cpp",
+          "line": 86
+        },
+        {
+          "name": "FrameFormatIsRGBA32",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_screen_capture.cpp",
+          "line": 94
+        },
+        {
+          "name": "FrameSizeCalculation",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_screen_capture.cpp",
+          "line": 100
+        },
+        {
+          "name": "PitchCalculation",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_screen_capture.cpp",
+          "line": 107
+        },
+        {
+          "name": "GetFrameBufferReturnsValidPointer",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_screen_capture.cpp",
+          "line": 118
+        },
+        {
+          "name": "GetFrameSizeMatchesExpectation",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_screen_capture.cpp",
+          "line": 125
+        },
+        {
+          "name": "GetWidthHeight",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_screen_capture.cpp",
+          "line": 132
+        },
+        {
+          "name": "GetFormatReturnsRGBA32",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_screen_capture.cpp",
+          "line": 141
+        },
+        {
+          "name": "CompressionNoneReturnsUnmodifiedData",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_screen_capture.cpp",
+          "line": 151
+        },
+        {
+          "name": "CompressionRLEOnSolidColor",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_screen_capture.cpp",
+          "line": 166
+        },
+        {
+          "name": "CompressionRLEOnCheckerboard",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_screen_capture.cpp",
+          "line": 186
+        },
+        {
+          "name": "CompressionRLEDecompression",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_screen_capture.cpp",
+          "line": 204
+        },
+        {
+          "name": "GetCompressionRatioAfterCompress",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_screen_capture.cpp",
+          "line": 226
+        },
+        {
+          "name": "CompressionRatioCalculation",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_screen_capture.cpp",
+          "line": 234
+        },
+        {
+          "name": "ConcurrentCaptures",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_screen_capture.cpp",
+          "line": 255
+        },
+        {
+          "name": "CapturePerformance",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_screen_capture.cpp",
+          "line": 285
+        },
+        {
+          "name": "CompressPerformance",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_screen_capture.cpp",
+          "line": 297
+        },
+        {
+          "name": "CaptureAndCompressTotalPerformance",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_screen_capture.cpp",
+          "line": 311
+        },
+        {
+          "name": "CompressBeforeCaptureThrows",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_screen_capture.cpp",
+          "line": 328
+        },
+        {
+          "name": "GetBufferBeforeCaptureReturnsNull",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_screen_capture.cpp",
+          "line": 334
+        },
+        {
+          "name": "MultipleCapturesUpdateFrame",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_screen_capture.cpp",
+          "line": 339
+        }
+      ]
+    },
+    {
+      "name": "InputLockTest",
+      "tests": 25,
+      "testsuite": [
+        {
+          "name": "ConstructorWithValidPlatform",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_input_lock.cpp",
+          "line": 66
+        },
+        {
+          "name": "ConstructorWithNullPlatformThrows",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_input_lock.cpp",
+          "line": 70
+        },
+        {
+          "name": "InitialStateIsUnlocked",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_input_lock.cpp",
+          "line": 76
+        },
+        {
+          "name": "LockKeyboard",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_input_lock.cpp",
+          "line": 86
+        },
+        {
+          "name": "UnlockKeyboard",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_input_lock.cpp",
+          "line": 96
+        },
+        {
+          "name": "DoubleLockKeyboardIsIdempotent",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_input_lock.cpp",
+          "line": 104
+        },
+        {
+          "name": "DoubleUnlockKeyboardIsSafe",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_input_lock.cpp",
+          "line": 117
+        },
+        {
+          "name": "LockMouse",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_input_lock.cpp",
+          "line": 132
+        },
+        {
+          "name": "UnlockMouse",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_input_lock.cpp",
+          "line": 142
+        },
+        {
+          "name": "DoubleLockMouseIsIdempotent",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_input_lock.cpp",
+          "line": 150
+        },
+        {
+          "name": "DoubleUnlockMouseIsSafe",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_input_lock.cpp",
+          "line": 163
+        },
+        {
+          "name": "LockKeyboardDoesNotAffectMouse",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_input_lock.cpp",
+          "line": 178
+        },
+        {
+          "name": "LockMouseDoesNotAffectKeyboard",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_input_lock.cpp",
+          "line": 187
+        },
+        {
+          "name": "LockBothIndependently",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_input_lock.cpp",
+          "line": 196
+        },
+        {
+          "name": "SetLockLevelNone",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_input_lock.cpp",
+          "line": 214
+        },
+        {
+          "name": "SetLockLevelKeyboardOnly",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_input_lock.cpp",
+          "line": 223
+        },
+        {
+          "name": "SetLockLevelMouseOnly",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_input_lock.cpp",
+          "line": 235
+        },
+        {
+          "name": "SetLockLevelBoth",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_input_lock.cpp",
+          "line": 247
+        },
+        {
+          "name": "LockLevelTransitions",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_input_lock.cpp",
+          "line": 259
+        },
+        {
+          "name": "SetSameLevelTwiceIsIdempotent",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_input_lock.cpp",
+          "line": 277
+        },
+        {
+          "name": "ConcurrentLockUnlock",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_input_lock.cpp",
+          "line": 293
+        },
+        {
+          "name": "ConcurrentSetLockLevel",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_input_lock.cpp",
+          "line": 316
+        },
+        {
+          "name": "ConcurrentQueryState",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_input_lock.cpp",
+          "line": 344
+        },
+        {
+          "name": "LockStatePersistsAcrossMultipleCalls",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_input_lock.cpp",
+          "line": 369
+        },
+        {
+          "name": "ManualLockUpdatesLockLevel",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_input_lock.cpp",
+          "line": 380
+        }
+      ]
+    },
+    {
+      "name": "NetworkFilterManagerTest",
+      "tests": 15,
+      "testsuite": [
+        {
+          "name": "ConstructorValid",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_network_filter.cpp",
+          "line": 91
+        },
+        {
+          "name": "ConstructorUsingNullFilterThrows",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_network_filter.cpp",
+          "line": 95
+        },
+        {
+          "name": "InitialRulesAreEmpty",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_network_filter.cpp",
+          "line": 101
+        },
+        {
+          "name": "InitialModeIsDisabled",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_network_filter.cpp",
+          "line": 105
+        },
+        {
+          "name": "AddBlockedDomain",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_network_filter.cpp",
+          "line": 114
+        },
+        {
+          "name": "AddDuplicateDomainFails",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_network_filter.cpp",
+          "line": 124
+        },
+        {
+          "name": "RemoveBlockedDomain",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_network_filter.cpp",
+          "line": 132
+        },
+        {
+          "name": "RemoveNonExistentDomainFails",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_network_filter.cpp",
+          "line": 140
+        },
+        {
+          "name": "IsDomainBlockedCheck",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_network_filter.cpp",
+          "line": 145
+        },
+        {
+          "name": "CaseInsensitiveDomainHandling",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_network_filter.cpp",
+          "line": 152
+        },
+        {
+          "name": "ApplyRulesBlacklist",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_network_filter.cpp",
+          "line": 168
+        },
+        {
+          "name": "ApplyRulesDisabledClearsFilter",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_network_filter.cpp",
+          "line": 189
+        },
+        {
+          "name": "SaveAndLoadRules",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_network_filter.cpp",
+          "line": 205
+        },
+        {
+          "name": "WildcardSubdomainHandling",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_network_filter.cpp",
+          "line": 227
+        },
+        {
+          "name": "GetStatisticsInitial",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_network_filter.cpp",
+          "line": 239
+        }
+      ]
+    },
+    {
+      "name": "RemoteControlTest",
+      "tests": 6,
+      "testsuite": [
+        {
+          "name": "InitializationState",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_remote_control.cpp",
+          "line": 21
+        },
+        {
+          "name": "StartStopSession",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_remote_control.cpp",
+          "line": 29
+        },
+        {
+          "name": "LatencyCalculation",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_remote_control.cpp",
+          "line": 37
+        },
+        {
+          "name": "BandwidthStatsAccumulation",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_remote_control.cpp",
+          "line": 54
+        },
+        {
+          "name": "InputEventHandling",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_remote_control.cpp",
+          "line": 66
+        },
+        {
+          "name": "EventsFailIfDisconnected",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_remote_control.cpp",
+          "line": 84
+        }
+      ]
+    },
+    {
+      "name": "ActivityMonitorTest",
+      "tests": 10,
+      "testsuite": [
+        {
+          "name": "StartStopMonitoring",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ActivityMonitorTest.cpp",
+          "line": 25
+        },
+        {
+          "name": "CPUUsageInRange",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ActivityMonitorTest.cpp",
+          "line": 39
+        },
+        {
+          "name": "RAMUsageInRange",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ActivityMonitorTest.cpp",
+          "line": 48
+        },
+        {
+          "name": "ProcessListNotEmpty",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ActivityMonitorTest.cpp",
+          "line": 55
+        },
+        {
+          "name": "IdleTimeSanity",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ActivityMonitorTest.cpp",
+          "line": 72
+        },
+        {
+          "name": "InitialKeyboardStats",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ActivityMonitorTest.cpp",
+          "line": 80
+        },
+        {
+          "name": "InitialMouseStats",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ActivityMonitorTest.cpp",
+          "line": 86
+        },
+        {
+          "name": "NetworkStatsSanity",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ActivityMonitorTest.cpp",
+          "line": 92
+        },
+        {
+          "name": "ActivityReportConsistency",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ActivityMonitorTest.cpp",
+          "line": 99
+        },
+        {
+          "name": "ConcurrentAccess",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ActivityMonitorTest.cpp",
+          "line": 110
+        }
+      ]
+    },
+    {
+      "name": "MasterActivityAggregatorTest",
+      "tests": 21,
+      "testsuite": [
+        {
+          "name": "InitialStateIsEmpty",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\MasterActivityAggregatorTest.cpp",
+          "line": 30
+        },
+        {
+          "name": "AddClientActivityStoresData",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\MasterActivityAggregatorTest.cpp",
+          "line": 40
+        },
+        {
+          "name": "UpdateClientActivityOverwritesOld",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\MasterActivityAggregatorTest.cpp",
+          "line": 51
+        },
+        {
+          "name": "ClassroomSummaryCalculatesTotals",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\MasterActivityAggregatorTest.cpp",
+          "line": 64
+        },
+        {
+          "name": "ClassroomSummaryCalculatesAverages",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\MasterActivityAggregatorTest.cpp",
+          "line": 73
+        },
+        {
+          "name": "DetectMostUsedApp",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\MasterActivityAggregatorTest.cpp",
+          "line": 83
+        },
+        {
+          "name": "StudentRankingOrdersByActivity",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\MasterActivityAggregatorTest.cpp",
+          "line": 104
+        },
+        {
+          "name": "GetMostActiveStudentReturnsCorrectStudent",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\MasterActivityAggregatorTest.cpp",
+          "line": 123
+        },
+        {
+          "name": "GetLeastActiveStudentReturnsCorrectStudent",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\MasterActivityAggregatorTest.cpp",
+          "line": 134
+        },
+        {
+          "name": "GetTopApplicationsSortsByCount",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\MasterActivityAggregatorTest.cpp",
+          "line": 144
+        },
+        {
+          "name": "AnomalyMassIdle",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\MasterActivityAggregatorTest.cpp",
+          "line": 167
+        },
+        {
+          "name": "AnomalyGameUsage",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\MasterActivityAggregatorTest.cpp",
+          "line": 186
+        },
+        {
+          "name": "AnomalyHighLoad",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\MasterActivityAggregatorTest.cpp",
+          "line": 202
+        },
+        {
+          "name": "ActivityLevelLow",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\MasterActivityAggregatorTest.cpp",
+          "line": 216
+        },
+        {
+          "name": "ActivityLevelHigh",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\MasterActivityAggregatorTest.cpp",
+          "line": 223
+        },
+        {
+          "name": "ThreadSafetyAdd",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\MasterActivityAggregatorTest.cpp",
+          "line": 230
+        },
+        {
+          "name": "CountActiveStudents",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\MasterActivityAggregatorTest.cpp",
+          "line": 247
+        },
+        {
+          "name": "ClearDataRemovesAll",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\MasterActivityAggregatorTest.cpp",
+          "line": 258
+        },
+        {
+          "name": "RankAttributes",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\MasterActivityAggregatorTest.cpp",
+          "line": 265
+        },
+        {
+          "name": "RankAppCount",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\MasterActivityAggregatorTest.cpp",
+          "line": 274
+        },
+        {
+          "name": "EmptyProcessList",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\MasterActivityAggregatorTest.cpp",
+          "line": 286
+        }
+      ]
+    },
+    {
+      "name": "ApplicationManagerTest",
+      "tests": 18,
+      "testsuite": [
+        {
+          "name": "InitialModeIsDisabled",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ApplicationManagerTest.cpp",
+          "line": 20
+        },
+        {
+          "name": "SetModeWorks",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ApplicationManagerTest.cpp",
+          "line": 25
+        },
+        {
+          "name": "AddToBlacklist",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ApplicationManagerTest.cpp",
+          "line": 34
+        },
+        {
+          "name": "BlacklistAllowsOthers",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ApplicationManagerTest.cpp",
+          "line": 43
+        },
+        {
+          "name": "AddToWhitelist",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ApplicationManagerTest.cpp",
+          "line": 53
+        },
+        {
+          "name": "WhitelistBlocksUnlisted",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ApplicationManagerTest.cpp",
+          "line": 62
+        },
+        {
+          "name": "RegexMatchingBlacklist",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ApplicationManagerTest.cpp",
+          "line": 68
+        },
+        {
+          "name": "RegexMatchingWhitelist",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ApplicationManagerTest.cpp",
+          "line": 82
+        },
+        {
+          "name": "RemoveRule",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ApplicationManagerTest.cpp",
+          "line": 95
+        },
+        {
+          "name": "DisabledModeAllowsAll",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ApplicationManagerTest.cpp",
+          "line": 105
+        },
+        {
+          "name": "StatisticsTracking",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ApplicationManagerTest.cpp",
+          "line": 113
+        },
+        {
+          "name": "HashVerificationStub",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ApplicationManagerTest.cpp",
+          "line": 138
+        },
+        {
+          "name": "CaseInsensitivity",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ApplicationManagerTest.cpp",
+          "line": 146
+        },
+        {
+          "name": "ExportRules",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ApplicationManagerTest.cpp",
+          "line": 154
+        },
+        {
+          "name": "ImportRules",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ApplicationManagerTest.cpp",
+          "line": 164
+        },
+        {
+          "name": "RulePriority",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ApplicationManagerTest.cpp",
+          "line": 181
+        },
+        {
+          "name": "DuplicateRules",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ApplicationManagerTest.cpp",
+          "line": 199
+        },
+        {
+          "name": "PerformanceLargeRuleSet",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ApplicationManagerTest.cpp",
+          "line": 208
+        }
+      ]
+    },
+    {
+      "name": "ScreenRecorderTest",
+      "tests": 22,
+      "testsuite": [
+        {
+          "name": "StartStopRecording",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ScreenRecorderTest.cpp",
+          "line": 40
+        },
+        {
+          "name": "VideoFileGenerated",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ScreenRecorderTest.cpp",
+          "line": 57
+        },
+        {
+          "name": "PauseResumeRecording",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ScreenRecorderTest.cpp",
+          "line": 72
+        },
+        {
+          "name": "PauseWhenNotRecordingFails",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ScreenRecorderTest.cpp",
+          "line": 89
+        },
+        {
+          "name": "ResumeWhenNotPausedFails",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ScreenRecorderTest.cpp",
+          "line": 95
+        },
+        {
+          "name": "SetQualityBeforeRecording",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ScreenRecorderTest.cpp",
+          "line": 103
+        },
+        {
+          "name": "CannotSetQualityDuringRecording",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ScreenRecorderTest.cpp",
+          "line": 112
+        },
+        {
+          "name": "SetFrameRateValid",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ScreenRecorderTest.cpp",
+          "line": 122
+        },
+        {
+          "name": "SetFrameRateInvalidRange",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ScreenRecorderTest.cpp",
+          "line": 131
+        },
+        {
+          "name": "CannotSetFrameRateDuringRecording",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ScreenRecorderTest.cpp",
+          "line": 139
+        },
+        {
+          "name": "RecordingStatsAccurate",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ScreenRecorderTest.cpp",
+          "line": 149
+        },
+        {
+          "name": "GetOutputPath",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ScreenRecorderTest.cpp",
+          "line": 167
+        },
+        {
+          "name": "CancelRecordingDeletesFile",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ScreenRecorderTest.cpp",
+          "line": 180
+        },
+        {
+          "name": "CancelWhenNotRecordingFails",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ScreenRecorderTest.cpp",
+          "line": 197
+        },
+        {
+          "name": "PreventConcurrentRecording",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ScreenRecorderTest.cpp",
+          "line": 203
+        },
+        {
+          "name": "MultipleStartStopCycles",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ScreenRecorderTest.cpp",
+          "line": 213
+        },
+        {
+          "name": "StopWhenNotRecordingFails",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ScreenRecorderTest.cpp",
+          "line": 225
+        },
+        {
+          "name": "QualityPresetLow",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ScreenRecorderTest.cpp",
+          "line": 231
+        },
+        {
+          "name": "QualityPresetUltra",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ScreenRecorderTest.cpp",
+          "line": 247
+        },
+        {
+          "name": "DiskSpaceMonitoring",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ScreenRecorderTest.cpp",
+          "line": 263
+        },
+        {
+          "name": "FrameDropsTracking",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ScreenRecorderTest.cpp",
+          "line": 274
+        },
+        {
+          "name": "DestructorStopsRecording",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ScreenRecorderTest.cpp",
+          "line": 288
+        }
+      ]
+    },
+    {
+      "name": "ClientListModelTest",
+      "tests": 5,
+      "testsuite": [
+        {
+          "name": "InitialStateIsEmpty",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_ui_model.cpp",
+          "line": 21
+        },
+        {
+          "name": "AddClientIncreasesCount",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_ui_model.cpp",
+          "line": 26
+        },
+        {
+          "name": "RemoveClientDecreasesCount",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_ui_model.cpp",
+          "line": 39
+        },
+        {
+          "name": "UpdateReplacesAll",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_ui_model.cpp",
+          "line": 51
+        },
+        {
+          "name": "DataRetrieval",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_ui_model.cpp",
+          "line": 64
+        }
+      ]
+    }
+  ]
+}

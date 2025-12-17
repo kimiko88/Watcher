@@ -1,0 +1,32 @@
+Versione di MSBuild 17.13.15+18b3035f6 per .NET Framework
+
+  ScreenRecorder.cpp
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\core\ScreenRecorder.cpp(130,37): error C2665: 'std::lock_guard<std::mutex>::lock_guard': no overloaded function could convert all the argument types [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\core\cms_core.vcxproj]
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\mutex(464,5):
+      could be 'std::lock_guard<std::mutex>::lock_guard(const std::lock_guard<std::mutex> &)'
+          C:\Users\chimi\Desktop\Programmazione\Watcher\src\core\ScreenRecorder.cpp(130,37):
+          'std::lock_guard<std::mutex>::lock_guard(const std::lock_guard<std::mutex> &)': cannot convert argument 1 from 'const std::mutex' to 'const std::lock_guard<std::mutex> &'
+              C:\Users\chimi\Desktop\Programmazione\Watcher\src\core\ScreenRecorder.cpp(130,38):
+              Reason: cannot convert from 'const std::mutex' to 'const std::lock_guard<std::mutex>'
+              C:\Users\chimi\Desktop\Programmazione\Watcher\src\core\ScreenRecorder.cpp(130,38):
+              No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\mutex(453,5):
+      or       'std::lock_guard<std::mutex>::lock_guard(_Mutex &)'
+          with
+          [
+              _Mutex=std::mutex
+          ]
+          C:\Users\chimi\Desktop\Programmazione\Watcher\src\core\ScreenRecorder.cpp(130,37):
+          'std::lock_guard<std::mutex>::lock_guard(_Mutex &)': cannot convert argument 1 from 'const std::mutex' to '_Mutex &'
+          with
+          [
+              _Mutex=std::mutex
+          ]
+              C:\Users\chimi\Desktop\Programmazione\Watcher\src\core\ScreenRecorder.cpp(130,38):
+              Conversion loses qualifiers
+      C:\Users\chimi\Desktop\Programmazione\Watcher\src\core\ScreenRecorder.cpp(130,37):
+      while trying to match the argument list '(const std::mutex)'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\core\ScreenRecorder.cpp(137,24): warning C4244: '=': conversion from 'const uint32_t' to 'float', possible loss of data [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\core\cms_core.vcxproj]
+  gtest.vcxproj -> C:\Users\chimi\Desktop\Programmazione\Watcher\build\lib\Debug\gtest.lib
+  gtest_main.vcxproj -> C:\Users\chimi\Desktop\Programmazione\Watcher\build\lib\Debug\gtest_main.lib

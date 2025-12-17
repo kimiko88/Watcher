@@ -2,3 +2,5 @@ C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp;C
 C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsService.cpp;C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\cms_platform.dir\Debug\WindowsService.obj
 C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\ScreenCaptureService.cpp;C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\cms_platform.dir\Debug\ScreenCaptureService.obj
 C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\InputLockManager.cpp;C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\cms_platform.dir\Debug\InputLockManager.obj
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\Windows\ActivityMonitorWindows.cpp;C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\cms_platform.dir\Debug\ActivityMonitorWindows.obj
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\Windows\ApplicationManagerWindows.cpp;C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\cms_platform.dir\Debug\ApplicationManagerWindows.obj
