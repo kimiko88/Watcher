@@ -4,6 +4,7 @@
 #include "Common.h"
 #include "Protocol.h"
 #include "cms/Platform.h"
+#include "cms/Socket.h"
 #include <atomic>
 #include <condition_variable>
 #include <memory>
@@ -11,6 +12,7 @@
 #include <queue>
 #include <string>
 #include <thread>
+
 
 namespace cms {
 namespace client {
@@ -117,9 +119,8 @@ private:
   std::queue<protocol::Message> command_queue_;
   mutable std::mutex queue_mutex_;
 
-  // Network socket (platform-specific)
-  // In real implementation, would use actual socket
-  void *socket_ = nullptr;
+  // Network socket
+  std::unique_ptr<cms::Socket> socket_ = nullptr;
 
   // Constants
   static constexpr int DEFAULT_HEARTBEAT_INTERVAL = 30; // seconds

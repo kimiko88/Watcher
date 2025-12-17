@@ -5,6 +5,7 @@ set(CORE_SOURCES
     RemoteControl.cpp
     Protocol.cpp
     Core.cpp
+    Socket.cpp
 )
 
 # Core library
@@ -24,5 +25,9 @@ target_link_libraries(cms_core
         Threads::Threads
         nlohmann_json::nlohmann_json
 )
+
+if(WIN32)
+    target_link_libraries(cms_core PRIVATE ws2_32)
+endif()
 
 message(STATUS "Configured cms_core library")

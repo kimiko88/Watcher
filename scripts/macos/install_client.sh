@@ -1,52 +1,45 @@
 #!/bin/bash
-# install_client.sh
-# Installs Classroom Control Client on macOS (Launchd)
+# macOS Installation Script for Classroom Control Client
 
 set -e
 
-INSTALL_DIR="/opt/classroom-control"
-PLIST_LABEL="io.classroomcontrol.client"
-PLIST_PATH="/Library/LaunchDaemons/$PLIST_LABEL.plist"
-
-# 1. Check Root
+# 1. Verify Root
 if [ "$EUID" -ne 0 ]; then
-  echo "Please run as root"
+  echo "Please run as root (sudo)"
   exit 1
 fi
 
-echo "Starting installation for macOS..."
+TARGET_DIR="/opt/classroom-control"
+BIN_PATH="$TARGET_DIR/cms_client"
+PLIST_PATH="/Library/LaunchDaemons/io.classroomcontrol.client.plist"
+LABEL="io.classroomcontrol.client"
 
-# 2. Directories
-mkdir -p $INSTALL_DIR
-echo "Created directories"
+echo "Starting macOS installation..."
 
-# 3. Copy Files
-CMS_BIN="./cms_client"
-if [ ! -f "$CMS_BIN" ]; then
-    # Fallback
-    CMS_BIN="./build/src/client/cms_client"
-fi
+# 2. Create Directory
+mkdir -p "$TARGET_DIR"
 
-if [ -f "$CMS_BIN" ]; then
-    cp "$CMS_BIN" "$INSTALL_DIR/cms_client"
-    chmod +x "$INSTALL_DIR/cms_client"
-    echo "Installed executable"
+# 3. Copy Executable
+if [ -f "cms_client" ]; then
+    cp cms_client "$BIN_PATH"
+    chmod +x "$BIN_PATH"
 else
-    echo "Error: cms_client binary not found"
-    exit 1
+    echo "Warning: cms_client execution not found."
 fi
 
 # 4. Create Launchd Plist
-cat <<EOF > $PLIST_PATH
+echo "Creating Launchd plist..."
+cat <<EOF > "$PLIST_PATH"
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
     <key>Label</key>
-    <string>$PLIST_LABEL</string>
+    <string>$LABEL</string>
     <key>ProgramArguments</key>
     <array>
-        <string>$INSTALL_DIR/cms_client</string>
+        <string>$BIN_PATH</string>
+        <string>--service</string>
     </array>
     <key>RunAtLoad</key>
     <true/>
@@ -60,13 +53,9 @@ cat <<EOF > $PLIST_PATH
 </plist>
 EOF
 
-echo "Created Launchd plist at $PLIST_PATH"
-
 # 5. Load Service
-# Unload first if exists
-launchctl unload $PLIST_PATH 2>/dev/null || true
-launchctl load $PLIST_PATH
+# Unload if exists
+launchctl unload "$PLIST_PATH" 2>/dev/null || true
+launchctl load "$PLIST_PATH"
 
-echo "Installation Complete!"
-echo "Service status:"
-launchctl list | grep $PLIST_LABEL
+echo "Installation Complete. Check logs at /var/log/cms_client.log"

@@ -12,6 +12,7 @@ set(TEST_SOURCES
     unit/test_input_lock.cpp
     unit/test_network_filter.cpp
     unit/test_remote_control.cpp
+    unit/ActivityMonitorTest.cpp
     ${CMAKE_SOURCE_DIR}/src/client/ClientService.cpp
 )
 
@@ -54,11 +55,17 @@ endif()
 # Integration tests executable
 add_executable(cms_integration_tests
     integration/test_build.cpp
+    integration/InstallationTest.cpp
+    integration/EndToEndTest.cpp
+    integration/PerformanceTest.cpp
+    integration/ResillienceTest.cpp
+    ${CMAKE_SOURCE_DIR}/src/client/ClientService.cpp
 )
 
 target_link_libraries(cms_integration_tests
     PRIVATE
         cms_core
+        cms_platform
         GTest::gtest
         GTest::gtest_main
 )

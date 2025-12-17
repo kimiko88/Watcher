@@ -66,6 +66,10 @@ ClientService::ClientService(const std::string &config_path) {
   loadConfig(config_path);
   // Initialize platform interface
   platform_ = platform::getPlatformInstance().release();
+
+  // Initialize Socket subsystem
+  cms::Socket::Initialize();
+
   LOG_INFO("ClientService initialized with machine ID: " + config_.machine_id);
 }
 
@@ -161,6 +165,7 @@ ClientService::~ClientService() {
     delete platform_;
     platform_ = nullptr;
   }
+  cms::Socket::Cleanup();
 }
 
 // ============================================================================
@@ -357,28 +362,29 @@ bool ClientService::connectToMaster() {
   LOG_INFO("Attempting to connect to master at " + config_.master_address +
            ":" + std::to_string(config_.master_port));
 
-  // TODO: Implement actual TCP socket connection
-  // For now, simulate connection attempt
+  try {
+    socket_ = std::make_unique<cms::Socket>();
+    if (!socket_->Connect(config_.master_address, config_.master_port)) {
+      LOG_WARNING("Failed to connect to master");
+      socket_.reset();
+      connected_ = false;
+      return false;
+    }
 
-  // In real implementation:
-  // 1. Create socket
-  // 2. Connect to master_address:master_port
-  // 3. Set socket_ to the connected socket
+    connected_ = true;
+    LOG_INFO("Connected to master");
 
-  // Simulated failure (no actual server available in test)
-  socket_ = nullptr;
-  connected_ = false;
+    // Perform handshake
+    return sendHello();
 
-  LOG_WARNING("Connection failed (no network implementation yet)");
+  } catch (const std::exception &e) {
+    LOG_ERROR(std::string("Connection exception: ") + e.what());
+    socket_.reset();
+    connected_ = false;
+    return false;
+  }
+
   return false;
-
-  // When implemented, would:
-  // if (socket_) {
-  //     connected_ = true;
-  //     sendHello();
-  //     return true;
-  // }
-  // return false;
 }
 
 void ClientService::disconnect() {
@@ -388,10 +394,9 @@ void ClientService::disconnect() {
 
   LOG_INFO("Disconnecting from master");
 
-  // TODO: Close socket
   if (socket_) {
-    // Close socket
-    socket_ = nullptr;
+    socket_->Close();
+    socket_.reset();
   }
 
   connected_ = false;
@@ -421,12 +426,17 @@ bool ClientService::sendHello() {
     protocol::MessageSerializer serializer;
     std::string json = serializer.Serialize(helloMsg);
 
+    // Send with delimiter
+    std::string packet = json + "\n";
+
     LOG_DEBUG("HELLO message: " + json);
 
-    // TODO: Send via socket
-    // send(socket_, json.c_str(), json.length(), 0);
-
-    return true;
+    if (socket_ && socket_->Send(packet)) {
+      return true;
+    } else {
+      LOG_ERROR("Socket send failed");
+      return false;
+    }
 
   } catch (const std::exception &e) {
     LOG_ERROR(std::string("Failed to send HELLO: ") + e.what());

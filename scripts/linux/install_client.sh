@@ -1,65 +1,73 @@
 #!/bin/bash
-# install_client.sh
-# Installs Classroom Control Client on Linux (Systemd)
+# Linux Installation Script for Classroom Control Client
+# Requirements:
+# 1. Root check
+# 2. Dependencies check
+# 3. Create dirs, copy files
+# 4. Systemd service setup
 
 set -e
 
-INSTALL_DIR="/opt/classroom-control"
-CONFIG_DIR="/etc/classroom-control"
-SERVICE_NAME="classroom-control-client"
-USER_NAME="cms-service"
-
-# 1. Check Root
+# 1. Verify Root
 if [ "$EUID" -ne 0 ]; then
   echo "Please run as root"
   exit 1
 fi
 
+TARGET_DIR="/opt/classroom-control"
+BIN_PATH="$TARGET_DIR/cms_client"
+CONFIG_DIR="/etc/classroom-control"
+CONFIG_PATH="$CONFIG_DIR/config.json"
+SERVICE_NAME="classroom-control-client"
+
 echo "Starting installation..."
 
-# 2. Create User
-if ! id "$USER_NAME" &>/dev/null; then
-    useradd -r -s /bin/false $USER_NAME
-    echo "Created system user: $USER_NAME"
+# 2. Dependencies (Simple check for common libs)
+# Ideally use package manager, but this is a generic script.
+echo "Checking dependencies..."
+if ! ldconfig -p | grep -q libssl; then
+    echo "Warning: libssl not found in ldcache. Client might fail."
 fi
 
-# 3. Directories
-mkdir -p $INSTALL_DIR
-mkdir -p $CONFIG_DIR
-echo "Created directories"
+# 3. Create Directories
+mkdir -p "$TARGET_DIR"
+mkdir -p "$CONFIG_DIR"
 
-# 4. Copy Files
-# Assume script is run from source root or build dir passed as arg? 
-# Defaulting to checking local directory for binary
-CMS_BIN="./cms_client"
-if [ ! -f "$CMS_BIN" ]; then
-    # Fallback to build path if exists
-    CMS_BIN="./build/src/client/cms_client"
-fi
-
-if [ -f "$CMS_BIN" ]; then
-    cp "$CMS_BIN" "$INSTALL_DIR/cms_client"
-    chmod +x "$INSTALL_DIR/cms_client"
-    echo "Installed executable"
+# Copy Executable
+if [ -f "cms_client" ]; then
+    cp cms_client "$BIN_PATH"
+    chmod +x "$BIN_PATH"
+    echo "Copied executable."
 else
-    echo "Error: cms_client binary not found in current directory or ./build/src/client/"
-    exit 1
+    echo "Warning: cms_client not found in current directory."
 fi
 
-# Config
+# Copy/Create Config
 if [ -f "config.json" ]; then
-    cp "config.json" "$CONFIG_DIR/config.json"
-else
-    # Create default
-    echo '{ "server_ip": "127.0.0.1", "server_port": 5000 }' > "$CONFIG_DIR/config.json"
-    echo "Created default config at $CONFIG_DIR/config.json"
+    cp config.json "$CONFIG_PATH"
+elif [ ! -f "$CONFIG_PATH" ]; then
+    cat <<EOF > "$CONFIG_PATH"
+{
+    "master_address": "127.0.0.1",
+    "master_port": 5000,
+    "machine_id": "$(cat /proc/sys/kernel/random/uuid)",
+    "log_level": "INFO"
+}
+EOF
+    echo "Created default config at $CONFIG_PATH"
 fi
 
-# Permissions
-chown -R $USER_NAME:$USER_NAME $INSTALL_DIR
-chown -R $USER_NAME:$USER_NAME $CONFIG_DIR
+# Add user if needed
+if ! id "cms-service" &>/dev/null; then
+    useradd -r -s /bin/false cms-service
+    echo "Created system user 'cms-service'"
+fi
 
-# 5. Systemd Service
+chown -R cms-service:cms-service "$TARGET_DIR"
+chown -R cms-service:cms-service "$CONFIG_DIR"
+
+# 4. Systemd Service
+echo "Creating systemd service..."
 cat <<EOF > /etc/systemd/system/$SERVICE_NAME.service
 [Unit]
 Description=Classroom Control Client
@@ -67,24 +75,20 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart=$INSTALL_DIR/cms_client
-WorkingDirectory=$INSTALL_DIR
+ExecStart=$BIN_PATH --config $CONFIG_PATH
 Restart=always
 RestartSec=10
-User=$USER_NAME
-Group=$USER_NAME
-Environment=CMS_CONFIG=$CONFIG_DIR/config.json
+User=cms-service
+Group=cms-service
 
 [Install]
 WantedBy=multi-user.target
 EOF
 
-echo "Created systemd unit file"
-
-# 6. Enable and Start
+# 5. Enable and Start
 systemctl daemon-reload
 systemctl enable $SERVICE_NAME
 systemctl restart $SERVICE_NAME
 
-echo "Installation Complete!"
+echo "Installation Complete. Status:"
 systemctl status $SERVICE_NAME --no-pager
