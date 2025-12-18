@@ -4,7 +4,6 @@
 #include <fstream>
 #include <gtest/gtest.h>
 
-
 using namespace cms;
 namespace fs = std::filesystem;
 
@@ -57,7 +56,7 @@ TEST_F(RecordingManagerTest, ListRecordingsEmpty) {
 }
 
 // 2. List Recordings - With Files
-TEST_F(RecordingManagerTest, ListRecordingsWith Files) {
+TEST_F(RecordingManagerTest, ListRecordingsWithFiles) {
   RecordingManager manager(test_recordings_dir);
   auto recordings = manager.listRecordings();
 

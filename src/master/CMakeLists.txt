@@ -27,6 +27,7 @@ if (Qt6_FOUND)
         ui/ClientThumbnailWidget.cpp
         ui/MasterWindow.cpp
         ui/RemoteViewWindow.cpp
+        ui/RecordingPlayerWidget.cpp
         main.cpp
         ${MOC_SOURCES}
     )
@@ -43,6 +44,12 @@ if (Qt6_FOUND)
         Qt6::Widgets
         Qt6::Network
     )
+    
+    # Link FFmpeg if available for RecordingPlayerWidget
+    if(FFMPEG_FOUND)
+        target_include_directories(cms_master PRIVATE ${FFMPEG_INCLUDE_DIRS})
+        target_link_libraries(cms_master PRIVATE ${FFMPEG_LIBRARIES})
+    endif()
     
     message(STATUS "Configured cms_master executable")
 else()

@@ -19,6 +19,12 @@ target_include_directories(cms_core
         ${CMAKE_SOURCE_DIR}/include
 )
 
+# Link FFmpeg if available
+if(FFMPEG_FOUND)
+    target_include_directories(cms_core PRIVATE ${FFMPEG_INCLUDE_DIRS})
+    target_link_libraries(cms_core PRIVATE ${FFMPEG_LIBRARIES})
+endif()
+
 # Link threading library (required for Logger mutex)
 find_package(Threads REQUIRED)
 target_link_libraries(cms_core
@@ -28,7 +34,7 @@ target_link_libraries(cms_core
 )
 
 if(WIN32)
-    target_link_libraries(cms_core PRIVATE ws2_32)
+    target_link_libraries(cms_core PRIVATE ws2_32 gdi32)
 endif()
 
 message(STATUS "Configured cms_core library")

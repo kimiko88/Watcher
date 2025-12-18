@@ -161,29 +161,28 @@ public:
   }
 
   bool deleteRecording(const std::string &id) {
-    std::lock_guard<std::mutex> lock(mutex);
+    {
+      std::lock_guard<std::mutex> lock(mutex);
 
-    auto it = std::find_if(
-        recordings_cache.begin(), recordings_cache.end(),
-        [&id](const RecordingInfo &r) { return r.recording_id == id; });
+      auto it = std::find_if(
+          recordings_cache.begin(), recordings_cache.end(),
+          [&id](const RecordingInfo &r) { return r.recording_id == id; });
 
-    if (it == recordings_cache.end()) {
-      return false;
-    }
+      if (it == recordings_cache.end()) {
+        return false;
+      }
 
-    // Delete file
-    fs::path file_path = fs::path(recordings_dir) / it->filename;
-    if (fs::exists(file_path)) {
-      fs::remove(file_path);
-    }
+      // Delete file
+      fs::path file_path = fs::path(recordings_dir) / it->filename;
+      if (fs::exists(file_path)) {
+        fs::remove(file_path);
+      }
 
-    // Remove from cache
-    recordings_cache.erase(it);
+      // Remove from cache
+      recordings_cache.erase(it);
+    } // Release lock before calling saveMetadata
 
-    mutex.unlock();
     saveMetadata();
-    mutex.lock();
-
     return true;
   }
 
@@ -202,8 +201,14 @@ public:
 
     RecordingStorageStats stats;
     stats.total_recordings = static_cast<uint32_t>(recordings_cache.size());
+
+    // Calculate total storage directly to avoid mutex deadlock
+    uint64_t total_bytes = 0;
+    for (const auto &rec : recordings_cache) {
+      total_bytes += static_cast<uint64_t>(rec.file_size_mb * 1024 * 1024);
+    }
     stats.total_storage_mb =
-        static_cast<float>(getTotalStorageUsed()) / (1024.0f * 1024.0f);
+        static_cast<float>(total_bytes) / (1024.0f * 1024.0f);
     stats.quota_mb = static_cast<float>(storage_quota) / (1024.0f * 1024.0f);
 
     if (storage_quota > 0) {
@@ -217,76 +222,86 @@ public:
   }
 
   uint32_t cleanupOldRecordings(uint32_t days) {
-    std::lock_guard<std::mutex> lock(mutex);
-
-    auto now = std::chrono::system_clock::now();
-    auto threshold = now - std::chrono::hours(24 * days);
-    auto threshold_ts = std::chrono::duration_cast<std::chrono::seconds>(
-                            threshold.time_since_epoch())
-                            .count();
-
     uint32_t deleted = 0;
 
-    auto it = recordings_cache.begin();
-    while (it != recordings_cache.end()) {
-      if (it->timestamp < static_cast<uint64_t>(threshold_ts)) {
-        // Delete file
-        fs::path file_path = fs::path(recordings_dir) / it->filename;
-        if (fs::exists(file_path)) {
-          fs::remove(file_path);
-        }
+    {
+      std::lock_guard<std::mutex> lock(mutex);
 
-        it = recordings_cache.erase(it);
-        deleted++;
-      } else {
-        ++it;
+      auto now = std::chrono::system_clock::now();
+      auto threshold = now - std::chrono::hours(24 * days);
+      auto threshold_ts = std::chrono::duration_cast<std::chrono::seconds>(
+                              threshold.time_since_epoch())
+                              .count();
+
+      auto it = recordings_cache.begin();
+      while (it != recordings_cache.end()) {
+        if (it->timestamp < static_cast<uint64_t>(threshold_ts)) {
+          // Delete file
+          fs::path file_path = fs::path(recordings_dir) / it->filename;
+          if (fs::exists(file_path)) {
+            fs::remove(file_path);
+          }
+
+          it = recordings_cache.erase(it);
+          deleted++;
+        } else {
+          ++it;
+        }
       }
-    }
+    } // Release lock
 
     if (deleted > 0) {
-      mutex.unlock();
       saveMetadata();
-      mutex.lock();
     }
 
     return deleted;
   }
 
   bool addTags(const std::string &id, const std::vector<std::string> &tags) {
-    std::lock_guard<std::mutex> lock(mutex);
+    bool found = false;
+    {
+      std::lock_guard<std::mutex> lock(mutex);
 
-    for (auto &rec : recordings_cache) {
-      if (rec.recording_id == id) {
-        for (const auto &tag : tags) {
-          if (std::find(rec.tags.begin(), rec.tags.end(), tag) ==
-              rec.tags.end()) {
-            rec.tags.push_back(tag);
+      for (auto &rec : recordings_cache) {
+        if (rec.recording_id == id) {
+          for (const auto &tag : tags) {
+            if (std::find(rec.tags.begin(), rec.tags.end(), tag) ==
+                rec.tags.end()) {
+              rec.tags.push_back(tag);
+            }
           }
+          found = true;
+          break; // Found and updated, exit loop
         }
-        mutex.unlock();
-        saveMetadata();
-        mutex.lock();
-        return true;
       }
+    } // Release lock
+
+    if (found) {
+      saveMetadata();
     }
 
-    return false;
+    return found;
   }
 
   bool updateNotes(const std::string &id, const std::string &notes) {
-    std::lock_guard<std::mutex> lock(mutex);
+    bool found = false;
+    {
+      std::lock_guard<std::mutex> lock(mutex);
 
-    for (auto &rec : recordings_cache) {
-      if (rec.recording_id == id) {
-        rec.notes = notes;
-        mutex.unlock();
-        saveMetadata();
-        mutex.lock();
-        return true;
+      for (auto &rec : recordings_cache) {
+        if (rec.recording_id == id) {
+          rec.notes = notes;
+          found = true;
+          break; // Found and updated, exit loop
+        }
       }
+    } // Release lock
+
+    if (found) {
+      saveMetadata();
     }
 
-    return false;
+    return found;
   }
 
   std::vector<RecordingInfo> searchByTag(const std::string &tag) const {
