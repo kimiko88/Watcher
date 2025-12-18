@@ -2,11 +2,11 @@
 #define CMS_MASTER_SERVER_H
 
 #include "Common.h"
+#include "cms/DomainPolicy.h"
 #include <cstdint>
 #include <memory>
 #include <string>
 #include <vector>
-
 
 namespace cms {
 namespace master {
@@ -74,6 +74,10 @@ public:
   // Request instant screenshot update
   virtual bool refreshClientThumbnail(const std::string &client_id) = 0;
 
+  // Domain Policy
+  virtual bool sendDomainPolicy(const std::string &client_id,
+                                const DomainPolicy &policy) = 0;
+
   // Observer Interface
   class IServerObserver {
   public:
@@ -84,6 +88,8 @@ public:
                                       ClientState new_state) {}
     virtual void onClientThumbnailUpdated(const std::string &client_id,
                                           const std::vector<uint8_t> &data) {}
+    virtual void onScreenshotReceived(const std::string &client_id,
+                                      const std::vector<uint8_t> &data) {}
   };
 
   virtual void addObserver(IServerObserver *observer) = 0;

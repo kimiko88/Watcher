@@ -161,10 +161,10 @@ public:
       avformat_close_input(&format_ctx);
       format_ctx = nullptr;
     }
+    video_stream_index = -1;
 #endif
     loaded = false;
     playing = false;
-    video_stream_index = -1;
   }
 
   void startPlayback() {

@@ -7,6 +7,7 @@ set(CORE_SOURCES
     Core.cpp
     Socket.cpp
     ScreenRecorder.cpp
+    DomainPolicy.cpp
 )
 
 # Core library

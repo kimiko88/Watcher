@@ -11,7 +11,6 @@
 #include <map>
 #include <mutex>
 
-
 namespace cms {
 namespace master {
 
@@ -215,6 +214,7 @@ private:
         std::vector<uint8_t> vec(bytes.begin(), bytes.end());
 
         notifyClientThumbnailUpdated(msg.source, vec);
+        notifyScreenshotReceived(msg.source, vec);
       }
     } else if (msg.type == protocol::CommandType::PING) {
       std::lock_guard<std::mutex> lock(clientsMutex_);
@@ -254,6 +254,26 @@ private:
     return true;
   }
 
+  bool sendDomainPolicy(const std::string &client_id,
+                        const DomainPolicy &policy) override {
+    nlohmann::json payload = policy.toJson();
+
+    std::lock_guard<std::mutex> lock(clientsMutex_);
+    auto it = clientSockets_.find(client_id);
+    if (it == clientSockets_.end())
+      return false;
+
+    protocol::Message msg =
+        protocol::Message::Create(protocol::CommandType::DOMAIN_POLICY_UPDATE,
+                                  "MASTER", client_id, payload);
+    protocol::MessageSerializer serializer;
+    std::string data = serializer.Serialize(msg);
+
+    it->second->write(data.data(), data.size());
+    it->second->flush();
+    return true;
+  }
+
   void notifyClientConnected(const ClientInfo &info) {
     std::lock_guard<std::mutex> lock(observers_mutex_);
     for (auto *obs : observers_)
@@ -271,6 +291,13 @@ private:
     std::lock_guard<std::mutex> lock(observers_mutex_);
     for (auto *obs : observers_)
       obs->onClientThumbnailUpdated(id, data);
+  }
+
+  void notifyScreenshotReceived(const std::string &id,
+                                const std::vector<uint8_t> &data) {
+    std::lock_guard<std::mutex> lock(observers_mutex_);
+    for (auto *obs : observers_)
+      obs->onScreenshotReceived(id, data);
   }
 
   ServerConfig config_;

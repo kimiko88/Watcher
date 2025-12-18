@@ -106,6 +106,10 @@ void ClientService::processCommands() {
     case protocol::CommandType::DOMAIN_BLOCK:
       // Handle domain blocking
       break;
+    case protocol::CommandType::DOMAIN_POLICY_UPDATE:
+      LOG_INFO("Received Domain Policy Update");
+      // TODO: Apply policy using DomainFilterService
+      break;
     default:
       LOG_WARNING("Unknown command type");
       break;
@@ -144,13 +148,19 @@ void ClientService::sendScreenshot() {
                                          config_.machine_id, "master", payload);
 
     // Serialize and send (TODO: Socket send)
+    // Serialize and send
     protocol::MessageSerializer serializer;
     std::string json = serializer.Serialize(msg);
 
-    // In real impl: socket_->send(json)
-    // logging for now to prove it works
-    LOG_DEBUG("Generated Screenshot Data (" +
-              std::to_string(base64Data.size()) + " bytes)");
+    // Send with delimiter
+    std::string packet = json + "\n";
+
+    if (socket_ && socket_->Send(packet)) {
+      LOG_DEBUG("Sent Screenshot Data (" + std::to_string(base64Data.size()) +
+                " bytes)");
+    } else {
+      LOG_ERROR("Failed to send screenshot data");
+    }
 
   } catch (const std::exception &e) {
     LOG_ERROR(std::string("Failed to send screenshot: ") + e.what());
