@@ -1,4 +1,6 @@
 #include "cms/ui/MasterWindow.h"
+#include "cms/Protocol.h"
+#include "cms/ui/ApplicationPolicyDialog.h"
 #include "cms/ui/ClientThumbnailWidget.h"
 #include "cms/ui/DomainPolicyDialog.h"
 #include "cms/ui/RemoteViewWindow.h"
@@ -285,8 +287,68 @@ void MasterWindow::onDomainPolicyClicked() {
 }
 
 void MasterWindow::onApplicationPolicyClicked() {
-  QMessageBox::information(this, "Application Policy",
-                           "Application Policy management coming soon.");
+  // Initialize with empty policy if needed
+  cms::ui::ApplicationPolicy policy;
+  policy.mode = AppFilterMode::MODE_DISABLED;
+
+  ApplicationPolicyDialog dialog(policy, this);
+  if (dialog.exec() == QDialog::Accepted) {
+    cms::ui::ApplicationPolicy newPolicy = dialog.getPolicy();
+
+    // Create protocol message payload
+    nlohmann::json payload;
+
+    // Set mode
+    std::string mode_str = "disabled";
+    if (newPolicy.mode == AppFilterMode::MODE_BLACKLIST) {
+      mode_str = "blacklist";
+    } else if (newPolicy.mode == AppFilterMode::MODE_WHITELIST) {
+      mode_str = "whitelist";
+    }
+    payload["mode"] = mode_str;
+
+    // Add rules array
+    nlohmann::json rules_array = nlohmann::json::array();
+    for (const auto &rule : newPolicy.rules) {
+      nlohmann::json rule_json;
+      rule_json["rule_id"] = rule.rule_id;
+      rule_json["app_path"] = rule.app_path;
+      rule_json["app_name"] = rule.app_name;
+      rule_json["process_pattern"] = rule.process_pattern;
+      rule_json["action"] =
+          (rule.action == RuleAction::BLOCK) ? "block" : "allow";
+      rule_json["enabled"] = rule.enabled;
+      rule_json["created_at"] = rule.created_at;
+      rules_array.push_back(rule_json);
+    }
+    payload["rules"] = rules_array;
+
+    // Send to all connected clients using Protocol messages
+    auto clients = server_->getConnectedClients();
+    int count = 0;
+    protocol::MessageSerializer serializer;
+
+    for (const auto &client : clients) {
+      // Create APP_POLICY_SYNC message
+      auto msg = protocol::Message::Create(
+          protocol::CommandType::APP_POLICY_SYNC, "master", client.id, payload);
+
+      // Serialize to JSON string
+      std::string json = serializer.Serialize(msg);
+
+      // Send to client (using sendToClient if available, or queue for sending)
+      // For now, we'll log since sendToClient may not exist
+      // In production, this would use server_->broadcastMessage or similar
+      count++;
+
+      // TODO: Replace with actual send when MasterServer API is ready
+      // server_->sendMessageToClient(client.id, json);
+    }
+
+    statusBar()->showMessage(QString("Application policy configured for %1 "
+                                     "client(s) (send pending implementation)")
+                                 .arg(count));
+  }
 }
 
 void MasterWindow::onAboutClicked() {

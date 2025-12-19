@@ -1,0 +1,48 @@
+Versione di MSBuild 17.13.15+18b3035f6 per .NET Framework
+
+  cms_core.vcxproj -> C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\core\Debug\cms_core.lib
+  Automatic MOC and UIC for target cms_master
+  moc_MasterWindow.cpp
+C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(85,54): warning C4100: 'client': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
+  (compiling source file '__/__/include/cms/ui/moc_MasterWindow.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(86,58): warning C4100: 'client_id': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
+  (compiling source file '__/__/include/cms/ui/moc_MasterWindow.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(88,51): warning C4100: 'new_state': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
+  (compiling source file '__/__/include/cms/ui/moc_MasterWindow.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(87,58): warning C4100: 'client_id': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
+  (compiling source file '__/__/include/cms/ui/moc_MasterWindow.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(90,71): warning C4100: 'data': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
+  (compiling source file '__/__/include/cms/ui/moc_MasterWindow.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(89,62): warning C4100: 'client_id': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
+  (compiling source file '__/__/include/cms/ui/moc_MasterWindow.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(92,67): warning C4100: 'data': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
+  (compiling source file '__/__/include/cms/ui/moc_MasterWindow.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(91,58): warning C4100: 'client_id': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
+  (compiling source file '__/__/include/cms/ui/moc_MasterWindow.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\ui\MasterWindow.h(66,8): error C2039: 'DomainPolicy': is not a member of 'cms::ui::cms' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
+  (compiling source file '__/__/include/cms/ui/moc_MasterWindow.cpp')
+      C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\ui\MasterWindow.h(18,11):
+      see declaration of 'cms::ui::cms'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\__\__\include\cms\ui\moc_MasterWindow.cpp(37,44): error C3083: 'cms': the symbol to the left of a '::' must be a type [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\__\__\include\cms\ui\moc_MasterWindow.cpp(37,49): error C3083: 'ui': the symbol to the left of a '::' must be a type [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\__\__\include\cms\ui\moc_MasterWindow.cpp(37,91): error C2988: unrecognizable template declaration/definition [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\__\__\include\cms\ui\moc_MasterWindow.cpp(37,91): error C2143: syntax error: missing ';' before '<' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\__\__\include\cms\ui\moc_MasterWindow.cpp(37,67): error C7524: 'inline' specifier cannot appear on a block-scope declaration or non-static data member [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\__\__\include\cms\ui\moc_MasterWindow.cpp(37,67): error C2350: 'cms::ui::cms::ui::MasterWindow::qt_create_metaobjectdata' is not a static member [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
+      C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\__\__\include\cms\ui\moc_MasterWindow.cpp(37,67):
+      see declaration of 'cms::ui::cms::ui::MasterWindow::qt_create_metaobjectdata'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\__\__\include\cms\ui\moc_MasterWindow.cpp(37,67): error C2513: 'cms::ui::cms::ui::MasterWindow::qt_create_metaobjectdata': no variable declared before '=' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\__\__\include\cms\ui\moc_MasterWindow.cpp(37,35): fatal  error C1907: unable to recover from previous error(s); stopping compilation [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
+  INTERNAL COMPILER ERROR in 'C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\bin\HostX64\x64\CL.exe'
+      Please choose the Technical Support command on the Visual C++
+      Help menu, or open the Technical Support help file for more information

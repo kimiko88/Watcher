@@ -19,6 +19,7 @@ if (Qt6_FOUND)
         ${CMAKE_SOURCE_DIR}/include/cms/ui/RecordingPlayerWidget.h
         ${CMAKE_SOURCE_DIR}/include/cms/ui/ScreenshotViewerDialog.h
         ${CMAKE_SOURCE_DIR}/include/cms/ui/DomainPolicyDialog.h
+        ${CMAKE_SOURCE_DIR}/include/cms/ui/ApplicationPolicyDialog.h
     )
     # Ensure Core is found for qt6_wrap_cpp
     find_package(Qt6 COMPONENTS Core REQUIRED)
@@ -35,6 +36,7 @@ if (Qt6_FOUND)
         ui/RecordingPlayerWidget.cpp
         ui/ScreenshotViewerDialog.cpp
         ui/DomainPolicyDialog.cpp
+        ui/ApplicationPolicyDialog.cpp
         main.cpp
         ${MOC_SOURCES}
     )

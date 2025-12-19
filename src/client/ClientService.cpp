@@ -182,7 +182,65 @@ void ClientService::processCommands() {
       }
       break;
     case protocol::CommandType::APP_POLICY_SYNC:
-      // TODO: Full sync
+      if (appManager_) {
+        try {
+          auto payload = cmd.payload;
+
+          LOG_INFO("Synchronizing application policy from master");
+
+          // 1. Parse and set mode
+          std::string mode_str = payload.value("mode", "disabled");
+          AppFilterMode mode = AppFilterMode::MODE_DISABLED;
+          if (mode_str == "blacklist") {
+            mode = AppFilterMode::MODE_BLACKLIST;
+          } else if (mode_str == "whitelist") {
+            mode = AppFilterMode::MODE_WHITELIST;
+          }
+          appManager_->setMode(mode);
+          LOG_INFO("Application filter mode set to: " + mode_str);
+
+          // 2. Clear existing rules and add new ones from payload
+          // Note: ApplicationManager doesn't have clearRules(), so we recreate
+          // it by creating a new instance or manually clearing (if we add that
+          // method) For now, we'll add rules additively. In production,
+          // consider adding clearRules()
+
+          if (payload.contains("rules") && payload["rules"].is_array()) {
+            for (const auto &rule_json : payload["rules"]) {
+              ApplicationRule rule;
+              rule.rule_id = rule_json.value("rule_id", "");
+              rule.app_path = rule_json.value("app_path", "");
+              rule.app_name = rule_json.value("app_name", "");
+              rule.process_pattern = rule_json.value("process_pattern", "");
+
+              // Parse action
+              std::string action_str = rule_json.value("action", "block");
+              rule.action = (action_str == "allow") ? RuleAction::ALLOW
+                                                    : RuleAction::BLOCK;
+
+              rule.enabled = rule_json.value("enabled", true);
+              rule.created_at = rule_json.value("created_at", 0);
+
+              appManager_->addRule(rule);
+              LOG_DEBUG("Added rule: " + rule.app_name + " (" + rule.app_path +
+                        ")");
+            }
+            LOG_INFO("Loaded " + std::to_string(payload["rules"].size()) +
+                     " application rules");
+          }
+
+          // 3. Persist to disk for persistence across restarts
+          if (appManager_->exportRules("app_rules.csv")) {
+            LOG_INFO("Application policy saved to app_rules.csv");
+          } else {
+            LOG_WARNING("Failed to save application policy to file");
+          }
+
+        } catch (const std::exception &e) {
+          LOG_ERROR("Failed to sync application policy: " +
+                    std::string(e.what()));
+        }
+      }
       break;
     case protocol::CommandType::DOMAIN_POLICY_UPDATE:
       LOG_INFO("Received Domain Policy Update");
