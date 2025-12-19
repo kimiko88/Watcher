@@ -356,9 +356,10 @@ void MasterWindow::onAboutClicked() {
 }
 
 void MasterWindow::onScreenshotReceived(const std::string &client_id,
-                                        const std::vector<uint8_t> &data) {
+                                        const std::vector<uint8_t> &imageData) {
   QImage image;
-  if (image.loadFromData(data.data(), static_cast<int>(data.size()))) {
+  if (image.loadFromData(imageData.data(),
+                         static_cast<int>(imageData.size()))) {
     auto client = server_->getClientInfo(client_id);
 
     // Check if we already have a dialog for this client?

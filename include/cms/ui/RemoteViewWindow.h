@@ -8,7 +8,6 @@
 #include <QScrollArea>
 #include <memory>
 
-
 namespace cms {
 namespace ui {
 
@@ -38,10 +37,11 @@ private:
   class StreamObserver : public master::MasterServer::IServerObserver {
   public:
     StreamObserver(RemoteViewWindow *window) : window_(window) {}
-    void onClientThumbnailUpdated(const std::string &client_id,
-                                  const std::vector<uint8_t> &data) override {
+    void
+    onClientThumbnailUpdated(const std::string &client_id,
+                             const std::vector<uint8_t> &imageData) override {
       if (client_id == window_->client_id_) {
-        window_->updateImage(data);
+        window_->updateImage(imageData);
       }
     }
     // Other methods empty

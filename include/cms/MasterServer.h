@@ -82,14 +82,13 @@ public:
   class IServerObserver {
   public:
     virtual ~IServerObserver() = default;
-    virtual void onClientConnected(const ClientInfo &client) {}
-    virtual void onClientDisconnected(const std::string &client_id) {}
-    virtual void onClientStateChanged(const std::string &client_id,
-                                      ClientState new_state) {}
-    virtual void onClientThumbnailUpdated(const std::string &client_id,
-                                          const std::vector<uint8_t> &data) {}
-    virtual void onScreenshotReceived(const std::string &client_id,
-                                      const std::vector<uint8_t> &data) {}
+    virtual void onClientConnected(const ClientInfo &) {}
+    virtual void onClientDisconnected(const std::string &) {}
+    virtual void onClientStateChanged(const std::string &, ClientState) {}
+    virtual void onClientThumbnailUpdated(const std::string &,
+                                          const std::vector<uint8_t> &) {}
+    virtual void onScreenshotReceived(const std::string &,
+                                      const std::vector<uint8_t> &) {}
   };
 
   virtual void addObserver(IServerObserver *observer) = 0;
