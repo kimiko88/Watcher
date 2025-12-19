@@ -16,6 +16,7 @@ set(TEST_SOURCES
     unit/ActivityMonitorTest.cpp
     unit/MasterActivityAggregatorTest.cpp
     unit/ApplicationManagerTest.cpp
+    unit/ApplicationPolicyProtocolTest.cpp
     unit/ScreenRecorderTest.cpp
     unit/RecordingManagerTest.cpp
     ${CMAKE_SOURCE_DIR}/src/client/ClientService.cpp
@@ -64,6 +65,7 @@ add_executable(cms_integration_tests
     integration/test_build.cpp
     integration/InstallationTest.cpp
     integration/EndToEndTest.cpp
+    integration/ApplicationPolicyIntegrationTest.cpp
     integration/PerformanceTest.cpp
     integration/ResillienceTest.cpp
     ${CMAKE_SOURCE_DIR}/src/client/ClientService.cpp

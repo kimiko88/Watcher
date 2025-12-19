@@ -86,7 +86,8 @@ void ClientListModel::updateClients(
 }
 
 void ClientListModel::addClient(const master::ClientInfo &client) {
-  beginInsertRows(QModelIndex(), clients_.size(), clients_.size());
+  int row = static_cast<int>(clients_.size());
+  beginInsertRows(QModelIndex(), row, row);
   clients_.push_back(client);
   endInsertRows();
 }
