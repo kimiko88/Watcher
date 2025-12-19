@@ -7,7 +7,6 @@
 #include <stdexcept>
 #include <string>
 
-
 namespace cms {
 namespace protocol {
 
@@ -25,7 +24,10 @@ enum class CommandType {
   DOMAIN_POLICY_UPDATE, // Sync full domain policy
   STATUS_UPDATE,        // Status update from client
   PING,                 // Keepalive ping
-  DISCONNECT            // Disconnect notification
+  DISCONNECT,           // Disconnect notification
+  APP_BLOCK,            // Block application
+  APP_ALLOW,            // Allow application
+  APP_POLICY_SYNC       // Sync full application policy
 };
 
 // Convert CommandType to string
@@ -57,6 +59,12 @@ inline std::string CommandTypeToString(CommandType type) {
     return "PING";
   case CommandType::DISCONNECT:
     return "DISCONNECT";
+  case CommandType::APP_BLOCK:
+    return "APP_BLOCK";
+  case CommandType::APP_ALLOW:
+    return "APP_ALLOW";
+  case CommandType::APP_POLICY_SYNC:
+    return "APP_POLICY_SYNC";
   default:
     return "UNKNOWN";
   }
@@ -90,6 +98,12 @@ inline CommandType StringToCommandType(const std::string &str) {
     return CommandType::PING;
   if (str == "DISCONNECT")
     return CommandType::DISCONNECT;
+  if (str == "APP_BLOCK")
+    return CommandType::APP_BLOCK;
+  if (str == "APP_ALLOW")
+    return CommandType::APP_ALLOW;
+  if (str == "APP_POLICY_SYNC")
+    return CommandType::APP_POLICY_SYNC;
 
   throw std::invalid_argument("Invalid command type: " + str);
 }

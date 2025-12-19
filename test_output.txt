@@ -4,49 +4,49 @@ Note: Google Test filter = RecordingManagerTest.*
 [----------] Global test environment set-up.
 [----------] 18 tests from RecordingManagerTest
 [ RUN      ] RecordingManagerTest.ListRecordingsEmpty
-[       OK ] RecordingManagerTest.ListRecordingsEmpty (7 ms)
+[       OK ] RecordingManagerTest.ListRecordingsEmpty (8 ms)
 [ RUN      ] RecordingManagerTest.ListRecordingsWithFiles
-[       OK ] RecordingManagerTest.ListRecordingsWithFiles (7 ms)
+[       OK ] RecordingManagerTest.ListRecordingsWithFiles (5 ms)
 [ RUN      ] RecordingManagerTest.GetRecordingInfoValid
-[       OK ] RecordingManagerTest.GetRecordingInfoValid (4 ms)
+[       OK ] RecordingManagerTest.GetRecordingInfoValid (20 ms)
 [ RUN      ] RecordingManagerTest.GetRecordingInfoInvalid
-[       OK ] RecordingManagerTest.GetRecordingInfoInvalid (5 ms)
+[       OK ] RecordingManagerTest.GetRecordingInfoInvalid (6 ms)
 [ RUN      ] RecordingManagerTest.DeleteRecording
 C:\Users\chimi\Desktop\Programmazione\Watcher\tests\unit\RecordingManagerTest.cpp(99): error: Value of: info.recording_id.empty()
   Actual: false
 Expected: true
 
-[  FAILED  ] RecordingManagerTest.DeleteRecording (11 ms)
+[  FAILED  ] RecordingManagerTest.DeleteRecording (7 ms)
 [ RUN      ] RecordingManagerTest.DeleteNonExistent
-[       OK ] RecordingManagerTest.DeleteNonExistent (7 ms)
+[       OK ] RecordingManagerTest.DeleteNonExistent (5 ms)
 [ RUN      ] RecordingManagerTest.StorageQuotaDefault
 [       OK ] RecordingManagerTest.StorageQuotaDefault (5 ms)
 [ RUN      ] RecordingManagerTest.StorageQuotaSetGet
-[       OK ] RecordingManagerTest.StorageQuotaSetGet (5 ms)
+[       OK ] RecordingManagerTest.StorageQuotaSetGet (8 ms)
 [ RUN      ] RecordingManagerTest.TotalStorageUsed
-[       OK ] RecordingManagerTest.TotalStorageUsed (8 ms)
+[       OK ] RecordingManagerTest.TotalStorageUsed (5 ms)
 [ RUN      ] RecordingManagerTest.RecordingStats
-[       OK ] RecordingManagerTest.RecordingStats (6 ms)
+[       OK ] RecordingManagerTest.RecordingStats (4 ms)
 [ RUN      ] RecordingManagerTest.CleanupOldRecordingsNone
-[       OK ] RecordingManagerTest.CleanupOldRecordingsNone (7 ms)
+[       OK ] RecordingManagerTest.CleanupOldRecordingsNone (4 ms)
 [ RUN      ] RecordingManagerTest.AddTags
 [       OK ] RecordingManagerTest.AddTags (5 ms)
 [ RUN      ] RecordingManagerTest.UpdateNotes
-[       OK ] RecordingManagerTest.UpdateNotes (10 ms)
+[       OK ] RecordingManagerTest.UpdateNotes (5 ms)
 [ RUN      ] RecordingManagerTest.SearchByTagFound
-[       OK ] RecordingManagerTest.SearchByTagFound (8 ms)
+[       OK ] RecordingManagerTest.SearchByTagFound (7 ms)
 [ RUN      ] RecordingManagerTest.SearchByTagNotFound
-[       OK ] RecordingManagerTest.SearchByTagNotFound (8 ms)
+[       OK ] RecordingManagerTest.SearchByTagNotFound (15 ms)
 [ RUN      ] RecordingManagerTest.ExportRecordingUnsupportedFormat
-[       OK ] RecordingManagerTest.ExportRecordingUnsupportedFormat (8 ms)
+[       OK ] RecordingManagerTest.ExportRecordingUnsupportedFormat (4 ms)
 [ RUN      ] RecordingManagerTest.PlayRecordingValid
-[       OK ] RecordingManagerTest.PlayRecordingValid (6 ms)
+[       OK ] RecordingManagerTest.PlayRecordingValid (5 ms)
 [ RUN      ] RecordingManagerTest.PlayRecordingInvalid
-[       OK ] RecordingManagerTest.PlayRecordingInvalid (7 ms)
-[----------] 18 tests from RecordingManagerTest (136 ms total)
+[       OK ] RecordingManagerTest.PlayRecordingInvalid (6 ms)
+[----------] 18 tests from RecordingManagerTest (133 ms total)
 
 [----------] Global test environment tear-down
-[==========] 18 tests from 1 test suite ran. (137 ms total)
+[==========] 18 tests from 1 test suite ran. (133 ms total)
 [  PASSED  ] 17 tests.
 [  FAILED  ] 1 test, listed below:
 [  FAILED  ] RecordingManagerTest.DeleteRecording

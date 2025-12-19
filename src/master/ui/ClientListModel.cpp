@@ -1,4 +1,5 @@
 #include "cms/ui/ClientListModel.h"
+#include <QImage>
 
 namespace cms {
 namespace ui {
@@ -34,7 +35,22 @@ QVariant ClientListModel::data(const QModelIndex &index, int role) const {
   case StateRole:
     return static_cast<int>(client.state);
   case ThumbnailRole:
-    return QByteArray(); // TODO: Convert vector<uint8_t> to QImage/QPixmap?
+    if (!client.thumbnail_data.empty()) {
+      if (client.thumbnail_width > 0 && client.thumbnail_height > 0) {
+        // Assume RGBA for now if dimensions are provided
+        QImage img(client.thumbnail_data.data(), client.thumbnail_width,
+                   client.thumbnail_height, QImage::Format_RGBA8888);
+        return img.copy(); // Return a copy to own the data
+      } else {
+        // Try loading from data (e.g. PNG/JPEG)
+        QImage img;
+        if (img.loadFromData(client.thumbnail_data.data(),
+                             static_cast<int>(client.thumbnail_data.size()))) {
+          return img;
+        }
+      }
+    }
+    return QVariant();
 
   case Qt::DisplayRole:
     switch (index.column()) {

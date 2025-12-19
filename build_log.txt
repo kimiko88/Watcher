@@ -1,217 +1,998 @@
 Versione di MSBuild 17.13.15+18b3035f6 per .NET Framework
 
   cms_core.vcxproj -> C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\core\Debug\cms_core.lib
-  Automatic MOC and UIC for target cms_master
-  moc_ClientListModel.cpp
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(85,54): warning C4100: 'client': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '__/__/include/cms/ui/moc_ClientListModel.cpp')
+  cms_platform.vcxproj -> C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\Debug\cms_platform.lib
+  gtest.vcxproj -> C:\Users\chimi\Desktop\Programmazione\Watcher\build\lib\Debug\gtest.lib
+  gtest_main.vcxproj -> C:\Users\chimi\Desktop\Programmazione\Watcher\build\lib\Debug\gtest_main.lib
+  EndToEndTest.cpp
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(6,1): error C2059: syntax error: 'public' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(86,58): warning C4100: 'client_id': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '__/__/include/cms/ui/moc_ClientListModel.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(7,1): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(88,51): warning C4100: 'new_state': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '__/__/include/cms/ui/moc_ClientListModel.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(8,61): error C2550: 'MockMasterServer': constructor initializer lists are only allowed on constructor definitions [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(87,58): warning C4100: 'client_id': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '__/__/include/cms/ui/moc_ClientListModel.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(8,62): warning C4508: 'MockMasterServer': function should return a value; 'void' return type assumed [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(90,71): warning C4100: 'data': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '__/__/include/cms/ui/moc_ClientListModel.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(11,7): error C2065: 'running_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(89,62): warning C4100: 'client_id': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '__/__/include/cms/ui/moc_ClientListModel.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(13,3): error C2065: 'running_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(92,67): warning C4100: 'data': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '__/__/include/cms/ui/moc_ClientListModel.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(14,3): error C2065: 'server_thread_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(91,58): warning C4100: 'client_id': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '__/__/include/cms/ui/moc_ClientListModel.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(14,33): error C3482: 'this' can only be used as a lambda capture within a non-static member function [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-  moc_DomainPolicyDialog.cpp
-  moc_MasterWindow.cpp
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(85,54): warning C4100: 'client': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '__/__/include/cms/ui/moc_MasterWindow.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(41,67): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(86,58): warning C4100: 'client_id': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '__/__/include/cms/ui/moc_MasterWindow.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(16,5): error C2065: 'server_socket_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(88,51): warning C4100: 'new_state': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '__/__/include/cms/ui/moc_MasterWindow.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(18,10): error C2065: 'server_socket_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(87,58): warning C4100: 'client_id': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '__/__/include/cms/ui/moc_MasterWindow.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(18,31): error C2065: 'port_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(90,71): warning C4100: 'data': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '__/__/include/cms/ui/moc_MasterWindow.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(19,12): error C2039: 'cerr': is not a member of 'std' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\queue(32,1):
+      see declaration of 'std'
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(89,62): warning C4100: 'client_id': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '__/__/include/cms/ui/moc_MasterWindow.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(19,12): error C2065: 'cerr': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(92,67): warning C4100: 'data': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '__/__/include/cms/ui/moc_MasterWindow.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(19,58): error C2065: 'port_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(91,58): warning C4100: 'client_id': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '__/__/include/cms/ui/moc_MasterWindow.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(22,10): error C2065: 'server_socket_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\ui\MasterWindow.h(26,8): error C3668: 'cms::ui::MasterWindow::onScreenshotReceived': method with override specifier 'override' did not override any base class methods [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '__/__/include/cms/ui/moc_MasterWindow.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(23,12): error C2039: 'cerr': is not a member of 'std' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\queue(32,1):
+      see declaration of 'std'
   
-  moc_RemoteViewWindow.cpp
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(85,54): warning C4100: 'client': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '__/__/include/cms/ui/moc_RemoteViewWindow.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(23,12): error C2065: 'cerr': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(86,58): warning C4100: 'client_id': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '__/__/include/cms/ui/moc_RemoteViewWindow.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(27,10): error C2039: 'cout': is not a member of 'std' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\queue(32,1):
+      see declaration of 'std'
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(88,51): warning C4100: 'new_state': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '__/__/include/cms/ui/moc_RemoteViewWindow.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(27,10): error C2065: 'cout': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(87,58): warning C4100: 'client_id': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '__/__/include/cms/ui/moc_RemoteViewWindow.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(27,48): error C2065: 'port_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(90,71): warning C4100: 'data': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '__/__/include/cms/ui/moc_RemoteViewWindow.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(29,12): error C2065: 'running_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(89,62): warning C4100: 'client_id': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '__/__/include/cms/ui/moc_RemoteViewWindow.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(30,12): error C2065: 'server_socket_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(92,67): warning C4100: 'data': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '__/__/include/cms/ui/moc_RemoteViewWindow.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(33,29): error C2065: 'server_socket_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(91,58): warning C4100: 'client_id': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '__/__/include/cms/ui/moc_RemoteViewWindow.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(35,14): error C2039: 'cout': is not a member of 'std' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\queue(32,1):
+      see declaration of 'std'
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\ui\RemoteViewWindow.h(42,63): warning C4458: declaration of 'data' hides class member [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '__/__/include/cms/ui/moc_RemoteViewWindow.cpp')
-      C:\Qt\6.10.1\msvc2022_64\include\QtWidgets\qwidget.h(784,18):
-      see declaration of 'QWidget::data'
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(35,14): error C2065: 'cout': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-  MasterServer.cpp
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(85,54): warning C4100: 'client': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '../../../src/master/MasterServer.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(36,42): error C2065: 'clients_mutex_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(86,58): warning C4100: 'client_id': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '../../../src/master/MasterServer.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(37,9): error C2065: 'clients_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(88,51): warning C4100: 'new_state': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '../../../src/master/MasterServer.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(41,9): error C2065: 'client_threads_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(87,58): warning C4100: 'client_id': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '../../../src/master/MasterServer.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(41,39): error C2653: 'MockMasterServer': is not a class or namespace name [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(90,71): warning C4100: 'data': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '../../../src/master/MasterServer.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(41,57): error C2065: 'readLoop': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(89,62): warning C4100: 'client_id': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '../../../src/master/MasterServer.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(50,3): error C2065: 'running_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(92,67): warning C4100: 'data': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '../../../src/master/MasterServer.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(51,7): error C2065: 'server_socket_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(91,58): warning C4100: 'client_id': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '../../../src/master/MasterServer.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(52,5): error C2065: 'server_socket_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\src\master\MasterServer.cpp(98,44): warning C4100: 'message': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-C:\Users\chimi\Desktop\Programmazione\Watcher\src\master\MasterServer.cpp(152,36): warning C4101: 'e': unreferenced local variable [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-C:\Users\chimi\Desktop\Programmazione\Watcher\src\master\MasterServer.cpp(182,12): warning C4189: 'now': local variable is initialized but not referenced [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  main.cpp
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(85,54): warning C4100: 'client': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '../../../src/master/main.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(53,7): error C2065: 'server_thread_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(86,58): warning C4100: 'client_id': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '../../../src/master/main.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(54,5): error C2065: 'server_thread_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(88,51): warning C4100: 'new_state': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '../../../src/master/main.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(57,36): error C2065: 'clients_mutex_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(87,58): warning C4100: 'client_id': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '../../../src/master/main.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(59,18): error C2065: 'clients_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(90,71): warning C4100: 'data': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '../../../src/master/main.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(59,14): error C2530: 'c': references must be initialized [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(89,62): warning C4100: 'client_id': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '../../../src/master/main.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(59,14): error C3531: 'c': a symbol whose type contains 'auto' must have an initializer [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(92,67): warning C4100: 'data': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '../../../src/master/main.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(59,16): error C2143: syntax error: missing ';' before ':' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(91,58): warning C4100: 'client_id': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '../../../src/master/main.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(59,26): error C2143: syntax error: missing ';' before ')' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\ui\MasterWindow.h(26,8): error C3668: 'cms::ui::MasterWindow::onScreenshotReceived': method with override specifier 'override' did not override any base class methods [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '../../../src/master/main.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(64,18): error C2065: 'client_threads_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-  MasterWindow.cpp
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(85,54): warning C4100: 'client': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '../../../src/master/ui/MasterWindow.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(64,14): error C2530: 't': references must be initialized [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(86,58): warning C4100: 'client_id': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '../../../src/master/ui/MasterWindow.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(64,14): error C3531: 't': a symbol whose type contains 'auto' must have an initializer [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(88,51): warning C4100: 'new_state': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '../../../src/master/ui/MasterWindow.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(64,16): error C2143: syntax error: missing ';' before ':' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(87,58): warning C4100: 'client_id': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '../../../src/master/ui/MasterWindow.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(64,33): error C2143: syntax error: missing ';' before ')' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(90,71): warning C4100: 'data': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '../../../src/master/ui/MasterWindow.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(68,3): error C2065: 'client_threads_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(89,62): warning C4100: 'client_id': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '../../../src/master/ui/MasterWindow.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(69,3): error C2065: 'clients_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(92,67): warning C4100: 'data': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '../../../src/master/ui/MasterWindow.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(77,38): error C2065: 'clients_mutex_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(91,58): warning C4100: 'client_id': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '../../../src/master/ui/MasterWindow.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(78,10): error C2065: 'clients_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\ui\MasterWindow.h(26,8): error C3668: 'cms::ui::MasterWindow::onScreenshotReceived': method with override specifier 'override' did not override any base class methods [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '../../../src/master/ui/MasterWindow.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(87,36): error C2065: 'clients_mutex_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\ui\RemoteViewWindow.h(42,63): warning C4458: declaration of 'data' hides class member [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '../../../src/master/ui/MasterWindow.cpp')
-      C:\Qt\6.10.1\msvc2022_64\include\QtWidgets\qwidget.h(784,18):
-      see declaration of 'QWidget::data'
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(88,8): error C2065: 'clients_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\src\master\ui\MasterWindow.cpp(205,5): error C2760: syntax error: 'void' was unexpected here; expected 'declaration' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-C:\Users\chimi\Desktop\Programmazione\Watcher\src\master\ui\MasterWindow.cpp(210,5): error C2760: syntax error: 'void' was unexpected here; expected 'declaration' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-C:\Users\chimi\Desktop\Programmazione\Watcher\src\master\ui\MasterWindow.cpp(232,5): error C2760: syntax error: 'void' was unexpected here; expected 'declaration' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-C:\Users\chimi\Desktop\Programmazione\Watcher\src\master\ui\MasterWindow.cpp(250,1): error C2059: syntax error: '}' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-C:\Users\chimi\Desktop\Programmazione\Watcher\src\master\ui\MasterWindow.cpp(20,14): error C1075: '{': no matching token found [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  RemoteViewWindow.cpp
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(85,54): warning C4100: 'client': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '../../../src/master/ui/RemoteViewWindow.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(95,5): error C2065: 'clients_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(86,58): warning C4100: 'client_id': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '../../../src/master/ui/RemoteViewWindow.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(104,38): error C2065: 'messages_mutex_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(88,51): warning C4100: 'new_state': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '../../../src/master/ui/RemoteViewWindow.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(105,28): error C2065: 'received_messages_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(87,58): warning C4100: 'client_id': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '../../../src/master/ui/RemoteViewWindow.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(105,22): error C2530: 'msg': references must be initialized [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(90,71): warning C4100: 'data': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '../../../src/master/ui/RemoteViewWindow.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(105,22): error C3531: 'msg': a symbol whose type contains 'auto' must have an initializer [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(89,62): warning C4100: 'client_id': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '../../../src/master/ui/RemoteViewWindow.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(105,26): error C2143: syntax error: missing ';' before ':' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(92,67): warning C4100: 'data': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '../../../src/master/ui/RemoteViewWindow.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(105,46): error C2143: syntax error: missing ';' before ')' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(91,58): warning C4100: 'client_id': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '../../../src/master/ui/RemoteViewWindow.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(116,36): error C2065: 'messages_mutex_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\ui\RemoteViewWindow.h(42,63): warning C4458: declaration of 'data' hides class member [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '../../../src/master/ui/RemoteViewWindow.cpp')
-      C:\Qt\6.10.1\msvc2022_64\include\QtWidgets\qwidget.h(784,18):
-      see declaration of 'QWidget::data'
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(117,7): error C2065: 'received_messages_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\src\master\ui\RemoteViewWindow.cpp(49,64): warning C4458: declaration of 'data' hides class member [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-      C:\Qt\6.10.1\msvc2022_64\include\QtWidgets\qwidget.h(784,18):
-      see declaration of 'QWidget::data'
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(119,10): error C2065: 'received_messages_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(122,1): error C2059: syntax error: 'private' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(128,10): error C2065: 'running_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(141,44): error C2065: 'messages_mutex_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(142,11): error C2065: 'received_messages_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(143,16): error C2039: 'cout': is not a member of 'std' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\queue(32,1):
+      see declaration of 'std'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(143,16): error C2065: 'cout': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(147,16): error C2039: 'cerr': is not a member of 'std' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\queue(32,1):
+      see declaration of 'std'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(147,16): error C2065: 'cerr': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(167,1): error C2059: syntax error: '}' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(167,1): error C2143: syntax error: missing ';' before '}' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(193,20): error C2143: syntax error: missing ';' before '*' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(193,3): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(193,33): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(211,8): error C2923: 'std::unique_ptr': 'MockMasterServer' is not a valid template type argument for parameter '_Ty' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+      C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(7,1):
+      see declaration of 'MockMasterServer'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(211,8): error C2976: 'std::unique_ptr': too few template arguments [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3332,7):
+      see declaration of 'std::unique_ptr'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(211,37): error C2955: 'std::unique_ptr': use of class template requires template argument list [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3332,7):
+      see declaration of 'std::unique_ptr'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(176,20): error C2672: 'std::make_unique': no matching overloaded function found [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3604,6):
+      could be 'void std::make_unique(_Types ...)'
+          C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(176,32):
+          'std::make_unique': invalid template argument for '_Ty', type expected
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3598,57):
+      or       'std::unique_ptr<_Ty,std::default_delete<_Ty>> std::make_unique(const size_t)'
+          C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(176,32):
+          'std::make_unique': invalid template argument for '_Ty', type expected
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3593,57):
+      or       'std::unique_ptr<_Ty,std::default_delete<_Ty>> std::make_unique(_Types ...)'
+          C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(176,32):
+          'std::make_unique': invalid template argument for '_Ty', type expected
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(177,5): error C2678: binary '->': no operator found which takes a left-hand operand of type 'std::unique_ptr' (or there is no acceptable conversion) [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3425,37):
+      could be '_Get_deleter_pointer_type<_Ty,remove_reference<_Ty1>::type,void>::type std::unique_ptr<_Ty,_Dx>::operator ->(void) noexcept const'
+          C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(177,5):
+          '_Get_deleter_pointer_type<_Ty,remove_reference<_Ty1>::type,void>::type std::unique_ptr<_Ty,_Dx>::operator ->(void) noexcept const': cannot convert 'this' pointer from 'std::unique_ptr' to 'const std::unique_ptr<_Ty,_Dx> &'
+              C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(177,5):
+              Reason: cannot convert from 'std::unique_ptr' to 'const std::unique_ptr<_Ty,_Dx>'
+              C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(177,5):
+              Conversion requires a second user-defined-conversion operator or constructor
+      C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(177,5):
+      while trying to match the argument list '(std::unique_ptr)'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(177,14): error C2039: 'start': is not a member of 'std::unique_ptr' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3332,7):
+      see declaration of 'std::unique_ptr'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(181,9): error C2451: a conditional expression of type 'std::unique_ptr' is not valid [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+      C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(181,9):
+      No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(182,7): error C2678: binary '->': no operator found which takes a left-hand operand of type 'std::unique_ptr' (or there is no acceptable conversion) [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3425,37):
+      could be '_Get_deleter_pointer_type<_Ty,remove_reference<_Ty1>::type,void>::type std::unique_ptr<_Ty,_Dx>::operator ->(void) noexcept const'
+          C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(182,7):
+          '_Get_deleter_pointer_type<_Ty,remove_reference<_Ty1>::type,void>::type std::unique_ptr<_Ty,_Dx>::operator ->(void) noexcept const': cannot convert 'this' pointer from 'std::unique_ptr' to 'const std::unique_ptr<_Ty,_Dx> &'
+              C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(182,7):
+              Reason: cannot convert from 'std::unique_ptr' to 'const std::unique_ptr<_Ty,_Dx>'
+              C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(182,7):
+              Conversion requires a second user-defined-conversion operator or constructor
+      C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(182,7):
+      while trying to match the argument list '(std::unique_ptr)'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(182,16): error C2039: 'stop': is not a member of 'std::unique_ptr' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3332,7):
+      see declaration of 'std::unique_ptr'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\EndToEndTest.cpp(61,16): error C2039: 'getMaster': is not a member of 'TestOrchestrator' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+      C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(171,7):
+      see declaration of 'TestOrchestrator'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\EndToEndTest.cpp(65,3): error C2039: 'getMaster': is not a member of 'TestOrchestrator' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+      C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(171,7):
+      see declaration of 'TestOrchestrator'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\EndToEndTest.cpp(65,3): error C2512: 'testing::AssertionResult': no appropriate default constructor available [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+      C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\EndToEndTest.cpp(65,3):
+      'testing::AssertionResult::AssertionResult': no appropriate default constructor available
+          C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest-assertion-result.h(155,3):
+          could be 'testing::AssertionResult::AssertionResult(const T &,std::enable_if<!std::is_convertible<T,testing::AssertionResult>::value,void>::type *)'
+          C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\EndToEndTest.cpp(65,3):
+          while trying to match the argument list '()'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\EndToEndTest.cpp(65,3): error C2737: 'gtest_ar_': const object must be initialized [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\EndToEndTest.cpp(67,27): error C2039: 'getMaster': is not a member of 'TestOrchestrator' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+      C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(171,7):
+      see declaration of 'TestOrchestrator'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\EndToEndTest.cpp(68,3): error C3536: 'msg': cannot be used before it is initialized [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\EndToEndTest.cpp(68,3): error C2660: 'testing::internal::EqHelper::Compare': function does not take 3 arguments [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+      C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(1407,26):
+      see declaration of 'testing::internal::EqHelper::Compare'
+      C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(1414,26):
+      could be 'testing::AssertionResult testing::internal::EqHelper::Compare(const char *,const char *,std::nullptr_t,T *)'
+          C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\EndToEndTest.cpp(68,3):
+          'testing::AssertionResult testing::internal::EqHelper::Compare(const char *,const char *,std::nullptr_t,T *)': expects 4 arguments - 3 provided
+      C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(1395,26):
+      or       'testing::AssertionResult testing::internal::EqHelper::Compare(const char *,const char *,const T1 &,const T2 &)'
+          C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\EndToEndTest.cpp(68,3):
+          'testing::AssertionResult testing::internal::EqHelper::Compare(const char *,const char *,const T1 &,const T2 &)': expects 4 arguments - 3 provided
+      C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\EndToEndTest.cpp(68,3):
+      while trying to match the argument list '(const char [9], const char [44], cms::protocol::CommandType)'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\EndToEndTest.cpp(69,3): error C2512: 'testing::AssertionResult': no appropriate default constructor available [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+      C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\EndToEndTest.cpp(69,3):
+      'testing::AssertionResult::AssertionResult': no appropriate default constructor available
+          C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest-assertion-result.h(155,3):
+          could be 'testing::AssertionResult::AssertionResult(const T &,std::enable_if<!std::is_convertible<T,testing::AssertionResult>::value,void>::type *)'
+          C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\EndToEndTest.cpp(69,3):
+          while trying to match the argument list '()'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\EndToEndTest.cpp(69,3): error C2737: 'gtest_ar_': const object must be initialized [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\EndToEndTest.cpp(70,3): error C2059: syntax error: ')' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\EndToEndTest.cpp(70,3): error C2181: illegal else without matching if [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\EndToEndTest.cpp(70,3): error C2065: 'gtest_ar_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\EndToEndTest.cpp(70,3): error C2440: '<function-style-cast>': cannot convert from 'initializer list' to 'testing::internal::AssertHelper' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+      C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\EndToEndTest.cpp(70,3):
+      'testing::internal::AssertHelper::AssertHelper': function does not take 3 arguments
+          C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\EndToEndTest.cpp(70,3):
+          while trying to match the argument list '(testing::TestPartResult::Type, const char [81], int)'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\EndToEndTest.cpp(70,3): error C1003: error count exceeds 100; stopping compilation [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  PerformanceTest.cpp
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(6,1): error C2059: syntax error: 'public' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(7,1): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(8,61): error C2550: 'MockMasterServer': constructor initializer lists are only allowed on constructor definitions [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(8,62): warning C4508: 'MockMasterServer': function should return a value; 'void' return type assumed [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(11,7): error C2065: 'running_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(13,3): error C2065: 'running_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(14,3): error C2065: 'server_thread_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(14,33): error C3482: 'this' can only be used as a lambda capture within a non-static member function [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(41,67): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(16,5): error C2065: 'server_socket_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(18,10): error C2065: 'server_socket_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(18,31): error C2065: 'port_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(19,12): error C2039: 'cerr': is not a member of 'std' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\queue(32,1):
+      see declaration of 'std'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(19,12): error C2065: 'cerr': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(19,58): error C2065: 'port_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(22,10): error C2065: 'server_socket_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(23,12): error C2039: 'cerr': is not a member of 'std' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\queue(32,1):
+      see declaration of 'std'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(23,12): error C2065: 'cerr': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(27,10): error C2039: 'cout': is not a member of 'std' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\queue(32,1):
+      see declaration of 'std'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(27,10): error C2065: 'cout': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(27,48): error C2065: 'port_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(29,12): error C2065: 'running_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(30,12): error C2065: 'server_socket_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(33,29): error C2065: 'server_socket_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(35,14): error C2039: 'cout': is not a member of 'std' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\queue(32,1):
+      see declaration of 'std'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(35,14): error C2065: 'cout': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(36,42): error C2065: 'clients_mutex_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(37,9): error C2065: 'clients_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(41,9): error C2065: 'client_threads_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(41,39): error C2653: 'MockMasterServer': is not a class or namespace name [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(41,57): error C2065: 'readLoop': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(50,3): error C2065: 'running_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(51,7): error C2065: 'server_socket_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(52,5): error C2065: 'server_socket_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(53,7): error C2065: 'server_thread_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(54,5): error C2065: 'server_thread_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(57,36): error C2065: 'clients_mutex_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(59,18): error C2065: 'clients_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(59,14): error C2530: 'c': references must be initialized [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(59,14): error C3531: 'c': a symbol whose type contains 'auto' must have an initializer [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(59,16): error C2143: syntax error: missing ';' before ':' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(59,26): error C2143: syntax error: missing ';' before ')' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(64,18): error C2065: 'client_threads_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(64,14): error C2530: 't': references must be initialized [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(64,14): error C3531: 't': a symbol whose type contains 'auto' must have an initializer [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(64,16): error C2143: syntax error: missing ';' before ':' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(64,33): error C2143: syntax error: missing ';' before ')' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(68,3): error C2065: 'client_threads_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(69,3): error C2065: 'clients_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(77,38): error C2065: 'clients_mutex_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(78,10): error C2065: 'clients_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(87,36): error C2065: 'clients_mutex_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(88,8): error C2065: 'clients_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(95,5): error C2065: 'clients_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(104,38): error C2065: 'messages_mutex_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(105,28): error C2065: 'received_messages_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(105,22): error C2530: 'msg': references must be initialized [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(105,22): error C3531: 'msg': a symbol whose type contains 'auto' must have an initializer [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(105,26): error C2143: syntax error: missing ';' before ':' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(105,46): error C2143: syntax error: missing ';' before ')' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(116,36): error C2065: 'messages_mutex_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(117,7): error C2065: 'received_messages_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(119,10): error C2065: 'received_messages_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(122,1): error C2059: syntax error: 'private' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(128,10): error C2065: 'running_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(141,44): error C2065: 'messages_mutex_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(142,11): error C2065: 'received_messages_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(143,16): error C2039: 'cout': is not a member of 'std' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\queue(32,1):
+      see declaration of 'std'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(143,16): error C2065: 'cout': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(147,16): error C2039: 'cerr': is not a member of 'std' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\queue(32,1):
+      see declaration of 'std'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(147,16): error C2065: 'cerr': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(167,1): error C2059: syntax error: '}' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(167,1): error C2143: syntax error: missing ';' before '}' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(193,20): error C2143: syntax error: missing ';' before '*' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(193,3): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(193,33): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(211,8): error C2923: 'std::unique_ptr': 'MockMasterServer' is not a valid template type argument for parameter '_Ty' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+      C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(7,1):
+      see declaration of 'MockMasterServer'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(211,8): error C2976: 'std::unique_ptr': too few template arguments [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3332,7):
+      see declaration of 'std::unique_ptr'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(211,37): error C2955: 'std::unique_ptr': use of class template requires template argument list [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3332,7):
+      see declaration of 'std::unique_ptr'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(176,20): error C2672: 'std::make_unique': no matching overloaded function found [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3604,6):
+      could be 'void std::make_unique(_Types ...)'
+          C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(176,32):
+          'std::make_unique': invalid template argument for '_Ty', type expected
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3598,57):
+      or       'std::unique_ptr<_Ty,std::default_delete<_Ty>> std::make_unique(const size_t)'
+          C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(176,32):
+          'std::make_unique': invalid template argument for '_Ty', type expected
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3593,57):
+      or       'std::unique_ptr<_Ty,std::default_delete<_Ty>> std::make_unique(_Types ...)'
+          C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(176,32):
+          'std::make_unique': invalid template argument for '_Ty', type expected
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(177,5): error C2678: binary '->': no operator found which takes a left-hand operand of type 'std::unique_ptr' (or there is no acceptable conversion) [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3425,37):
+      could be '_Get_deleter_pointer_type<_Ty,remove_reference<_Ty1>::type,void>::type std::unique_ptr<_Ty,_Dx>::operator ->(void) noexcept const'
+          C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(177,5):
+          '_Get_deleter_pointer_type<_Ty,remove_reference<_Ty1>::type,void>::type std::unique_ptr<_Ty,_Dx>::operator ->(void) noexcept const': cannot convert 'this' pointer from 'std::unique_ptr' to 'const std::unique_ptr<_Ty,_Dx> &'
+              C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(177,5):
+              Reason: cannot convert from 'std::unique_ptr' to 'const std::unique_ptr<_Ty,_Dx>'
+              C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(177,5):
+              Conversion requires a second user-defined-conversion operator or constructor
+      C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(177,5):
+      while trying to match the argument list '(std::unique_ptr)'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(177,14): error C2039: 'start': is not a member of 'std::unique_ptr' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3332,7):
+      see declaration of 'std::unique_ptr'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(181,9): error C2451: a conditional expression of type 'std::unique_ptr' is not valid [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+      C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(181,9):
+      No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(182,7): error C2678: binary '->': no operator found which takes a left-hand operand of type 'std::unique_ptr' (or there is no acceptable conversion) [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3425,37):
+      could be '_Get_deleter_pointer_type<_Ty,remove_reference<_Ty1>::type,void>::type std::unique_ptr<_Ty,_Dx>::operator ->(void) noexcept const'
+          C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(182,7):
+          '_Get_deleter_pointer_type<_Ty,remove_reference<_Ty1>::type,void>::type std::unique_ptr<_Ty,_Dx>::operator ->(void) noexcept const': cannot convert 'this' pointer from 'std::unique_ptr' to 'const std::unique_ptr<_Ty,_Dx> &'
+              C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(182,7):
+              Reason: cannot convert from 'std::unique_ptr' to 'const std::unique_ptr<_Ty,_Dx>'
+              C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(182,7):
+              Conversion requires a second user-defined-conversion operator or constructor
+      C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(182,7):
+      while trying to match the argument list '(std::unique_ptr)'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(182,16): error C2039: 'stop': is not a member of 'std::unique_ptr' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3332,7):
+      see declaration of 'std::unique_ptr'
+  
+  ResillienceTest.cpp
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(6,1): error C2059: syntax error: 'public' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(7,1): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(8,61): error C2550: 'MockMasterServer': constructor initializer lists are only allowed on constructor definitions [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(8,62): warning C4508: 'MockMasterServer': function should return a value; 'void' return type assumed [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(11,7): error C2065: 'running_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(13,3): error C2065: 'running_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(14,3): error C2065: 'server_thread_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(14,33): error C3482: 'this' can only be used as a lambda capture within a non-static member function [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(41,67): error C2355: 'this': can only be referenced inside non-static member functions or non-static data member initializers [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(16,5): error C2065: 'server_socket_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(18,10): error C2065: 'server_socket_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(18,31): error C2065: 'port_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(19,12): error C2039: 'cerr': is not a member of 'std' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\queue(32,1):
+      see declaration of 'std'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(19,12): error C2065: 'cerr': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(19,58): error C2065: 'port_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(22,10): error C2065: 'server_socket_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(23,12): error C2039: 'cerr': is not a member of 'std' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\queue(32,1):
+      see declaration of 'std'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(23,12): error C2065: 'cerr': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(27,10): error C2039: 'cout': is not a member of 'std' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\queue(32,1):
+      see declaration of 'std'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(27,10): error C2065: 'cout': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(27,48): error C2065: 'port_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(29,12): error C2065: 'running_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(30,12): error C2065: 'server_socket_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(33,29): error C2065: 'server_socket_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(35,14): error C2039: 'cout': is not a member of 'std' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\queue(32,1):
+      see declaration of 'std'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(35,14): error C2065: 'cout': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(36,42): error C2065: 'clients_mutex_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(37,9): error C2065: 'clients_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(41,9): error C2065: 'client_threads_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(41,39): error C2653: 'MockMasterServer': is not a class or namespace name [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(41,57): error C2065: 'readLoop': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(50,3): error C2065: 'running_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(51,7): error C2065: 'server_socket_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(52,5): error C2065: 'server_socket_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(53,7): error C2065: 'server_thread_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(54,5): error C2065: 'server_thread_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(57,36): error C2065: 'clients_mutex_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(59,18): error C2065: 'clients_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(59,14): error C2530: 'c': references must be initialized [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(59,14): error C3531: 'c': a symbol whose type contains 'auto' must have an initializer [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(59,16): error C2143: syntax error: missing ';' before ':' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(59,26): error C2143: syntax error: missing ';' before ')' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(64,18): error C2065: 'client_threads_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(64,14): error C2530: 't': references must be initialized [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(64,14): error C3531: 't': a symbol whose type contains 'auto' must have an initializer [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(64,16): error C2143: syntax error: missing ';' before ':' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(64,33): error C2143: syntax error: missing ';' before ')' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(68,3): error C2065: 'client_threads_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(69,3): error C2065: 'clients_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(77,38): error C2065: 'clients_mutex_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(78,10): error C2065: 'clients_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(87,36): error C2065: 'clients_mutex_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(88,8): error C2065: 'clients_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(95,5): error C2065: 'clients_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(104,38): error C2065: 'messages_mutex_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(105,28): error C2065: 'received_messages_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(105,22): error C2530: 'msg': references must be initialized [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(105,22): error C3531: 'msg': a symbol whose type contains 'auto' must have an initializer [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(105,26): error C2143: syntax error: missing ';' before ':' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(105,46): error C2143: syntax error: missing ';' before ')' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(116,36): error C2065: 'messages_mutex_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(117,7): error C2065: 'received_messages_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(119,10): error C2065: 'received_messages_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(122,1): error C2059: syntax error: 'private' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(128,10): error C2065: 'running_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(141,44): error C2065: 'messages_mutex_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(142,11): error C2065: 'received_messages_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(143,16): error C2039: 'cout': is not a member of 'std' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\queue(32,1):
+      see declaration of 'std'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(143,16): error C2065: 'cout': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(147,16): error C2039: 'cerr': is not a member of 'std' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\queue(32,1):
+      see declaration of 'std'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(147,16): error C2065: 'cerr': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(167,1): error C2059: syntax error: '}' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(167,1): error C2143: syntax error: missing ';' before '}' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(193,20): error C2143: syntax error: missing ';' before '*' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(193,3): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(193,33): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(211,8): error C2923: 'std::unique_ptr': 'MockMasterServer' is not a valid template type argument for parameter '_Ty' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+      C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(7,1):
+      see declaration of 'MockMasterServer'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(211,8): error C2976: 'std::unique_ptr': too few template arguments [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3332,7):
+      see declaration of 'std::unique_ptr'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(211,37): error C2955: 'std::unique_ptr': use of class template requires template argument list [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3332,7):
+      see declaration of 'std::unique_ptr'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(176,20): error C2672: 'std::make_unique': no matching overloaded function found [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3604,6):
+      could be 'void std::make_unique(_Types ...)'
+          C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(176,32):
+          'std::make_unique': invalid template argument for '_Ty', type expected
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3598,57):
+      or       'std::unique_ptr<_Ty,std::default_delete<_Ty>> std::make_unique(const size_t)'
+          C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(176,32):
+          'std::make_unique': invalid template argument for '_Ty', type expected
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3593,57):
+      or       'std::unique_ptr<_Ty,std::default_delete<_Ty>> std::make_unique(_Types ...)'
+          C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(176,32):
+          'std::make_unique': invalid template argument for '_Ty', type expected
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(177,5): error C2678: binary '->': no operator found which takes a left-hand operand of type 'std::unique_ptr' (or there is no acceptable conversion) [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3425,37):
+      could be '_Get_deleter_pointer_type<_Ty,remove_reference<_Ty1>::type,void>::type std::unique_ptr<_Ty,_Dx>::operator ->(void) noexcept const'
+          C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(177,5):
+          '_Get_deleter_pointer_type<_Ty,remove_reference<_Ty1>::type,void>::type std::unique_ptr<_Ty,_Dx>::operator ->(void) noexcept const': cannot convert 'this' pointer from 'std::unique_ptr' to 'const std::unique_ptr<_Ty,_Dx> &'
+              C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(177,5):
+              Reason: cannot convert from 'std::unique_ptr' to 'const std::unique_ptr<_Ty,_Dx>'
+              C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(177,5):
+              Conversion requires a second user-defined-conversion operator or constructor
+      C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(177,5):
+      while trying to match the argument list '(std::unique_ptr)'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(177,14): error C2039: 'start': is not a member of 'std::unique_ptr' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3332,7):
+      see declaration of 'std::unique_ptr'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(181,9): error C2451: a conditional expression of type 'std::unique_ptr' is not valid [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+      C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(181,9):
+      No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(182,7): error C2678: binary '->': no operator found which takes a left-hand operand of type 'std::unique_ptr' (or there is no acceptable conversion) [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3425,37):
+      could be '_Get_deleter_pointer_type<_Ty,remove_reference<_Ty1>::type,void>::type std::unique_ptr<_Ty,_Dx>::operator ->(void) noexcept const'
+          C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(182,7):
+          '_Get_deleter_pointer_type<_Ty,remove_reference<_Ty1>::type,void>::type std::unique_ptr<_Ty,_Dx>::operator ->(void) noexcept const': cannot convert 'this' pointer from 'std::unique_ptr' to 'const std::unique_ptr<_Ty,_Dx> &'
+              C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(182,7):
+              Reason: cannot convert from 'std::unique_ptr' to 'const std::unique_ptr<_Ty,_Dx>'
+              C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(182,7):
+              Conversion requires a second user-defined-conversion operator or constructor
+      C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(182,7):
+      while trying to match the argument list '(std::unique_ptr)'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(182,16): error C2039: 'stop': is not a member of 'std::unique_ptr' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3332,7):
+      see declaration of 'std::unique_ptr'
   
   Generating Code...

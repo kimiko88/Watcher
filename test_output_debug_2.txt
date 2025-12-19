@@ -1,0 +1,199 @@
+Running main() from C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\src\gtest_main.cc
+Note: Google Test filter = RecordingManagerTest.*
+[==========] Running 18 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 18 tests from RecordingManagerTest
+[ RUN      ] RecordingManagerTest.ListRecordingsEmpty
+RecordingManager::Impl created: 00000186634BBF00 dir: test_recordings_data
+Scanning for new recordings in: test_recordings_data
+RecordingManager::Impl destroyed: 00000186634BBF00
+[       OK ] RecordingManagerTest.ListRecordingsEmpty (5 ms)
+[ RUN      ] RecordingManagerTest.ListRecordingsWithFiles
+RecordingManager::Impl created: 00000186634BD330 dir: test_recordings_data
+Scanning for new recordings in: test_recordings_data
+Found file: test1.mp4
+Added new recording: rec_1766131968317 (test1.mp4)
+Found file: test2.webm
+Added new recording: rec_1766131968318 (test2.webm)
+RecordingManager::Impl destroyed: 00000186634BD330
+[       OK ] RecordingManagerTest.ListRecordingsWithFiles (5 ms)
+[ RUN      ] RecordingManagerTest.GetRecordingInfoValid
+RecordingManager::Impl created: 00000186634BD000 dir: test_recordings_data
+Scanning for new recordings in: test_recordings_data
+Found file: test1.mp4
+Added new recording: rec_1766131968322 (test1.mp4)
+Found file: test2.webm
+Added new recording: rec_1766131968322 (test2.webm)
+getRecordingInfo(rec_1766131968322) on 00000186634BD000. Cache size: 2
+Found recording: rec_1766131968322
+RecordingManager::Impl destroyed: 00000186634BD000
+[       OK ] RecordingManagerTest.GetRecordingInfoValid (3 ms)
+[ RUN      ] RecordingManagerTest.GetRecordingInfoInvalid
+RecordingManager::Impl created: 00000186634BC890 dir: test_recordings_data
+Scanning for new recordings in: test_recordings_data
+Found file: test1.mp4
+Added new recording: rec_1766131968326 (test1.mp4)
+Found file: test2.webm
+Added new recording: rec_1766131968326 (test2.webm)
+getRecordingInfo(non-existent-uuid) on 00000186634BC890. Cache size: 2
+Recording not found.
+RecordingManager::Impl destroyed: 00000186634BC890
+[       OK ] RecordingManagerTest.GetRecordingInfoInvalid (3 ms)
+[ RUN      ] RecordingManagerTest.DeleteRecording
+RecordingManager::Impl created: 00000186634BBF00 dir: test_recordings_data
+Scanning for new recordings in: test_recordings_data
+Found file: test1.mp4
+Added new recording: rec_1766131968330 (test1.mp4)
+Found file: test2.webm
+Added new recording: rec_1766131968330 (test2.webm)
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\unit\RecordingManagerTest.cpp(99): error: Value of: info.recording_id.empty()
+  Actual: false
+Expected: true
+
+[  FAILED  ] RecordingManagerTest.DeleteRecording (5 ms)
+[ RUN      ] RecordingManagerTest.DeleteNonExistent
+[       OK ] RecordingManagerTest.DeleteNonExistent (3 ms)
+[ RUN      ] RecordingManagerTest.StorageQuotaDefault
+[       OK ] RecordingManagerTest.StorageQuotaDefault (5 ms)
+[ RUN      ] RecordingManagerTest.StorageQuotaSetGet
+[       OK ] RecordingManagerTest.StorageQuotaSetGet (4 ms)
+[ RUN      ] RecordingManagerTest.TotalStorageUsed
+[       OK ] RecordingManagerTest.TotalStorageUsed (5 ms)
+[ RUN      ] RecordingManagerTest.RecordingStats
+Attempting to delete recording: rec_1766131968330
+Cache size before: 2
+File deleted: "test_recordings_data\\test1.mp4"
+Cache size after: 1
+getRecordingInfo(rec_1766131968330) on 00000186634BBF00. Cache size: 1
+Found recording: rec_1766131968330
+RecordingManager::Impl destroyed: 00000186634BBF00
+RecordingManager::Impl created: 00000186634BC890 dir: test_recordings_data
+Scanning for new recordings in: test_recordings_data
+Found file: test1.mp4
+Added new recording: rec_1766131968335 (test1.mp4)
+Found file: test2.webm
+Added new recording: rec_1766131968336 (test2.webm)
+Attempting to delete recording: fake-uuid
+Cache size before: 2
+Recording not found in cache!
+RecordingManager::Impl destroyed: 00000186634BC890
+RecordingManager::Impl created: 00000186634BC450 dir: test_recordings_data
+Scanning for new recordings in: test_recordings_data
+Found file: test1.mp4
+Added new recording: rec_1766131968340 (test1.mp4)
+Found file: test2.webm
+Added new recording: rec_1766131968340 (test2.webm)
+RecordingManager::Impl destroyed: 00000186634BC450
+RecordingManager::Impl created: 00000186634BC890 dir: test_recordings_data
+Scanning for new recordings in: test_recordings_data
+Found file: test1.mp4
+Added new recording: rec_1766131968346 (test1.mp4)
+Found file: test2.webm
+Added new recording: rec_1766131968346 (test2.webm)
+RecordingManager::Impl destroyed: 00000186634BC890
+RecordingManager::Impl created: 00000186634BC450 dir: test_recordings_data
+Scanning for new recordings in: test_recordings_data
+Found file: test1.mp4
+Added new recording: rec_1766131968352 (test1.mp4)
+Found file: test2.webm
+Added new recording: rec_1766131968352 (test2.webm)
+RecordingManager::Impl destroyed: 00000186634BC450
+RecordingManager::Impl created: 00000186634BCEF0 dir: test_recordings_data
+Scanning for new recordings in: test_recordings_data
+Found file: test1.mp4
+Added new recording: rec_1766131968355 (test1.mp4)
+Found file: test2.webm
+Added new recording: rec_1766131968355 (test2.webm)
+RecordingManager::Impl destroyed: 00000186634BCEF0
+[       OK ] RecordingManagerTest.RecordingStats (6 ms)
+[ RUN      ] RecordingManagerTest.CleanupOldRecordingsNone
+RecordingManager::Impl created: 00000186634BBF00 dir: test_recordings_data
+Scanning for new recordings in: test_recordings_data
+Found file: test1.mp4
+Added new recording: rec_1766131968363 (test1.mp4)
+Found file: test2.webm
+Added new recording: rec_1766131968363 (test2.webm)
+RecordingManager::Impl destroyed: 00000186634BBF00
+[       OK ] RecordingManagerTest.CleanupOldRecordingsNone (4 ms)
+[ RUN      ] RecordingManagerTest.AddTags
+RecordingManager::Impl created: 00000186634BC890 dir: test_recordings_data
+Scanning for new recordings in: test_recordings_data
+Found file: test1.mp4
+Added new recording: rec_1766131968368 (test1.mp4)
+Found file: test2.webm
+Added new recording: rec_1766131968368 (test2.webm)
+getRecordingInfo(rec_1766131968368) on 00000186634BC890. Cache size: 2
+Found recording: rec_1766131968368
+RecordingManager::Impl destroyed: 00000186634BC890
+[       OK ] RecordingManagerTest.AddTags (5 ms)
+[ RUN      ] RecordingManagerTest.UpdateNotes
+RecordingManager::Impl created: 00000186634BCEF0 dir: test_recordings_data
+Scanning for new recordings in: test_recordings_data
+Found file: test1.mp4
+Added new recording: rec_1766131968374 (test1.mp4)
+Found file: test2.webm
+Added new recording: rec_1766131968374 (test2.webm)
+getRecordingInfo(rec_1766131968374) on 00000186634BCEF0. Cache size: 2
+Found recording: rec_1766131968374
+RecordingManager::Impl destroyed: 00000186634BCEF0
+[       OK ] RecordingManagerTest.UpdateNotes (6 ms)
+[ RUN      ] RecordingManagerTest.SearchByTagFound
+RecordingManager::Impl created: 00000186634BC340 dir: test_recordings_data
+Scanning for new recordings in: test_recordings_data
+Found file: test1.mp4
+Added new recording: rec_1766131968380 (test1.mp4)
+Found file: test2.webm
+Added new recording: rec_1766131968380 (test2.webm)
+RecordingManager::Impl destroyed: 00000186634BC340
+[       OK ] RecordingManagerTest.SearchByTagFound (12 ms)
+[ RUN      ] RecordingManagerTest.SearchByTagNotFound
+RecordingManager::Impl created: 00000186634BC890 dir: test_recordings_data
+Scanning for new recordings in: test_recordings_data
+Found file: test1.mp4
+Added new recording: rec_1766131968392 (test1.mp4)
+Found file: test2.webm
+Added new recording: rec_1766131968392 (test2.webm)
+RecordingManager::Impl destroyed: 00000186634BC890
+[       OK ] RecordingManagerTest.SearchByTagNotFound (4 ms)
+[ RUN      ] RecordingManagerTest.ExportRecordingUnsupportedFormat
+RecordingManager::Impl created: 00000186634BCEF0 dir: test_recordings_data
+Scanning for new recordings in: test_recordings_data
+Found file: test1.mp4
+Added new recording: rec_1766131968396 (test1.mp4)
+Found file: test2.webm
+Added new recording: rec_1766131968396 (test2.webm)
+getRecordingInfo(rec_1766131968396) on 00000186634BCEF0. Cache size: 2
+Found recording: rec_1766131968396
+RecordingManager::Impl destroyed: 00000186634BCEF0
+[       OK ] RecordingManagerTest.ExportRecordingUnsupportedFormat (4 ms)
+[ RUN      ] RecordingManagerTest.PlayRecordingValid
+RecordingManager::Impl created: 00000186634BD330 dir: test_recordings_data
+Scanning for new recordings in: test_recordings_data
+Found file: test1.mp4
+Added new recording: rec_1766131968401 (test1.mp4)
+Found file: test2.webm
+Added new recording: rec_1766131968401 (test2.webm)
+getRecordingInfo(rec_1766131968401) on 00000186634BD330. Cache size: 2
+Found recording: rec_1766131968401
+RecordingManager::Impl destroyed: 00000186634BD330
+[       OK ] RecordingManagerTest.PlayRecordingValid (4 ms)
+[ RUN      ] RecordingManagerTest.PlayRecordingInvalid
+[       OK ] RecordingManagerTest.PlayRecordingInvalid (6 ms)
+RecordingManager::Impl created: 00000186634BBF00 dir: test_recordings_data
+Scanning for new recordings in: test_recordings_data
+Found file: test1.mp4
+Added new recording: rec_1766131968407 (test1.mp4)
+Found file: test2.webm
+Added new recording: rec_1766131968407 (test2.webm)
+getRecordingInfo(invalid-uuid) on 00000186634BBF00. Cache size: 2
+Recording not found.
+RecordingManager::Impl destroyed: 00000186634BBF00
+[----------] 18 tests from RecordingManagerTest (101 ms total)
+
+[----------] Global test environment tear-down
+[==========] 18 tests from 1 test suite ran. (101 ms total)
+[  PASSED  ] 17 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] RecordingManagerTest.DeleteRecording
+
+ 1 FAILED TEST

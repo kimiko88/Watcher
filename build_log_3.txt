@@ -1,0 +1,65 @@
+Versione di MSBuild 17.13.15+18b3035f6 per .NET Framework
+
+  cms_core.vcxproj -> C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\core\Debug\cms_core.lib
+  cms_platform.vcxproj -> C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\Debug\cms_platform.lib
+  gtest.vcxproj -> C:\Users\chimi\Desktop\Programmazione\Watcher\build\lib\Debug\gtest.lib
+  gtest_main.vcxproj -> C:\Users\chimi\Desktop\Programmazione\Watcher\build\lib\Debug\gtest_main.lib
+  EndToEndTest.cpp
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(82,41): warning C4100: 'clientId': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\EndToEndTest.cpp(66,3): error C2039: 'waitForMessage': is not a member of 'MockMasterServer' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+      C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(13,7):
+      see declaration of 'MockMasterServer'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\EndToEndTest.cpp(66,3): error C2512: 'testing::AssertionResult': no appropriate default constructor available [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+      C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\EndToEndTest.cpp(66,3):
+      'testing::AssertionResult::AssertionResult': no appropriate default constructor available
+          C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest-assertion-result.h(155,3):
+          could be 'testing::AssertionResult::AssertionResult(const T &,std::enable_if<!std::is_convertible<T,testing::AssertionResult>::value,void>::type *)'
+          C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\EndToEndTest.cpp(66,3):
+          while trying to match the argument list '()'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\EndToEndTest.cpp(66,3): error C2737: 'gtest_ar_': const object must be initialized [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\EndToEndTest.cpp(68,40): error C2039: 'getLastMessage': is not a member of 'MockMasterServer' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+      C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(13,7):
+      see declaration of 'MockMasterServer'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\EndToEndTest.cpp(69,3): error C3536: 'msg': cannot be used before it is initialized [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\EndToEndTest.cpp(69,3): error C2660: 'testing::internal::EqHelper::Compare': function does not take 3 arguments [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+      C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(1407,26):
+      see declaration of 'testing::internal::EqHelper::Compare'
+      C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(1414,26):
+      could be 'testing::AssertionResult testing::internal::EqHelper::Compare(const char *,const char *,std::nullptr_t,T *)'
+          C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\EndToEndTest.cpp(69,3):
+          'testing::AssertionResult testing::internal::EqHelper::Compare(const char *,const char *,std::nullptr_t,T *)': expects 4 arguments - 3 provided
+      C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(1395,26):
+      or       'testing::AssertionResult testing::internal::EqHelper::Compare(const char *,const char *,const T1 &,const T2 &)'
+          C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\EndToEndTest.cpp(69,3):
+          'testing::AssertionResult testing::internal::EqHelper::Compare(const char *,const char *,const T1 &,const T2 &)': expects 4 arguments - 3 provided
+      C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\EndToEndTest.cpp(69,3):
+      while trying to match the argument list '(const char [9], const char [44], cms::protocol::CommandType)'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\EndToEndTest.cpp(70,3): error C2512: 'testing::AssertionResult': no appropriate default constructor available [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+      C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\EndToEndTest.cpp(70,3):
+      'testing::AssertionResult::AssertionResult': no appropriate default constructor available
+          C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest-assertion-result.h(155,3):
+          could be 'testing::AssertionResult::AssertionResult(const T &,std::enable_if<!std::is_convertible<T,testing::AssertionResult>::value,void>::type *)'
+          C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\EndToEndTest.cpp(70,3):
+          while trying to match the argument list '()'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\EndToEndTest.cpp(70,3): error C2737: 'gtest_ar_': const object must be initialized [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\EndToEndTest.cpp(71,3): error C2059: syntax error: ')' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\EndToEndTest.cpp(71,3): error C2181: illegal else without matching if [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\EndToEndTest.cpp(71,3): error C2065: 'gtest_ar_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\EndToEndTest.cpp(71,3): error C2440: '<function-style-cast>': cannot convert from 'initializer list' to 'testing::internal::AssertHelper' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+      C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\EndToEndTest.cpp(71,3):
+      'testing::internal::AssertHelper::AssertHelper': function does not take 3 arguments
+          C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\EndToEndTest.cpp(71,3):
+          while trying to match the argument list '(testing::TestPartResult::Type, const char [81], int)'
+  
+  ResillienceTest.cpp
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(82,41): warning C4100: 'clientId': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+  Generating Code...

@@ -1,0 +1,28 @@
+Running main() from C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\src\gtest_main.cc
+Note: Google Test filter = EndToEndTest.TakeScreenshotAndVerify
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from EndToEndTest
+[ RUN      ] EndToEndTest.TakeScreenshotAndVerify
+[ERROR] Failed to open hosts file for writing (admin required)
+[INFO] ClientService initialized with machine ID: TEST_CLIENT_01
+[INFO] Starting ClientService...
+[INFO] ClientService started
+MockMaster listening on 5555
+[INFO] Processing loop started
+[INFO] Attempting to connect to master at 127.0.0.1:5555
+MockMaster: Client connected
+[INFO] Connected to master
+[INFO] Sending HELLO handshake
+[INFO] Read loop started
+MockMaster: Received HELLO
+MockMaster: Received PING
+[INFO] Received command: SCREENSHOT_REQUEST
+[INFO] Processing command: SCREENSHOT_REQUEST
+MockMaster: Received SCREENSHOT_DATA
+Test finished successfully, SUCCEEDing...
+[ERROR] Socket receive failed or closed
+[INFO] Read loop stopped
+[INFO] Stopping ClientService...
+[INFO] Processing loop stopped
+[INFO] ClientService stopped

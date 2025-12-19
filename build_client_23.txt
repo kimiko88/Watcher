@@ -1,0 +1,197 @@
+Versione di MSBuild 17.13.15+18b3035f6 per .NET Framework
+
+  cms_core.vcxproj -> C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\core\Debug\cms_core.lib
+  WindowsPlatform.cpp
+C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\Platform.h(196,52): warning C4100: 'path': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+  (compiling source file '../../../src/platform/WindowsPlatform.cpp')
+  
+  cms_platform.vcxproj -> C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\Debug\cms_platform.lib
+  ClientService.cpp
+C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\ClientService.h(22,1): error C2059: syntax error: '}' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\client\cms_client.vcxproj]
+  (compiling source file '../../../src/client/ClientService.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\ClientService.h(22,1): error C2143: syntax error: missing ';' before '}' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\client\cms_client.vcxproj]
+  (compiling source file '../../../src/client/ClientService.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\ClientService.h(128,24): error C3083: 'network': the symbol to the left of a '::' must be a type [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\client\cms_client.vcxproj]
+  (compiling source file '../../../src/client/ClientService.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\ClientService.h(128,33): error C2039: 'NetworkFilterManager': is not a member of 'cms' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\client\cms_client.vcxproj]
+  (compiling source file '../../../src/client/ClientService.cpp')
+      C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\ClientService.h(34,11):
+      see declaration of 'cms'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\ClientService.h(128,33): error C2065: 'NetworkFilterManager': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\client\cms_client.vcxproj]
+  (compiling source file '../../../src/client/ClientService.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\ClientService.h(128,8): error C2923: 'std::unique_ptr': 'NetworkFilterManager' is not a valid template type argument for parameter '_Ty' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\client\cms_client.vcxproj]
+  (compiling source file '../../../src/client/ClientService.cpp')
+      C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\ClientService.h(128,33):
+      see declaration of 'NetworkFilterManager'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\ClientService.h(128,8): error C2976: 'std::unique_ptr': too few template arguments [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\client\cms_client.vcxproj]
+  (compiling source file '../../../src/client/ClientService.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3332,7):
+      see declaration of 'std::unique_ptr'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\ClientService.h(128,55): error C2955: 'std::unique_ptr': use of class template requires template argument list [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\client\cms_client.vcxproj]
+  (compiling source file '../../../src/client/ClientService.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3332,7):
+      see declaration of 'std::unique_ptr'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(66,62): error C2512: 'std::unique_ptr': no appropriate default constructor available [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\client\cms_client.vcxproj]
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3332,7):
+      see declaration of 'std::unique_ptr'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(76,3): error C2678: binary '=': no operator found which takes a left-hand operand of type 'std::unique_ptr' (or there is no acceptable conversion) [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\client\cms_client.vcxproj]
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3449,17):
+      could be 'std::unique_ptr<_Ty,_Dx> &std::unique_ptr<_Ty,_Dx>::operator =(const std::unique_ptr<_Ty,_Dx> &)'
+          C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(76,3):
+          'std::unique_ptr<_Ty,_Dx> &std::unique_ptr<_Ty,_Dx>::operator =(const std::unique_ptr<_Ty,_Dx> &)': cannot convert 'this' pointer from 'std::unique_ptr' to 'std::unique_ptr<_Ty,_Dx> &'
+              C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(76,3):
+              Reason: cannot convert from 'std::unique_ptr' to 'std::unique_ptr<_Ty,_Dx>'
+              C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(76,3):
+              Conversion requires a second user-defined-conversion operator or constructor
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3344,30):
+      or       'std::unique_ptr<_Ty,_Dx> &std::unique_ptr<_Ty,_Dx>::operator =(std::nullptr_t) noexcept'
+          C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(76,3):
+          'std::unique_ptr<_Ty,_Dx> &std::unique_ptr<_Ty,_Dx>::operator =(std::nullptr_t) noexcept': cannot convert 'this' pointer from 'std::unique_ptr' to 'std::unique_ptr<_Ty,_Dx> &'
+              C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(76,3):
+              Reason: cannot convert from 'std::unique_ptr' to 'std::unique_ptr<_Ty,_Dx>'
+              C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(76,3):
+              Conversion requires a second user-defined-conversion operator or constructor
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3395,30):
+      or       'std::unique_ptr<_Ty,_Dx> &std::unique_ptr<_Ty,_Dx>::operator =(std::unique_ptr<_Ty,_Dx> &&) noexcept'
+          C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(76,3):
+          'std::unique_ptr<_Ty,_Dx> &std::unique_ptr<_Ty,_Dx>::operator =(std::unique_ptr<_Ty,_Dx> &&) noexcept': could not deduce template argument for '__formal'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3388,30):
+      or       'std::unique_ptr<_Ty,_Dx> &std::unique_ptr<_Ty,_Dx>::operator =(std::unique_ptr<_Ux,_Dx> &&) noexcept'
+          C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(76,3):
+          'std::unique_ptr<_Ty,_Dx> &std::unique_ptr<_Ty,_Dx>::operator =(std::unique_ptr<_Ux,_Dx> &&) noexcept': could not deduce template argument for '__formal'
+      C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(76,3):
+      while trying to match the argument list '(std::unique_ptr, std::unique_ptr<cms::network::NetworkFilterManager,std::default_delete<cms::network::NetworkFilterManager>>)'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(76,18): error C2582: 'operator =' function is unavailable in 'std::unique_ptr' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\client\cms_client.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(79,3): error C2678: binary '->': no operator found which takes a left-hand operand of type 'std::unique_ptr' (or there is no acceptable conversion) [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\client\cms_client.vcxproj]
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3425,37):
+      could be '_Get_deleter_pointer_type<_Ty,remove_reference<_Ty1>::type,void>::type std::unique_ptr<_Ty,_Dx>::operator ->(void) noexcept const'
+          C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(79,3):
+          '_Get_deleter_pointer_type<_Ty,remove_reference<_Ty1>::type,void>::type std::unique_ptr<_Ty,_Dx>::operator ->(void) noexcept const': cannot convert 'this' pointer from 'std::unique_ptr' to 'const std::unique_ptr<_Ty,_Dx> &'
+              C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(79,3):
+              Reason: cannot convert from 'std::unique_ptr' to 'const std::unique_ptr<_Ty,_Dx>'
+              C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(79,3):
+              Conversion requires a second user-defined-conversion operator or constructor
+      C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(79,3):
+      while trying to match the argument list '(std::unique_ptr)'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(79,19): error C2039: 'loadRules': is not a member of 'std::unique_ptr' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\client\cms_client.vcxproj]
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3332,7):
+      see declaration of 'std::unique_ptr'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(81,3): error C2678: binary '->': no operator found which takes a left-hand operand of type 'std::unique_ptr' (or there is no acceptable conversion) [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\client\cms_client.vcxproj]
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3425,37):
+      could be '_Get_deleter_pointer_type<_Ty,remove_reference<_Ty1>::type,void>::type std::unique_ptr<_Ty,_Dx>::operator ->(void) noexcept const'
+          C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(81,3):
+          '_Get_deleter_pointer_type<_Ty,remove_reference<_Ty1>::type,void>::type std::unique_ptr<_Ty,_Dx>::operator ->(void) noexcept const': cannot convert 'this' pointer from 'std::unique_ptr' to 'const std::unique_ptr<_Ty,_Dx> &'
+              C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(81,3):
+              Reason: cannot convert from 'std::unique_ptr' to 'const std::unique_ptr<_Ty,_Dx>'
+              C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(81,3):
+              Conversion requires a second user-defined-conversion operator or constructor
+      C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(81,3):
+      while trying to match the argument list '(std::unique_ptr)'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(81,19): error C2039: 'applyRules': is not a member of 'std::unique_ptr' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\client\cms_client.vcxproj]
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3332,7):
+      see declaration of 'std::unique_ptr'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(201,9): error C2678: binary '->': no operator found which takes a left-hand operand of type 'std::unique_ptr' (or there is no acceptable conversion) [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\client\cms_client.vcxproj]
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3425,37):
+      could be '_Get_deleter_pointer_type<_Ty,remove_reference<_Ty1>::type,void>::type std::unique_ptr<_Ty,_Dx>::operator ->(void) noexcept const'
+          C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(201,9):
+          '_Get_deleter_pointer_type<_Ty,remove_reference<_Ty1>::type,void>::type std::unique_ptr<_Ty,_Dx>::operator ->(void) noexcept const': cannot convert 'this' pointer from 'std::unique_ptr' to 'const std::unique_ptr<_Ty,_Dx> &'
+              C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(201,9):
+              Reason: cannot convert from 'std::unique_ptr' to 'const std::unique_ptr<_Ty,_Dx>'
+              C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(201,9):
+              Conversion requires a second user-defined-conversion operator or constructor
+      C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(201,9):
+      while trying to match the argument list '(std::unique_ptr)'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(201,25): error C2039: 'setFilterMode': is not a member of 'std::unique_ptr' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\client\cms_client.vcxproj]
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3332,7):
+      see declaration of 'std::unique_ptr'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(207,15): error C2678: binary '->': no operator found which takes a left-hand operand of type 'std::unique_ptr' (or there is no acceptable conversion) [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\client\cms_client.vcxproj]
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3425,37):
+      could be '_Get_deleter_pointer_type<_Ty,remove_reference<_Ty1>::type,void>::type std::unique_ptr<_Ty,_Dx>::operator ->(void) noexcept const'
+          C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(207,15):
+          '_Get_deleter_pointer_type<_Ty,remove_reference<_Ty1>::type,void>::type std::unique_ptr<_Ty,_Dx>::operator ->(void) noexcept const': cannot convert 'this' pointer from 'std::unique_ptr' to 'const std::unique_ptr<_Ty,_Dx> &'
+              C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(207,15):
+              Reason: cannot convert from 'std::unique_ptr' to 'const std::unique_ptr<_Ty,_Dx>'
+              C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(207,15):
+              Conversion requires a second user-defined-conversion operator or constructor
+      C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(207,15):
+      while trying to match the argument list '(std::unique_ptr)'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(207,31): error C2039: 'addBlockedDomain': is not a member of 'std::unique_ptr' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\client\cms_client.vcxproj]
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3332,7):
+      see declaration of 'std::unique_ptr'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(209,15): error C2678: binary '->': no operator found which takes a left-hand operand of type 'std::unique_ptr' (or there is no acceptable conversion) [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\client\cms_client.vcxproj]
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3425,37):
+      could be '_Get_deleter_pointer_type<_Ty,remove_reference<_Ty1>::type,void>::type std::unique_ptr<_Ty,_Dx>::operator ->(void) noexcept const'
+          C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(209,15):
+          '_Get_deleter_pointer_type<_Ty,remove_reference<_Ty1>::type,void>::type std::unique_ptr<_Ty,_Dx>::operator ->(void) noexcept const': cannot convert 'this' pointer from 'std::unique_ptr' to 'const std::unique_ptr<_Ty,_Dx> &'
+              C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(209,15):
+              Reason: cannot convert from 'std::unique_ptr' to 'const std::unique_ptr<_Ty,_Dx>'
+              C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(209,15):
+              Conversion requires a second user-defined-conversion operator or constructor
+      C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(209,15):
+      while trying to match the argument list '(std::unique_ptr)'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(209,31): error C2039: 'addAllowedDomain': is not a member of 'std::unique_ptr' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\client\cms_client.vcxproj]
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3332,7):
+      see declaration of 'std::unique_ptr'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(215,9): error C2678: binary '->': no operator found which takes a left-hand operand of type 'std::unique_ptr' (or there is no acceptable conversion) [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\client\cms_client.vcxproj]
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3425,37):
+      could be '_Get_deleter_pointer_type<_Ty,remove_reference<_Ty1>::type,void>::type std::unique_ptr<_Ty,_Dx>::operator ->(void) noexcept const'
+          C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(215,9):
+          '_Get_deleter_pointer_type<_Ty,remove_reference<_Ty1>::type,void>::type std::unique_ptr<_Ty,_Dx>::operator ->(void) noexcept const': cannot convert 'this' pointer from 'std::unique_ptr' to 'const std::unique_ptr<_Ty,_Dx> &'
+              C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(215,9):
+              Reason: cannot convert from 'std::unique_ptr' to 'const std::unique_ptr<_Ty,_Dx>'
+              C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(215,9):
+              Conversion requires a second user-defined-conversion operator or constructor
+      C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(215,9):
+      while trying to match the argument list '(std::unique_ptr)'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(215,25): error C2039: 'applyRules': is not a member of 'std::unique_ptr' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\client\cms_client.vcxproj]
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3332,7):
+      see declaration of 'std::unique_ptr'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(216,9): error C2678: binary '->': no operator found which takes a left-hand operand of type 'std::unique_ptr' (or there is no acceptable conversion) [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\client\cms_client.vcxproj]
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3425,37):
+      could be '_Get_deleter_pointer_type<_Ty,remove_reference<_Ty1>::type,void>::type std::unique_ptr<_Ty,_Dx>::operator ->(void) noexcept const'
+          C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(216,9):
+          '_Get_deleter_pointer_type<_Ty,remove_reference<_Ty1>::type,void>::type std::unique_ptr<_Ty,_Dx>::operator ->(void) noexcept const': cannot convert 'this' pointer from 'std::unique_ptr' to 'const std::unique_ptr<_Ty,_Dx> &'
+              C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(216,9):
+              Reason: cannot convert from 'std::unique_ptr' to 'const std::unique_ptr<_Ty,_Dx>'
+              C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(216,9):
+              Conversion requires a second user-defined-conversion operator or constructor
+      C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(216,9):
+      while trying to match the argument list '(std::unique_ptr)'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(216,25): error C2039: 'saveRules': is not a member of 'std::unique_ptr' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\client\cms_client.vcxproj]
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\memory(3332,7):
+      see declaration of 'std::unique_ptr'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(320,53): error C2039: 'monitorLoop': is not a member of 'cms::client::ClientService' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\client\cms_client.vcxproj]
+      C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\ClientService.h(48,7):
+      see declaration of 'cms::client::ClientService'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(692,21): error C2039: 'monitorLoop': is not a member of 'cms::client::ClientService' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\client\cms_client.vcxproj]
+      C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\ClientService.h(48,7):
+      see declaration of 'cms::client::ClientService'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(694,10): error C2065: 'running_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\client\cms_client.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(696,11): error C2065: 'platform_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\client\cms_client.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(697,38): error C2065: 'platform_': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\client\cms_client.vcxproj]

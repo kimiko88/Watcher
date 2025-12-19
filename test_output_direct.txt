@@ -1,0 +1,24 @@
+Running main() from C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\src\gtest_main.cc
+Note: Google Test filter = EndToEndTest.*
+[==========] Running 5 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 5 tests from EndToEndTest
+[ RUN      ] EndToEndTest.ClientStartupConnectToMaster
+[ERROR] Failed to open hosts file for writing (admin required)
+[INFO] ClientService initialized with machine ID: TEST_CLIENT_01
+MockMaster listening on 5555
+[INFO] Starting ClientService...
+[INFO] ClientService started
+[INFO] Processing loop started
+[INFO] Attempting to connect to master at 127.0.0.1:5555
+[INFO] Connected to master
+MockMaster: Client connected
+[INFO] Sending HELLO handshake
+MockMaster: Received HELLO
+[INFO] Read loop started
+MockMaster: Received PING
+[ERROR] Socket receive failed or closed
+[INFO] Read loop stopped
+[INFO] Stopping ClientService...
+[INFO] Processing loop stopped
+[INFO] ClientService stopped

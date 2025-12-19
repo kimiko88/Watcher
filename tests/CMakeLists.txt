@@ -12,6 +12,7 @@ set(TEST_SOURCES
     unit/test_input_lock.cpp
     unit/test_network_filter.cpp
     unit/test_remote_control.cpp
+    unit/test_network.cpp
     unit/ActivityMonitorTest.cpp
     unit/MasterActivityAggregatorTest.cpp
     unit/ApplicationManagerTest.cpp

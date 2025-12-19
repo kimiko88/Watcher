@@ -1,0 +1,96 @@
+Running main() from C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\src\gtest_main.cc
+[==========] Running 20 tests from 5 test suites.
+[----------] Global test environment set-up.
+[----------] 6 tests from BuildIntegrationTest
+[ RUN      ] BuildIntegrationTest.AllHeadersCompileTogether
+[       OK ] BuildIntegrationTest.AllHeadersCompileTogether (0 ms)
+[ RUN      ] BuildIntegrationTest.CommonAndLoggerIntegration
+[INFO] Platform: Windows
+[INFO] Version: 1.0.0
+[       OK ] BuildIntegrationTest.CommonAndLoggerIntegration (0 ms)
+[ RUN      ] BuildIntegrationTest.ConfigAndCommonIntegration
+[       OK ] BuildIntegrationTest.ConfigAndCommonIntegration (0 ms)
+[ RUN      ] BuildIntegrationTest.ConfigOperations
+[       OK ] BuildIntegrationTest.ConfigOperations (0 ms)
+[ RUN      ] BuildIntegrationTest.RealisticScenario
+[INFO] Application configuration:
+[INFO]   Name: CMS Test
+[INFO]   Version: 1.0.0
+[INFO]   Platform: Windows
+[       OK ] BuildIntegrationTest.RealisticScenario (0 ms)
+[ RUN      ] BuildIntegrationTest.PlatformSpecificCode
+[INFO] Running on Windows
+[       OK ] BuildIntegrationTest.PlatformSpecificCode (0 ms)
+[----------] 6 tests from BuildIntegrationTest (0 ms total)
+
+[----------] 5 tests from InstallationTest
+[ RUN      ] InstallationTest.DirectoriesExist
+[       OK ] InstallationTest.DirectoriesExist (0 ms)
+[ RUN      ] InstallationTest.WindowsScriptExists
+[       OK ] InstallationTest.WindowsScriptExists (0 ms)
+[ RUN      ] InstallationTest.LinuxScriptExists
+[       OK ] InstallationTest.LinuxScriptExists (0 ms)
+[ RUN      ] InstallationTest.MacOsScriptExists
+[       OK ] InstallationTest.MacOsScriptExists (0 ms)
+[ RUN      ] InstallationTest.WindowsScriptSyntaxCheck
+[       OK ] InstallationTest.WindowsScriptSyntaxCheck (408 ms)
+[----------] 5 tests from InstallationTest (409 ms total)
+
+[----------] 5 tests from EndToEndTest
+[ RUN      ] EndToEndTest.ClientStartupConnectToMaster
+unknown file: error: C++ exception with description "JSON type error: [json.exception.type_error.302] type must be boolean, but is null" thrown in the test body.
+
+MockMaster listening on 5555
+[  FAILED  ] EndToEndTest.ClientStartupConnectToMaster (18 ms)
+[ RUN      ] EndToEndTest.TakeScreenshotAndVerify
+unknown file: error: C++ exception with description "JSON type error: [json.exception.type_error.302] type must be boolean, but is null" thrown in the test body.
+
+MockMaster listening on 5555
+[  FAILED  ] EndToEndTest.TakeScreenshotAndVerify (11 ms)
+[ RUN      ] EndToEndTest.LockUnlockScreen
+unknown file: error: C++ exception with description "JSON type error: [json.exception.type_error.302] type must be boolean, but is null" thrown in the test body.
+
+MockMaster listening on 5555
+[  FAILED  ] EndToEndTest.LockUnlockScreen (11 ms)
+[ RUN      ] EndToEndTest.BlockDomainOnClient
+unknown file: error: C++ exception with description "JSON type error: [json.exception.type_error.302] type must be boolean, but is null" thrown in the test body.
+
+MockMaster listening on 5555
+[  FAILED  ] EndToEndTest.BlockDomainOnClient (7 ms)
+[ RUN      ] EndToEndTest.SafeShutdown
+[       OK ] EndToEndTest.SafeShutdown (1 ms)
+[----------] 5 tests from EndToEndTest (50 ms total)
+
+[----------] 3 tests from PerformanceTest
+[ RUN      ] PerformanceTest.MasterBroadcastsScreen
+unknown file: error: C++ exception with description "Failed to open config file: test_config.json" thrown in the test body.
+
+MockMaster listening on 5555
+[  FAILED  ] PerformanceTest.MasterBroadcastsScreen (8 ms)
+[ RUN      ] PerformanceTest.MultipleClientsMultipleCommands
+MockMaster listening on 5555
+[       OK ] PerformanceTest.MultipleClientsMultipleCommands (3 ms)
+[ RUN      ] PerformanceTest.SustainedLoad30Clients
+[       OK ] PerformanceTest.SustainedLoad30Clients (0 ms)
+[----------] 3 tests from PerformanceTest (12 ms total)
+
+[----------] 1 test from ResillienceTest
+[ RUN      ] ResillienceTest.ClientReconnectsAfterNetworkLoss
+unknown file: error: C++ exception with description "Failed to open config file: config.json" thrown in the test body.
+
+MockMaster listening on 5555
+[  FAILED  ] ResillienceTest.ClientReconnectsAfterNetworkLoss (3 ms)
+[----------] 1 test from ResillienceTest (3 ms total)
+
+[----------] Global test environment tear-down
+[==========] 20 tests from 5 test suites ran. (478 ms total)
+[  PASSED  ] 14 tests.
+[  FAILED  ] 6 tests, listed below:
+[  FAILED  ] EndToEndTest.ClientStartupConnectToMaster
+[  FAILED  ] EndToEndTest.TakeScreenshotAndVerify
+[  FAILED  ] EndToEndTest.LockUnlockScreen
+[  FAILED  ] EndToEndTest.BlockDomainOnClient
+[  FAILED  ] PerformanceTest.MasterBroadcastsScreen
+[  FAILED  ] ResillienceTest.ClientReconnectsAfterNetworkLoss
+
+ 6 FAILED TESTS

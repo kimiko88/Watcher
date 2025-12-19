@@ -3,6 +3,8 @@
 
 #include "Common.h"
 #include "Protocol.h"
+#include "cms/ApplicationManager.h"
+#include "cms/NetworkFilterManager.h"
 #include "cms/Platform.h"
 #include "cms/Socket.h"
 #include <atomic>
@@ -12,7 +14,6 @@
 #include <queue>
 #include <string>
 #include <thread>
-
 
 namespace cms {
 namespace client {
@@ -80,6 +81,9 @@ private:
   // Main processing loop (runs in separate thread)
   void processingLoop();
 
+  // Monitor loop for application blocking
+  void monitorLoop();
+
   // Connect to master server
   bool connectToMaster();
 
@@ -105,16 +109,26 @@ private:
   std::atomic<int64_t> last_heartbeat_{0};
   std::atomic<uint64_t> start_time_{0};
 
-  // Platform abstraction for system operations
-  // Platform abstraction for system operations
   cms::platform::Platform *platform_ = nullptr;
+
+  // Network Filter Manager
+  std::unique_ptr<cms::network::NetworkFilterManager> networkFilter_;
+
+  // Application Manager
+  std::unique_ptr<cms::ApplicationManager> appManager_;
 
   // Send screenshot to master
   void sendScreenshot();
 
+  // Read loop for incoming commands
+  void readLoop();
+
   std::unique_ptr<std::thread> processing_thread_;
+  std::unique_ptr<std::thread> read_thread_;
+  std::unique_ptr<std::thread> monitor_thread_;
   mutable std::mutex mutex_;
   std::condition_variable cv_;
+  std::mutex cv_mutex_;
 
   std::queue<protocol::Message> command_queue_;
   mutable std::mutex queue_mutex_;
@@ -125,7 +139,8 @@ private:
   // Constants
   static constexpr int DEFAULT_HEARTBEAT_INTERVAL = 30; // seconds
   static constexpr int MAX_RECONNECT_ATTEMPTS = 10;
-  static constexpr int RECONNECT_DELAY = 5; // seconds
+  static constexpr int RECONNECT_DELAY = 5;        // seconds
+  static constexpr int MONITOR_INTERVAL_MS = 2000; // 2 seconds
 };
 
 } // namespace client

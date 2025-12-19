@@ -1,0 +1,85 @@
+Versione di MSBuild 17.13.15+18b3035f6 per .NET Framework
+
+  cms_core.vcxproj -> C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\core\Debug\cms_core.lib
+  WindowsPlatform.cpp
+C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\Platform.h(194,52): warning C4100: 'path': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+  (compiling source file '../../../src/platform/WindowsPlatform.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(28,33): warning C4996: 'getenv': This function or variable may be unsafe. Consider using _dupenv_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+  cms_platform.vcxproj -> C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\Debug\cms_platform.lib
+  ClientService.cpp
+C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\Platform.h(194,52): warning C4100: 'path': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\client\cms_client.vcxproj]
+  (compiling source file '../../../src/client/ClientService.cpp')
+  
+  cms_client.vcxproj -> C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\client\Debug\cms_client.exe
+  gtest.vcxproj -> C:\Users\chimi\Desktop\Programmazione\Watcher\build\lib\Debug\gtest.lib
+  gtest_main.vcxproj -> C:\Users\chimi\Desktop\Programmazione\Watcher\build\lib\Debug\gtest_main.lib
+  ClientService.cpp
+C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\Platform.h(194,52): warning C4100: 'path': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../src/client/ClientService.cpp')
+  
+  EndToEndTest.cpp
+C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\Platform.h(194,52): warning C4100: 'path': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(82,41): warning C4100: 'clientId': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\EndToEndTest.cpp(38,18): error C2039: 'setup': is not a member of 'TestOrchestrator' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+      C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(179,7):
+      see declaration of 'TestOrchestrator'
+  
+  PerformanceTest.cpp
+C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\Platform.h(194,52): warning C4100: 'path': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(82,41): warning C4100: 'clientId': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+  ResillienceTest.cpp
+C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\Platform.h(194,52): warning C4100: 'path': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\TestOrchestrator.h(82,41): warning C4100: 'clientId': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+  Generating Code...
+  Automatic MOC and UIC for target cms_master
+  cms_master.vcxproj -> C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\Debug\cms_master.exe
+  Automatic MOC for target cms_unit_tests
+  ClientService.cpp
+C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\Platform.h(194,52): warning C4100: 'path': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_unit_tests.vcxproj]
+  (compiling source file '../../src/client/ClientService.cpp')
+  
+  test_client_service.cpp
+C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\Platform.h(194,52): warning C4100: 'path': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_unit_tests.vcxproj]
+  (compiling source file '../../tests/unit/test_client_service.cpp')
+  
+  test_input_lock.cpp
+C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\Platform.h(194,52): warning C4100: 'path': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_unit_tests.vcxproj]
+  (compiling source file '../../tests/unit/test_input_lock.cpp')
+  
+  test_network_filter.cpp
+C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\Platform.h(194,52): warning C4100: 'path': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_unit_tests.vcxproj]
+  (compiling source file '../../tests/unit/test_network_filter.cpp')
+  
+  test_platform.cpp
+C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\Platform.h(194,52): warning C4100: 'path': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_unit_tests.vcxproj]
+  (compiling source file '../../tests/unit/test_platform.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\unit\test_platform.cpp(291,10): warning C4189: 'result1': local variable is initialized but not referenced [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_unit_tests.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\unit\test_platform.cpp(294,10): warning C4189: 'result2': local variable is initialized but not referenced [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_unit_tests.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\unit\test_platform.cpp(307,10): warning C4189: 'result': local variable is initialized but not referenced [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_unit_tests.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\unit\test_platform.cpp(320,10): warning C4189: 'result': local variable is initialized but not referenced [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_unit_tests.vcxproj]
+  test_remote_control.cpp
+C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\Platform.h(194,52): warning C4100: 'path': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_unit_tests.vcxproj]
+  (compiling source file '../../tests/unit/test_remote_control.cpp')
+  
+  test_screen_capture.cpp
+C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\Platform.h(194,52): warning C4100: 'path': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_unit_tests.vcxproj]
+  (compiling source file '../../tests/unit/test_screen_capture.cpp')
+  
+  Generating Code...
+  cms_unit_tests.vcxproj -> C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\Debug\cms_unit_tests.exe
+  gmock.vcxproj -> C:\Users\chimi\Desktop\Programmazione\Watcher\build\lib\Debug\gmock.lib
+  gmock_main.vcxproj -> C:\Users\chimi\Desktop\Programmazione\Watcher\build\lib\Debug\gmock_main.lib

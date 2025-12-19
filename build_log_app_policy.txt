@@ -1,0 +1,77 @@
+Versione di MSBuild 17.13.15+18b3035f6 per .NET Framework
+
+  NetworkFilterManager.cpp
+C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\Platform.h(196,52): warning C4100: 'path': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\core\cms_core.vcxproj]
+  (compiling source file '../../../src/core/NetworkFilterManager.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\algorithm(3769,24): warning C4244: '=': conversion from 'int' to 'char', possible loss of data [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\core\cms_core.vcxproj]
+  (compiling source file '../../../src/core/NetworkFilterManager.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\algorithm(3769,24):
+      the template instantiation context (the oldest one first) is
+          C:\Users\chimi\Desktop\Programmazione\Watcher\src\core\NetworkFilterManager.cpp(315,8):
+          see reference to function template instantiation '_OutIt std::transform<std::_String_iterator<std::_String_val<std::_Simple_types<_Elem>>>,std::_String_iterator<std::_String_val<std::_Simple_types<_Elem>>>,int(__cdecl *)(int)>(const _InIt,const _InIt,_OutIt,_Fn)' being compiled
+          with
+          [
+              _OutIt=std::_String_iterator<std::_String_val<std::_Simple_types<char>>>,
+              _Elem=char,
+              _InIt=std::_String_iterator<std::_String_val<std::_Simple_types<char>>>,
+              _Fn=int (__cdecl *)(int)
+          ]
+  
+  Protocol.cpp
+  RemoteControl.cpp
+C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\Platform.h(196,52): warning C4100: 'path': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\core\cms_core.vcxproj]
+  (compiling source file '../../../src/core/RemoteControl.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\core\RemoteControl.cpp(79,60): warning C4100: 'event': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\core\cms_core.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\core\RemoteControl.cpp(87,66): warning C4100: 'event': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\core\cms_core.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\core\RemoteControl.cpp(107,48): warning C4100: 'bytes_received': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\core\cms_core.vcxproj]
+  Generating Code...
+  cms_core.vcxproj -> C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\core\Debug\cms_core.lib
+  InputLockManager.cpp
+C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\Platform.h(196,52): warning C4100: 'path': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+  (compiling source file '../../../src/platform/InputLockManager.cpp')
+  
+  ScreenCaptureService.cpp
+C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\Platform.h(196,52): warning C4100: 'path': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+  (compiling source file '../../../src/platform/ScreenCaptureService.cpp')
+  
+  WindowsPlatform.cpp
+C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\Platform.h(196,52): warning C4100: 'path': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+  (compiling source file '../../../src/platform/WindowsPlatform.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(28,33): warning C4996: 'getenv': This function or variable may be unsafe. Consider using _dupenv_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(89,9): error C3861: 'EnumProcesses': identifier not found [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+  Generating Code...
+  gtest.vcxproj -> C:\Users\chimi\Desktop\Programmazione\Watcher\build\lib\Debug\gtest.lib
+  gtest_main.vcxproj -> C:\Users\chimi\Desktop\Programmazione\Watcher\build\lib\Debug\gtest_main.lib
+  Automatic MOC and UIC for target cms_master
+  MasterServer.cpp
+C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(85,54): warning C4100: 'client': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
+  (compiling source file '../../../src/master/MasterServer.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(86,58): warning C4100: 'client_id': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
+  (compiling source file '../../../src/master/MasterServer.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(88,51): warning C4100: 'new_state': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
+  (compiling source file '../../../src/master/MasterServer.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(87,58): warning C4100: 'client_id': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
+  (compiling source file '../../../src/master/MasterServer.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(90,71): warning C4100: 'data': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
+  (compiling source file '../../../src/master/MasterServer.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(89,62): warning C4100: 'client_id': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
+  (compiling source file '../../../src/master/MasterServer.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(92,67): warning C4100: 'data': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
+  (compiling source file '../../../src/master/MasterServer.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(91,58): warning C4100: 'client_id': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
+  (compiling source file '../../../src/master/MasterServer.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\master\MasterServer.cpp(98,44): warning C4100: 'message': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
+  cms_master.vcxproj -> C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\Debug\cms_master.exe
+  gmock.vcxproj -> C:\Users\chimi\Desktop\Programmazione\Watcher\build\lib\Debug\gmock.lib
+  gmock_main.vcxproj -> C:\Users\chimi\Desktop\Programmazione\Watcher\build\lib\Debug\gmock_main.lib

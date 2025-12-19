@@ -101,6 +101,37 @@ void MasterWindow::refreshGrid() {
     connect(widget, &ClientThumbnailWidget::clicked, this,
             &MasterWindow::onClientThumbnailClicked);
 
+    connect(widget, &ClientThumbnailWidget::lockRequested,
+            [this](const std::string &id) {
+              server_->lockClient(id);
+              statusBar()->showMessage("Locked client: " +
+                                       QString::fromStdString(id));
+            });
+
+    connect(widget, &ClientThumbnailWidget::unlockRequested,
+            [this](const std::string &id) {
+              server_->unlockClient(id);
+              statusBar()->showMessage("Unlocked client: " +
+                                       QString::fromStdString(id));
+            });
+
+    connect(widget, &ClientThumbnailWidget::screenshotRequested,
+            [this](const std::string &id) {
+              server_->refreshClientThumbnail(id);
+              statusBar()->showMessage("Requested screenshot from: " +
+                                       QString::fromStdString(id));
+            });
+
+    // Disconnect is not yet in MasterServer interface, so we'll just log for
+    // now or skip
+    connect(widget, &ClientThumbnailWidget::disconnectRequested,
+            [this](const std::string &id) {
+              // server_->disconnectClient(id); // TODO: Implement in
+              // MasterServer
+              statusBar()->showMessage("Disconnect requested for: " +
+                                       QString::fromStdString(id));
+            });
+
     int row = i / columns;
     int col = i % columns;
     grid->addWidget(widget, row, col);
@@ -219,22 +250,25 @@ void MasterWindow::onTakeScreenshot() {
     return;
   }
 
-  // Request from first client for now (MVP)
-  // TODO: Get selected client from grid
-  auto client = model_->getClient(0);
-  server_->refreshClientThumbnail(client.id);
+  if (selected_client_id_.empty()) {
+    QMessageBox::warning(this, "No Selection", "Please select a client first.");
+    return;
+  }
+
+  server_->refreshClientThumbnail(selected_client_id_);
   statusBar()->showMessage("Requested screenshot from " +
-                           QString::fromStdString(client.hostname));
+                           QString::fromStdString(selected_client_id_));
 }
 
 void MasterWindow::onDomainPolicyClicked() {
-  // TODO: Get actual policy from server
-  cms::DomainPolicy policy;
+  // Use current policy
+  cms::DomainPolicy policy = current_policy_;
 
   DomainPolicyDialog dialog(policy, this);
   if (dialog.exec() == QDialog::Accepted) {
     // Save policy to server and broadcast
-    cms::DomainPolicy newPolicy = dialog.getPolicy();
+    current_policy_ = dialog.getPolicy();
+    cms::DomainPolicy newPolicy = current_policy_;
 
     // Broadcast to all clients
     auto clients = server_->getConnectedClients();
@@ -282,6 +316,13 @@ void MasterWindow::onScreenshotReceived(const std::string &client_id,
 }
 
 void MasterWindow::onClientThumbnailClicked(const std::string &client_id) {
+  selected_client_id_ = client_id;
+  statusBar()->showMessage("Selected client: " +
+                           QString::fromStdString(client_id));
+
+  // Optional: Open remote view on double click or separate action
+  // For now, we just select.
+  /*
   if (remote_views_.find(client_id) != remote_views_.end()) {
     remote_views_[client_id]->raise();
     remote_views_[client_id]->activateWindow();
@@ -296,6 +337,7 @@ void MasterWindow::onClientThumbnailClicked(const std::string &client_id) {
 
   remote_views_[client_id] = window;
   window->show();
+  */
 }
 
 } // namespace ui

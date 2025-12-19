@@ -58,6 +58,8 @@ private slots:
 
 private:
   std::map<std::string, class RemoteViewWindow *> remote_views_;
+  std::string selected_client_id_;
+  cms::DomainPolicy current_policy_;
 };
 
 } // namespace ui

@@ -1,5 +1,6 @@
 #include "cms/ClientService.h"
 #include "cms/Logger.h"
+#include "cms/NetworkFilterManager.h"
 #include "cms/Platform.h"
 #include <chrono>
 #include <fstream>
@@ -70,6 +71,20 @@ ClientService::ClientService(const std::string &config_path) {
   // Initialize Socket subsystem
   cms::Socket::Initialize();
 
+  // Initialize Network Filter Manager
+  // We use a default config file for persistence
+  networkFilter_ = std::make_unique<cms::network::NetworkFilterManager>(
+      platform_, "domain_rules.json");
+  // Load any existing rules
+  networkFilter_->loadRules();
+  // Apply them
+  networkFilter_->applyRules();
+
+  // Initialize Application Manager
+  appManager_ = std::make_unique<cms::ApplicationManager>();
+  // Load rules if persistence implemented (TODO: Add persistence file path)
+  // appManager_->importRules("app_rules.csv");
+
   LOG_INFO("ClientService initialized with machine ID: " + config_.machine_id);
 }
 
@@ -104,11 +119,107 @@ void ClientService::processCommands() {
       // Handle power control
       break;
     case protocol::CommandType::DOMAIN_BLOCK:
-      // Handle domain blocking
+      if (platform_) {
+        try {
+          if (cmd.payload.contains("domains") &&
+              cmd.payload["domains"].is_array()) {
+            std::vector<std::string> domains =
+                cmd.payload["domains"].get<std::vector<std::string>>();
+            if (platform_->blockDomains(domains)) {
+              LOG_INFO("Blocked domains successfully");
+            } else {
+              LOG_ERROR("Failed to block domains");
+            }
+          }
+        } catch (const std::exception &e) {
+          LOG_ERROR("Error processing DOMAIN_BLOCK: " + std::string(e.what()));
+        }
+      }
+      break;
+    case protocol::CommandType::DOMAIN_ALLOW:
+      if (platform_) {
+        try {
+          if (cmd.payload.contains("domains") &&
+              cmd.payload["domains"].is_array()) {
+            std::vector<std::string> domains =
+                cmd.payload["domains"].get<std::vector<std::string>>();
+            if (platform_->allowDomains(domains)) {
+              LOG_INFO("Allowed domains successfully");
+            } else {
+              LOG_ERROR("Failed to allow domains");
+            }
+          }
+        } catch (const std::exception &e) {
+          LOG_ERROR("Error processing DOMAIN_ALLOW: " + std::string(e.what()));
+        }
+      }
+      break;
+    case protocol::CommandType::APP_BLOCK:
+      if (appManager_) {
+        try {
+          std::string app_path = cmd.payload.value("app_path", "");
+          std::string app_name = cmd.payload.value("app_name", "");
+          if (!app_path.empty()) {
+            appManager_->addToBlacklist(app_path, app_name);
+            LOG_INFO("Blocked application: " + app_path);
+          }
+        } catch (const std::exception &e) {
+          LOG_ERROR("Error processing APP_BLOCK: " + std::string(e.what()));
+        }
+      }
+      break;
+    case protocol::CommandType::APP_ALLOW:
+      if (appManager_) {
+        try {
+          std::string app_path = cmd.payload.value("app_path", "");
+          if (!app_path.empty()) {
+            appManager_->removeFromBlacklist(app_path);
+            LOG_INFO("Allowed application: " + app_path);
+          }
+        } catch (const std::exception &e) {
+          LOG_ERROR("Error processing APP_ALLOW: " + std::string(e.what()));
+        }
+      }
+      break;
+    case protocol::CommandType::APP_POLICY_SYNC:
+      // TODO: Full sync
       break;
     case protocol::CommandType::DOMAIN_POLICY_UPDATE:
       LOG_INFO("Received Domain Policy Update");
-      // TODO: Apply policy using DomainFilterService
+      try {
+        auto payload = cmd.payload;
+
+        // Expected payload: { "mode": "blacklist"|"whitelist", "domains":
+        // ["example.com", ...] }
+
+        // 1. Set Mode
+        std::string modeStr = payload.value("mode", "blacklist");
+        cms::network::FilterMode mode =
+            (modeStr == "whitelist") ? cms::network::FilterMode::MODE_WHITELIST
+                                     : cms::network::FilterMode::MODE_BLACKLIST;
+
+        networkFilter_->setFilterMode(mode);
+
+        // 2. Add Domains
+        if (payload.contains("domains") && payload["domains"].is_array()) {
+          for (const auto &domain : payload["domains"]) {
+            if (mode == cms::network::FilterMode::MODE_BLACKLIST) {
+              networkFilter_->addBlockedDomain(domain);
+            } else {
+              networkFilter_->addAllowedDomain(domain);
+            }
+          }
+        }
+
+        // 3. Apply and Save
+        networkFilter_->applyRules();
+        networkFilter_->saveRules();
+
+        LOG_INFO("Domain policy applied successfully");
+
+      } catch (const std::exception &e) {
+        LOG_ERROR("Failed to apply domain policy: " + std::string(e.what()));
+      }
       break;
     default:
       LOG_WARNING("Unknown command type");
@@ -147,7 +258,6 @@ void ClientService::sendScreenshot() {
     auto msg = protocol::Message::Create(protocol::CommandType::SCREENSHOT_DATA,
                                          config_.machine_id, "master", payload);
 
-    // Serialize and send (TODO: Socket send)
     // Serialize and send
     protocol::MessageSerializer serializer;
     std::string json = serializer.Serialize(msg);
@@ -205,6 +315,10 @@ bool ClientService::start() {
   processing_thread_ =
       std::make_unique<std::thread>(&ClientService::processingLoop, this);
 
+  // Start monitor thread
+  monitor_thread_ =
+      std::make_unique<std::thread>(&ClientService::monitorLoop, this);
+
   LOG_INFO("ClientService started");
   return true;
 }
@@ -225,15 +339,21 @@ bool ClientService::stop() {
   // Notify processing thread
   cv_.notify_all();
 
-  // Wait for thread to finish
+  // Disconnect from master to interrupt blocking calls
+  disconnect();
+
+  // Wait for threads to finish
   if (processing_thread_ && processing_thread_->joinable()) {
     mutex_.unlock(); // Unlock to allow thread to finish
     processing_thread_->join();
     mutex_.lock();
   }
 
-  // Disconnect from master
-  disconnect();
+  if (monitor_thread_ && monitor_thread_->joinable()) {
+    mutex_.unlock();
+    monitor_thread_->join();
+    mutex_.lock();
+  }
 
   LOG_INFO("ClientService stopped");
   return true;
@@ -335,7 +455,11 @@ void ClientService::processingLoop() {
           }
 
           // Wait before next reconnect attempt
-          std::this_thread::sleep_for(std::chrono::seconds(RECONNECT_DELAY));
+          std::unique_lock<std::mutex> lock(cv_mutex_);
+          cv_.wait_for(lock, std::chrono::seconds(RECONNECT_DELAY),
+                       [this] { return !running_; });
+          if (!running_)
+            break;
           continue;
         }
       }
@@ -354,14 +478,18 @@ void ClientService::processingLoop() {
       processCommands();
 
       // Sleep briefly to avoid busy-waiting
-      std::this_thread::sleep_for(std::chrono::milliseconds(100));
+      std::unique_lock<std::mutex> lock(cv_mutex_);
+      cv_.wait_for(lock, std::chrono::milliseconds(100),
+                   [this] { return !running_; });
 
     } catch (const std::exception &e) {
       LOG_ERROR(std::string("Error in processing loop: ") + e.what());
 
       // Disconnect and try to reconnect
       disconnect();
-      std::this_thread::sleep_for(std::chrono::seconds(RECONNECT_DELAY));
+      std::unique_lock<std::mutex> lock(cv_mutex_);
+      cv_.wait_for(lock, std::chrono::seconds(RECONNECT_DELAY),
+                   [this] { return !running_; });
     }
   }
 
@@ -385,7 +513,12 @@ bool ClientService::connectToMaster() {
     LOG_INFO("Connected to master");
 
     // Perform handshake
-    return sendHello();
+    if (sendHello()) {
+      // Start read loop
+      read_thread_ =
+          std::make_unique<std::thread>(&ClientService::readLoop, this);
+      return true;
+    }
 
   } catch (const std::exception &e) {
     LOG_ERROR(std::string("Connection exception: ") + e.what());
@@ -406,10 +539,19 @@ void ClientService::disconnect() {
 
   if (socket_) {
     socket_->Close();
-    socket_.reset();
+    // Do not reset socket_ here to avoid race condition with processing thread
+    // socket_.reset();
   }
 
   connected_ = false;
+
+  if (read_thread_ && read_thread_->joinable()) {
+    if (std::this_thread::get_id() != read_thread_->get_id()) {
+      read_thread_->join();
+    } else {
+      read_thread_->detach();
+    }
+  }
 }
 
 bool ClientService::sendHello() {
@@ -472,8 +614,15 @@ void ClientService::sendHeartbeat() {
     protocol::MessageSerializer serializer;
     std::string json = serializer.Serialize(pingMsg);
 
-    // TODO: Send via socket
-    // send(socket_, json.c_str(), json.length(), 0);
+    // Send with delimiter
+    std::string packet = json + "\n";
+
+    if (socket_ && socket_->Send(packet)) {
+      // Success
+    } else {
+      LOG_ERROR("Failed to send heartbeat");
+      return;
+    }
 
     // Update last heartbeat timestamp
     auto now = std::chrono::system_clock::now();
@@ -492,9 +641,76 @@ void ClientService::handleReconnection() {
   disconnect();
 
   // Wait before reconnecting
-  std::this_thread::sleep_for(std::chrono::seconds(RECONNECT_DELAY));
+  std::unique_lock<std::mutex> lock(cv_mutex_);
+  cv_.wait_for(lock, std::chrono::seconds(RECONNECT_DELAY),
+               [this] { return !running_; });
 
   connectToMaster();
+}
+
+void ClientService::readLoop() {
+  LOG_INFO("Read loop started");
+  protocol::MessageSerializer serializer;
+  std::string buffer;
+  char tempBuffer[4096];
+
+  while (connected_ && running_) {
+    if (!socket_)
+      break;
+    int bytesRead = socket_->Receive(tempBuffer, sizeof(tempBuffer) - 1);
+    if (bytesRead > 0) {
+      tempBuffer[bytesRead] = '\0';
+      buffer += tempBuffer;
+
+      size_t pos;
+      while ((pos = buffer.find('\n')) != std::string::npos) {
+        std::string line = buffer.substr(0, pos);
+        buffer.erase(0, pos + 1);
+
+        try {
+          auto msg = serializer.Deserialize(line);
+          {
+            std::lock_guard<std::mutex> lock(queue_mutex_);
+            command_queue_.push(msg);
+          }
+          LOG_INFO("Received command: " +
+                   protocol::CommandTypeToString(msg.type));
+        } catch (const std::exception &e) {
+          LOG_ERROR("Failed to parse message: " + std::string(e.what()));
+        }
+      }
+    } else {
+      LOG_ERROR("Socket receive failed or closed");
+      connected_ = false;
+      cv_.notify_all(); // Wake up processing loop to reconnect
+      break;
+    }
+  }
+  LOG_INFO("Read loop stopped");
+}
+
+void ClientService::monitorLoop() {
+  LOG_INFO("Application monitor loop started");
+  while (running_) {
+    try {
+      if (platform_ && appManager_) {
+        std::vector<uint32_t> pids = platform_->getRunningPids();
+        for (uint32_t pid : pids) {
+          // Check if allowed (this internally resolves path)
+          if (!appManager_->isApplicationAllowed(pid)) {
+            LOG_INFO("Blocking forbidden application (PID: " +
+                     std::to_string(pid) + ")");
+            appManager_->blockRunningApplication(pid);
+          }
+        }
+      }
+    } catch (const std::exception &e) {
+      LOG_ERROR("Error in monitor loop: " + std::string(e.what()));
+    }
+
+    std::this_thread::sleep_for(std::chrono::milliseconds(MONITOR_INTERVAL_MS));
+  }
+  LOG_INFO("Application monitor loop stopped");
 }
 
 } // namespace client

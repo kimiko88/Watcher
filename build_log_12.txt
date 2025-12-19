@@ -1,0 +1,154 @@
+Versione di MSBuild 17.13.15+18b3035f6 per .NET Framework
+
+  cms_core.vcxproj -> C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\core\Debug\cms_core.lib
+  WindowsPlatform.cpp
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(4,13): error C2039: 'string': is not a member of 'std' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+      C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\predefined C++ types (compiler internal)(357,11):
+      see declaration of 'std'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(4,13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(4,20): error C2146: syntax error: missing ';' before identifier 'g_hosts_file_path' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(4,20): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(5,33): error C2039: 'getenv': is not a member of 'std' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+      C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\predefined C++ types (compiler internal)(357,11):
+      see declaration of 'std'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(5,33): error C3861: 'getenv': identifier not found [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(7,17): error C2039: 'string': is not a member of 'std' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+      C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\predefined C++ types (compiler internal)(357,11):
+      see declaration of 'std'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(7,17): error C2064: term does not evaluate to a function taking 1 arguments [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(9,15): error C2039: 'string': is not a member of 'std' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+      C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\predefined C++ types (compiler internal)(357,11):
+      see declaration of 'std'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(9,15): error C2064: term does not evaluate to a function taking 1 arguments [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(4,38): error C2440: 'initializing': cannot convert from 'void' to 'int' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+      C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(4,38):
+      Expressions of type void cannot be converted to other types
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(12,32): error C2504: 'Platform': base class undefined [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(18,14): error C3646: 'getSystemInfo': unknown override specifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(18,27): error C2059: syntax error: '(' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(18,39): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(45,11): error C3646: 'getRAMInfo': unknown override specifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(45,21): error C2059: syntax error: '(' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(45,33): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(59,14): error C3646: 'getScreenResolution': unknown override specifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(59,33): error C2059: syntax error: '(' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(59,45): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(74,15): error C3646: 'captureScreen': unknown override specifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(74,28): error C2059: syntax error: '(' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(74,40): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(112,15): error C3646: 'captureWindow': unknown override specifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(112,28): error C2059: syntax error: '(' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(112,59): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(155,8): error C2039: 'pair': is not a member of 'std' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+      C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\predefined C++ types (compiler internal)(357,11):
+      see declaration of 'std'
+      C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(155,8):
+      did you intend to include <utility>?
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(155,12): error C2143: syntax error: missing ';' before '<' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(155,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(155,54): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(159,8): error C2039: 'vector': is not a member of 'std' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+      C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\predefined C++ types (compiler internal)(357,11):
+      see declaration of 'std'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(159,14): error C2143: syntax error: missing ';' before '<' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(159,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(159,56): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(221,15): error C3646: 'getPowerStatus': unknown override specifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(221,29): error C2059: syntax error: '(' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(221,41): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(244,32): error C2039: 'vector': is not a member of 'std' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+      C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\predefined C++ types (compiler internal)(357,11):
+      see declaration of 'std'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(244,21): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(244,38): error C2143: syntax error: missing ',' before '<' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(296,32): error C2039: 'vector': is not a member of 'std' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+      C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\predefined C++ types (compiler internal)(357,11):
+      see declaration of 'std'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(296,21): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(296,38): error C2143: syntax error: missing ',' before '<' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(348,8): error C2039: 'vector': is not a member of 'std' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+      C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\predefined C++ types (compiler internal)(357,11):
+      see declaration of 'std'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(348,14): error C2143: syntax error: missing ';' before '<' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(348,8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(348,54): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(382,36): error C2039: 'string': is not a member of 'std' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+      C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\predefined C++ types (compiler internal)(357,11):
+      see declaration of 'std'
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(382,25): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(382,43): error C2143: syntax error: missing ',' before '&' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(67,9): error C3668: 'cms::platform::WindowsPlatform::getScreenScaleFactor': method with override specifier 'override' did not override any base class methods [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(163,8): error C3668: 'cms::platform::WindowsPlatform::lockKeyboard': method with override specifier 'override' did not override any base class methods [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(174,8): error C3668: 'cms::platform::WindowsPlatform::unlockKeyboard': method with override specifier 'override' did not override any base class methods [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(183,8): error C3668: 'cms::platform::WindowsPlatform::lockMouse': method with override specifier 'override' did not override any base class methods [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(194,8): error C3668: 'cms::platform::WindowsPlatform::unlockMouse': method with override specifier 'override' did not override any base class methods [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(203,8): error C3668: 'cms::platform::WindowsPlatform::isInputLocked': method with override specifier 'override' did not override any base class methods [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(205,8): error C3668: 'cms::platform::WindowsPlatform::powerOff': method with override specifier 'override' did not override any base class methods [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(211,8): error C3668: 'cms::platform::WindowsPlatform::reboot': method with override specifier 'override' did not override any base class methods [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(216,8): error C3668: 'cms::platform::WindowsPlatform::hibernate': method with override specifier 'override' did not override any base class methods [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(244,8): error C3668: 'cms::platform::WindowsPlatform::blockDomains': method with override specifier 'override' did not override any base class methods [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(296,8): error C3668: 'cms::platform::WindowsPlatform::allowDomains': method with override specifier 'override' did not override any base class methods [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(337,8): error C3668: 'cms::platform::WindowsPlatform::setAllowListMode': method with override specifier 'override' did not override any base class methods [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(343,8): error C3668: 'cms::platform::WindowsPlatform::setBlockListMode': method with override specifier 'override' did not override any base class methods [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(382,8): error C3668: 'cms::platform::WindowsPlatform::setHostsFilePath': method with override specifier 'override' did not override any base class methods [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(68,5): error C2065: 'HDC': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(68,9): error C2146: syntax error: missing ';' before identifier 'screen' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(68,9): error C2065: 'screen': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(68,24): error C2065: 'NULL': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(68,18): error C3861: 'GetDC': identifier not found [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(69,29): error C2065: 'screen': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(69,37): error C2065: 'LOGPIXELSX': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(69,15): error C3861: 'GetDeviceCaps': identifier not found [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(70,15): error C2065: 'NULL': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(70,21): error C2065: 'screen': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(70,5): error C3861: 'ReleaseDC': identifier not found [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(164,5): error C2065: 'BOOL': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(164,10): error C2146: syntax error: missing ';' before identifier 'result' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(164,10): error C2065: 'result': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(164,30): error C2065: 'TRUE': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(164,19): error C3861: 'BlockInput': identifier not found [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(165,9): error C2065: 'result': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(167,7): error C3861: 'LOG_INFO': identifier not found [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(169,7): error C3861: 'LOG_WARNING': identifier not found [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(171,12): error C2065: 'result': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(175,5): error C2065: 'BOOL': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(175,10): error C2146: syntax error: missing ';' before identifier 'result' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(175,10): error C2065: 'result': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(175,30): error C2065: 'FALSE': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(175,19): error C3861: 'BlockInput': identifier not found [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(176,9): error C2065: 'result': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(178,7): error C3861: 'LOG_INFO': identifier not found [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(180,12): error C2065: 'result': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(184,5): error C2065: 'BOOL': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(184,10): error C2146: syntax error: missing ';' before identifier 'result' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(184,10): error C2065: 'result': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(184,30): error C2065: 'TRUE': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(184,19): error C3861: 'BlockInput': identifier not found [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(185,9): error C2065: 'result': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(187,7): error C3861: 'LOG_INFO': identifier not found [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(189,7): error C3861: 'LOG_WARNING': identifier not found [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(191,12): error C2065: 'result': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(195,5): error C2065: 'BOOL': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(195,10): error C2146: syntax error: missing ';' before identifier 'result' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(195,10): error C2065: 'result': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(195,30): error C2065: 'FALSE': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(195,19): error C3861: 'BlockInput': identifier not found [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(196,9): error C2065: 'result': undeclared identifier [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\platform\WindowsPlatform.cpp(196,9): error C1003: error count exceeds 100; stopping compilation [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\cms_platform.vcxproj]
+  gtest.vcxproj -> C:\Users\chimi\Desktop\Programmazione\Watcher\build\lib\Debug\gtest.lib
+  gtest_main.vcxproj -> C:\Users\chimi\Desktop\Programmazione\Watcher\build\lib\Debug\gtest_main.lib
+  Automatic MOC and UIC for target cms_master
+  cms_master.vcxproj -> C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\Debug\cms_master.exe
+  gmock.vcxproj -> C:\Users\chimi\Desktop\Programmazione\Watcher\build\lib\Debug\gmock.lib
+  gmock_main.vcxproj -> C:\Users\chimi\Desktop\Programmazione\Watcher\build\lib\Debug\gmock_main.lib

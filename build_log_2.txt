@@ -1,162 +1,928 @@
 Versione di MSBuild 17.13.15+18b3035f6 per .NET Framework
 
   cms_core.vcxproj -> C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\core\Debug\cms_core.lib
-  Automatic MOC and UIC for target cms_master
-  Generating __/__/include/cms/ui/moc_MasterWindow.cpp
-  MasterWindow.cpp
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(85,54): warning C4100: 'client': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '../../../src/master/ui/MasterWindow.cpp')
+  cms_platform.vcxproj -> C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\Debug\cms_platform.lib
+  gtest.vcxproj -> C:\Users\chimi\Desktop\Programmazione\Watcher\build\lib\Debug\gtest.lib
+  gtest_main.vcxproj -> C:\Users\chimi\Desktop\Programmazione\Watcher\build\lib\Debug\gtest_main.lib
+  EndToEndTest.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\__msvc_filebuf.hpp(27,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(86,58): warning C4100: 'client_id': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '../../../src/master/ui/MasterWindow.cpp')
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\__msvc_filebuf.hpp(27,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(88,51): warning C4100: 'new_state': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '../../../src/master/ui/MasterWindow.cpp')
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\fstream(20,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(87,58): warning C4100: 'client_id': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '../../../src/master/ui/MasterWindow.cpp')
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\fstream(20,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(90,71): warning C4100: 'data': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '../../../src/master/ui/MasterWindow.cpp')
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\set(22,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(89,62): warning C4100: 'client_id': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '../../../src/master/ui/MasterWindow.cpp')
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\set(22,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(92,67): warning C4100: 'data': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '../../../src/master/ui/MasterWindow.cpp')
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\sstream(19,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(91,58): warning C4100: 'client_id': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '../../../src/master/ui/MasterWindow.cpp')
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\sstream(19,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\ui\RemoteViewWindow.h(42,63): warning C4458: declaration of 'data' hides class member [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '../../../src/master/ui/MasterWindow.cpp')
-      C:\Qt\6.10.1\msvc2022_64\include\QtWidgets\qwidget.h(784,18):
-      see declaration of 'QWidget::data'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\direct.h(19,1): error C2059: syntax error: 'string' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\src\master\ui\MasterWindow.cpp(263,69): warning C4458: declaration of 'data' hides class member [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-      C:\Qt\6.10.1\msvc2022_64\include\QtWidgets\qwidget.h(784,18):
-      see declaration of 'QWidget::data'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\direct.h(19,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-  RemoteViewWindow.cpp
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(85,54): warning C4100: 'client': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '../../../src/master/ui/RemoteViewWindow.cpp')
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\corecrt_io.h(18,1): error C2059: syntax error: 'string' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(86,58): warning C4100: 'client_id': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '../../../src/master/ui/RemoteViewWindow.cpp')
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\corecrt_io.h(18,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(88,51): warning C4100: 'new_state': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '../../../src/master/ui/RemoteViewWindow.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-port.h(908,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(87,58): warning C4100: 'client_id': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '../../../src/master/ui/RemoteViewWindow.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-port.h(908,19): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(90,71): warning C4100: 'data': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '../../../src/master/ui/RemoteViewWindow.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-port.h(2359,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(89,62): warning C4100: 'client_id': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '../../../src/master/ui/RemoteViewWindow.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-port.h(2359,19): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(92,67): warning C4100: 'data': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '../../../src/master/ui/RemoteViewWindow.cpp')
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xsmf_control.h(20,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(91,58): warning C4100: 'client_id': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '../../../src/master/ui/RemoteViewWindow.cpp')
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xsmf_control.h(20,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\ui\RemoteViewWindow.h(42,63): warning C4458: declaration of 'data' hides class member [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '../../../src/master/ui/RemoteViewWindow.cpp')
-      C:\Qt\6.10.1\msvc2022_64\include\QtWidgets\qwidget.h(784,18):
-      see declaration of 'QWidget::data'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\optional(30,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\src\master\ui\RemoteViewWindow.cpp(49,64): warning C4458: declaration of 'data' hides class member [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-      C:\Qt\6.10.1\msvc2022_64\include\QtWidgets\qwidget.h(784,18):
-      see declaration of 'QWidget::data'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\optional(30,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-  main.cpp
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(85,54): warning C4100: 'client': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '../../../src/master/main.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-port.h(2393,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  PerformanceTest.cpp
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(86,58): warning C4100: 'client_id': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '../../../src/master/main.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-port.h(2393,19): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(88,51): warning C4100: 'new_state': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '../../../src/master/main.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-port.h(2427,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(87,58): warning C4100: 'client_id': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '../../../src/master/main.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-port.h(2427,19): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(90,71): warning C4100: 'data': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '../../../src/master/main.cpp')
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\variant(31,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(89,62): warning C4100: 'client_id': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '../../../src/master/main.cpp')
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\variant(31,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(92,67): warning C4100: 'data': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '../../../src/master/main.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-port.h(2461,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(91,58): warning C4100: 'client_id': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '../../../src/master/main.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-port.h(2461,19): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-  moc_MasterWindow.cpp
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(85,54): warning C4100: 'client': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '__/__/include/cms/ui/moc_MasterWindow.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest-message.h(71,23): error C2653: 'testing': is not a class or namespace name [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(86,58): warning C4100: 'client_id': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '__/__/include/cms/ui/moc_MasterWindow.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest-message.h(71,48): error C2143: syntax error: missing ',' before '&' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(88,51): warning C4100: 'new_state': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '__/__/include/cms/ui/moc_MasterWindow.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest-message.h(73,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(87,58): warning C4100: 'client_id': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '__/__/include/cms/ui/moc_MasterWindow.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest-message.h(73,19): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(90,71): warning C4100: 'data': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '__/__/include/cms/ui/moc_MasterWindow.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest-assertion-result.h(52,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(89,62): warning C4100: 'client_id': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '__/__/include/cms/ui/moc_MasterWindow.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest-assertion-result.h(52,19): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(92,67): warning C4100: 'data': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '__/__/include/cms/ui/moc_MasterWindow.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-string.h(59,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(91,58): warning C4100: 'client_id': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '__/__/include/cms/ui/moc_MasterWindow.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-string.h(59,19): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-  moc_RemoteViewWindow.cpp
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(85,54): warning C4100: 'client': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '__/__/include/cms/ui/moc_RemoteViewWindow.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-filepath.h(55,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(86,58): warning C4100: 'client_id': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '__/__/include/cms/ui/moc_RemoteViewWindow.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-filepath.h(55,19): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(88,51): warning C4100: 'new_state': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '__/__/include/cms/ui/moc_RemoteViewWindow.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-type-util.h(54,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(87,58): warning C4100: 'client_id': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '__/__/include/cms/ui/moc_RemoteViewWindow.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-type-util.h(54,19): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(90,71): warning C4100: 'data': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '__/__/include/cms/ui/moc_RemoteViewWindow.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-internal.h(98,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(89,62): warning C4100: 'client_id': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '__/__/include/cms/ui/moc_RemoteViewWindow.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-internal.h(98,18): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(92,67): warning C4100: 'data': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '__/__/include/cms/ui/moc_RemoteViewWindow.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-internal.h(102,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\MasterServer.h(91,58): warning C4100: 'client_id': unreferenced formal parameter [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '__/__/include/cms/ui/moc_RemoteViewWindow.cpp')
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-internal.h(102,19): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
   
-C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\ui\RemoteViewWindow.h(42,63): warning C4458: declaration of 'data' hides class member [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\cms_master.vcxproj]
-  (compiling source file '__/__/include/cms/ui/moc_RemoteViewWindow.cpp')
-      C:\Qt\6.10.1\msvc2022_64\include\QtWidgets\qwidget.h(784,18):
-      see declaration of 'QWidget::data'
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-internal.h(1312,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-internal.h(1312,15): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-internal.h(1360,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-internal.h(1360,19): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest-printers.h(125,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest-printers.h(125,19): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest-matchers.h(65,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest-matchers.h(65,19): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-death-test-internal.h(50,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-death-test-internal.h(50,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-death-test-internal.h(52,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-death-test-internal.h(52,19): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest-death-test.h(50,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest-death-test.h(50,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest-death-test.h(52,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest-death-test.h(52,19): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\assert.h(17,1): error C2059: syntax error: 'string' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\assert.h(17,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest-test-part.h(48,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest-test-part.h(48,19): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-param-util.h(58,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-param-util.h(58,19): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest-param-test.h(184,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest-param-test.h(184,19): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest_pred_impl.h(43,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest_pred_impl.h(43,19): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(83,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(83,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(86,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(86,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(90,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(90,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(95,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(95,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(99,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(99,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(103,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(103,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(107,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(107,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(111,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(111,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(115,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(115,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(118,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(118,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(122,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(122,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(125,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(125,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(128,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(128,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(132,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(132,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(138,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(138,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(142,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(142,1): error C1003: error count exceeds 100; stopping compilation [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/EndToEndTest.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\__msvc_filebuf.hpp(27,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\__msvc_filebuf.hpp(27,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\fstream(20,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\fstream(20,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\set(22,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\set(22,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\sstream(19,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\sstream(19,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\direct.h(19,1): error C2059: syntax error: 'string' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\direct.h(19,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\corecrt_io.h(18,1): error C2059: syntax error: 'string' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\corecrt_io.h(18,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-port.h(908,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-port.h(908,19): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-port.h(2359,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-port.h(2359,19): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xsmf_control.h(20,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xsmf_control.h(20,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\optional(30,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\optional(30,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-port.h(2393,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-port.h(2393,19): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-port.h(2427,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-port.h(2427,19): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\variant(31,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\variant(31,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-port.h(2461,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-port.h(2461,19): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest-message.h(71,23): error C2653: 'testing': is not a class or namespace name [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest-message.h(71,48): error C2143: syntax error: missing ',' before '&' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest-message.h(73,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest-message.h(73,19): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest-assertion-result.h(52,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest-assertion-result.h(52,19): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-string.h(59,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-string.h(59,19): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-filepath.h(55,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-filepath.h(55,19): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-type-util.h(54,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-type-util.h(54,19): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-internal.h(98,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-internal.h(98,18): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-internal.h(102,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-internal.h(102,19): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-internal.h(1312,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-internal.h(1312,15): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-internal.h(1360,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-internal.h(1360,19): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest-printers.h(125,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest-printers.h(125,19): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest-matchers.h(65,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest-matchers.h(65,19): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-death-test-internal.h(50,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-death-test-internal.h(50,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-death-test-internal.h(52,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-death-test-internal.h(52,19): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest-death-test.h(50,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest-death-test.h(50,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest-death-test.h(52,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest-death-test.h(52,19): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\assert.h(17,1): error C2059: syntax error: 'string' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\assert.h(17,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest-test-part.h(48,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest-test-part.h(48,19): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-param-util.h(58,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-param-util.h(58,19): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest-param-test.h(184,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest-param-test.h(184,19): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest_pred_impl.h(43,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest_pred_impl.h(43,19): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(83,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(83,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(86,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(86,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(90,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(90,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(95,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(95,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(99,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(99,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(103,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(103,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(107,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(107,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(111,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(111,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(115,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(115,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(118,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(118,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(122,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(122,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(125,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(125,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(128,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(128,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(132,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(132,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(138,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(138,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(142,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(142,1): error C1003: error count exceeds 100; stopping compilation [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/PerformanceTest.cpp')
+  
+  ResillienceTest.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\__msvc_filebuf.hpp(27,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\__msvc_filebuf.hpp(27,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\fstream(20,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\fstream(20,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\set(22,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\set(22,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\sstream(19,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\sstream(19,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\direct.h(19,1): error C2059: syntax error: 'string' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\direct.h(19,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\corecrt_io.h(18,1): error C2059: syntax error: 'string' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\corecrt_io.h(18,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-port.h(908,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-port.h(908,19): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-port.h(2359,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-port.h(2359,19): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xsmf_control.h(20,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\xsmf_control.h(20,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\optional(30,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\optional(30,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-port.h(2393,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-port.h(2393,19): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-port.h(2427,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-port.h(2427,19): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\variant(31,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\variant(31,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-port.h(2461,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-port.h(2461,19): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest-message.h(71,23): error C2653: 'testing': is not a class or namespace name [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest-message.h(71,48): error C2143: syntax error: missing ',' before '&' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest-message.h(73,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest-message.h(73,19): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest-assertion-result.h(52,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest-assertion-result.h(52,19): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-string.h(59,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-string.h(59,19): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-filepath.h(55,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-filepath.h(55,19): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-type-util.h(54,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-type-util.h(54,19): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-internal.h(98,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-internal.h(98,18): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-internal.h(102,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-internal.h(102,19): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-internal.h(1312,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-internal.h(1312,15): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-internal.h(1360,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-internal.h(1360,19): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest-printers.h(125,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest-printers.h(125,19): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest-matchers.h(65,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest-matchers.h(65,19): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-death-test-internal.h(50,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-death-test-internal.h(50,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-death-test-internal.h(52,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-death-test-internal.h(52,19): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest-death-test.h(50,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest-death-test.h(50,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest-death-test.h(52,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest-death-test.h(52,19): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\assert.h(17,1): error C2059: syntax error: 'string' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\assert.h(17,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest-test-part.h(48,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest-test-part.h(48,19): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-param-util.h(58,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\internal\gtest-param-util.h(58,19): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest-param-test.h(184,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest-param-test.h(184,19): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest_pred_impl.h(43,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest_pred_impl.h(43,19): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(83,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(83,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(86,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(86,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(90,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(90,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(95,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(95,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(99,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(99,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(103,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(103,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(107,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(107,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(111,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(111,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(115,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(115,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(118,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(118,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(122,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(122,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(125,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(125,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(128,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(128,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(132,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(132,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(138,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(138,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(142,1): error C2059: syntax error: 'namespace' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\build\_deps\googletest-src\googletest\include\gtest\gtest.h(142,1): error C1003: error count exceeds 100; stopping compilation [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
+  (compiling source file '../../tests/integration/ResillienceTest.cpp')
   
   Generating Code...
-  cms_master.vcxproj -> C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\master\Debug\cms_master.exe
-Versione di MSBuild 17.13.15+18b3035f6 per .NET Framework
-
-  cms_core.vcxproj -> C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\core\Debug\cms_core.lib
-  cms_platform.vcxproj -> C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\Debug\cms_platform.lib
-  ClientService.cpp
-C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp(397,1): warning C4702: unreachable code [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\client\cms_client.vcxproj]
-  cms_client.vcxproj -> C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\client\Debug\cms_client.exe

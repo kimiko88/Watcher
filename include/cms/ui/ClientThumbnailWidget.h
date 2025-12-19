@@ -1,36 +1,42 @@
 #ifndef CMS_UI_CLIENT_THUMBNAIL_WIDGET_H
 #define CMS_UI_CLIENT_THUMBNAIL_WIDGET_H
 
-#include <QWidget>
+#include "cms/MasterServer.h"
 #include <QLabel>
 #include <QVBoxLayout>
-#include "cms/MasterServer.h"
+#include <QWidget>
+
 
 namespace cms {
 namespace ui {
 
 class ClientThumbnailWidget : public QWidget {
-    Q_OBJECT
+  Q_OBJECT
 
 public:
-    explicit ClientThumbnailWidget(QWidget* parent = nullptr);
-    
-    void setClientInfo(const master::ClientInfo& info);
-    std::string getClientId() const { return client_id_; }
+  explicit ClientThumbnailWidget(QWidget *parent = nullptr);
+
+  void setClientInfo(const master::ClientInfo &info);
+  std::string getClientId() const { return client_id_; }
 
 signals:
-    void clicked(const std::string& client_id);
+  void clicked(const std::string &client_id);
+  void lockRequested(const std::string &client_id);
+  void unlockRequested(const std::string &client_id);
+  void screenshotRequested(const std::string &client_id);
+  void disconnectRequested(const std::string &client_id);
 
 protected:
-    void mousePressEvent(QMouseEvent* event) override;
+  void mousePressEvent(QMouseEvent *event) override;
+  void contextMenuEvent(QContextMenuEvent *event) override;
 
 private:
-    std::string client_id_;
-    QLabel* image_label_;
-    QLabel* name_label_;
-    QLabel* status_label_;
-    
-    void updateStyle(master::ClientState state);
+  std::string client_id_;
+  QLabel *image_label_;
+  QLabel *name_label_;
+  QLabel *status_label_;
+
+  void updateStyle(master::ClientState state);
 };
 
 } // namespace ui

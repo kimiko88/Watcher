@@ -3,6 +3,7 @@
 #include <chrono>
 #include <filesystem>
 #include <fstream>
+#include <iostream>
 #include <mutex>
 #include <nlohmann/json.hpp>
 
@@ -11,12 +12,16 @@ namespace fs = std::filesystem;
 using json = nlohmann::json;
 
 // Helper to generate UUID (simple implementation)
+#include <atomic>
+
+// Helper to generate UUID (simple implementation)
 static std::string generateUUID() {
+  static std::atomic<int> counter{0};
   auto now = std::chrono::system_clock::now();
   auto timestamp = std::chrono::duration_cast<std::chrono::milliseconds>(
                        now.time_since_epoch())
                        .count();
-  return "rec_" + std::to_string(timestamp);
+  return "rec_" + std::to_string(timestamp) + "_" + std::to_string(counter++);
 }
 
 // Internal implementation
@@ -175,7 +180,13 @@ public:
       // Delete file
       fs::path file_path = fs::path(recordings_dir) / it->filename;
       if (fs::exists(file_path)) {
-        fs::remove(file_path);
+        std::error_code ec;
+        if (!fs::remove(file_path, ec)) {
+          // Log error if we had a logger here, or just print to stderr for test
+          // debugging
+          std::cerr << "Failed to delete file: " << file_path
+                    << " Error: " << ec.message() << std::endl;
+        }
       }
 
       // Remove from cache

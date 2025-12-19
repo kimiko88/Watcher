@@ -1,18 +1,16 @@
+#include "cms/Socket.h"
+
 // Network layer placeholder
 // This file will contain networking functionality in future iterations
 
 namespace cms {
 namespace network {
 
-// Placeholder for network initialization
-void InitializeNetwork() {
-    // TODO: Implement network initialization
-}
+// Network initialization
+void InitializeNetwork() { cms::Socket::Initialize(); }
 
-// Placeholder for network cleanup
-void ShutdownNetwork() {
-    // TODO: Implement network cleanup
-}
+// Network cleanup
+void ShutdownNetwork() { cms::Socket::Cleanup(); }
 
 } // namespace network
 } // namespace cms

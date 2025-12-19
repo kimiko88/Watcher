@@ -133,25 +133,25 @@ private slots:
   }
 
   void handleReadyRead(QTcpSocket *socket) {
-    // Buffered reading: simpler for now, assume JSON object per packet or line
-    // In prod, need ring buffer. For now, readAll and split by newline if we
-    // enforce it, or try parse.
     QByteArray data = socket->readAll();
-    // TODO: Handle fragmentation. Assuming small packets for control, large for
-    // screenshots. If it's a screenshot, it might be fragmented. Ideally we
-    // need a length-prefix protocol.
+    std::string &buffer = incomingBuffers_[socket];
+    buffer.append(data.toStdString());
 
-    // Attempt to parse as JSON string
-    std::string jsonStr = data.toStdString();
+    size_t pos;
+    while ((pos = buffer.find('\n')) != std::string::npos) {
+      std::string line = buffer.substr(0, pos);
+      buffer.erase(0, pos + 1);
 
-    try {
-      protocol::MessageSerializer serializer;
-      auto msg = serializer.Deserialize(jsonStr); // Might throw if incomplete
+      if (line.empty())
+        continue;
 
-      processMessage(socket, msg);
-    } catch (const std::exception &e) {
-      // In a real implementation we would buffer 'data' until valid JSON.
-      // LOG_ERROR("Failed to parse message: " + std::string(e.what()));
+      try {
+        protocol::MessageSerializer serializer;
+        auto msg = serializer.Deserialize(line);
+        processMessage(socket, msg);
+      } catch (const std::exception &e) {
+        LOG_ERROR("Failed to parse message: " + std::string(e.what()));
+      }
     }
   }
 
@@ -175,13 +175,34 @@ private slots:
     }
 
     socket->deleteLater();
+
+    // Clean up buffer
+    incomingBuffers_.erase(socket);
   }
 
   void checkClientHealth() {
     // Check for timeouts
     time_t now = time(nullptr);
-    std::lock_guard<std::mutex> lock(clientsMutex_);
-    // Logic to remove stale clients could go here
+    std::vector<std::string> staleClients;
+
+    {
+      std::lock_guard<std::mutex> lock(clientsMutex_);
+      for (const auto &pair : clients_) {
+        if (difftime(now, pair.second.last_heartbeat) >
+            60) { // 60 seconds timeout
+          staleClients.push_back(pair.first);
+        }
+      }
+    }
+
+    for (const auto &clientId : staleClients) {
+      std::lock_guard<std::mutex> lock(clientsMutex_);
+      auto it = clientSockets_.find(clientId);
+      if (it != clientSockets_.end()) {
+        LOG_WARNING("Client timed out: " + clientId);
+        it->second->disconnectFromHost();
+      }
+    }
   }
 
 private:
@@ -308,7 +329,11 @@ private:
   std::map<std::string, QTcpSocket *> clientSockets_;
 
   std::vector<IServerObserver *> observers_;
+
   std::mutex observers_mutex_;
+
+  // Buffers for incoming data
+  std::map<QTcpSocket *, std::string> incomingBuffers_;
 };
 
 std::unique_ptr<MasterServer> createMasterServer(const ServerConfig &config) {

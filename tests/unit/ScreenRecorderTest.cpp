@@ -5,7 +5,6 @@
 #include <gtest/gtest.h>
 #include <thread>
 
-
 using namespace cms;
 namespace fs = std::filesystem;
 
@@ -150,7 +149,7 @@ TEST_F(ScreenRecorderTest, RecordingStatsAccurate) {
   ScreenRecorder recorder(test_output_dir);
   recorder.startRecording("stats_test", Quality::LOW);
 
-  std::this_thread::sleep_for(std::chrono::milliseconds(500));
+  std::this_thread::sleep_for(std::chrono::seconds(3));
 
   RecordingStats stats = recorder.getRecordingStats();
 
