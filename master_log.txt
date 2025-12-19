@@ -38,3 +38,4 @@
 [INFO] Client disconnected: test-machine-123
 [INFO] Master Server listening on port 5555
 [INFO] Master Server listening on port 5555
+[INFO] Master Server listening on port 5555
