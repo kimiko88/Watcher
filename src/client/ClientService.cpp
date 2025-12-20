@@ -64,7 +64,7 @@ std::string base64_encode(unsigned char const *bytes_to_encode, size_t in_len) {
 } // namespace
 
 ClientService::ClientService(const std::string &config_path) {
-  loadConfig(config_path);
+  LOG_INFO("ClientService constructor starting...");
   LOG_INFO("Config path: " + config_path);
 
   try {
@@ -81,7 +81,6 @@ ClientService::ClientService(const std::string &config_path) {
   }
 
   // Initialize platform interface
-  platform_ = platform::getPlatformInstance().release();
   LOG_INFO("Initializing platform interface...");
   try {
     platform_ = platform::getPlatformInstance().release();
@@ -95,7 +94,6 @@ ClientService::ClientService(const std::string &config_path) {
   }
 
   // Initialize Socket subsystem
-  cms::Socket::Initialize();
   LOG_INFO("Initializing socket subsystem...");
   try {
     if (!cms::Socket::Initialize()) {
@@ -110,13 +108,6 @@ ClientService::ClientService(const std::string &config_path) {
   }
 
   // Initialize Network Filter Manager
-  // We use a default config file for persistence
-  networkFilter_ = std::make_unique<cms::network::NetworkFilterManager>(
-      platform_, "domain_rules.json");
-  // Load any existing rules
-  networkFilter_->loadRules();
-  // Apply them
-  networkFilter_->applyRules();
   LOG_INFO("Initializing Network Filter Manager...");
   try {
     std::string rulesFile = "domain_rules.json";
