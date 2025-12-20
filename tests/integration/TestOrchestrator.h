@@ -79,7 +79,7 @@ public:
   }
 
   // Mock Helpers
-  bool waitForClient(const std::string &clientId, int timeoutMs = 5000) {
+  bool waitForClient(const std::string &clientId, int timeoutMs = 5555) {
     auto start = std::chrono::steady_clock::now();
     while (std::chrono::steady_clock::now() - start <
            std::chrono::milliseconds(timeoutMs)) {
@@ -105,7 +105,7 @@ public:
     }
   }
 
-  bool waitForMessage(const std::string &type, int timeoutMs = 5000) {
+  bool waitForMessage(const std::string &type, int timeoutMs = 5555) {
     auto start = std::chrono::steady_clock::now();
     while (std::chrono::steady_clock::now() - start <
            std::chrono::milliseconds(timeoutMs)) {

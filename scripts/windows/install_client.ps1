@@ -55,7 +55,7 @@ try {
         # Create default config if missing
         @{
             master_address = "127.0.0.1"
-            master_port    = 5000
+            master_port    = 5555
             machine_id     = [Guid]::NewGuid().ToString()
             log_level      = "INFO"
         } | ConvertTo-Json | Set-Content $ConfigPath

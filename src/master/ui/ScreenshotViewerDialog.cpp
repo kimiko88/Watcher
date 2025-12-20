@@ -1,5 +1,6 @@
 #include "cms/ui/ScreenshotViewerDialog.h"
 #include <QDateTime>
+#include <QDir>
 #include <QFileDialog>
 #include <QHBoxLayout>
 #include <QLabel>
@@ -7,8 +8,8 @@
 #include <QPushButton>
 #include <QScrollArea>
 #include <QSlider>
+#include <QStandardPaths>
 #include <QVBoxLayout>
-
 
 namespace cms {
 namespace ui {
@@ -139,8 +140,21 @@ void ScreenshotViewerDialog::saveScreenshot() {
                                 .arg(clientHostname_.replace(' ', '_'))
                                 .arg(timestamp);
 
+  // Get Pictures/Screenshots directory as default location
+  QString picturesPath =
+      QStandardPaths::writableLocation(QStandardPaths::PicturesLocation);
+  QString screenshotsPath = picturesPath + "/Screenshots";
+
+  // Create Screenshots directory if it doesn't exist
+  QDir dir;
+  if (!dir.exists(screenshotsPath)) {
+    dir.mkpath(screenshotsPath);
+  }
+
+  QString defaultPath = screenshotsPath + "/" + defaultFilename;
+
   QString filename = QFileDialog::getSaveFileName(
-      this, "Save Screenshot", defaultFilename,
+      this, "Save Screenshot", defaultPath,
       "PNG Images (*.png);;JPEG Images (*.jpg);;All Files (*.*)");
 
   if (!filename.isEmpty()) {

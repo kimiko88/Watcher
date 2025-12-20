@@ -47,3 +47,6 @@
 [INFO] Master Server listening on port 5555
 [INFO] Master Server listening on port 5555
 [INFO] Master Server listening on port 5555
+[INFO] Master Server listening on port 5555
+[INFO] New incoming connection from ::ffff:192.168.1.97
+[INFO] Registered client: test-client-01

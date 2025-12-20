@@ -49,7 +49,7 @@ elif [ ! -f "$CONFIG_PATH" ]; then
     cat <<EOF > "$CONFIG_PATH"
 {
     "master_address": "127.0.0.1",
-    "master_port": 5000,
+    "master_port": 5555,
     "machine_id": "$(cat /proc/sys/kernel/random/uuid)",
     "log_level": "INFO"
 }

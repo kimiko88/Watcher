@@ -104,7 +104,7 @@ TEST_F(MasterActivityAggregatorTest, DetectMostUsedApp) {
 TEST_F(MasterActivityAggregatorTest, StudentRankingOrdersByActivity) {
   // Activity % = 100 - idle_ratio
   aggregator.addClientActivity(
-      "c1", "Alice", createReport(10, 0, 5000)); // Idle 5s -> High activity
+      "c1", "Alice", createReport(10, 0, 5555)); // Idle 5s -> High activity
   aggregator.addClientActivity(
       "c2", "Bob", createReport(10, 0, 1000)); // Idle 1s -> Higher activity
   aggregator.addClientActivity(
@@ -121,7 +121,7 @@ TEST_F(MasterActivityAggregatorTest, StudentRankingOrdersByActivity) {
 // 8. Most Active Student
 TEST_F(MasterActivityAggregatorTest,
        GetMostActiveStudentReturnsCorrectStudent) {
-  aggregator.addClientActivity("c1", "Alice", createReport(10, 0, 5000));
+  aggregator.addClientActivity("c1", "Alice", createReport(10, 0, 5555));
   aggregator.addClientActivity("c2", "Bob", createReport(10, 0, 0)); // 0 idle
 
   auto most = aggregator.getMostActiveStudent();
@@ -132,7 +132,7 @@ TEST_F(MasterActivityAggregatorTest,
 // 9. Least Active Student
 TEST_F(MasterActivityAggregatorTest,
        GetLeastActiveStudentReturnsCorrectStudent) {
-  aggregator.addClientActivity("c1", "Alice", createReport(10, 0, 5000));
+  aggregator.addClientActivity("c1", "Alice", createReport(10, 0, 5555));
   aggregator.addClientActivity("c2", "Bob", createReport(10, 0, 0));
 
   auto least = aggregator.getLeastActiveStudent();

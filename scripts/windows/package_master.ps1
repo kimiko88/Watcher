@@ -83,7 +83,7 @@ Write-Host "[5/6] Qt dependencies collected successfully" -ForegroundColor Green
 
 # 6. Create default configuration file
 $defaultConfig = @{
-    port              = 5000
+    port              = 5555
     max_clients       = 50
     log_level         = "INFO"
     screenshots_dir   = "screenshots"
@@ -110,7 +110,7 @@ $readmeContent = @"
 1. Copy this entire folder to the target PC (e.g., C:\Program Files\ClassroomControl\Master)
 
 2. Edit config.json if needed:
-   - port: Network port (default: 5000)
+   - port: Network port (default: 5555)
    - max_clients: Maximum number of clients
    - log_level: DEBUG, INFO, WARNING, or ERROR
 
@@ -120,7 +120,7 @@ $readmeContent = @"
 
 ## Firewall Configuration
 
-Allow incoming connections on port 5000:
+Allow incoming connections on port 5555:
 ```powershell
 New-NetFirewallRule -DisplayName "Classroom Control Master" -Direction Inbound -Program "<path>\cms_master.exe" -Action Allow -Profile Any
 ```
@@ -135,7 +135,7 @@ New-NetFirewallRule -DisplayName "Classroom Control Master" -Direction Inbound -
 If the application doesn't start:
 1. Check Event Viewer for errors
 2. Verify config.json is valid JSON
-3. Ensure no other application is using port 5000
+3. Ensure no other application is using port 5555
 4. Run with --help to see command-line options
 
 For more information, see the full documentation.

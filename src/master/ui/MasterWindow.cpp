@@ -38,6 +38,8 @@ MasterWindow::MasterWindow(std::shared_ptr<master::MasterServer> server,
           &MasterWindow::refreshGrid);
   connect(model_, &QAbstractTableModel::modelReset, this,
           &MasterWindow::refreshGrid);
+  connect(model_, &QAbstractTableModel::dataChanged, this,
+          &MasterWindow::refreshGrid);
 
   resize(1024, 768);
   setWindowTitle("Classroom Management System - Master");
@@ -252,9 +254,18 @@ void MasterWindow::onTakeScreenshot() {
     return;
   }
 
+  // Auto-select if only one client and none selected
   if (selected_client_id_.empty()) {
-    QMessageBox::warning(this, "No Selection", "Please select a client first.");
-    return;
+    if (model_->rowCount() == 1) {
+      selected_client_id_ = model_->getClient(0).id;
+      statusBar()->showMessage("Auto-selected: " +
+                               QString::fromStdString(selected_client_id_));
+    } else {
+      QMessageBox::warning(
+          this, "No Selection",
+          "Please click on a client thumbnail to select it first.");
+      return;
+    }
   }
 
   server_->refreshClientThumbnail(selected_client_id_);
@@ -357,23 +368,74 @@ void MasterWindow::onAboutClicked() {
 
 void MasterWindow::onScreenshotReceived(const std::string &client_id,
                                         const std::vector<uint8_t> &imageData) {
+  qDebug() << "onScreenshotReceived called for client:"
+           << QString::fromStdString(client_id);
+  qDebug() << "Image data size:" << imageData.size();
+
+  // Get client info to extract screenshot metadata
+  auto client = server_->getClientInfo(client_id);
+
+  // The imageData contains raw RGBA bytes, not a compressed image
+  // We need width and height which should be in client.thumbnail_width/height
+  // Or we can try to decode as compressed first, then fall back to raw
+
   QImage image;
+
+  // Try loading as compressed format first (PNG/JPEG)
   if (image.loadFromData(imageData.data(),
                          static_cast<int>(imageData.size()))) {
-    auto client = server_->getClientInfo(client_id);
+    qDebug() << "Image loaded as compressed format. Size:" << image.width()
+             << "x" << image.height();
+  }
+  // If that fails, assume it's raw RGBA data
+  else {
+    // Calculate dimensions from data size
+    // Assuming RGBA32 (4 bytes per pixel)
+    int totalPixels = imageData.size() / 4;
 
-    // Check if we already have a dialog for this client?
-    // For now, just open a new one.
+    // Common resolutions to try
+    int width = 0, height = 0;
+    if (totalPixels == 1920 * 1080) {
+      width = 1920;
+      height = 1080;
+    } else if (totalPixels == 1600 * 900) {
+      width = 1600;
+      height = 900;
+    } else if (totalPixels == 1366 * 768) {
+      width = 1366;
+      height = 768;
+    } else if (totalPixels == 1280 * 720) {
+      width = 1280;
+      height = 720;
+    } else {
+      // Try to extract from client thumbnail info if available
+      width = client.thumbnail_width;
+      height = client.thumbnail_height;
+    }
 
+    if (width > 0 && height > 0) {
+      // Create QImage from raw RGBA data
+      image = QImage(imageData.data(), width, height, width * 4,
+                     QImage::Format_RGBA8888)
+                  .copy();
+      qDebug() << "Image created from raw RGBA data. Size:" << width << "x"
+               << height;
+    }
+  }
+
+  if (!image.isNull()) {
     ScreenshotViewerDialog *dialog = new ScreenshotViewerDialog(
         image, QString::fromStdString(client.id),
         QString::fromStdString(client.hostname), this);
     dialog->setAttribute(Qt::WA_DeleteOnClose);
     dialog->show();
 
+    qDebug() << "Dialog created and shown";
+
     statusBar()->showMessage("Screenshot received from " +
                              QString::fromStdString(client.hostname));
   } else {
+    qDebug() << "Failed to load screenshot image data";
     statusBar()->showMessage("Failed to load screenshot data");
   }
 }

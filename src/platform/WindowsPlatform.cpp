@@ -130,12 +130,31 @@ public:
     ScreenImage image;
     try {
       HDC screenDC = GetDC(NULL);
+
+      // Get full physical screen resolution (not DPI-scaled)
+      int width = GetDeviceCaps(screenDC, DESKTOPHORZRES);
+      int height = GetDeviceCaps(screenDC, DESKTOPVERTRES);
+
+      // If that fails, fallback to virtual screen dimensions for multi-monitor
+      if (width == 0 || height == 0) {
+        width = GetSystemMetrics(SM_CXVIRTUALSCREEN);
+        height = GetSystemMetrics(SM_CYVIRTUALSCREEN);
+      }
+
+      // If still zero, use primary monitor
+      if (width == 0 || height == 0) {
+        width = GetSystemMetrics(SM_CXSCREEN);
+        height = GetSystemMetrics(SM_CYSCREEN);
+      }
+
       HDC memDC = CreateCompatibleDC(screenDC);
-      int width = GetSystemMetrics(SM_CXSCREEN);
-      int height = GetSystemMetrics(SM_CYSCREEN);
       HBITMAP bitmap = CreateCompatibleBitmap(screenDC, width, height);
       HBITMAP old = (HBITMAP)SelectObject(memDC, bitmap);
-      BitBlt(memDC, 0, 0, width, height, screenDC, 0, 0, SRCCOPY);
+
+      // For multi-monitor, capture from virtual screen origin
+      int xSrc = GetSystemMetrics(SM_XVIRTUALSCREEN);
+      int ySrc = GetSystemMetrics(SM_YVIRTUALSCREEN);
+      BitBlt(memDC, 0, 0, width, height, screenDC, xSrc, ySrc, SRCCOPY);
 
       BITMAPINFO bmi = {};
       bmi.bmiHeader.biSize = sizeof(BITMAPINFOHEADER);

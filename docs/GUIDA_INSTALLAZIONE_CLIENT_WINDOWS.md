@@ -48,7 +48,7 @@ L'eseguibile verrà creato in: `build\src\client\Release\cms_client.exe`
 
 - Assicurarsi che il firewall Windows consenta connessioni in uscita
 - Conoscere l'indirizzo IP del server master
-- Verificare che la porta di comunicazione (default: 5000) non sia bloccata
+- Verificare che la porta di comunicazione (default: 5555) non sia bloccata
 
 ---
 
@@ -76,7 +76,7 @@ Creare un file `config.json` nella cartella `C:\Temp\CMSClient\`:
 ```json
 {
     "master_address": "192.168.1.100",
-    "master_port": 5000,
+    "master_port": 5555,
     "machine_id": "client-lab01-pc15",
     "encryption_enabled": false,
     "log_level": "INFO"
@@ -143,7 +143,7 @@ Copy-Item "build\src\client\Release\cms_client.exe" -Destination "C:\Program Fil
 # Creare il file di configurazione
 $config = @{
     master_address = "192.168.1.100"
-    master_port = 5000
+    master_port = 5555
     machine_id = "client-" + $env:COMPUTERNAME
     encryption_enabled = $false
     log_level = "INFO"
@@ -202,7 +202,7 @@ Il file `C:\Program Files\ClassroomControl\config.json` contiene i parametri di 
 | Parametro | Descrizione | Valori | Esempio |
 |-----------|-------------|--------|---------|
 | `master_address` | Indirizzo IP del server master | Indirizzo IPv4 valido | `"192.168.1.100"` |
-| `master_port` | Porta del server master | 1-65535 | `5000` |
+| `master_port` | Porta del server master | 1-65535 | `5555` |
 | `machine_id` | Identificatore univoco del client | Stringa alfanumerica | `"client-lab01-pc15"` |
 | `encryption_enabled` | Abilita crittografia (futuro) | `true` / `false` | `false` |
 | `log_level` | Livello di logging | `DEBUG`, `INFO`, `WARNING`, `ERROR` | `"INFO"` |
@@ -275,7 +275,7 @@ Verificare che il client possa raggiungere il server master:
 
 ```powershell
 # Test di connettività di rete
-Test-NetConnection -ComputerName 192.168.1.100 -Port 5000
+Test-NetConnection -ComputerName 192.168.1.100 -Port 5555
 
 # Output atteso:
 # TcpTestSucceeded : True
@@ -376,7 +376,7 @@ Il servizio ClassroomControlClient non può essere avviato
 2. Testare la connettività di rete:
    ```powershell
    ping 192.168.1.100
-   Test-NetConnection -ComputerName 192.168.1.100 -Port 5000
+   Test-NetConnection -ComputerName 192.168.1.100 -Port 5555
    ```
 3. Verificare le regole del firewall su entrambi client e server
 
@@ -438,7 +438,7 @@ Il servizio ClassroomControlClient non può essere avviato
 **Soluzione:**
 ```powershell
 # Trovare il processo che usa la porta
-netstat -ano | findstr :5000
+netstat -ano | findstr :5555
 
 # Terminare il processo (sostituire PID)
 taskkill /F /PID <PID>
@@ -573,7 +573,7 @@ Restart-Service -Name "ClassroomControlClient"
 Get-EventLog -LogName Application -Source "ClassroomControl*" -Newest 10
 
 # Test connettività
-Test-NetConnection -ComputerName <MASTER_IP> -Port 5000
+Test-NetConnection -ComputerName <MASTER_IP> -Port 5555
 
 # Configurazione firewall
 Get-NetFirewallRule -DisplayName "Classroom Control Client"

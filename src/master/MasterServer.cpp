@@ -27,7 +27,7 @@ public:
     QTimer *timer = new QTimer(this);
     connect(timer, &QTimer::timeout, this,
             &MasterServerImpl::checkClientHealth);
-    timer->start(5000);
+    timer->start(5555);
   }
 
   bool start() override {
@@ -137,6 +137,9 @@ private slots:
     std::string &buffer = incomingBuffers_[socket];
     buffer.append(data.toStdString());
 
+    LOG_DEBUG("Received data: " + std::to_string(data.size()) + " bytes from " +
+              socket->peerAddress().toString().toStdString());
+
     size_t pos;
     while ((pos = buffer.find('\n')) != std::string::npos) {
       std::string line = buffer.substr(0, pos);
@@ -145,12 +148,17 @@ private slots:
       if (line.empty())
         continue;
 
+      LOG_DEBUG("Processing line: " + line.substr(0, 100) + "...");
+
       try {
         protocol::MessageSerializer serializer;
         auto msg = serializer.Deserialize(line);
+        LOG_INFO("Successfully parsed message type: " +
+                 protocol::CommandTypeToString(msg.type));
         processMessage(socket, msg);
       } catch (const std::exception &e) {
-        LOG_ERROR("Failed to parse message: " + std::string(e.what()));
+        LOG_ERROR("Failed to parse message: " + std::string(e.what()) +
+                  " | Raw data: " + line.substr(0, 200));
       }
     }
   }
@@ -226,16 +234,41 @@ private:
       LOG_INFO("Registered client: " + info.id);
 
     } else if (msg.type == protocol::CommandType::SCREENSHOT_DATA) {
+      LOG_INFO("Received SCREENSHOT_DATA from: " + msg.source);
       // Extract base64 or raw bytes
       // Payload might contain "data" as base64 string
       if (msg.payload.contains("data")) {
         std::string base64 = msg.payload["data"];
+        LOG_DEBUG("Screenshot data size: " + std::to_string(base64.size()) +
+                  " bytes (base64)");
         QByteArray bytes =
             QByteArray::fromBase64(QByteArray::fromStdString(base64));
+        LOG_DEBUG("Decoded image size: " + std::to_string(bytes.size()) +
+                  " bytes");
         std::vector<uint8_t> vec(bytes.begin(), bytes.end());
+
+        // Extract width and height from payload
+        {
+          std::lock_guard<std::mutex> lock(clientsMutex_);
+          if (clients_.count(msg.source)) {
+            if (msg.payload.contains("width")) {
+              clients_[msg.source].thumbnail_width = msg.payload["width"];
+            }
+            if (msg.payload.contains("height")) {
+              clients_[msg.source].thumbnail_height = msg.payload["height"];
+            }
+            LOG_DEBUG("Screenshot dimensions: " +
+                      std::to_string(clients_[msg.source].thumbnail_width) +
+                      "x" +
+                      std::to_string(clients_[msg.source].thumbnail_height));
+          }
+        }
 
         notifyClientThumbnailUpdated(msg.source, vec);
         notifyScreenshotReceived(msg.source, vec);
+        LOG_INFO("Screenshot notification sent for client: " + msg.source);
+      } else {
+        LOG_ERROR("SCREENSHOT_DATA missing 'data' field in payload");
       }
     } else if (msg.type == protocol::CommandType::PING) {
       std::lock_guard<std::mutex> lock(clientsMutex_);
@@ -256,7 +289,13 @@ private:
     protocol::MessageSerializer serializer;
     std::string data = serializer.Serialize(msg);
 
-    it->second->write(data.data(), data.size());
+    // Add newline delimiter so client can parse the message
+    std::string packet = data + "\n";
+
+    LOG_DEBUG("Sending " + protocol::CommandTypeToString(type) + " to " +
+              client_id);
+
+    it->second->write(packet.data(), packet.size());
     it->second->flush();
     return true;
   }
@@ -268,8 +307,11 @@ private:
     protocol::MessageSerializer serializer;
     std::string data = serializer.Serialize(msg);
 
+    // Add newline delimiter
+    std::string packet = data + "\n";
+
     for (auto &pair : clientSockets_) {
-      pair.second->write(data.data(), data.size());
+      pair.second->write(packet.data(), packet.size());
       pair.second->flush();
     }
     return true;
@@ -290,7 +332,10 @@ private:
     protocol::MessageSerializer serializer;
     std::string data = serializer.Serialize(msg);
 
-    it->second->write(data.data(), data.size());
+    // Add newline delimiter
+    std::string packet = data + "\n";
+
+    it->second->write(packet.data(), packet.size());
     it->second->flush();
     return true;
   }

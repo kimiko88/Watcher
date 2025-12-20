@@ -101,7 +101,7 @@ Il file `config.json` contiene i parametri di configurazione del Master:
 
 ```json
 {
-    "port": 5000,
+    "port": 5555,
     "max_clients": 50,
     "log_level": "INFO",
     "screenshots_dir": "screenshots",
@@ -111,7 +111,7 @@ Il file `config.json` contiene i parametri di configurazione del Master:
 
 | Parametro | Descrizione | Valori Consigliati |
 |-----------|-------------|-------------------|
-| `port` | Porta TCP per connessioni client | `5000` (default) |
+| `port` | Porta TCP per connessioni client | `5555` (default) |
 | `max_clients` | Numero massimo di client simultanei | `50` (laboratorio standard) |
 | `log_level` | Livello di logging | `INFO` (produzione), `DEBUG` (troubleshooting) |
 | `screenshots_dir` | Directory per salvare screenshot | `screenshots` o percorso assoluto |
@@ -189,7 +189,7 @@ New-NetFirewallRule `
     -Action Allow `
     -Profile Any `
     -Protocol TCP `
-    -LocalPort 5000
+    -LocalPort 5555
 
 Write-Host "Regola firewall creata!" -ForegroundColor Green
 ```
@@ -206,7 +206,7 @@ Da un altro PC sulla stessa rete:
 
 ```powershell
 # Sostituire 192.168.1.100 con l'IP del PC Master
-Test-NetConnection -ComputerName 192.168.1.100 -Port 5000
+Test-NetConnection -ComputerName 192.168.1.100 -Port 5555
 
 # Output atteso: TcpTestSucceeded : True
 ```
@@ -236,13 +236,13 @@ Get-ChildItem "C:\Program Files\ClassroomControl\Master" -Filter "Qt6*.dll"
 
 ### Problema: Porta Già in Uso
 
-**Sintomo**: "Address already in use" o porta 5000 non disponibile
+**Sintomo**: "Address already in use" o porta 5555 non disponibile
 
 **Soluzione**:
 
 ```powershell
-# Trovare il processo che usa la porta 5000
-netstat -ano | findstr :5000
+# Trovare il processo che usa la porta 5555
+netstat -ano | findstr :5555
 
 # Terminare il processo (sostituire PID)
 taskkill /F /PID <PID>
@@ -264,13 +264,13 @@ taskkill /F /PID <PID>
 Get-Process cms_master -ErrorAction SilentlyContinue
 
 # 2. Verificare la porta in ascolto
-netstat -an | findstr :5000
+netstat -an | findstr :5555
 
 # 3. Verificare IP del PC Master
 ipconfig
 
 # 4. Testare connessione dal client
-Test-NetConnection -ComputerName <IP_MASTER> -Port 5000
+Test-NetConnection -ComputerName <IP_MASTER> -Port 5555
 ```
 
 ### Problema: Visual C++ Runtime Mancante

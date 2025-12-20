@@ -621,10 +621,20 @@ bool ClientService::sendHello() {
   LOG_INFO("Sending HELLO handshake");
 
   try {
+    // Get hostname
+    char hostname[256];
+#ifdef _WIN32
+    DWORD size = sizeof(hostname);
+    GetComputerNameA(hostname, &size);
+#else
+    gethostname(hostname, sizeof(hostname));
+#endif
+
     // Create HELLO message
     nlohmann::json payload = {
         {"version", CMS_VERSION_STRING},
         {"machine_id", config_.machine_id},
+        {"hostname", std::string(hostname)},
         {"capabilities",
          nlohmann::json::array(
              {"screenshot", "screen_lock", "power_control", "domain_filter"})}};

@@ -84,7 +84,7 @@ TEST_F(EndToEndTest, TakeScreenshotAndVerify) {
 
   // Verify response
   ASSERT_TRUE(
-      orchestrator.getMaster()->waitForMessage("SCREENSHOT_DATA", 5000));
+      orchestrator.getMaster()->waitForMessage("SCREENSHOT_DATA", 5555));
   auto msg = orchestrator.getMaster()->getLastMessage();
   EXPECT_EQ(msg.type, cms::protocol::CommandType::SCREENSHOT_DATA);
   EXPECT_TRUE(msg.payload.contains("data"));
