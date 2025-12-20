@@ -65,11 +65,49 @@ std::string base64_encode(unsigned char const *bytes_to_encode, size_t in_len) {
 
 ClientService::ClientService(const std::string &config_path) {
   loadConfig(config_path);
+  LOG_INFO("Config path: " + config_path);
+
+  try {
+    // Load configuration first
+    loadConfig(config_path);
+    LOG_INFO("Configuration loaded successfully");
+    LOG_INFO("Master: " + config_.master_address + ":" +
+             std::to_string(config_.master_port));
+    LOG_INFO("Machine ID: " + config_.machine_id);
+
+  } catch (const std::exception &e) {
+    LOG_ERROR("Failed to load config: " + std::string(e.what()));
+    throw; // Re-throw to prevent incomplete initialization
+  }
+
   // Initialize platform interface
   platform_ = platform::getPlatformInstance().release();
+  LOG_INFO("Initializing platform interface...");
+  try {
+    platform_ = platform::getPlatformInstance().release();
+    if (!platform_) {
+      throw std::runtime_error("Failed to get platform instance");
+    }
+    LOG_INFO("Platform interface initialized");
+  } catch (const std::exception &e) {
+    LOG_ERROR("Platform initialization failed: " + std::string(e.what()));
+    throw;
+  }
 
   // Initialize Socket subsystem
   cms::Socket::Initialize();
+  LOG_INFO("Initializing socket subsystem...");
+  try {
+    if (!cms::Socket::Initialize()) {
+      LOG_WARNING(
+          "Socket::Initialize() returned false (may already be initialized)");
+    } else {
+      LOG_INFO("Socket subsystem initialized");
+    }
+  } catch (const std::exception &e) {
+    LOG_ERROR("Socket initialization failed: " + std::string(e.what()));
+    throw;
+  }
 
   // Initialize Network Filter Manager
   // We use a default config file for persistence
@@ -79,13 +117,69 @@ ClientService::ClientService(const std::string &config_path) {
   networkFilter_->loadRules();
   // Apply them
   networkFilter_->applyRules();
+  LOG_INFO("Initializing Network Filter Manager...");
+  try {
+    std::string rulesFile = "domain_rules.json";
+
+    // Check if rules file exists
+    std::ifstream ruleCheck(rulesFile);
+    if (!ruleCheck.good()) {
+      LOG_WARNING("Domain rules file not found: " + rulesFile +
+                  " (will create on first save)");
+    } else {
+      LOG_INFO("Domain rules file found: " + rulesFile);
+    }
+
+    networkFilter_ = std::make_unique<cms::network::NetworkFilterManager>(
+        platform_, rulesFile);
+
+    // Try to load existing rules
+    try {
+      networkFilter_->loadRules();
+      LOG_INFO("Network filter rules loaded");
+    } catch (const std::exception &e) {
+      LOG_WARNING("Could not load network rules (may not exist yet): " +
+                  std::string(e.what()));
+    }
+
+    // Apply rules
+    networkFilter_->applyRules();
+    LOG_INFO("Network filter rules applied");
+
+  } catch (const std::exception &e) {
+    LOG_ERROR("Network filter initialization failed: " + std::string(e.what()));
+    // Don't throw - network filtering is optional
+  }
 
   // Initialize Application Manager
-  appManager_ = std::make_unique<cms::ApplicationManager>();
-  // Load rules if persistence implemented (TODO: Add persistence file path)
-  // appManager_->importRules("app_rules.csv");
+  LOG_INFO("Initializing Application Manager...");
+  try {
+    appManager_ = std::make_unique<cms::ApplicationManager>();
+    LOG_INFO("Application Manager initialized");
 
-  LOG_INFO("ClientService initialized with machine ID: " + config_.machine_id);
+    // Try to load persisted rules
+    std::string appRulesFile = "app_rules.csv";
+    std::ifstream appRuleCheck(appRulesFile);
+    if (appRuleCheck.good()) {
+      appRuleCheck.close();
+      if (appManager_->importRules(appRulesFile)) {
+        LOG_INFO("Application rules imported from: " + appRulesFile);
+      } else {
+        LOG_WARNING("Failed to import application rules from: " + appRulesFile);
+      }
+    } else {
+      LOG_INFO("No existing application rules file found (will create on first "
+               "save)");
+    }
+
+  } catch (const std::exception &e) {
+    LOG_ERROR("Application Manager initialization failed: " +
+              std::string(e.what()));
+    // Don't throw - app filtering is optional
+  }
+
+  LOG_INFO("ClientService initialized successfully with machine ID: " +
+           config_.machine_id);
 }
 
 // ... (Destructor stays same)
@@ -107,13 +201,16 @@ void ClientService::processCommands() {
       sendScreenshot();
       break;
     case protocol::CommandType::SCREEN_LOCK:
-      if (platform_)
-        platform_->lockKeyboard(); // Simplified for now
-      // In full implementation, invoke InputLockManager logic
+      if (platform_) {
+        platform_->lockKeyboard();
+        platform_->lockMouse();
+      }
       break;
     case protocol::CommandType::SCREEN_UNLOCK:
-      if (platform_)
+      if (platform_) {
         platform_->unlockKeyboard();
+        platform_->unlockMouse();
+      }
       break;
     case protocol::CommandType::POWER_CONTROL:
       // Handle power control
@@ -555,37 +652,68 @@ void ClientService::processingLoop() {
 }
 
 bool ClientService::connectToMaster() {
-  LOG_INFO("Attempting to connect to master at " + config_.master_address +
-           ":" + std::to_string(config_.master_port));
+  LOG_INFO("===== CONNECTION ATTEMPT =====");
+  LOG_INFO("Target: " + config_.master_address + ":" +
+           std::to_string(config_.master_port));
 
   try {
     socket_ = std::make_unique<cms::Socket>();
-    if (!socket_->Connect(config_.master_address, config_.master_port)) {
-      LOG_WARNING("Failed to connect to master");
+
+    // TODO: Add timeout support to Socket::Connect if not already present
+    // For now, log before attempting connection
+    LOG_INFO("Attempting socket connection...");
+
+    auto startTime = std::chrono::steady_clock::now();
+    bool connected =
+        socket_->Connect(config_.master_address, config_.master_port);
+    auto endTime = std::chrono::steady_clock::now();
+    auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(
+        endTime - startTime);
+
+    if (!connected) {
+      LOG_WARNING("Connection failed after " +
+                  std::to_string(duration.count()) + "ms");
+      LOG_WARNING("Possible causes:");
+      LOG_WARNING("  - Master server not running");
+      LOG_WARNING("  - Firewall blocking port " +
+                  std::to_string(config_.master_port));
+      LOG_WARNING("  - Incorrect IP address: " + config_.master_address);
+      LOG_WARNING("  - Network connectivity issues");
       socket_.reset();
       connected_ = false;
       return false;
     }
 
+    LOG_INFO("Socket connected successfully in " +
+             std::to_string(duration.count()) + "ms");
     connected_ = true;
-    LOG_INFO("Connected to master");
 
     // Perform handshake
+    LOG_INFO("Performing HELLO handshake...");
     if (sendHello()) {
+      LOG_INFO("HELLO sent successfully");
+
       // Start read loop
+      LOG_INFO("Starting read loop thread...");
       read_thread_ =
           std::make_unique<std::thread>(&ClientService::readLoop, this);
+
+      LOG_INFO("===== CONNECTION ESTABLISHED =====");
       return true;
+    } else {
+      LOG_ERROR("HELLO handshake failed");
+      socket_->Close();
+      socket_.reset();
+      connected_ = false;
+      return false;
     }
 
   } catch (const std::exception &e) {
-    LOG_ERROR(std::string("Connection exception: ") + e.what());
+    LOG_ERROR("Connection exception: " + std::string(e.what()));
     socket_.reset();
     connected_ = false;
     return false;
   }
-
-  return false;
 }
 
 void ClientService::disconnect() {
@@ -618,48 +746,40 @@ bool ClientService::sendHello() {
     return false;
   }
 
-  LOG_INFO("Sending HELLO handshake");
+  LOG_INFO("Sending HELLO handshake to master");
 
   try {
-    // Get hostname
-    char hostname[256];
-#ifdef _WIN32
-    DWORD size = sizeof(hostname);
-    GetComputerNameA(hostname, &size);
-#else
-    gethostname(hostname, sizeof(hostname));
-#endif
-
-    // Create HELLO message
     nlohmann::json payload = {
         {"version", CMS_VERSION_STRING},
         {"machine_id", config_.machine_id},
-        {"hostname", std::string(hostname)},
+        {"hostname", platform_->getHostname()},
+        {"username", platform_->getUsername()},
         {"capabilities",
-         nlohmann::json::array(
-             {"screenshot", "screen_lock", "power_control", "domain_filter"})}};
+         nlohmann::json::array({"screenshot", "screen_lock", "power_control",
+                                "domain_filter", "app_filter"})}};
 
     auto helloMsg = protocol::Message::Create(
         protocol::CommandType::HELLO, config_.machine_id, "master", payload);
 
-    // Serialize message
     protocol::MessageSerializer serializer;
     std::string json = serializer.Serialize(helloMsg);
-
-    // Send with delimiter
     std::string packet = json + "\n";
 
-    LOG_DEBUG("HELLO message: " + json);
+    LOG_DEBUG("HELLO message payload: " + json);
+    LOG_INFO("HELLO message size: " + std::to_string(packet.size()) + " bytes");
 
     if (socket_ && socket_->Send(packet)) {
+      LOG_INFO("HELLO sent successfully");
+      // Note: We don't wait for HELLO_ACK here
+      // The master should respond, and we'll receive it in readLoop
       return true;
     } else {
-      LOG_ERROR("Socket send failed");
+      LOG_ERROR("Failed to send HELLO (socket->Send returned false)");
       return false;
     }
 
   } catch (const std::exception &e) {
-    LOG_ERROR(std::string("Failed to send HELLO: ") + e.what());
+    LOG_ERROR("Exception while sending HELLO: " + std::string(e.what()));
     return false;
   }
 }
@@ -717,44 +837,91 @@ void ClientService::handleReconnection() {
 }
 
 void ClientService::readLoop() {
-  LOG_INFO("Read loop started");
+  LOG_INFO("===== READ LOOP STARTED =====");
   protocol::MessageSerializer serializer;
   std::string buffer;
   char tempBuffer[4096];
+  int consecutiveErrors = 0;
+  const int MAX_CONSECUTIVE_ERRORS = 5;
 
   while (connected_ && running_) {
-    if (!socket_)
+    if (!socket_) {
+      LOG_ERROR("Socket is null in readLoop");
       break;
-    int bytesRead = socket_->Receive(tempBuffer, sizeof(tempBuffer) - 1);
-    if (bytesRead > 0) {
-      tempBuffer[bytesRead] = '\0';
-      buffer += tempBuffer;
+    }
 
-      size_t pos;
-      while ((pos = buffer.find('\n')) != std::string::npos) {
-        std::string line = buffer.substr(0, pos);
-        buffer.erase(0, pos + 1);
+    try {
+      int bytesRead = socket_->Receive(tempBuffer, sizeof(tempBuffer) - 1);
 
-        try {
-          auto msg = serializer.Deserialize(line);
-          {
-            std::lock_guard<std::mutex> lock(queue_mutex_);
-            command_queue_.push(msg);
+      if (bytesRead > 0) {
+        consecutiveErrors = 0; // Reset error counter
+        tempBuffer[bytesRead] = '\0';
+        buffer += tempBuffer;
+
+        LOG_DEBUG("Received " + std::to_string(bytesRead) + " bytes");
+
+        // Process complete messages (delimited by newline)
+        size_t pos;
+        while ((pos = buffer.find('\n')) != std::string::npos) {
+          std::string line = buffer.substr(0, pos);
+          buffer.erase(0, pos + 1);
+
+          if (line.empty())
+            continue;
+
+          LOG_DEBUG("Processing message: " +
+                    line.substr(0, std::min<size_t>(100, line.length())) +
+                    "...");
+
+          try {
+            auto msg = serializer.Deserialize(line);
+            {
+              std::lock_guard<std::mutex> lock(queue_mutex_);
+              command_queue_.push(msg);
+            }
+            LOG_INFO(
+                "Queued command: " + protocol::CommandTypeToString(msg.type) +
+                " (from: " + msg.source + ", to: " + msg.destination + ")");
+          } catch (const std::exception &e) {
+            LOG_ERROR("Failed to parse message: " + std::string(e.what()));
+            LOG_ERROR("Raw message: " + line);
           }
-          LOG_INFO("Received command: " +
-                   protocol::CommandTypeToString(msg.type));
-        } catch (const std::exception &e) {
-          LOG_ERROR("Failed to parse message: " + std::string(e.what()));
         }
+
+      } else if (bytesRead == 0) {
+        LOG_WARNING("Socket closed by remote host (bytesRead = 0)");
+        connected_ = false;
+        cv_.notify_all();
+        break;
+
+      } else { // bytesRead < 0
+        consecutiveErrors++;
+        LOG_ERROR("Socket receive error (attempt " +
+                  std::to_string(consecutiveErrors) + "/" +
+                  std::to_string(MAX_CONSECUTIVE_ERRORS) + ")");
+
+        if (consecutiveErrors >= MAX_CONSECUTIVE_ERRORS) {
+          LOG_ERROR("Max consecutive errors reached, closing connection");
+          connected_ = false;
+          cv_.notify_all();
+          break;
+        }
+
+        // Brief pause before retry
+        std::this_thread::sleep_for(std::chrono::milliseconds(100));
       }
-    } else {
-      LOG_ERROR("Socket receive failed or closed");
+
+    } catch (const std::exception &e) {
+      LOG_ERROR("Exception in readLoop: " + std::string(e.what()));
       connected_ = false;
-      cv_.notify_all(); // Wake up processing loop to reconnect
+      cv_.notify_all();
       break;
     }
   }
-  LOG_INFO("Read loop stopped");
+
+  LOG_INFO("===== READ LOOP STOPPED ===== (connected=" +
+           std::to_string(connected_.load()) +
+           ", running=" + std::to_string(running_.load()) + ")");
 }
 
 void ClientService::monitorLoop() {

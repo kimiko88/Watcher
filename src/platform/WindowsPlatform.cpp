@@ -22,6 +22,7 @@
 #define _M_AMD64 100
 #endif
 #endif
+#include <lmcons.h> // For UNLEN
 #include <minwindef.h>
 #include <psapi.h>
 #include <windows.h>
@@ -124,6 +125,28 @@ public:
       }
     }
     return pids;
+  }
+
+  std::string getHostname() override {
+    char buffer[MAX_COMPUTERNAME_LENGTH + 1] = {0};
+    DWORD size = MAX_COMPUTERNAME_LENGTH + 1;
+    if (GetComputerNameA(buffer, &size)) {
+      buffer[MAX_COMPUTERNAME_LENGTH] = '\0'; // Ensure null termination
+      return std::string(buffer);
+    }
+    LOG_WARNING("Failed to get hostname");
+    return "Unknown";
+  }
+
+  std::string getUsername() override {
+    char buffer[UNLEN + 1] = {0}; // UNLEN = 256 from lmcons.h
+    DWORD size = UNLEN + 1;
+    if (GetUserNameA(buffer, &size)) {
+      buffer[UNLEN] = '\0'; // Ensure null termination
+      return std::string(buffer);
+    }
+    LOG_WARNING("Failed to get username");
+    return "Unknown";
   }
 
   ScreenImage captureScreen() override {
@@ -255,6 +278,12 @@ public:
   }
 
   bool lockMouse() override {
+    // BlockInput locks both keyboard and mouse, check if already locked
+    if (keyboard_locked_ || mouse_locked_) {
+      mouse_locked_ = true;
+      LOG_INFO("Mouse locked (input already blocked)");
+      return true;
+    }
     BOOL result = BlockInput(TRUE);
     if (result) {
       mouse_locked_ = true;
@@ -266,12 +295,17 @@ public:
   }
 
   bool unlockMouse() override {
-    BOOL result = BlockInput(FALSE);
-    if (result) {
-      mouse_locked_ = false;
-      LOG_INFO("Mouse unlocked");
+    mouse_locked_ = false;
+    // Only unblock if keyboard is also unlocked
+    if (!keyboard_locked_) {
+      BOOL result = BlockInput(FALSE);
+      if (result) {
+        LOG_INFO("Mouse unlocked");
+      }
+      return result != 0;
     }
-    return result != 0;
+    LOG_INFO("Mouse unlocked (input still blocked by keyboard)");
+    return true;
   }
 
   bool isInputLocked() override { return keyboard_locked_ || mouse_locked_; }
@@ -409,9 +443,62 @@ public:
   }
 
   bool setAllowListMode() override {
-    LOG_WARNING("setAllowListMode not implemented (use blockDomains for block "
-                "list)");
-    return false;
+    // Allow-list mode: block everything except explicitly allowed domains
+    std::string hostsPath = g_hosts_file_path;
+    try {
+      std::ifstream hostsIn(hostsPath);
+      if (!hostsIn.is_open()) {
+        LOG_ERROR("Failed to open hosts file for reading (admin required)");
+        return false;
+      }
+
+      std::vector<std::string> lines;
+      std::string line;
+      bool inCMSSection = false;
+
+      // Read existing file and remove CMS section
+      while (std::getline(hostsIn, line)) {
+        if (line.find("# CMS Blocked Domains") != std::string::npos) {
+          inCMSSection = true;
+          continue;
+        }
+        if (inCMSSection &&
+            (line.empty() || line.find("# CMS") != std::string::npos)) {
+          inCMSSection = false;
+        }
+        if (!inCMSSection) {
+          lines.push_back(line);
+        }
+      }
+      hostsIn.close();
+
+      // Write back without CMS section
+      std::ofstream hostsOut(hostsPath, std::ios::trunc);
+      if (!hostsOut.is_open()) {
+        LOG_ERROR("Failed to open hosts file for writing (admin required)");
+        return false;
+      }
+
+      for (const auto &l : lines) {
+        hostsOut << l << "\n";
+      }
+
+      // Add allow-list marker
+      hostsOut << "\n# CMS Allow-List Mode Active\n";
+      hostsOut << "# Only domains explicitly allowed in filter rules will be "
+                  "accessible\n";
+      hostsOut << "# Use blockDomains() to specify allowed domains\n";
+
+      hostsOut.close();
+      std::system("ipconfig /flushdns >nul 2>&1");
+
+      LOG_INFO("Allow-list mode activated (use blockDomains to specify allowed "
+               "domains)");
+      return true;
+    } catch (const std::exception &e) {
+      LOG_ERROR(std::string("Error setting allow-list mode: ") + e.what());
+      return false;
+    }
   }
 
   bool setBlockListMode() override {

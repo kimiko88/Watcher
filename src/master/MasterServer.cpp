@@ -219,8 +219,22 @@ private:
       // Register client
       ClientInfo info;
       info.id = msg.source;
-      info.hostname = msg.payload.value("hostname", "Unknown");
-      info.ip_address = socket->peerAddress().toString().toStdString();
+
+      // Extract hostname with fallback to machine_id
+      info.hostname = msg.payload.value(
+          "hostname", msg.payload.value("machine_id", "Unknown"));
+
+      // Normalize IP address (convert IPv6-mapped IPv4 to pure IPv4)
+      QHostAddress addr = socket->peerAddress();
+      if (addr.protocol() == QAbstractSocket::IPv6Protocol) {
+        bool ok;
+        QHostAddress ipv4 = QHostAddress(addr.toIPv4Address(&ok));
+        if (ok) {
+          addr = ipv4;
+        }
+      }
+      info.ip_address = addr.toString().toStdString();
+
       info.state = ClientState::CONNECTED;
       info.last_heartbeat = time(nullptr);
 

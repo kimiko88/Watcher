@@ -75,7 +75,8 @@ try {
     
     Write-Host "Creating Windows Service..."
     # Use PowerShell's native New-Service cmdlet for reliability
-    $binPathValue = "`"$BinPath`" --service"
+    # Include the --config parameter to specify the config file location
+    $binPathValue = "`"$BinPath`" --service --config `"$ConfigPath`""
     
     try {
         New-Service -Name $ServiceName `

@@ -109,6 +109,12 @@ public:
 
   // Get list of running process IDs
   virtual std::vector<uint32_t> getRunningPids() = 0;
+
+  // Get system hostname
+  virtual std::string getHostname() = 0;
+
+  // Get current logged-in username
+  virtual std::string getUsername() = 0;
 };
 
 // Screen Capture Interface
