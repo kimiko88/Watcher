@@ -1,8 +1,0 @@
-Versione di MSBuild 17.13.15+18b3035f6 per .NET Framework
-
-  cms_core.vcxproj -> C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\core\Debug\cms_core.lib
-  cms_platform.vcxproj -> C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\platform\Debug\cms_platform.lib
-  gtest.vcxproj -> C:\Users\chimi\Desktop\Programmazione\Watcher\build\lib\Debug\gtest.lib
-  gtest_main.vcxproj -> C:\Users\chimi\Desktop\Programmazione\Watcher\build\lib\Debug\gtest_main.lib
-  ApplicationPolicyIntegrationTest.cpp
-C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\ApplicationPolicyIntegrationTest.cpp(1,10): error C1083: Cannot open include file: 'cms/Applicationmanager->h': No such file or directory [C:\Users\chimi\Desktop\Programmazione\Watcher\build\tests\cms_integration_tests.vcxproj]
