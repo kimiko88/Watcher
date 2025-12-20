@@ -1,209 +1,268 @@
-# Classroom Control (CMS) - C++ Classroom Management System
+# Watcher - Classroom Management System
 
-A cross-platform classroom management system built with modern C++17, designed to provide efficient control and monitoring of classroom environments.
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Platform](https://img.shields.io/badge/platform-Windows-lightgrey.svg)]()
+[![C++](https://img.shields.io/badge/C++-17-blue.svg)]()
+[![Qt](https://img.shields.io/badge/Qt-6-green.svg)]()
 
-## Features
+**[🇮🇹 Versione Italiana](README_IT.md)**
 
-- **Cross-Platform**: Supports Windows, Linux, and macOS
-- **Modern C++17**: Utilizes modern C++ features and best practices
-- **Modular Architecture**: Separates concerns into core, client, and master components
-- **Robust Testing**: Comprehensive test coverage with Google Test
-- **Flexible Configuration**: Simple configuration management system
-- **Professional Logging**: Multi-level logging with thread safety
+A comprehensive classroom management system (CMS) for educational environments, enabling teachers to monitor and control student computers from a central master application.
 
-## Project Structure
+## 🎯 Features
 
+### 📸 Real-Time Monitoring
+- **Live Screenshot Capture**: Capture full-resolution screenshots of student screens with DPI-aware rendering
+- **Automatic Thumbnail Updates**: View real-time thumbnail previews of all connected clients
+- **Multi-Monitor Support**: Correctly captures entire screen across multiple displays
+- **High-Quality Export**: Save screenshots to `Pictures/Screenshots` in PNG format with timestamp
+
+### 🔒 Screen Control
+- **Input Locking**: Lock both keyboard and mouse input on student machines
+- **Selective Unlock**: Independently control keyboard and mouse lock states
+- **Admin-Level Control**: Requires appropriate privileges for maximum security
+
+### 🌐 Network Filtering
+- **Domain Blocking**: Block access to specific websites via hosts file modification
+- **Domain Allow-List**: Whitelist-only mode for strict internet control
+- **Dynamic Rule Management**: Add/remove domains without system restart
+- **Automatic DNS Flush**: Changes take effect immediately
+
+### 🚫 Application Control
+- **Process Blocking**: Prevent specific applications from running
+- **Rule Persistence**: Application rules saved across sessions
+- **Real-Time Monitoring**: Continuously scans for and blocks forbidden applications
+- **Flexible Filtering**: Support for both blacklist and whitelist modes
+
+### ⚡ Power Management
+- **Remote Shutdown**: Power off student machines remotely
+- **Remote Reboot**: Restart client computers
+- **Hibernate Support**: Put machines into low-power state
+- **Battery Status**: Monitor battery level and charging state (laptops)
+
+### 🖥️ Client Information
+- **System Details**: View CPU, RAM, and screen resolution
+- **Network Information**: Display IP address (IPv4/IPv6)
+- **Hostname Display**: Show computer name and username
+- **Connection Status**: Real-time monitoring of client connectivity
+
+## 🏗️ Architecture
+
+### Master Application
+The teacher-facing GUI application built with Qt6:
+- **Dashboard**: Grid view of all connected clients
+- **Screenshot Viewer**: Full-screen image viewer with zoom capabilities
+- **Policy Management**: Configure domain and application filtering
+- **Broadcast Commands**: Send commands to all or selected clients
+
+### Client Service
+Background service running on student machines:
+- **Lightweight**: Minimal resource usage
+- **Auto-Reconnect**: Automatically reconnects to master if connection is lost
+- **Secure Communication**: JSON-based protocol over TCP
+- **Platform-Specific**: Optimized Windows API integration
+
+### Communication Protocol
+- **TCP-based**: Reliable message delivery
+- **JSON Messages**: Human-readable command format
+- **Newline-Delimited**: Efficient message parsing
+- **Base64 Encoding**: Screenshot data transmission
+
+## 📋 Requirements
+
+### Master Application
+- Windows 10/11
+- **Qt 6.5 or higher** (required for GUI)
+- CMake 3.15+
+- MSVC 2019 or newer
+- Visual Studio 2019/2022 with C++ Desktop Development workload
+
+### Client Service
+- Windows 10/11
+- CMake 3.15+
+- MSVC 2019 or newer
+- Administrator privileges (for input locking and domain filtering)
+- Network connectivity to master
+
+## 🔧 Qt Installation
+
+### Installing Qt 6
+
+1. **Download Qt Online Installer**
+   - Visit [Qt Official Website](https://www.qt.io/download-qt-installer)
+   - Download the Qt Online Installer for Windows
+
+2. **Install Qt 6.5+ with Required Components**
+   ```
+   During installation, select:
+   ✓ Qt 6.5 (or newer)
+   ✓ MSVC 2019 64-bit (or MSVC 2022 64-bit)
+   ✓ Qt 5 Compatibility Module
+   ✓ Additional Libraries (if prompted)
+   ```
+
+3. **Note the Installation Path**
+   - Default: `C:\Qt\6.5.3\msvc2019_64`
+   - You'll need this path for CMake configuration
+
+### Setting Qt Path
+
+Add Qt to your system PATH or use CMake prefix:
+
+**Option 1: Set CMAKE_PREFIX_PATH**
+```bash
+set CMAKE_PREFIX_PATH=C:\Qt\6.5.3\msvc2019_64
 ```
-Watcher/
-├── CMakeLists.txt              # Root build configuration
-├── README.md                   # This file
-├── .gitignore                  # Git ignore rules
-├── include/
-│   └── cms/
-│       ├── Common.h            # Shared types and constants
-│       ├── Logger.h            # Logging interface
-│       └── Config.h            # Configuration management
-├── src/
-│   ├── core/                   # Business logic library
-│   ├── client/                 # Client application
-│   ├── master/                 # Master/server application
-│   ├── network/                # Networking layer (placeholder)
-│   └── platform/               # Platform-specific code (placeholder)
-├── tests/
-│   ├── unit/                   # Unit tests
-│   └── integration/            # Integration tests
-└── docs/
-    └── ARCHITECTURE.md         # Architecture documentation
+
+**Option 2: Use Qt CMake Path**
+```bash
+set Qt6_DIR=C:\Qt\6.5.3\msvc2019_64\lib\cmake\Qt6
 ```
 
-## Requirements
+## 🚀 Quick Start
 
-- **CMake** 3.14 or higher
-- **C++17** compatible compiler:
-  - Windows: Visual Studio 2017 or later / MinGW-w64
-  - Linux: GCC 7+ or Clang 5+
-  - macOS: Xcode 10+ (Apple Clang)
-- **Internet connection** (first build only, for downloading Google Test)
+### Building from Source
 
-## Building
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/Watcher.git
+cd Watcher
 
-### Windows (Visual Studio)
+# Create build directory
+mkdir build
+cd build
 
-```powershell
-# Configure
-cmake -B build -G "Visual Studio 16 2019"
+# Configure with CMake (specify Qt path)
+cmake .. -DCMAKE_PREFIX_PATH=C:\Qt\6.5.3\msvc2019_64
 
-# Build Debug
-cmake --build build --config Debug
+# Alternative: specify Qt6_DIR
+cmake .. -DQt6_DIR=C:\Qt\6.5.3\msvc2019_64\lib\cmake\Qt6
 
-# Build Release
+# Build master application (with Qt GUI)
+cmake --build . --target cms_master --config Release
+
+# Build client service (no Qt dependency)
+cmake --build . --target cms_client --config Release
+```
+
+### Visual Studio Build
+
+```bash
+# Generate Visual Studio solution
+cmake -B build -G "Visual Studio 16 2019" -A x64 ^
+  -DCMAKE_PREFIX_PATH=C:\Qt\6.5.3\msvc2019_64
+
+# Open in Visual Studio
+start build\Watcher.sln
+
+# Or build from command line
 cmake --build build --config Release
 ```
 
-### Windows (MinGW)
+### Configuration
 
-```powershell
-# Configure
-cmake -B build -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Debug
+#### Master Setup
+1. Launch `cms_master.exe`
+2. The server will automatically start on port `5555`
+3. Clients will connect automatically
 
-# Build
-cmake --build build
+#### Client Setup
+1. Edit `client_config.json`:
+```json
+{
+  "master_address": "192.168.1.100",
+  "master_port": 5555,
+  "machine_id": "student-pc-01",
+  "encryption_enabled": false,
+  "log_level": "INFO"
+}
 ```
 
-### Linux / macOS
+2. Run `cms_client.exe` (requires administrator privileges)
 
-```bash
-# Configure Debug build
-cmake -B build -DCMAKE_BUILD_TYPE=Debug
+## 🔧 Usage
 
-# Build
-cmake --build build
+### Taking Screenshots
+1. Select a client from the grid (or use auto-selection if only one client)
+2. Click the **📸 Screenshot** button in the toolbar
+3. View the screenshot in the popup dialog
+4. Use zoom controls or save to disk
 
-# Or configure Release build
-cmake -B build-release -DCMAKE_BUILD_TYPE=Release
-cmake --build build-release
+### Locking/Unlocking Screens
+- **Lock All**: Toolbar button to lock all connected clients
+- **Unlock All**: Toolbar button to unlock all clients
+- **Individual Lock**: Right-click client thumbnail for per-client control
+
+### Domain Filtering
+1. Click **Policy** → **Domain Filter**
+2. Choose mode: **Blacklist** or **Whitelist**
+3. Add domains to block/allow
+4. Click **Apply** to push rules to all clients
+
+### Application Control
+1. Click **Policy** → **Application Filter**
+2. Select filter mode
+3. Add application paths or process names
+4. Rules are applied immediately
+
+## 🛠️ Technical Details
+
+### Screenshot Capture
+- Uses `GetDeviceCaps(DESKTOPHORZRES/DESKTOPVERTRES)` for DPI-aware resolution
+- Captures raw RGBA pixel data (4 bytes per pixel)
+- Automatic resolution detection from data size
+- Support for common resolutions: 1920x1080, 1600x900, 1366x768, 1280x720
+
+### Network Protocol
+Messages are JSON objects with newline delimiters:
+
+```json
+{
+  "type": "SCREENSHOT_REQUEST",
+  "source": "master",
+  "destination": "client-01",
+  "timestamp": 1234567890,
+  "payload": {}
+}
 ```
 
-## Running Tests
+### Command Types
+- `HELLO` - Client handshake
+- `PING` - Heartbeat
+- `SCREENSHOT_REQUEST` - Request screenshot
+- `SCREENSHOT_DATA` - Screenshot response
+- `SCREEN_LOCK` / `SCREEN_UNLOCK` - Input control
+- `DOMAIN_BLOCK` / `DOMAIN_ALLOW` - Network filtering
+- `APP_BLOCK` / `APP_ALLOW` - Application control
+- `POWER_CONTROL` - Shutdown/reboot/hibernate
 
-### All Tests
+## 🐛 Known Issues
 
-```bash
-cd build
-ctest --output-on-failure
-```
+- Input locking requires administrator privileges
+- Domain filtering modifies system hosts file (admin required)
+- Multi-monitor support captures primary screen only in some cases
 
-### Verbose Output
+## 🤝 Contributing
 
-```bash
-cd build
-ctest -V
-```
+Contributions are welcome! Please feel free to submit pull requests or open issues for bugs and feature requests.
 
-### Run Specific Test Suite
+## 📄 License
 
-```bash
-# Unit tests only
-./build/tests/cms_unit_tests
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-# Integration tests only
-./build/tests/cms_integration_tests
-```
+## 🙏 Acknowledgments
 
-## Running Applications
+- Built with Qt 6 Framework
+- Uses nlohmann/json for JSON parsing
+- Windows API for platform-specific features
 
-### Client Application
+## 📞 Support
 
-```bash
-# Windows
-.\build\src\client\Debug\cms_client.exe
+For issues and questions:
+- Create an issue on GitHub
+- Check existing issues for solutions
+- Review the documentation
 
-# Linux/macOS
-./build/src/client/cms_client
-```
+---
 
-### Master Application
-
-```bash
-# Windows
-.\build\src\master\Debug\cms_master.exe
-
-# Linux/macOS
-./build/src/master/cms_master
-```
-
-## Development
-
-### Adding New Features
-
-1. **Create header files** in `include/cms/`
-2. **Implement in** `src/core/` for shared code
-3. **Write tests first** (TDD approach) in `tests/unit/`
-4. **Update CMakeLists.txt** if adding new files
-5. **Run tests** to verify
-
-### Build Types
-
-- **Debug**: Full debugging symbols, no optimization (`-g -O0`)
-- **Release**: Optimized for performance (`-O3`, `-DNDEBUG`)
-
-### Compiler Warnings
-
-- **MSVC**: `/W4` (Debug), `/W3` (Release)
-- **GCC/Clang**: `-Wall -Wextra` (Debug)
-
-## Components
-
-### Core Library (`cms_core`)
-
-Static library containing:
-- Common types and constants
-- Logger implementation
-- Configuration management
-- Core business logic
-
-### Client Application (`cms_client`)
-
-Student/client-side application that connects to the master server.
-
-### Master Application (`cms_master`)
-
-Teacher/server-side application that manages and monitors clients.
-
-## Configuration
-
-The system uses a simple key-value configuration system:
-
-```cpp
-auto& config = cms::Config::Instance();
-config.Set("server.port", "8080");
-auto port = config.Get("server.port");
-```
-
-## Logging
-
-Multi-level logging with thread safety:
-
-```cpp
-LOG_DEBUG("Debug information");
-LOG_INFO("General information");
-LOG_WARNING("Warning message");
-LOG_ERROR("Error occurred");
-```
-
-## License
-
-[Add your license here]
-
-## Contributing
-
-[Add contribution guidelines here]
-
-## Authors
-
-- [Your name/team here]
-
-## Acknowledgments
-
-- Google Test framework for testing infrastructure
-- CMake for cross-platform build system
+**Note**: This software is intended for educational environments. Ensure you have proper authorization before deploying on any network.

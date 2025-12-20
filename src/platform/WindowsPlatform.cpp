@@ -206,6 +206,91 @@ public:
     return image;
   }
 
+  ScreenImage captureThumbnail(int maxWidth = 400,
+                               int maxHeight = 225) override {
+    ScreenImage image;
+    try {
+      HDC screenDC = GetDC(NULL);
+
+      // Get full physical screen resolution
+      int fullWidth = GetDeviceCaps(screenDC, DESKTOPHORZRES);
+      int fullHeight = GetDeviceCaps(screenDC, DESKTOPVERTRES);
+
+      if (fullWidth == 0 || fullHeight == 0) {
+        fullWidth = GetSystemMetrics(SM_CXSCREEN);
+        fullHeight = GetSystemMetrics(SM_CYSCREEN);
+      }
+
+      // Calculate thumbnail dimensions maintaining aspect ratio
+      float aspectRatio =
+          static_cast<float>(fullWidth) / static_cast<float>(fullHeight);
+      int thumbWidth = maxWidth;
+      int thumbHeight = static_cast<int>(thumbWidth / aspectRatio);
+
+      if (thumbHeight > maxHeight) {
+        thumbHeight = maxHeight;
+        thumbWidth = static_cast<int>(thumbHeight * aspectRatio);
+      }
+
+      // Capture full screen first
+      HDC memDCFull = CreateCompatibleDC(screenDC);
+      HBITMAP bitmapFull =
+          CreateCompatibleBitmap(screenDC, fullWidth, fullHeight);
+      HBITMAP oldFull = (HBITMAP)SelectObject(memDCFull, bitmapFull);
+
+      int xSrc = GetSystemMetrics(SM_XVIRTUALSCREEN);
+      int ySrc = GetSystemMetrics(SM_YVIRTUALSCREEN);
+      BitBlt(memDCFull, 0, 0, fullWidth, fullHeight, screenDC, xSrc, ySrc,
+             SRCCOPY);
+
+      // Create thumbnail bitmap and resize with StretchBlt
+      HDC memDCThumb = CreateCompatibleDC(screenDC);
+      HBITMAP bitmapThumb =
+          CreateCompatibleBitmap(screenDC, thumbWidth, thumbHeight);
+      HBITMAP oldThumb = (HBITMAP)SelectObject(memDCThumb, bitmapThumb);
+
+      // Use HALFTONE mode for better quality downscaling
+      SetStretchBltMode(memDCThumb, HALFTONE);
+      SetBrushOrgEx(memDCThumb, 0, 0, NULL);
+
+      StretchBlt(memDCThumb, 0, 0, thumbWidth, thumbHeight, memDCFull, 0, 0,
+                 fullWidth, fullHeight, SRCCOPY);
+
+      // Get thumbnail pixel data
+      BITMAPINFO bmi = {};
+      bmi.bmiHeader.biSize = sizeof(BITMAPINFOHEADER);
+      bmi.bmiHeader.biWidth = thumbWidth;
+      bmi.bmiHeader.biHeight = -thumbHeight; // Top-down
+      bmi.bmiHeader.biPlanes = 1;
+      bmi.bmiHeader.biBitCount = 32;
+      bmi.bmiHeader.biCompression = BI_RGB;
+
+      size_t dataSize = thumbWidth * thumbHeight * 4;
+      image.data.resize(dataSize);
+      GetDIBits(memDCThumb, bitmapThumb, 0, thumbHeight, image.data.data(),
+                &bmi, DIB_RGB_COLORS);
+
+      image.width = thumbWidth;
+      image.height = thumbHeight;
+      image.format = ImageFormat::RGBA;
+
+      // Cleanup
+      SelectObject(memDCThumb, oldThumb);
+      DeleteObject(bitmapThumb);
+      DeleteDC(memDCThumb);
+
+      SelectObject(memDCFull, oldFull);
+      DeleteObject(bitmapFull);
+      DeleteDC(memDCFull);
+
+      ReleaseDC(NULL, screenDC);
+
+    } catch (...) {
+      LOG_ERROR("Failed to capture thumbnail");
+    }
+    return image;
+  }
+
   ScreenImage captureWindow(void *window_handle) override {
     ScreenImage image;
     if (!window_handle)

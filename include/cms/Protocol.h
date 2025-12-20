@@ -15,6 +15,7 @@ enum class CommandType {
   HELLO,                // Initial handshake between client and master
   SCREENSHOT_REQUEST,   // Request screenshot from client
   SCREENSHOT_DATA,      // Screenshot data response
+  THUMBNAIL_UPDATE,     // Automatic periodic thumbnail update
   SCREEN_LOCK,          // Lock client screen
   SCREEN_UNLOCK,        // Unlock client screen
   SCREEN_BROADCAST,     // Broadcast screen to all clients
@@ -39,6 +40,8 @@ inline std::string CommandTypeToString(CommandType type) {
     return "SCREENSHOT_REQUEST";
   case CommandType::SCREENSHOT_DATA:
     return "SCREENSHOT_DATA";
+  case CommandType::THUMBNAIL_UPDATE:
+    return "THUMBNAIL_UPDATE";
   case CommandType::SCREEN_LOCK:
     return "SCREEN_LOCK";
   case CommandType::SCREEN_UNLOCK:
@@ -78,6 +81,8 @@ inline CommandType StringToCommandType(const std::string &str) {
     return CommandType::SCREENSHOT_REQUEST;
   if (str == "SCREENSHOT_DATA")
     return CommandType::SCREENSHOT_DATA;
+  if (str == "THUMBNAIL_UPDATE")
+    return CommandType::THUMBNAIL_UPDATE;
   if (str == "SCREEN_LOCK")
     return CommandType::SCREEN_LOCK;
   if (str == "SCREEN_UNLOCK")

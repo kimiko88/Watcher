@@ -120,12 +120,19 @@ private:
   // Send screenshot to master
   void sendScreenshot();
 
+  // Send thumbnail to master (periodic update)
+  void sendThumbnail();
+
+  // Thumbnail update loop
+  void thumbnailLoop();
+
   // Read loop for incoming commands
   void readLoop();
 
   std::unique_ptr<std::thread> processing_thread_;
   std::unique_ptr<std::thread> read_thread_;
   std::unique_ptr<std::thread> monitor_thread_;
+  std::unique_ptr<std::thread> thumbnail_thread_;
   mutable std::mutex mutex_;
   std::condition_variable cv_;
   std::mutex cv_mutex_;
@@ -139,8 +146,9 @@ private:
   // Constants
   static constexpr int DEFAULT_HEARTBEAT_INTERVAL = 30; // seconds
   static constexpr int MAX_RECONNECT_ATTEMPTS = 10;
-  static constexpr int RECONNECT_DELAY = 5;        // seconds
-  static constexpr int MONITOR_INTERVAL_MS = 2000; // 2 seconds
+  static constexpr int RECONNECT_DELAY = 5;          // seconds
+  static constexpr int MONITOR_INTERVAL_MS = 2000;   // 2 seconds
+  static constexpr int THUMBNAIL_INTERVAL_MS = 5000; // 5 seconds
 };
 
 } // namespace client

@@ -248,41 +248,33 @@ private:
       LOG_INFO("Registered client: " + info.id);
 
     } else if (msg.type == protocol::CommandType::SCREENSHOT_DATA) {
-      LOG_INFO("Received SCREENSHOT_DATA from: " + msg.source);
-      // Extract base64 or raw bytes
-      // Payload might contain "data" as base64 string
+      LOG_DEBUG("Processing SCREENSHOT_DATA from: " + msg.source);
       if (msg.payload.contains("data")) {
         std::string base64 = msg.payload["data"];
-        LOG_DEBUG("Screenshot data size: " + std::to_string(base64.size()) +
-                  " bytes (base64)");
         QByteArray bytes =
             QByteArray::fromBase64(QByteArray::fromStdString(base64));
-        LOG_DEBUG("Decoded image size: " + std::to_string(bytes.size()) +
-                  " bytes");
         std::vector<uint8_t> vec(bytes.begin(), bytes.end());
 
-        // Extract width and height from payload
-        {
-          std::lock_guard<std::mutex> lock(clientsMutex_);
-          if (clients_.count(msg.source)) {
-            if (msg.payload.contains("width")) {
-              clients_[msg.source].thumbnail_width = msg.payload["width"];
-            }
-            if (msg.payload.contains("height")) {
-              clients_[msg.source].thumbnail_height = msg.payload["height"];
-            }
-            LOG_DEBUG("Screenshot dimensions: " +
-                      std::to_string(clients_[msg.source].thumbnail_width) +
-                      "x" +
-                      std::to_string(clients_[msg.source].thumbnail_height));
-          }
-        }
+        // Dimensions are in the payload but don't need to be stored in
+        // ClientInfo
 
         notifyClientThumbnailUpdated(msg.source, vec);
         notifyScreenshotReceived(msg.source, vec);
-        LOG_INFO("Screenshot notification sent for client: " + msg.source);
-      } else {
-        LOG_ERROR("SCREENSHOT_DATA missing 'data' field in payload");
+        LOG_DEBUG("Screenshot data processed for: " + msg.source);
+      }
+    } else if (msg.type == protocol::CommandType::THUMBNAIL_UPDATE) {
+      // Handle periodic thumbnail updates
+      if (msg.payload.contains("data")) {
+        std::string base64 = msg.payload["data"];
+        QByteArray bytes =
+            QByteArray::fromBase64(QByteArray::fromStdString(base64));
+        std::vector<uint8_t> vec(bytes.begin(), bytes.end());
+
+        // Dimensions are in the payload and used by the UI
+
+        // Notify UI to update thumbnail
+        notifyClientThumbnailUpdated(msg.source, vec);
+        LOG_DEBUG("Thumbnail updated: " + msg.source);
       }
     } else if (msg.type == protocol::CommandType::PING) {
       std::lock_guard<std::mutex> lock(clientsMutex_);

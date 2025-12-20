@@ -126,6 +126,11 @@ public:
   // Capture entire screen
   virtual ScreenImage captureScreen() = 0;
 
+  // Capture screen thumbnail (downscaled for bandwidth efficiency)
+  // maxWidth/maxHeight: maximum dimensions, maintains aspect ratio
+  virtual ScreenImage captureThumbnail(int maxWidth = 400,
+                                       int maxHeight = 225) = 0;
+
   // Capture specific window (platform-specific handle)
   virtual ScreenImage captureWindow(void *window_handle) = 0;
 

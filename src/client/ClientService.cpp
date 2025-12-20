@@ -423,6 +423,64 @@ void ClientService::sendScreenshot() {
   }
 }
 
+void ClientService::sendThumbnail() {
+  if (!connected_ || !platform_) {
+    return;
+  }
+
+  try {
+    // Capture thumbnail (400x225 default)
+    cms::platform::ScreenImage thumbnail =
+        platform_->captureThumbnail(400, 225);
+    if (thumbnail.data.empty()) {
+      LOG_DEBUG("Thumbnail capture failed: empty data");
+      return;
+    }
+
+    std::string base64Data = base64_encode(
+        reinterpret_cast<unsigned char const *>(thumbnail.data.data()),
+        static_cast<size_t>(thumbnail.data.size()));
+
+    nlohmann::json payload = {{"width", thumbnail.width},
+                              {"height", thumbnail.height},
+                              {"format", "RGBA"},
+                              {"data", base64Data}};
+
+    auto msg =
+        protocol::Message::Create(protocol::CommandType::THUMBNAIL_UPDATE,
+                                  config_.machine_id, "master", payload);
+
+    protocol::MessageSerializer serializer;
+    std::string json = serializer.Serialize(msg);
+    std::string packet = json + "\n";
+
+    if (socket_ && socket_->Send(packet)) {
+      LOG_DEBUG("Sent thumbnail update (" + std::to_string(thumbnail.width) +
+                "x" + std::to_string(thumbnail.height) + ", " +
+                std::to_string(base64Data.size()) + " bytes)");
+    } else {
+      LOG_ERROR("Failed to send thumbnail");
+    }
+
+  } catch (const std::exception &e) {
+    LOG_ERROR(std::string("Failed to send thumbnail: ") + e.what());
+  }
+}
+
+void ClientService::thumbnailLoop() {
+  LOG_INFO("===== THUMBNAIL LOOP STARTED =====");
+
+  while (connected_ && running_) {
+    sendThumbnail();
+
+    // Sleep for THUMBNAIL_INTERVAL_MS (5 seconds)
+    std::this_thread::sleep_for(
+        std::chrono::milliseconds(THUMBNAIL_INTERVAL_MS));
+  }
+
+  LOG_INFO("===== THUMBNAIL LOOP STOPPED =====");
+}
+
 ClientService::~ClientService() {
   if (running_) {
     stop();
@@ -464,6 +522,12 @@ bool ClientService::start() {
   // Start monitor thread
   monitor_thread_ =
       std::make_unique<std::thread>(&ClientService::monitorLoop, this);
+  LOG_INFO("Monitor thread started");
+
+  // Start thumbnail update thread
+  thumbnail_thread_ =
+      std::make_unique<std::thread>(&ClientService::thumbnailLoop, this);
+  LOG_INFO("Thumbnail thread started");
 
   LOG_INFO("ClientService started");
   return true;
@@ -498,6 +562,12 @@ bool ClientService::stop() {
   if (monitor_thread_ && monitor_thread_->joinable()) {
     mutex_.unlock();
     monitor_thread_->join();
+    mutex_.lock();
+  }
+
+  if (thumbnail_thread_ && thumbnail_thread_->joinable()) {
+    mutex_.unlock();
+    thumbnail_thread_->join();
     mutex_.lock();
   }
 
