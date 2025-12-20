@@ -68,14 +68,28 @@ try {
     if ($Service) {
         Write-Host "Service already exists. Stopping..."
         Stop-Service -Name $ServiceName -Force -ErrorAction SilentlyContinue
-        # We don't delete to preserve config, but we updating bin path/config requires sc config normally
-        # For clean install, one might sc delete. Let's assume update.
+        Write-Host "Deleting existing service to recreate..."
+        sc.exe delete $ServiceName
+        Start-Sleep -Seconds 2
     }
-    else {
-        Write-Host "Creating Windows Service..."
-        # Note: binPath must be quoted if contains spaces
-        $scArgs = @("create", $ServiceName, "binPath=", "`"$BinPath`" --service", "start=", "auto", "DisplayName=", $DisplayName, "depend=", "Tcpip/EventLog")
-        Start-Process -FilePath "sc.exe" -ArgumentList $scArgs -Wait -NoNewWindow
+    
+    Write-Host "Creating Windows Service..."
+    # Use PowerShell's native New-Service cmdlet for reliability
+    $binPathValue = "`"$BinPath`" --service"
+    
+    try {
+        New-Service -Name $ServiceName `
+            -BinaryPathName $binPathValue `
+            -DisplayName $DisplayName `
+            -StartupType Automatic `
+            -DependsOn @("Tcpip", "EventLog") `
+            -ErrorAction Stop
+        
+        Write-Host "Service created successfully."
+    }
+    catch {
+        Write-Error "Failed to create service: $_"
+        exit 1
     }
 
     # 6. Firewall Rule
@@ -86,19 +100,31 @@ try {
 
     # 7. Start Service
     Write-Host "Starting service..."
-    Start-Service -Name $ServiceName
-    
-    # 8. Verify
-    Start-Sleep -Seconds 2
-    $Status = (Get-Service -Name $ServiceName).Status
-    if ($Status -eq "Running") {
-        Write-Host "Installation SUCCESS! Service is running." -ForegroundColor Green
+    try {
+        Start-Service -Name $ServiceName -ErrorAction Stop
         
-        # Event log entry check (simulated or real if service supports it)
-        # Write-EventLog -LogName Application -Source "ClassroomControl" ...
+        # 8. Verify
+        Start-Sleep -Seconds 2
+        $ServiceStatus = Get-Service -Name $ServiceName
+        
+        if ($ServiceStatus.Status -eq "Running") {
+            Write-Host "Installation SUCCESS! Service is running." -ForegroundColor Green
+            Write-Host "Service Name: $ServiceName" -ForegroundColor Cyan
+            Write-Host "Installation Path: $TargetDir" -ForegroundColor Cyan
+            Write-Host "Config File: $ConfigPath" -ForegroundColor Cyan
+        }
+        else {
+            Write-Error "Service failed to start. Current status: $($ServiceStatus.Status)"
+            Write-Host "Check Event Viewer (eventvwr.msc) for error details." -ForegroundColor Yellow
+            exit 1
+        }
     }
-    else {
-        Write-Error "Service failed to start. Current status: $Status"
+    catch {
+        Write-Error "Failed to start service: $_"
+        Write-Host "Troubleshooting tips:" -ForegroundColor Yellow
+        Write-Host "  1. Check if cms_client.exe exists at: $BinPath" -ForegroundColor Yellow
+        Write-Host "  2. Verify config.json syntax at: $ConfigPath" -ForegroundColor Yellow
+        Write-Host "  3. Check Event Viewer for service startup errors" -ForegroundColor Yellow
         exit 1
     }
 

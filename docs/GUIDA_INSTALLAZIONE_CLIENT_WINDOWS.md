@@ -429,7 +429,7 @@ Il servizio ClassroomControlClient non può essere avviato
 
 3. **Verificare Windows Defender:**
    - Aprire Windows Security → Protezione da virus e minacce → Gestisci impostazioni
-   - Aggiungere un'esclusione per `C:\Program Files\ClassroomControl`
+   - Aggiungere un'esclusione per `NNew`
 
 ### Errore "Port Already in Use"
 
