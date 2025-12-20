@@ -1,8 +1,7 @@
 {
-    "master_host": "127.0.0.1",
-    "master_port": 8080,
-    "client_name": "integration_test_client",
-    "screenshot_interval_ms": 10000,
-    "thumbnail_width": 160,
-    "thumbnail_height": 120
-}
+            "master_address": "127.0.0.1",
+            "master_port": 5555,
+            "machine_id": "RES_CLIENT_01",
+            "log_level": "INFO",
+            "encryption_enabled": false
+        }

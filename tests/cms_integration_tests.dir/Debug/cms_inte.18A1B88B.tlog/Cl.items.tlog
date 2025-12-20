@@ -1,6 +1,7 @@
 C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\test_build.cpp;C:\Users\chimi\Desktop\Programmazione\Watcher\tests\cms_integration_tests.dir\Debug\test_build.obj
 C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\InstallationTest.cpp;C:\Users\chimi\Desktop\Programmazione\Watcher\tests\cms_integration_tests.dir\Debug\InstallationTest.obj
 C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\EndToEndTest.cpp;C:\Users\chimi\Desktop\Programmazione\Watcher\tests\cms_integration_tests.dir\Debug\EndToEndTest.obj
+C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\ApplicationPolicyIntegrationTest.cpp;C:\Users\chimi\Desktop\Programmazione\Watcher\tests\cms_integration_tests.dir\Debug\ApplicationPolicyIntegrationTest.obj
 C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\PerformanceTest.cpp;C:\Users\chimi\Desktop\Programmazione\Watcher\tests\cms_integration_tests.dir\Debug\PerformanceTest.obj
 C:\Users\chimi\Desktop\Programmazione\Watcher\tests\integration\ResillienceTest.cpp;C:\Users\chimi\Desktop\Programmazione\Watcher\tests\cms_integration_tests.dir\Debug\ResillienceTest.obj
 C:\Users\chimi\Desktop\Programmazione\Watcher\src\client\ClientService.cpp;C:\Users\chimi\Desktop\Programmazione\Watcher\tests\cms_integration_tests.dir\Debug\ClientService.obj

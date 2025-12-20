@@ -1,5 +1,5 @@
 {
-  "tests": 238,
+  "tests": 267,
   "name": "AllTests",
   "testsuites": [
     {
@@ -91,62 +91,62 @@
         {
           "name": "StringToCommandType",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_protocol.cpp",
-          "line": 39
+          "line": 42
         },
         {
           "name": "StringToCommandTypeInvalid",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_protocol.cpp",
-          "line": 54
+          "line": 60
         },
         {
           "name": "CreateMessageWithAllFields",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_protocol.cpp",
-          "line": 64
+          "line": 71
         },
         {
           "name": "CreateMessageFactory",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_protocol.cpp",
-          "line": 83
+          "line": 90
         },
         {
           "name": "GenerateMessageIdNonEmpty",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_protocol.cpp",
-          "line": 105
+          "line": 108
         },
         {
           "name": "GenerateMessageIdUnique",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_protocol.cpp",
-          "line": 111
+          "line": 114
         },
         {
           "name": "GetCurrentTimestamp",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_protocol.cpp",
-          "line": 117
+          "line": 120
         },
         {
           "name": "TimestampIncreases",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_protocol.cpp",
-          "line": 123
+          "line": 126
         },
         {
           "name": "CRC32Calculation",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_protocol.cpp",
-          "line": 134
+          "line": 137
         },
         {
           "name": "CRC32EmptyString",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_protocol.cpp",
-          "line": 148
+          "line": 151
         },
         {
           "name": "SerializeHelloMessage",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_protocol.cpp",
-          "line": 158
+          "line": 161
         },
         {
           "name": "SerializeAllCommandTypes",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_protocol.cpp",
-          "line": 178
+          "line": 180
         },
         {
           "name": "SerializeVerifyJsonStructure",
@@ -171,87 +171,87 @@
         {
           "name": "IdempotencyAllCommandTypes",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_protocol.cpp",
-          "line": 312
+          "line": 310
         },
         {
           "name": "ValidateValidChecksum",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_protocol.cpp",
-          "line": 335
+          "line": 332
         },
         {
           "name": "ValidateInvalidChecksum",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_protocol.cpp",
-          "line": 351
+          "line": 348
         },
         {
           "name": "ValidateDetectsPayloadModification",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_protocol.cpp",
-          "line": 370
+          "line": 367
         },
         {
           "name": "ValidateDetectsHeaderModification",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_protocol.cpp",
-          "line": 386
+          "line": 384
         },
         {
           "name": "DeserializeMalformedJson",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_protocol.cpp",
-          "line": 406
+          "line": 404
         },
         {
           "name": "DeserializeMissingMessageId",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_protocol.cpp",
-          "line": 414
+          "line": 412
         },
         {
           "name": "DeserializeMissingType",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_protocol.cpp",
-          "line": 431
+          "line": 429
         },
         {
           "name": "DeserializeMissingTimestamp",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_protocol.cpp",
-          "line": 448
+          "line": 446
         },
         {
           "name": "DeserializeMissingSource",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_protocol.cpp",
-          "line": 465
+          "line": 463
         },
         {
           "name": "DeserializeMissingDestination",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_protocol.cpp",
-          "line": 482
+          "line": 480
         },
         {
           "name": "DeserializeMissingChecksum",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_protocol.cpp",
-          "line": 499
+          "line": 497
         },
         {
           "name": "DeserializeInvalidCommandType",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_protocol.cpp",
-          "line": 516
+          "line": 514
         },
         {
           "name": "RealisticHelloHandshake",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_protocol.cpp",
-          "line": 538
+          "line": 536
         },
         {
           "name": "RealisticScreenshotFlow",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_protocol.cpp",
-          "line": 562
+          "line": 560
         },
         {
           "name": "RealisticDomainBlockCommand",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_protocol.cpp",
-          "line": 597
+          "line": 591
         },
         {
           "name": "RealisticStatusUpdate",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_protocol.cpp",
-          "line": 617
+          "line": 610
         }
       ]
     },
@@ -378,117 +378,117 @@
         {
           "name": "ConstructionWithValidConfig",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_client_service.cpp",
-          "line": 89
+          "line": 83
         },
         {
           "name": "ConstructionWithInvalidConfigThrows",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_client_service.cpp",
-          "line": 95
+          "line": 87
         },
         {
           "name": "ConstructionWithNonExistentConfigThrows",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_client_service.cpp",
-          "line": 105
+          "line": 95
         },
         {
           "name": "InitiallyNotRunning",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_client_service.cpp",
-          "line": 115
+          "line": 105
         },
         {
           "name": "StartSetsRunningTrue",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_client_service.cpp",
-          "line": 120
+          "line": 110
         },
         {
           "name": "StopSetsRunningFalse",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_client_service.cpp",
-          "line": 135
+          "line": 125
         },
         {
           "name": "MultipleStartCallsIdempotent",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_client_service.cpp",
-          "line": 145
+          "line": 135
         },
         {
           "name": "MultipleStopCallsSafe",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_client_service.cpp",
-          "line": 160
+          "line": 150
         },
         {
           "name": "GetStatusReturnsValidStruct",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_client_service.cpp",
-          "line": 176
+          "line": 164
         },
         {
           "name": "StatusReflectsConnectionState",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_client_service.cpp",
-          "line": 191
+          "line": 179
         },
         {
           "name": "UptimeIncreasesWhileRunning",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_client_service.cpp",
-          "line": 207
+          "line": 195
         },
         {
           "name": "ConnectToMasterAttempted",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_client_service.cpp",
-          "line": 226
+          "line": 216
         },
         {
           "name": "HelloMessageFormatValid",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_client_service.cpp",
-          "line": 238
+          "line": 228
         },
         {
           "name": "HeartbeatIntervalConfigurable",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_client_service.cpp",
-          "line": 272
+          "line": 258
         },
         {
           "name": "LastHeartbeatTimestampUpdates",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_client_service.cpp",
-          "line": 280
+          "line": 266
         },
         {
           "name": "ReconnectionOnDisconnect",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_client_service.cpp",
-          "line": 300
+          "line": 286
         },
         {
           "name": "ReconnectionAttemptsLimited",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_client_service.cpp",
-          "line": 315
+          "line": 301
         },
         {
           "name": "CommandQueueInitiallyEmpty",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_client_service.cpp",
-          "line": 327
+          "line": 313
         },
         {
           "name": "CommandQueueProcessing",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_client_service.cpp",
-          "line": 333
+          "line": 319
         },
         {
           "name": "ConcurrentStartStopSafe",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_client_service.cpp",
-          "line": 351
+          "line": 337
         },
         {
           "name": "ConcurrentStatusQueriesSafe",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_client_service.cpp",
-          "line": 371
+          "line": 357
         },
         {
           "name": "FullLifecycle",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_client_service.cpp",
-          "line": 399
+          "line": 385
         },
         {
           "name": "MultipleLifecycles",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_client_service.cpp",
-          "line": 418
+          "line": 404
         }
       ]
     },
@@ -867,6 +867,17 @@
       ]
     },
     {
+      "name": "NetworkTest",
+      "tests": 1,
+      "testsuite": [
+        {
+          "name": "InitializationAndCleanup",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\test_network.cpp",
+          "line": 13
+        }
+      ]
+    },
+    {
       "name": "ActivityMonitorTest",
       "tests": 10,
       "testsuite": [
@@ -1130,118 +1141,270 @@
       ]
     },
     {
+      "name": "ApplicationPolicyProtocolTest",
+      "tests": 10,
+      "testsuite": [
+        {
+          "name": "CreateAppPolicySyncMessage",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ApplicationPolicyProtocolTest.cpp",
+          "line": 15
+        },
+        {
+          "name": "SerializeAppPolicySyncMessage",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ApplicationPolicyProtocolTest.cpp",
+          "line": 45
+        },
+        {
+          "name": "DeserializeAppPolicySyncMessage",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ApplicationPolicyProtocolTest.cpp",
+          "line": 64
+        },
+        {
+          "name": "MultipleRulesInPayload",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ApplicationPolicyProtocolTest.cpp",
+          "line": 95
+        },
+        {
+          "name": "DisabledModePayload",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ApplicationPolicyProtocolTest.cpp",
+          "line": 120
+        },
+        {
+          "name": "WhitelistModePayload",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ApplicationPolicyProtocolTest.cpp",
+          "line": 134
+        },
+        {
+          "name": "InvalidJsonHandling",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ApplicationPolicyProtocolTest.cpp",
+          "line": 157
+        },
+        {
+          "name": "MissingModeField",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ApplicationPolicyProtocolTest.cpp",
+          "line": 165
+        },
+        {
+          "name": "CommandTypeToString",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ApplicationPolicyProtocolTest.cpp",
+          "line": 185
+        },
+        {
+          "name": "EmptyRulesArray",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ApplicationPolicyProtocolTest.cpp",
+          "line": 191
+        }
+      ]
+    },
+    {
       "name": "ScreenRecorderTest",
       "tests": 22,
       "testsuite": [
         {
           "name": "StartStopRecording",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ScreenRecorderTest.cpp",
-          "line": 40
+          "line": 39
         },
         {
           "name": "VideoFileGenerated",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ScreenRecorderTest.cpp",
-          "line": 57
+          "line": 56
         },
         {
           "name": "PauseResumeRecording",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ScreenRecorderTest.cpp",
-          "line": 72
+          "line": 71
         },
         {
           "name": "PauseWhenNotRecordingFails",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ScreenRecorderTest.cpp",
-          "line": 89
+          "line": 88
         },
         {
           "name": "ResumeWhenNotPausedFails",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ScreenRecorderTest.cpp",
-          "line": 95
+          "line": 94
         },
         {
           "name": "SetQualityBeforeRecording",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ScreenRecorderTest.cpp",
-          "line": 103
+          "line": 102
         },
         {
           "name": "CannotSetQualityDuringRecording",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ScreenRecorderTest.cpp",
-          "line": 112
+          "line": 111
         },
         {
           "name": "SetFrameRateValid",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ScreenRecorderTest.cpp",
-          "line": 122
+          "line": 121
         },
         {
           "name": "SetFrameRateInvalidRange",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ScreenRecorderTest.cpp",
-          "line": 131
+          "line": 130
         },
         {
           "name": "CannotSetFrameRateDuringRecording",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ScreenRecorderTest.cpp",
-          "line": 139
+          "line": 138
         },
         {
           "name": "RecordingStatsAccurate",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ScreenRecorderTest.cpp",
-          "line": 149
+          "line": 148
         },
         {
           "name": "GetOutputPath",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ScreenRecorderTest.cpp",
-          "line": 167
+          "line": 166
         },
         {
           "name": "CancelRecordingDeletesFile",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ScreenRecorderTest.cpp",
-          "line": 180
+          "line": 179
         },
         {
           "name": "CancelWhenNotRecordingFails",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ScreenRecorderTest.cpp",
-          "line": 197
+          "line": 196
         },
         {
           "name": "PreventConcurrentRecording",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ScreenRecorderTest.cpp",
-          "line": 203
+          "line": 202
         },
         {
           "name": "MultipleStartStopCycles",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ScreenRecorderTest.cpp",
-          "line": 213
+          "line": 212
         },
         {
           "name": "StopWhenNotRecordingFails",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ScreenRecorderTest.cpp",
-          "line": 225
+          "line": 224
         },
         {
           "name": "QualityPresetLow",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ScreenRecorderTest.cpp",
-          "line": 231
+          "line": 230
         },
         {
           "name": "QualityPresetUltra",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ScreenRecorderTest.cpp",
-          "line": 247
+          "line": 246
         },
         {
           "name": "DiskSpaceMonitoring",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ScreenRecorderTest.cpp",
-          "line": 263
+          "line": 262
         },
         {
           "name": "FrameDropsTracking",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ScreenRecorderTest.cpp",
-          "line": 274
+          "line": 273
         },
         {
           "name": "DestructorStopsRecording",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\ScreenRecorderTest.cpp",
-          "line": 288
+          "line": 287
+        }
+      ]
+    },
+    {
+      "name": "RecordingManagerTest",
+      "tests": 18,
+      "testsuite": [
+        {
+          "name": "ListRecordingsEmpty",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\RecordingManagerTest.cpp",
+          "line": 48
+        },
+        {
+          "name": "ListRecordingsWithFiles",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\RecordingManagerTest.cpp",
+          "line": 59
+        },
+        {
+          "name": "GetRecordingInfoValid",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\RecordingManagerTest.cpp",
+          "line": 68
+        },
+        {
+          "name": "GetRecordingInfoInvalid",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\RecordingManagerTest.cpp",
+          "line": 80
+        },
+        {
+          "name": "DeleteRecording",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\RecordingManagerTest.cpp",
+          "line": 88
+        },
+        {
+          "name": "DeleteNonExistent",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\RecordingManagerTest.cpp",
+          "line": 104
+        },
+        {
+          "name": "StorageQuotaDefault",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\RecordingManagerTest.cpp",
+          "line": 111
+        },
+        {
+          "name": "StorageQuotaSetGet",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\RecordingManagerTest.cpp",
+          "line": 119
+        },
+        {
+          "name": "TotalStorageUsed",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\RecordingManagerTest.cpp",
+          "line": 129
+        },
+        {
+          "name": "RecordingStats",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\RecordingManagerTest.cpp",
+          "line": 137
+        },
+        {
+          "name": "CleanupOldRecordingsNone",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\RecordingManagerTest.cpp",
+          "line": 146
+        },
+        {
+          "name": "AddTags",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\RecordingManagerTest.cpp",
+          "line": 155
+        },
+        {
+          "name": "UpdateNotes",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\RecordingManagerTest.cpp",
+          "line": 170
+        },
+        {
+          "name": "SearchByTagFound",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\RecordingManagerTest.cpp",
+          "line": 185
+        },
+        {
+          "name": "SearchByTagNotFound",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\RecordingManagerTest.cpp",
+          "line": 199
+        },
+        {
+          "name": "ExportRecordingUnsupportedFormat",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\RecordingManagerTest.cpp",
+          "line": 207
+        },
+        {
+          "name": "PlayRecordingValid",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\RecordingManagerTest.cpp",
+          "line": 218
+        },
+        {
+          "name": "PlayRecordingInvalid",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\unit\\RecordingManagerTest.cpp",
+          "line": 232
         }
       ]
     },

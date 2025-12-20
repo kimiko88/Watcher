@@ -1,0 +1,9 @@
+-IC:/Users/chimi/Desktop/Programmazione/Watcher/include
+-DCMS_PLATFORM_WINDOWS
+-DWIN32
+--compiler-flavor=msvc
+-o
+C:/Users/chimi/Desktop/Programmazione/Watcher/src/master/__/__/include/cms/ui/moc_RecordingPlayerWidget.cpp
+C:/Users/chimi/Desktop/Programmazione/Watcher/include/cms/ui/RecordingPlayerWidget.h
+-DWIN32
+--compiler-flavor=msvc

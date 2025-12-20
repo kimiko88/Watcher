@@ -1,5 +1,5 @@
 {
-  "tests": 20,
+  "tests": 24,
   "name": "AllTests",
   "testsuites": [
     {
@@ -76,27 +76,53 @@
         {
           "name": "ClientStartupConnectToMaster",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\integration\\EndToEndTest.cpp",
-          "line": 31
+          "line": 52
         },
         {
           "name": "TakeScreenshotAndVerify",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\integration\\EndToEndTest.cpp",
-          "line": 50
+          "line": 71
         },
         {
           "name": "LockUnlockScreen",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\integration\\EndToEndTest.cpp",
-          "line": 68
+          "line": 96
         },
         {
           "name": "BlockDomainOnClient",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\integration\\EndToEndTest.cpp",
-          "line": 82
+          "line": 120
         },
         {
           "name": "SafeShutdown",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\integration\\EndToEndTest.cpp",
-          "line": 93
+          "line": 145
+        }
+      ]
+    },
+    {
+      "name": "ApplicationPolicyIntegrationTest",
+      "tests": 4,
+      "testsuite": [
+        {
+          "name": "FullPolicyWorkflow",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\integration\\ApplicationPolicyIntegrationTest.cpp",
+          "line": 60
+        },
+        {
+          "name": "WhitelistPolicyIntegration",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\integration\\ApplicationPolicyIntegrationTest.cpp",
+          "line": 88
+        },
+        {
+          "name": "DisabledModeAllowsAll",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\integration\\ApplicationPolicyIntegrationTest.cpp",
+          "line": 113
+        },
+        {
+          "name": "PolicyUpdate",
+          "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\integration\\ApplicationPolicyIntegrationTest.cpp",
+          "line": 144
         }
       ]
     },
@@ -107,17 +133,17 @@
         {
           "name": "MasterBroadcastsScreen",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\integration\\PerformanceTest.cpp",
-          "line": 12
+          "line": 31
         },
         {
           "name": "MultipleClientsMultipleCommands",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\integration\\PerformanceTest.cpp",
-          "line": 26
+          "line": 45
         },
         {
           "name": "SustainedLoad30Clients",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\integration\\PerformanceTest.cpp",
-          "line": 34
+          "line": 53
         }
       ]
     },
@@ -128,7 +154,7 @@
         {
           "name": "ClientReconnectsAfterNetworkLoss",
           "file": "C:\\Users\\chimi\\Desktop\\Programmazione\\Watcher\\tests\\integration\\ResillienceTest.cpp",
-          "line": 11
+          "line": 30
         }
       ]
     }

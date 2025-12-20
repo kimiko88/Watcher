@@ -125,7 +125,7 @@ TEST_F(ProtocolTest, GetCurrentTimestamp) {
 
 TEST_F(ProtocolTest, TimestampIncreases) {
   auto ts1 = GetCurrentTimestamp();
-  std::this_thread::sleep_for(std::chrono::seconds(1));
+  std::this_thread::sleep_for(std::chrono::seconds(2));
   auto ts2 = GetCurrentTimestamp();
   EXPECT_GT(ts2, ts1);
 }

@@ -1,8 +1,0 @@
-{
-    "master_host": "localhost",
-    "master_port": 8081,
-    "client_name": "perf_test_client",
-    "screenshot_interval_ms": 1000,
-    "thumbnail_width": 160,
-    "thumbnail_height": 120
-}

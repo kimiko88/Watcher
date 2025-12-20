@@ -5,7 +5,6 @@
 #include <gtest/gtest.h>
 #include <thread>
 
-
 using namespace cms::client;
 using namespace cms::protocol;
 
@@ -199,9 +198,11 @@ TEST_F(ClientServiceTest, UptimeIncreasesWhileRunning) {
 
   std::this_thread::sleep_for(std::chrono::milliseconds(100));
   auto status1 = service.getStatus();
+  std::cout << "Uptime 1: " << status1.uptime << std::endl;
 
-  std::this_thread::sleep_for(std::chrono::milliseconds(1100));
+  std::this_thread::sleep_for(std::chrono::seconds(2));
   auto status2 = service.getStatus();
+  std::cout << "Uptime 2: " << status2.uptime << std::endl;
 
   EXPECT_GT(status2.uptime, status1.uptime);
 
