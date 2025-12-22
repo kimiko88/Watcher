@@ -220,7 +220,7 @@ bool MasterService::KillGUI() {
   return true;
 }
 
-bool MasterService::IsGUIAlive() {
+bool MasterService::IsGUIAlive() const {
   if (guiProcessHandle_ == INVALID_HANDLE_VALUE) {
     return false;
   }

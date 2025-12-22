@@ -96,7 +96,7 @@ private:
   bool KillGUI();
 
   // Check if GUI process is alive
-  bool IsGUIAlive();
+  bool IsGUIAlive() const;
 
   // Monitor loop for GUI process
   void GUIMonitorLoop();
