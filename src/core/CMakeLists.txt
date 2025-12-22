@@ -8,6 +8,8 @@ set(CORE_SOURCES
     Socket.cpp
     ScreenRecorder.cpp
     DomainPolicy.cpp
+    IPCProtocol.cpp
+    IPCChannel.cpp
     ../network/Network.cpp
 )
 

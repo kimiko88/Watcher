@@ -1,6 +1,20 @@
 # Find Qt6
 find_package(Qt6 COMPONENTS Widgets Network QUIET)
 
+# Master service executable (NO Qt required, always build)
+# Note: Does NOT include MasterServer.cpp which has Qt dependencies
+add_executable(cms_master_service
+    master_service_main.cpp
+    MasterService.cpp
+)
+
+target_link_libraries(cms_master_service PRIVATE
+    cms_core
+    cms_platform
+)
+
+message(STATUS "Configured cms_master_service executable (lightweight, no MasterServer)")
+
 if (Qt6_FOUND)
     message(STATUS "Qt6 found. Building cms_master GUI.")
     
