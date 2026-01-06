@@ -1,17 +1,35 @@
-# Find Qt6
-find_package(Qt6 COMPONENTS Widgets Network QUIET)
+# Find Qt6 - Required for Master Service (Networking)
+find_package(Qt6 COMPONENTS Core Network QUIET)
 
-# Master service executable (NO Qt required, always build)
-# Note: Does NOT include MasterServer.cpp which has Qt dependencies
+# Master service executable
 add_executable(cms_master_service
     master_service_main.cpp
     MasterService.cpp
 )
 
-target_link_libraries(cms_master_service PRIVATE
-    cms_core
-    cms_platform
-)
+# If Qt is found, we can compile the real MasterServer
+if (Qt6_FOUND)
+    target_sources(cms_master_service PRIVATE 
+        MasterServer.cpp
+        MasterActivityAggregator.cpp
+    )
+    
+    # Enable MOC for MasterServer which uses Q_OBJECT
+    set_property(TARGET cms_master_service PROPERTY AUTOMOC ON)
+    
+    target_link_libraries(cms_master_service PRIVATE
+        cms_core
+        cms_platform
+        Qt6::Core
+        Qt6::Network
+    )
+else()
+    message(WARNING "Qt6 not found! cms_master_service will fail to link createMasterServer unless a stub is provided.")
+    target_link_libraries(cms_master_service PRIVATE
+        cms_core
+        cms_platform
+    )
+endif()
 
 message(STATUS "Configured cms_master_service executable (lightweight, no MasterServer)")
 

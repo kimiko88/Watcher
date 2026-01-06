@@ -1,8 +1,11 @@
-# Quick Build Script for Watcher Service Architecture
-# Run this after cleaning build directory
-
 @echo off
+REM Quick Build Script for Watcher Service Architecture
+REM Run this after cleaning build directory
+
 setlocal EnableDelayedExpansion
+
+REM SET YOUR CUSTOM QT PATH HERE
+set "USER_QT_PATH=C:\Qt\6.10.1\msvc2022_64"
 
 echo ====================================
 echo Watcher Service Architecture Build
@@ -34,6 +37,17 @@ echo ====================================
 echo Step 1: CMake Configuration
 echo ====================================
 echo.
+
+if defined USER_QT_PATH (
+    if exist "%USER_QT_PATH%" (
+        echo Using user-defined Qt path: %USER_QT_PATH%
+        set "QT_PATH=%USER_QT_PATH%"
+        goto :qt_found
+    ) else (
+        echo WARNING: USER_QT_PATH defined but not found: %USER_QT_PATH%
+        echo Attempting auto-detection...
+    )
+)
 
 REM Try to find Qt automatically
 set "QT_PATH="
