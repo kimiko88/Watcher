@@ -102,7 +102,7 @@ Servizio in background eseguito sui computer degli studenti:
    ```
 
 3. **Annota il Percorso di Installazione**
-   - Predefinito: `C:\Qt\6.5.3\msvc2019_64`
+   - Predefinito: `C:\Qt\6.10.1\msvc2022_64`
    - Avrai bisogno di questo percorso per la configurazione CMake
 
 ### Impostare il Percorso Qt
@@ -111,12 +111,12 @@ Aggiungi Qt al PATH di sistema o usa il prefisso CMake:
 
 **Opzione 1: Imposta CMAKE_PREFIX_PATH**
 ```bash
-set CMAKE_PREFIX_PATH=C:\Qt\6.5.3\msvc2019_64
+set CMAKE_PREFIX_PATH=C:\Qt\6.10.1\msvc2022_64
 ```
 
 **Opzione 2: Usa il Percorso CMake di Qt**
 ```bash
-set Qt6_DIR=C:\Qt\6.5.3\msvc2019_64\lib\cmake\Qt6
+set Qt6_DIR=C:\Qt\6.10.1\msvc2022_64\lib\cmake\Qt6
 ```
 
 ## 🚀 Avvio Rapido
@@ -133,10 +133,10 @@ mkdir build
 cd build
 
 # Configura con CMake (specifica il percorso Qt)
-cmake .. -DCMAKE_PREFIX_PATH=C:\Qt\6.5.3\msvc2019_64
+cmake .. -DCMAKE_PREFIX_PATH=C:\Qt\6.10.1\msvc2022_64
 
 # Alternativa: specifica Qt6_DIR
-cmake .. -DQt6_DIR=C:\Qt\6.5.3\msvc2019_64\lib\cmake\Qt6
+cmake .. -DQt6_DIR=C:\Qt\6.10.1\msvc2022_64\lib\cmake\Qt6
 
 # Compila applicazione master (con GUI Qt)
 cmake --build . --target cms_master --config Release
@@ -150,7 +150,7 @@ cmake --build . --target cms_client --config Release
 ```bash
 # Genera soluzione Visual Studio
 cmake -B build -G "Visual Studio 16 2019" -A x64 ^
-  -DCMAKE_PREFIX_PATH=C:\Qt\6.5.3\msvc2019_64
+  -DCMAKE_PREFIX_PATH=C:\Qt\6.10.1\msvc2022_64
 
 # Apri in Visual Studio
 start build\Watcher.sln

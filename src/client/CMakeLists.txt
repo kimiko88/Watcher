@@ -8,6 +8,8 @@ target_link_libraries(cms_client_service
     PRIVATE
         cms_core
         cms_platform
+        wtsapi32
+        userenv
 )
 
 # Client worker executable (spawned by service, connects via IPC)

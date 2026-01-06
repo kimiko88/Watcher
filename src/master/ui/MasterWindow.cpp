@@ -407,6 +407,9 @@ void MasterWindow::onScreenshotReceived(const std::string &client_id,
     } else if (totalPixels == 1280 * 720) {
       width = 1280;
       height = 720;
+    } else if (totalPixels == 1024 * 768) {
+      width = 1024;
+      height = 768;
     } else {
       // Try to extract from client thumbnail info if available
       width = client.thumbnail_width;

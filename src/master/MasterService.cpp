@@ -141,7 +141,7 @@ bool MasterService::StopGUI() {
       ipc::IPCMessage::Create(ipc::IPCMessageType::SERVICE_SHUTDOWN);
 
   if (ipcServer_) {
-    ipcServer_->SendMessage(shutdownMsg);
+    ipcServer_->SendIPCMessage(shutdownMsg);
   }
 
   // Wait a bit for graceful shutdown
@@ -353,7 +353,7 @@ void MasterService::NotifyGUIStateUpdate() {
   ipc::IPCMessage stateMsg =
       ipc::IPCMessage::Create(ipc::IPCMessageType::SERVER_STATE, statePayload);
 
-  ipcServer_->SendMessage(stateMsg);
+  ipcServer_->SendIPCMessage(stateMsg);
 }
 
 nlohmann::json MasterService::SerializeServerState() {

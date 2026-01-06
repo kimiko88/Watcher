@@ -18,7 +18,7 @@ cd build
 
 # Configure (set Qt path if needed)
 cmake .. -G "Visual Studio 17 2022" -A x64 ^
-  -DCMAKE_PREFIX_PATH="C:\Qt\6.5.3\msvc2019_64"
+  -DCMAKE_PREFIX_PATH="C:\Qt\6.10.1\msvc2022_64"
 
 # Build all targets
 cmake --build . --config Release
@@ -165,7 +165,7 @@ TEST(IPCTest, BasicCommunication) {
   
   // Send message
   IPCMessage msg = IPCMessage::Create(IPCMessageType::PROCESS_READY);
-  client.SendMessage(msg);
+  client.SendIPCMessage(msg);
 }
 ```
 

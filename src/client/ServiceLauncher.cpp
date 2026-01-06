@@ -1,6 +1,9 @@
 #include "cms/ServiceLauncher.h"
 #include "cms/Logger.h"
 #include <sstream>
+#include <userenv.h>
+#include <wtsapi32.h>
+
 
 #ifdef _WIN32
 
@@ -112,11 +115,43 @@ bool ServiceLauncher::SendMessageToWorker(const ipc::IPCMessage &message) {
     return false;
   }
 
-  return ipcServer_->SendMessage(message);
+  return ipcServer_->SendIPCMessage(message);
 }
 
 bool ServiceLauncher::SpawnWorker() {
   LOG_INFO("Spawning worker process: " + config_.executable_path);
+
+  // Get the active console session ID
+  DWORD sessionId = WTSGetActiveConsoleSessionId();
+  if (sessionId == 0xFFFFFFFF) {
+    LOG_ERROR("No active console session found");
+    return false;
+  }
+
+  LOG_INFO("Active session ID: " + std::to_string(sessionId));
+
+  HANDLE hToken = nullptr;
+  if (!WTSQueryUserToken(sessionId, &hToken)) {
+    DWORD error = GetLastError();
+    LOG_ERROR("WTSQueryUserToken failed: " + std::to_string(error));
+    return false;
+  }
+
+  HANDLE hDupToken = nullptr;
+  if (!DuplicateTokenEx(hToken, MAXIMUM_ALLOWED, nullptr,
+                        SecurityIdentification, TokenPrimary, &hDupToken)) {
+    LOG_ERROR("DuplicateTokenEx failed: " + std::to_string(GetLastError()));
+    CloseHandle(hToken);
+    return false;
+  }
+
+  void *lpEnvironment = nullptr;
+  if (!CreateEnvironmentBlock(&lpEnvironment, hDupToken, FALSE)) {
+    LOG_ERROR("CreateEnvironmentBlock failed");
+    CloseHandle(hDupToken);
+    CloseHandle(hToken);
+    return false;
+  }
 
   // Build command line
   std::stringstream cmdLine;
@@ -126,25 +161,32 @@ bool ServiceLauncher::SpawnWorker() {
   std::string cmdLineStr = cmdLine.str();
 
   STARTUPINFOA si = {sizeof(si)};
+  si.lpDesktop = (LPSTR) "winsta0\\default";
   PROCESS_INFORMATION pi = {0};
 
-  // Create worker process
-  BOOL success =
-      CreateProcessA(NULL,                                   // Application name
-                     const_cast<char *>(cmdLineStr.c_str()), // Command line
-                     NULL,               // Process security attributes
-                     NULL,               // Thread security attributes
-                     FALSE,              // Inherit handles
-                     CREATE_NEW_CONSOLE, // Creation flags
-                     NULL,               // Environment
-                     NULL,               // Current directory
-                     &si,                // Startup info
-                     &pi                 // Process information
-      );
+  // Create worker process as user
+  BOOL success = CreateProcessAsUserA(
+      hDupToken,
+      NULL,                                   // Application name
+      const_cast<char *>(cmdLineStr.c_str()), // Command line
+      NULL,                                   // Process security attributes
+      NULL,                                   // Thread security attributes
+      FALSE,                                  // Inherit handles
+      NORMAL_PRIORITY_CLASS | CREATE_NEW_CONSOLE |
+          CREATE_UNICODE_ENVIRONMENT, // Creation flags
+      lpEnvironment,                  // Environment
+      NULL,                           // Current directory
+      &si,                            // Startup info
+      &pi                             // Process information
+  );
+
+  DestroyEnvironmentBlock(lpEnvironment);
+  CloseHandle(hDupToken);
+  CloseHandle(hToken);
 
   if (!success) {
     DWORD error = GetLastError();
-    LOG_ERROR("CreateProcess failed: " + std::to_string(error));
+    LOG_ERROR("CreateProcessAsUser failed: " + std::to_string(error));
     return false;
   }
 
@@ -152,7 +194,8 @@ bool ServiceLauncher::SpawnWorker() {
   workerThreadHandle_ = pi.hThread;
   workerPID_ = pi.dwProcessId;
 
-  LOG_INFO("Worker process spawned with PID: " + std::to_string(workerPID_));
+  LOG_INFO("Worker process spawned as user with PID: " +
+           std::to_string(workerPID_));
 
   // Reset heartbeat timer
   lastHeartbeat_ = std::chrono::duration_cast<std::chrono::milliseconds>(

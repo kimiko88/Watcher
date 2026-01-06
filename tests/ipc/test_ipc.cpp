@@ -4,7 +4,6 @@
 #include <gtest/gtest.h>
 #include <thread>
 
-
 using namespace cms::ipc;
 
 // Test fixture for IPC tests
@@ -87,7 +86,7 @@ TEST_F(IPCTest, NamedPipeBasicCommunication) {
 
   // Send message
   IPCMessage msg = IPCMessage::Create(IPCMessageType::PROCESS_READY);
-  EXPECT_TRUE(client.SendMessage(msg));
+  EXPECT_TRUE(client.SendIPCMessage(msg));
 
   // Wait for server to receive
   std::this_thread::sleep_for(std::chrono::seconds(1));
@@ -155,7 +154,7 @@ TEST_F(IPCTest, IPCChannelServer) {
     EXPECT_TRUE(clientChannel.Start());
 
     IPCMessage msg = IPCMessage::Create(IPCMessageType::PROCESS_READY);
-    clientChannel.SendMessage(msg);
+    clientChannel.SendIPCMessage(msg);
 
     std::this_thread::sleep_for(std::chrono::seconds(1));
     clientChannel.Stop();

@@ -53,10 +53,10 @@ Se preferisci controllare ogni passaggio o se lo script automatico fallisce, pro
 ```cmd
 mkdir build
 cd build
-cmake .. -G "Visual Studio 17 2022" -A x64 -DCMAKE_PREFIX_PATH="C:\Qt\6.5.3\msvc2019_64"
+cmake .. -G "Visual Studio 17 2022" -A x64 -DCMAKE_PREFIX_PATH="C:\Qt\6.10.1\msvc2022_64"
 ```
 
-*Sostituisci `C:\Qt\6.5.3\msvc2019_64` con il percorso reale della tua installazione Qt.*
+*Sostituisci `C:\Qt\6.10.1\msvc2022_64` con il percorso reale della tua installazione Qt.*
 
 ### 2. Compilazione
 
@@ -89,6 +89,7 @@ Il sistema utilizza degli script `.bat` situati nella cartella `scripts/` per in
     -   `install_client_service.bat`
     -   `cms_client_service.exe`
     -   `cms_client_worker.exe`
+    -   `client_config.json` (Da creare/configurare prima, vedi sotto)
     -   `cms_core.dll` (se necessario)
     
 2.  Apri un prompt dei comandi **come Amministratore** sul PC studente.
@@ -106,7 +107,7 @@ install_client_service.bat
 1.  Assicurati che gli eseguibili `cms_master.exe` e `cms_master_service.exe` siano presenti.
 2.  Per il deploy della GUI Qt (`cms_master.exe`), è necessario includere le DLL di Qt. Puoi usare il tool `windeployqt` per copiare le dipendenze nella stessa cartella dell'eseguibile:
     ```cmd
-    C:\Qt\6.5.3\msvc2019_64\bin\windeployqt.exe --release build\Release\cms_master.exe
+    C:\Qt\6.10.1\msvc2022_64\bin\windeployqt.exe --release build\Release\cms_master.exe
     ```
 3.  Ora puoi avviare `cms_master.exe`.
 

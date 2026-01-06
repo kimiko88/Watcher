@@ -47,7 +47,7 @@ public:
   bool IsRunning() const { return running_; }
 
   // Send message to connected client
-  bool SendMessage(const IPCMessage &message);
+  bool SendIPCMessage(const IPCMessage &message);
 
   // Set message handler callback
   void SetMessageHandler(MessageHandler handler);
@@ -105,7 +105,7 @@ public:
   bool IsConnected() const { return connected_; }
 
   // Send message to server
-  bool SendMessage(const IPCMessage &message);
+  bool SendIPCMessage(const IPCMessage &message);
 
   // Set message handler callback
   void SetMessageHandler(MessageHandler handler);
@@ -161,7 +161,7 @@ public:
   void Stop();
 
   // Send message
-  bool SendMessage(const IPCMessage &message);
+  bool SendIPCMessage(const IPCMessage &message);
 
   // Send message and wait for response
   bool SendRequest(const IPCMessage &request, IPCMessage &response,

@@ -56,7 +56,7 @@ void NamedPipeServer::Stop() {
   }
 }
 
-bool NamedPipeServer::SendMessage(const IPCMessage &message) {
+bool NamedPipeServer::SendIPCMessage(const IPCMessage &message) {
   try {
     std::string json = serializer_.Serialize(message);
 
@@ -291,7 +291,7 @@ void NamedPipeClient::Disconnect() {
   }
 }
 
-bool NamedPipeClient::SendMessage(const IPCMessage &message) {
+bool NamedPipeClient::SendIPCMessage(const IPCMessage &message) {
   if (!connected_) {
     LOG_ERROR("Cannot send message: not connected");
     return false;
@@ -466,11 +466,11 @@ void IPCChannel::Stop() {
   }
 }
 
-bool IPCChannel::SendMessage(const IPCMessage &message) {
+bool IPCChannel::SendIPCMessage(const IPCMessage &message) {
   if (server_) {
-    return server_->SendMessage(message);
+    return server_->SendIPCMessage(message);
   } else if (client_) {
-    return client_->SendMessage(message);
+    return client_->SendIPCMessage(message);
   }
   return false;
 }
@@ -478,7 +478,7 @@ bool IPCChannel::SendMessage(const IPCMessage &message) {
 bool IPCChannel::SendRequest(const IPCMessage &request, IPCMessage &response,
                              uint32_t timeoutMs) {
   // Send request
-  if (!SendMessage(request)) {
+  if (!SendIPCMessage(request)) {
     return false;
   }
 

@@ -121,7 +121,7 @@ int main(int argc, char *argv[]) {
       {
         ipc::IPCMessage ack =
             ipc::IPCMessage::Create(ipc::IPCMessageType::PROCESS_SHUTDOWN_ACK);
-        g_ipcClient->SendMessage(ack);
+        g_ipcClient->SendIPCMessage(ack);
       }
       break;
 
@@ -144,7 +144,7 @@ int main(int argc, char *argv[]) {
   {
     ipc::IPCMessage readyMsg =
         ipc::IPCMessage::Create(ipc::IPCMessageType::PROCESS_READY);
-    if (!g_ipcClient->SendMessage(readyMsg)) {
+    if (!g_ipcClient->SendIPCMessage(readyMsg)) {
       LOG_ERROR("Failed to send PROCESS_READY message");
     } else {
       LOG_INFO("Sent PROCESS_READY message");
@@ -225,7 +225,7 @@ int main(int argc, char *argv[]) {
           ipc::IPCMessage heartbeat = ipc::IPCMessage::Create(
               ipc::IPCMessageType::PROCESS_STATUS, statusPayload);
 
-          if (!g_ipcClient->SendMessage(heartbeat)) {
+          if (!g_ipcClient->SendIPCMessage(heartbeat)) {
             LOG_WARNING("Failed to send heartbeat to service");
           }
         }
