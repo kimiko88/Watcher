@@ -78,6 +78,10 @@ public:
   virtual bool sendDomainPolicy(const std::string &client_id,
                                 const DomainPolicy &policy) = 0;
 
+  // Remote Input
+  virtual bool sendRemoteInput(const std::string &client_id,
+                               const nlohmann::json &input_data) = 0;
+
   // Observer Interface
   class IServerObserver {
   public:
@@ -86,9 +90,11 @@ public:
     virtual void onClientDisconnected(const std::string &) {}
     virtual void onClientStateChanged(const std::string &, ClientState) {}
     virtual void onClientThumbnailUpdated(const std::string &,
-                                          const std::vector<uint8_t> &) {}
+                                          const std::vector<uint8_t> &,
+                                          int /*width*/, int /*height*/) {}
     virtual void onScreenshotReceived(const std::string &,
-                                      const std::vector<uint8_t> &) {}
+                                      const std::vector<uint8_t> &,
+                                      int /*width*/, int /*height*/) {}
   };
 
   virtual void addObserver(IServerObserver *observer) = 0;

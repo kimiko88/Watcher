@@ -161,6 +161,16 @@ public:
 
   // Check if input is currently locked
   virtual bool isInputLocked() = 0;
+
+  // Input Simulation
+  virtual void simulateMouseMove(int x, int y) = 0;
+  virtual void
+  simulateMouseClick(int x, int y, bool left,
+                     bool down) = 0; // left=true (Left), left=false (Right).
+                                     // down=true (Press), down=false (Release)
+  virtual void simulateKeyPress(
+      int key_code,
+      bool down) = 0; // key_code is OS specific (Virtual Key on Windows)
 };
 
 // Power Control Interface
@@ -205,6 +215,9 @@ public:
 
   // Set hosts file path (for testing)
   virtual void setHostsFilePath(const std::string &path) {}
+
+  // Clear all rules (requires admin/root)
+  virtual bool clearRules() = 0;
 };
 
 // ============================================================================

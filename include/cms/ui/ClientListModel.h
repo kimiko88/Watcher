@@ -43,7 +43,8 @@ public:
   void onClientStateChanged(const std::string &client_id,
                             master::ClientState new_state) override;
   void onClientThumbnailUpdated(const std::string &client_id,
-                                const std::vector<uint8_t> &data) override;
+                                const std::vector<uint8_t> &data, int width,
+                                int height) override;
 
 private:
   std::vector<master::ClientInfo> clients_;

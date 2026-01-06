@@ -255,11 +255,11 @@ private:
             QByteArray::fromBase64(QByteArray::fromStdString(base64));
         std::vector<uint8_t> vec(bytes.begin(), bytes.end());
 
-        // Dimensions are in the payload but don't need to be stored in
-        // ClientInfo
+        int width = msg.payload.value("width", 0);
+        int height = msg.payload.value("height", 0);
 
-        notifyClientThumbnailUpdated(msg.source, vec);
-        notifyScreenshotReceived(msg.source, vec);
+        notifyClientThumbnailUpdated(msg.source, vec, width, height);
+        notifyScreenshotReceived(msg.source, vec, width, height);
         LOG_DEBUG("Screenshot data processed for: " + msg.source);
       }
     } else if (msg.type == protocol::CommandType::THUMBNAIL_UPDATE) {
@@ -270,10 +270,11 @@ private:
             QByteArray::fromBase64(QByteArray::fromStdString(base64));
         std::vector<uint8_t> vec(bytes.begin(), bytes.end());
 
-        // Dimensions are in the payload and used by the UI
+        int width = msg.payload.value("width", 0);
+        int height = msg.payload.value("height", 0);
 
         // Notify UI to update thumbnail
-        notifyClientThumbnailUpdated(msg.source, vec);
+        notifyClientThumbnailUpdated(msg.source, vec, width, height);
         LOG_DEBUG("Thumbnail updated: " + msg.source);
       }
     } else if (msg.type == protocol::CommandType::PING) {
@@ -346,6 +347,24 @@ private:
     return true;
   }
 
+  bool sendRemoteInput(const std::string &client_id,
+                       const nlohmann::json &input_data) override {
+    std::lock_guard<std::mutex> lock(clientsMutex_);
+    auto it = clientSockets_.find(client_id);
+    if (it == clientSockets_.end())
+      return false;
+
+    protocol::Message msg = protocol::Message::Create(
+        protocol::CommandType::REMOTE_INPUT, "MASTER", client_id, input_data);
+    protocol::MessageSerializer serializer;
+    std::string data = serializer.Serialize(msg);
+    std::string packet = data + "\n";
+
+    it->second->write(packet.data(), packet.size());
+    it->second->flush();
+    return true;
+  }
+
   void notifyClientConnected(const ClientInfo &info) {
     std::lock_guard<std::mutex> lock(observers_mutex_);
     for (auto *obs : observers_)
@@ -359,17 +378,19 @@ private:
   }
 
   void notifyClientThumbnailUpdated(const std::string &id,
-                                    const std::vector<uint8_t> &data) {
+                                    const std::vector<uint8_t> &data, int width,
+                                    int height) {
     std::lock_guard<std::mutex> lock(observers_mutex_);
     for (auto *obs : observers_)
-      obs->onClientThumbnailUpdated(id, data);
+      obs->onClientThumbnailUpdated(id, data, width, height);
   }
 
   void notifyScreenshotReceived(const std::string &id,
-                                const std::vector<uint8_t> &data) {
+                                const std::vector<uint8_t> &data, int width,
+                                int height) {
     std::lock_guard<std::mutex> lock(observers_mutex_);
     for (auto *obs : observers_)
-      obs->onScreenshotReceived(id, data);
+      obs->onScreenshotReceived(id, data, width, height);
   }
 
   ServerConfig config_;

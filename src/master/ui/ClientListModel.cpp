@@ -86,6 +86,18 @@ void ClientListModel::updateClients(
 }
 
 void ClientListModel::addClient(const master::ClientInfo &client) {
+  // Check if client already exists
+  for (int i = 0; i < clients_.size(); ++i) {
+    if (clients_[i].id == client.id) {
+      // Update existing client
+      clients_[i] = client;
+      emit dataChanged(index(i, 0), index(i, 3),
+                       {Qt::DisplayRole, StateRole, IpRole, HostnameRole});
+      return;
+    }
+  }
+
+  // Add new client
   int row = static_cast<int>(clients_.size());
   beginInsertRows(QModelIndex(), row, row);
   clients_.push_back(client);
@@ -139,14 +151,17 @@ void ClientListModel::onClientStateChanged(const std::string &client_id,
       Qt::QueuedConnection);
 }
 
-void ClientListModel::onClientThumbnailUpdated(
-    const std::string &client_id, const std::vector<uint8_t> &data) {
+void ClientListModel::onClientThumbnailUpdated(const std::string &client_id,
+                                               const std::vector<uint8_t> &data,
+                                               int width, int height) {
   QMetaObject::invokeMethod(
       this,
-      [this, client_id, data]() {
+      [this, client_id, data, width, height]() {
         for (int i = 0; i < clients_.size(); ++i) {
           if (clients_[i].id == client_id) {
             clients_[i].thumbnail_data = data;
+            clients_[i].thumbnail_width = width;
+            clients_[i].thumbnail_height = height;
             emit dataChanged(index(i, 0), index(i, 0), {ThumbnailRole});
             break;
           }

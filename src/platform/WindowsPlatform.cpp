@@ -625,8 +625,126 @@ public:
     return rules;
   }
 
+  bool clearRules() override {
+    std::string hostsPath = g_hosts_file_path;
+    try {
+      std::ifstream hostsIn(hostsPath);
+      if (!hostsIn.is_open()) {
+        LOG_ERROR("Failed to open hosts file for reading (admin required)");
+        return false;
+      }
+
+      std::vector<std::string> lines;
+      std::string line;
+      bool inCMSSection = false;
+
+      while (std::getline(hostsIn, line)) {
+        if (line.find("# CMS Blocked Domains") != std::string::npos ||
+            line.find("# CMS Allow-List Mode Active") != std::string::npos) {
+          inCMSSection = true;
+          continue;
+        }
+        // If we hit an empty line or another CMS header while in section, we
+        // might be exiting it? Actually, let's assume the CMS section continues
+        // until the end or we see something else? The previous setAllowListMode
+        // implementation was: if (inCMSSection && (line.empty() || line.find("#
+        // CMS") != std::string::npos)) { inCMSSection = false; } Let's stick to
+        // that logic to be consistent, but improved: Any line starting with "#
+        // CMS" that isn't one of our headers is weird, but okay.
+
+        if (inCMSSection) {
+          // Check if we are exiting the section
+          if (line.empty()) {
+            inCMSSection = false;
+            // Keep the empty line? No, let's strip it to be clean.
+            continue;
+          }
+          // If it's a rule (127.0.0.1 domain), skip it
+          if (line.find("127.0.0.1") != std::string::npos) {
+            continue;
+          }
+          // If it's a comment inside our section?
+          if (line.find("#") != std::string::npos) {
+            // If it's another CMS header, we restart stripping?
+            if (line.find("# CMS") != std::string::npos) {
+              // Still in CMS section (or new one).
+              continue;
+            }
+            // Unknown comment, assume end of section?
+            inCMSSection = false;
+          } else {
+            // Non-comment, non-rule line?
+            inCMSSection = false;
+          }
+        }
+
+        if (!inCMSSection) {
+          lines.push_back(line);
+        } else {
+          // Still in section, so we are skipping this line
+        }
+      }
+      hostsIn.close();
+
+      std::ofstream hostsOut(hostsPath, std::ios::trunc);
+      if (!hostsOut.is_open()) {
+        LOG_ERROR("Failed to open hosts file for writing (admin required)");
+        return false;
+      }
+
+      for (const auto &l : lines) {
+        hostsOut << l << "\n";
+      }
+      hostsOut.close();
+      std::system("ipconfig /flushdns >nul 2>&1");
+      LOG_INFO("Cleared all CMS rules");
+      return true;
+    } catch (const std::exception &e) {
+      LOG_ERROR(std::string("Error clearing rules: ") + e.what());
+      return false;
+    }
+  }
+
   void setHostsFilePath(const std::string &path) override {
     g_hosts_file_path = path;
+  }
+
+  // ==========================================================================
+  // INPUT SIMULATION IMPLEMENTATION
+  // ==========================================================================
+
+  void simulateMouseMove(int x, int y) override {
+    // SetCursorPos takes screen coordinates directly
+    // This is simpler than SendInput for absolute positioning
+    SetCursorPos(x, y);
+  }
+
+  void simulateMouseClick(int x, int y, bool left, bool down) override {
+    // Optionally move fast to ensure click happens where expected
+    SetCursorPos(x, y);
+
+    INPUT input = {0};
+    input.type = INPUT_MOUSE;
+
+    if (left) {
+      input.mi.dwFlags = down ? MOUSEEVENTF_LEFTDOWN : MOUSEEVENTF_LEFTUP;
+    } else {
+      input.mi.dwFlags = down ? MOUSEEVENTF_RIGHTDOWN : MOUSEEVENTF_RIGHTUP;
+    }
+
+    SendInput(1, &input, sizeof(INPUT));
+  }
+
+  void simulateKeyPress(int key_code, bool down) override {
+    INPUT input = {0};
+    input.type = INPUT_KEYBOARD;
+    input.ki.wVk = static_cast<WORD>(key_code);
+
+    if (!down) {
+      input.ki.dwFlags = KEYEVENTF_KEYUP;
+    }
+
+    SendInput(1, &input, sizeof(INPUT));
   }
 };
 

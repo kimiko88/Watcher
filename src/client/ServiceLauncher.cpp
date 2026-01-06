@@ -4,7 +4,6 @@
 #include <userenv.h>
 #include <wtsapi32.h>
 
-
 #ifdef _WIN32
 
 namespace cms {
@@ -27,9 +26,13 @@ bool ServiceLauncher::Start() {
   state_ = LauncherState::Starting;
   running_ = true;
 
-  // Create IPC server
-  ipcServer_ =
-      std::make_unique<ipc::NamedPipeServer>(ipc::PipeNames::CLIENT_SERVICE);
+  // Create platform instance
+  platform_ = cms::platform::getPlatformInstance();
+  if (!platform_) {
+    LOG_ERROR("Failed to create platform instance");
+    state_ = LauncherState::Error;
+    return false;
+  }
 
   // Set message handler
   ipcServer_->SetMessageHandler(
@@ -314,6 +317,125 @@ void ServiceLauncher::HandleWorkerMessage(const ipc::IPCMessage &message) {
   case ipc::IPCMessageType::PROCESS_SHUTDOWN_ACK:
     LOG_INFO("Worker acknowledged shutdown");
     break;
+
+  case ipc::IPCMessageType::DELEGATE_DOMAIN_RULES: {
+    LOG_INFO("Received delegation: Apply Domain Rules");
+    if (!platform_) {
+      LOG_ERROR("Platform interface not available");
+      break;
+    }
+
+    try {
+      // 1. Parse domains from payload
+      if (message.payload.contains("domains") &&
+          message.payload["domains"].is_array()) {
+        std::vector<std::string> domains =
+            message.payload["domains"].get<std::vector<std::string>>();
+
+        // 2. CLEAN UP first (Simple approach: Read hosts, remove CMS blocks,
+        // Write back) Since we can't easily access the private methods of
+        // WindowsPlatform to clean, we rely on the implementation detail that
+        // we can just overwrite if we want, but WindowsPlatform::blockDomains
+        // is additive.
+
+        // Better strategy: Use a specialized method if available, or just
+        // implement cleaning here. For now, let's assume we implement a "Reset"
+        // via allowDomains of *all* known rules? No, we don't know the old
+        // rules.
+
+        // FORCE CLEAN:
+        // We'll read the hosts file, strip our section, and write it back.
+        // Then apply new blocks.
+        // Since ServiceLauncher runs as System, it can do this.
+        {
+          std::string hostsPath = "C:\\Windows\\System32\\drivers\\etc\\hosts";
+          std::ifstrream in(hostsPath);
+          std::vector<std::string> lines;
+          std::string line;
+          bool inCMS = false;
+          if (in.good()) {
+            while (std::getline(in, line)) {
+              if (line.find("# CMS") != std::string::npos)
+                inCMS = true;
+              if (!inCMS)
+                lines.push_back(line);
+              // Assuming CMS block is contiguous at end or marked.
+              // WindowsPlatform::blockDomains uses "# CMS Blocked Domains"
+              // header. But it might append multiple times?
+              // WindowsPlatform::blockDomains checks for duplicates.
+
+              // Re-reading WindowsPlatform.cpp:
+              // It checks for "# CMS Blocked Domains". If missing, adds it.
+              // Then for each domain, checks if line exists. If not, append.
+
+              // To RESET, we really need to strip everything under "# CMS
+              // Blocked Domains".
+            }
+            // Actually implementing a robust "Reset" here without code
+            // duplication is hard. Let's use `allowDomains` with a special
+            // "CLEAR_ALL" flag? No.
+
+            // Let's trust that the user only adds/removes via our tool.
+            // Code below just calls blockDomains.
+            // TO FIX THE BUG "Rules don't reset":
+            // The logic provided in WindowsPlatform is:
+            // `allowDomains` removes lines matching domain.
+
+            // So `ClientService` sending `DELEGATE_DOMAIN_RULES` should:
+            // Send "Blocked Domains" to block.
+            // Send "Allowed Domains" to unblock?
+
+            // If User removed a rule, the Master sends "Update: [A, B]" (User
+            // removed C). Client calculates: C is removed. Client should tell
+            // Service: "Unblock C".
+
+            // Current `DOMAIN_POLICY_UPDATE` receives the *Current State*.
+            // It doesn't know the delta.
+            // `networkFilter` might know?
+
+            // Hack fix:
+            // Service reads hosts. Finds all lines with "127.0.0.1".
+            // If it's a CMS block, remove it.
+            // Then add new blocks.
+          }
+          // Too complex to implement inline safely given time.
+
+          // Alternative: Just call blockDomains.
+          // The USER says "failed to reset".
+          // That's because we never called Unblock.
+
+          // Providing `platform_->blockDomains` is safe.
+          // We need `platform_->unblockAll()`?
+        }
+
+        if (platform_->clearRules()) {
+          LOG_INFO("Cleared existing rules before applying delegation");
+        } else {
+          LOG_WARNING("Failed to clear existing rules (might overlap)");
+        }
+
+        // Apply new rules
+        platform_->blockDomains(domains);
+        LOG_INFO("Delegated domain rules applied");
+      }
+    } catch (const std::exception &e) {
+      LOG_ERROR("Error handling domain delegation: " + std::string(e.what()));
+    }
+  } break;
+
+  case ipc::IPCMessageType::DELEGATE_INPUT_LOCK: {
+    LOG_INFO("Received delegation: Input Lock");
+    if (platform_) {
+      bool lock = message.payload.value("lock", false);
+      if (lock) {
+        platform_->lockKeyboard();
+        platform_->lockMouse();
+      } else {
+        platform_->unlockKeyboard();
+        platform_->unlockMouse();
+      }
+    }
+  } break;
 
   default:
     LOG_WARNING("Unhandled IPC message type: " +

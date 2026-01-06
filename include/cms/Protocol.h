@@ -28,7 +28,8 @@ enum class CommandType {
   DISCONNECT,           // Disconnect notification
   APP_BLOCK,            // Block application
   APP_ALLOW,            // Allow application
-  APP_POLICY_SYNC       // Sync full application policy
+  APP_POLICY_SYNC,      // Sync full application policy
+  REMOTE_INPUT          // Remote mouse/keyboard input
 };
 
 // Convert CommandType to string
@@ -66,8 +67,9 @@ inline std::string CommandTypeToString(CommandType type) {
     return "APP_BLOCK";
   case CommandType::APP_ALLOW:
     return "APP_ALLOW";
-  case CommandType::APP_POLICY_SYNC:
     return "APP_POLICY_SYNC";
+  case CommandType::REMOTE_INPUT:
+    return "REMOTE_INPUT";
   default:
     return "UNKNOWN";
   }
@@ -109,6 +111,8 @@ inline CommandType StringToCommandType(const std::string &str) {
     return CommandType::APP_ALLOW;
   if (str == "APP_POLICY_SYNC")
     return CommandType::APP_POLICY_SYNC;
+  if (str == "REMOTE_INPUT")
+    return CommandType::REMOTE_INPUT;
 
   throw std::invalid_argument("Invalid command type: " + str);
 }

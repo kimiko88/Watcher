@@ -25,7 +25,8 @@ protected:
 
 private:
   void setupUi();
-  void updateImage(const std::vector<uint8_t> &data);
+  bool eventFilter(QObject *obj, QEvent *event) override;
+  void updateImage(const std::vector<uint8_t> &data, int width, int height);
 
   std::string client_id_;
   std::shared_ptr<master::MasterServer> server_;
@@ -37,11 +38,11 @@ private:
   class StreamObserver : public master::MasterServer::IServerObserver {
   public:
     StreamObserver(RemoteViewWindow *window) : window_(window) {}
-    void
-    onClientThumbnailUpdated(const std::string &client_id,
-                             const std::vector<uint8_t> &imageData) override {
+    void onClientThumbnailUpdated(const std::string &client_id,
+                                  const std::vector<uint8_t> &imageData,
+                                  int width, int height) override {
       if (client_id == window_->client_id_) {
-        window_->updateImage(imageData);
+        window_->updateImage(imageData, width, height);
       }
     }
     // Other methods empty

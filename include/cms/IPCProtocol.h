@@ -29,9 +29,14 @@ enum class IPCMessageType {
   COMMAND_RESULT,  // Result of executed command
 
   // Generic
-  PING,          // Keepalive
-  PONG,          // Keepalive response
-  ERROR_RESPONSE // Error response
+  PING,           // Keepalive
+  PONG,           // Keepalive response
+  ERROR_RESPONSE, // Error response
+
+  // Worker → Service Delegation
+  DELEGATE_DOMAIN_RULES, // Request service to apply domain rules (requires
+                         // Admin)
+  DELEGATE_INPUT_LOCK    // Request service to lock input (requires Admin)
 };
 
 // Convert IPCMessageType to string
@@ -65,6 +70,10 @@ inline std::string IPCMessageTypeToString(IPCMessageType type) {
     return "PONG";
   case IPCMessageType::ERROR_RESPONSE:
     return "ERROR_RESPONSE";
+  case IPCMessageType::DELEGATE_DOMAIN_RULES:
+    return "DELEGATE_DOMAIN_RULES";
+  case IPCMessageType::DELEGATE_INPUT_LOCK:
+    return "DELEGATE_INPUT_LOCK";
   default:
     return "UNKNOWN";
   }
@@ -100,6 +109,10 @@ inline IPCMessageType StringToIPCMessageType(const std::string &str) {
     return IPCMessageType::PONG;
   if (str == "ERROR_RESPONSE")
     return IPCMessageType::ERROR_RESPONSE;
+  if (str == "DELEGATE_DOMAIN_RULES")
+    return IPCMessageType::DELEGATE_DOMAIN_RULES;
+  if (str == "DELEGATE_INPUT_LOCK")
+    return IPCMessageType::DELEGATE_INPUT_LOCK;
   throw std::invalid_argument("Invalid IPC message type: " + str);
 }
 

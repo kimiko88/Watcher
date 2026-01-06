@@ -4,12 +4,12 @@
 #include "Common.h"
 #include "IPCChannel.h"
 #include "IPCProtocol.h"
+#include "cms/Platform.h"
 #include <atomic>
 #include <chrono>
 #include <memory>
 #include <string>
 #include <thread>
-
 
 #ifdef _WIN32
 #include <windows.h>
@@ -65,6 +65,7 @@ public:
 private:
   WorkerConfig config_;
   std::atomic<LauncherState> state_{LauncherState::Stopped};
+  std::unique_ptr<cms::Platform> platform_;
 
   // IPC for communication with worker
   std::unique_ptr<ipc::NamedPipeServer> ipcServer_;

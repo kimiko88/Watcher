@@ -40,6 +40,8 @@ MasterWindow::MasterWindow(std::shared_ptr<master::MasterServer> server,
           &MasterWindow::refreshGrid);
   connect(model_, &QAbstractTableModel::dataChanged, this,
           &MasterWindow::refreshGrid);
+  connect(model_, &QAbstractTableModel::rowsRemoved, this,
+          &MasterWindow::refreshGrid);
 
   resize(1024, 768);
   setWindowTitle("Classroom Management System - Master");

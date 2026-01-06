@@ -16,6 +16,9 @@
 #include <thread>
 
 namespace cms {
+namespace ipc {
+class NamedPipeClient;
+}
 namespace client {
 
 // Client status information
@@ -64,6 +67,9 @@ public:
 
   // Get pending command count
   size_t getPendingCommandCount() const;
+
+  // Set IPC client for delegation
+  void setIPCClient(cms::ipc::NamedPipeClient *client);
 
 private:
   // Configuration structure
@@ -142,6 +148,9 @@ private:
 
   // Network socket
   std::unique_ptr<cms::Socket> socket_ = nullptr;
+
+  // IPC Client for delegation
+  cms::ipc::NamedPipeClient *ipcClient_ = nullptr;
 
   // Constants
   static constexpr int DEFAULT_HEARTBEAT_INTERVAL = 30; // seconds

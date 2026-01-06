@@ -192,6 +192,9 @@ int main(int argc, char *argv[]) {
       LOG_INFO("ClientService created");
       LogMain("ClientService instance created");
 
+      // Set IPC client for delegation
+      g_clientService->setIPCClient(g_ipcClient.get());
+
       // Start the service
       LOG_INFO("Starting ClientService...");
       LogMain("Calling ClientService::start()...");
