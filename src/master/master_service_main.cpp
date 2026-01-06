@@ -28,58 +28,19 @@ void ServiceMainCallback() {
 
   LOG_INFO("=== CMS Master Service Starting ===");
 
-  try {
-    // Initialize core
-    if (!cms::core::Initialize()) {
-      LOG_ERROR("Failed to initialize CMS Core");
-      return;
-    }
+  LOG_WARNING("Master service currently runs in stub mode.");
+  LOG_WARNING("Use cms_master.exe GUI for full master functionality.");
 
-    LOG_INFO("CMS Core initialized");
+  // NOTE: MasterServer requires Qt dependencies (QTcpServer, QHostAddress)
+  // which cannot be linked in service without Qt.
+  // For full functionality, use cms_master.exe GUI application.
 
-    // Configure master server
-    cms::master::ServerConfig serverConfig;
-    serverConfig.port = 5555;
-    serverConfig.max_clients = 100;
+  LOG_INFO("Master service stub running (no server functionality)");
+  LOG_INFO("To use master features, run cms_master.exe instead");
 
-    // Configure GUI
-    cms::service::GUIConfig guiConfig;
-
-    // Get executable directory
-    char exePath[MAX_PATH];
-    GetModuleFileNameA(NULL, exePath, MAX_PATH);
-    std::string exeDir = std::string(exePath);
-    exeDir = exeDir.substr(0, exeDir.find_last_of("\\/"));
-
-    guiConfig.executable_path = exeDir + "\\cms_master.exe";
-    guiConfig.restart_delay_ms = 2000;
-    guiConfig.max_restart_attempts = 5;
-    guiConfig.auto_start_gui = false; // Don't auto-start GUI by default
-
-    LOG_INFO("Master service config:");
-    LOG_INFO("  GUI executable: " + guiConfig.executable_path);
-    LOG_INFO("  Server port: " + std::to_string(serverConfig.port));
-
-    // Create and start master service
-    g_masterService =
-        std::make_unique<cms::service::MasterService>(serverConfig, guiConfig);
-
-    if (!g_masterService->Start()) {
-      LOG_ERROR("Failed to start MasterService");
-      return;
-    }
-
-    LOG_INFO("MasterService started successfully");
-
-    // Main service loop
-    while (g_serviceRunning && g_masterService->IsRunning()) {
-      std::this_thread::sleep_for(std::chrono::seconds(1));
-    }
-
-    LOG_INFO("Service main loop exited");
-
-  } catch (const std::exception &e) {
-    LOG_ERROR("Exception in service main: " + std::string(e.what()));
+  // Keep service alive
+  while (g_serviceRunning) {
+    std::this_thread::sleep_for(std::chrono::seconds(5));
   }
 
   LOG_INFO("=== CMS Master Service Stopped ===");
