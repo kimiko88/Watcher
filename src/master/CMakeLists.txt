@@ -1,5 +1,5 @@
-# Find Qt6 - Required for Master Service (Networking)
-find_package(Qt6 COMPONENTS Core Network QUIET)
+# Find Qt6 - Required for Master Service (Networking) and GUI (Widgets)
+find_package(Qt6 COMPONENTS Core Network Widgets QUIET)
 
 # Master service executable
 add_executable(cms_master_service
