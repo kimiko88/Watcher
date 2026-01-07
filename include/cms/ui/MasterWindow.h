@@ -34,6 +34,11 @@ private slots:
   void onTakeScreenshot();
   void onDomainPolicyClicked();
   void onApplicationPolicyClicked();
+  void onPowerControlClicked();
+  void onTextMessageClicked();
+  void onRemoteExecuteClicked();
+  void onBroadcastScreenClicked();
+  void onSendFileClicked();
   void onAboutClicked();
 
 private:

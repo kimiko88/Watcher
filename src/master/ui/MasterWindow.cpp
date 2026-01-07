@@ -7,7 +7,9 @@
 #include "cms/ui/ScreenshotViewerDialog.h"
 #include <QAction>
 #include <QApplication>
+#include <QFileDialog>
 #include <QGridLayout>
+#include <QInputDialog>
 #include <QLabel>
 #include <QMenuBar>
 #include <QMessageBox>
@@ -17,6 +19,7 @@
 #include <QToolBar>
 #include <QVBoxLayout>
 #include <iostream>
+
 
 namespace cms {
 namespace ui {
@@ -173,6 +176,24 @@ void MasterWindow::setupMenuBar() {
           &MasterWindow::onApplicationPolicyClicked);
 
   toolsMenu->addSeparator();
+
+  auto powerAction = toolsMenu->addAction("Power Control");
+  connect(powerAction, &QAction::triggered, this,
+          &MasterWindow::onPowerControlClicked);
+
+  auto messageAction = toolsMenu->addAction("Send Message");
+  connect(messageAction, &QAction::triggered, this,
+          &MasterWindow::onTextMessageClicked);
+
+  auto executeAction = toolsMenu->addAction("Remote Execute");
+  connect(executeAction, &QAction::triggered, this,
+          &MasterWindow::onRemoteExecuteClicked);
+
+  auto broadcastAction = toolsMenu->addAction("Broadcast Screen");
+  connect(broadcastAction, &QAction::triggered, this,
+          &MasterWindow::onBroadcastScreenClicked);
+
+  toolsMenu->addSeparator();
   auto lockAllAction = toolsMenu->addAction("&Lock All Clients");
   lockAllAction->setShortcut(QKeySequence("Ctrl+L"));
   connect(lockAllAction, &QAction::triggered, this, &MasterWindow::onLockAll);
@@ -216,6 +237,18 @@ void MasterWindow::setupToolbar() {
   appPolicyAction->setToolTip("Configure application policy");
   connect(appPolicyAction, &QAction::triggered, this,
           &MasterWindow::onApplicationPolicyClicked);
+
+  auto powerAction = toolbar->addAction("⚡ Power");
+  connect(powerAction, &QAction::triggered, this,
+          &MasterWindow::onPowerControlClicked);
+
+  auto msgAction = toolbar->addAction("✉ Message");
+  connect(msgAction, &QAction::triggered, this,
+          &MasterWindow::onTextMessageClicked);
+
+  auto broadcastAction = toolbar->addAction("📡 Broadcast");
+  connect(broadcastAction, &QAction::triggered, this,
+          &MasterWindow::onBroadcastScreenClicked);
 
   auto refreshAction = toolbar->addAction("Refresh");
   connect(refreshAction, &QAction::triggered, this, &MasterWindow::onRefresh);
@@ -468,6 +501,124 @@ void MasterWindow::onClientThumbnailClicked(const std::string &client_id) {
   remote_views_[client_id] = window;
   window->show();
   */
+}
+
+void MasterWindow::onPowerControlClicked() {
+  if (selected_client_id_.empty()) {
+    QMessageBox::warning(this, "No selection", "Please select a client first.");
+    return;
+  }
+
+  QMessageBox msgBox;
+  msgBox.setWindowTitle("Power Control");
+  msgBox.setText("Power Control - " +
+                 QString::fromStdString(selected_client_id_));
+  msgBox.setInformativeText("Select an action:");
+  QAbstractButton *shutdownBtn =
+      msgBox.addButton("Shutdown", QMessageBox::DestructiveRole);
+  QAbstractButton *rebootBtn =
+      msgBox.addButton("Reboot", QMessageBox::ActionRole);
+  msgBox.addButton(QMessageBox::Cancel);
+
+  msgBox.exec();
+
+  if (msgBox.clickedButton() == shutdownBtn) {
+    if (QMessageBox::question(
+            this, "Confirm",
+            "Are you sure you want to SHUTDOWN this client?") ==
+        QMessageBox::Yes) {
+      server_->sendPowerControl(selected_client_id_, "shutdown");
+      statusBar()->showMessage("Sent shutdown command");
+    }
+  } else if (msgBox.clickedButton() == rebootBtn) {
+    if (QMessageBox::question(this, "Confirm",
+                              "Are you sure you want to REBOOT this client?") ==
+        QMessageBox::Yes) {
+      server_->sendPowerControl(selected_client_id_, "reboot");
+      statusBar()->showMessage("Sent reboot command");
+    }
+  }
+}
+
+void MasterWindow::onTextMessageClicked() {
+  if (selected_client_id_.empty()) {
+    QMessageBox::warning(this, "No selection", "Please select a client first.");
+    return;
+  }
+  bool ok;
+  QString message = QInputDialog::getMultiLineText(this, "Send Message",
+                                                   "Message content:", "", &ok);
+  if (ok && !message.isEmpty()) {
+    QString title = "Message from Master"; // Default title
+    server_->sendTextMessage(selected_client_id_, title.toStdString(),
+                             message.toStdString());
+    statusBar()->showMessage("Sent message");
+  }
+}
+
+void MasterWindow::onRemoteExecuteClicked() {
+  if (selected_client_id_.empty()) {
+    QMessageBox::warning(this, "No selection", "Please select a client first.");
+    return;
+  }
+  bool ok;
+  QString command =
+      QInputDialog::getText(this, "Remote Execute",
+                            "Command to execute:", QLineEdit::Normal, "", &ok);
+  if (ok && !command.isEmpty()) {
+    QString args =
+        QInputDialog::getText(this, "Remote Execute", "Arguments (optional):");
+    server_->sendRemoteExecute(selected_client_id_, command.toStdString(),
+                               args.toStdString());
+    statusBar()->showMessage("Sent execute command");
+  }
+}
+
+void MasterWindow::onBroadcastScreenClicked() {
+  if (server_->isDemoModeActive()) {
+    server_->stopDemoMode();
+    statusBar()->showMessage("Stopped Screen Broadcast");
+    QMessageBox::information(this, "Broadcast", "Screen Broadcast Stopped.");
+  } else {
+    if (QMessageBox::question(
+            this, "Start Broadcast",
+            "Start verifying/broadcasting screen to all clients?") ==
+        QMessageBox::Yes) {
+      server_->startDemoMode();
+      server_->startDemoMode();
+      statusBar()->showMessage("Started Screen Broadcast");
+    }
+  }
+}
+
+void MasterWindow::onSendFileClicked() {
+  if (selected_client_id_.empty() &&
+      QMessageBox::question(this, "Send to All?",
+                            "No client selected. Send to ALL clients?") ==
+          QMessageBox::No) {
+    return;
+  }
+
+  QString fileName = QFileDialog::getOpenFileName(this, "Select File to Send");
+  if (fileName.isEmpty())
+    return;
+
+  QFile file(fileName);
+  if (!file.open(QIODevice::ReadOnly)) {
+    QMessageBox::critical(this, "Error", "Could not open file.");
+    return;
+  }
+
+  QByteArray fileData = file.readAll();
+  // Convert QByteArray to std::vector<uint8_t>
+  std::vector<uint8_t> data(fileData.begin(), fileData.end());
+
+  // QFileInfo for filename
+  QFileInfo fileInfo(fileName);
+
+  server_->sendFile(selected_client_id_, fileInfo.fileName().toStdString(),
+                    data);
+  statusBar()->showMessage("Sent file: " + fileInfo.fileName());
 }
 
 } // namespace ui

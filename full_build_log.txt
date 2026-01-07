@@ -1,0 +1,167 @@
+====================================
+Watcher Service Architecture Build
+====================================
+
+Running as Administrator: NO
+Warning: Some operations may require admin privileges
+
+Cleaning build directory...
+
+====================================
+Step 1: CMake Configuration
+====================================
+
+Using user-defined Qt path: C:\Qt\6.10.1\msvc2022_64
+Found Qt at: C:\Qt\6.10.1\msvc2022_64
+-- Selecting Windows SDK version 10.0.26100.0 to target Windows 10.0.26200.
+-- The CXX compiler identification is MSVC 19.44.35222.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: C:/Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Building for Windows
+-- Build type: Debug
+-- The C compiler identification is MSVC 19.44.35222.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: C:/Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Found Python3: C:/Users/chimi/AppData/Local/Programs/Python/Python313/python.exe (found version "3.13.1") found components: Interpreter
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - not found
+-- Found Threads: TRUE
+-- Using the multi-header code from C:/Users/chimi/Desktop/Programmazione/Watcher/build/_deps/json-src/include/
+-- Searching for FFmpeg libraries...
+-- pkg-config not found or FFmpeg not detected, trying manual search...
+CMake Warning at CMakeLists.txt:143 (message):
+  FFmpeg NOT found.  Screen recording will use stub implementation.
+
+
+CMake Warning at CMakeLists.txt:144 (message):
+  To enable FFmpeg:
+
+
+CMake Warning at CMakeLists.txt:145 (message):
+    - Install FFmpeg from https://www.gyan.dev/ffmpeg/builds/
+
+
+CMake Warning at CMakeLists.txt:146 (message):
+    - Set FFMPEG_ROOT environment variable to installation path
+
+
+CMake Warning at CMakeLists.txt:147 (message):
+    - Or install via vcpkg: vcpkg install ffmpeg
+
+
+-- Configured cms_core library
+-- Building for Windows platform
+-- Configured cms_platform library with sources: WindowsPlatform.cpp;WindowsService.cpp;ScreenCaptureService.cpp;InputLockManager.cpp;Windows/ActivityMonitorWindows.cpp;Windows/ApplicationManagerWindows.cpp
+-- Configured cms_client_service and cms_client_worker executables
+-- Performing Test HAVE_STDATOMIC
+-- Performing Test HAVE_STDATOMIC - Success
+-- Configured cms_master_service executable (lightweight, no MasterServer)
+-- Qt6 found. Building cms_master GUI.
+-- Configured cms_master executable
+-- 
+-- === Classroom Control (CMS) Build Configuration ===
+-- Version: 1.0.0
+-- C++ Standard: C++17
+-- Build Type: Debug
+-- Compiler: MSVC 19.44.35222.0
+-- ====================================================
+-- 
+-- Configuring done (47.7s)
+-- Generating done (1.4s)
+-- Build files have been written to: C:/Users/chimi/Desktop/Programmazione/Watcher/build
+-- Selecting Windows SDK version 10.0.26100.0 to target Windows 10.0.26200.
+-- Building for Windows
+-- Build type: Debug
+-- Using the multi-header code from C:/Users/chimi/Desktop/Programmazione/Watcher/build/_deps/json-src/include/
+-- Searching for FFmpeg libraries...
+-- pkg-config not found or FFmpeg not detected, trying manual search...
+CMake Warning at CMakeLists.txt:143 (message):
+  FFmpeg NOT found.  Screen recording will use stub implementation.
+
+
+CMake Warning at CMakeLists.txt:144 (message):
+  To enable FFmpeg:
+
+
+CMake Warning at CMakeLists.txt:145 (message):
+    - Install FFmpeg from https://www.gyan.dev/ffmpeg/builds/
+
+
+CMake Warning at CMakeLists.txt:146 (message):
+    - Set FFMPEG_ROOT environment variable to installation path
+
+
+CMake Warning at CMakeLists.txt:147 (message):
+    - Or install via vcpkg: vcpkg install ffmpeg
+
+
+-- Configured cms_core library
+-- Building for Windows platform
+-- Configured cms_platform library with sources: WindowsPlatform.cpp;WindowsService.cpp;ScreenCaptureService.cpp;InputLockManager.cpp;Windows/ActivityMonitorWindows.cpp;Windows/ApplicationManagerWindows.cpp
+-- Configured cms_client_service and cms_client_worker executables
+-- Configured cms_master_service executable (lightweight, no MasterServer)
+-- Qt6 found. Building cms_master GUI.
+-- Configured cms_master executable
+-- 
+-- === Classroom Control (CMS) Build Configuration ===
+-- Version: 1.0.0
+-- C++ Standard: C++17
+-- Build Type: Debug
+-- Compiler: MSVC 19.44.35222.0
+-- ====================================================
+-- 
+-- Configuring done (6.7s)
+-- Generating done (3.3s)
+-- Build files have been written to: C:/Users/chimi/Desktop/Programmazione/Watcher/build
+
+====================================
+Step 2: Building Core Library
+====================================
+
+Versione di MSBuild 17.14.23+b0019275e per .NET Framework
+
+  1>Checking Build System
+  Building Custom Rule C:/Users/chimi/Desktop/Programmazione/Watcher/src/core/CMakeLists.txt
+  Logger.cpp
+  NetworkFilterManager.cpp
+C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\Platform.h(172,7): error C2062: tipo 'bool' imprevisto [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\core\cms_core.vcxproj]
+  (compilazione del file di origine '../../../src/core/NetworkFilterManager.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\Platform.h(172,18): error C2059: errore di sintassi: '=' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\core\cms_core.vcxproj]
+  (compilazione del file di origine '../../../src/core/NetworkFilterManager.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\Platform.h(172,21): error C2238: token imprevisti prima di ';' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\core\cms_core.vcxproj]
+  (compilazione del file di origine '../../../src/core/NetworkFilterManager.cpp')
+  
+  RemoteControl.cpp
+C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\Platform.h(172,7): error C2062: tipo 'bool' imprevisto [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\core\cms_core.vcxproj]
+  (compilazione del file di origine '../../../src/core/RemoteControl.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\Platform.h(172,18): error C2059: errore di sintassi: '=' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\core\cms_core.vcxproj]
+  (compilazione del file di origine '../../../src/core/RemoteControl.cpp')
+  
+C:\Users\chimi\Desktop\Programmazione\Watcher\include\cms\Platform.h(172,21): error C2238: token imprevisti prima di ';' [C:\Users\chimi\Desktop\Programmazione\Watcher\build\src\core\cms_core.vcxproj]
+  (compilazione del file di origine '../../../src/core/RemoteControl.cpp')
+  
+  Protocol.cpp
+  Core.cpp
+  Socket.cpp
+  ScreenRecorder.cpp
+  DomainPolicy.cpp
+  IPCProtocol.cpp
+  IPCChannel.cpp
+  Network.cpp
+  Generazione del codice in corso...
+ERROR: Core build failed
+Check errors above
+Premere un tasto per continuare . . . 

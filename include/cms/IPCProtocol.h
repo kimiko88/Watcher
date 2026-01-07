@@ -36,7 +36,9 @@ enum class IPCMessageType {
   // Worker → Service Delegation
   DELEGATE_DOMAIN_RULES, // Request service to apply domain rules (requires
                          // Admin)
-  DELEGATE_INPUT_LOCK    // Request service to lock input (requires Admin)
+  DELEGATE_INPUT_LOCK,   // Request service to lock input (requires Admin)
+  DELEGATE_POWER_CONTROL // Request service to perform power action (requires
+                         // Admin)
 };
 
 // Convert IPCMessageType to string
@@ -74,6 +76,8 @@ inline std::string IPCMessageTypeToString(IPCMessageType type) {
     return "DELEGATE_DOMAIN_RULES";
   case IPCMessageType::DELEGATE_INPUT_LOCK:
     return "DELEGATE_INPUT_LOCK";
+  case IPCMessageType::DELEGATE_POWER_CONTROL:
+    return "DELEGATE_POWER_CONTROL";
   default:
     return "UNKNOWN";
   }
@@ -113,6 +117,8 @@ inline IPCMessageType StringToIPCMessageType(const std::string &str) {
     return IPCMessageType::DELEGATE_DOMAIN_RULES;
   if (str == "DELEGATE_INPUT_LOCK")
     return IPCMessageType::DELEGATE_INPUT_LOCK;
+  if (str == "DELEGATE_POWER_CONTROL")
+    return IPCMessageType::DELEGATE_POWER_CONTROL;
   throw std::invalid_argument("Invalid IPC message type: " + str);
 }
 

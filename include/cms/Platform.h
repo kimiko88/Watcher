@@ -173,6 +173,27 @@ public:
       bool down) = 0; // key_code is OS specific (Virtual Key on Windows)
 };
 
+// System Operations Interface
+// Provides miscellaneous system operations
+class ISystemOperations {
+public:
+  virtual ~ISystemOperations() = default;
+
+  // Show a system message box
+  virtual void showMessageBox(const std::string &title,
+                              const std::string &message) = 0;
+
+  // Execute a command
+  virtual void executeCommand(const std::string &command,
+                              const std::string &args) = 0;
+
+  // Show full screen image (for Demo/Broadcast Mode)
+  virtual void showFullScreenImage(const std::vector<uint8_t> &imageData) {}
+
+  // Close full screen image window
+  virtual void closeFullScreenImage() {}
+};
+
 // Power Control Interface
 // Provides power management functionality
 class IPowerControl {
@@ -229,7 +250,8 @@ class Platform : public IPlatformManager,
                  public IScreenCapture,
                  public IInputControl,
                  public IPowerControl,
-                 public INetworkFilter {
+                 public INetworkFilter,
+                 public ISystemOperations {
 public:
   virtual ~Platform() = default;
 };

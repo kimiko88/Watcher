@@ -365,6 +365,177 @@ private:
     return true;
   }
 
+  bool sendPowerControl(const std::string &client_id,
+                        const std::string &action) override {
+    nlohmann::json payload;
+    payload["action"] = action;
+
+    std::lock_guard<std::mutex> lock(clientsMutex_);
+    auto it = clientSockets_.find(client_id);
+    if (it == clientSockets_.end())
+      return false;
+
+    protocol::Message msg = protocol::Message::Create(
+        protocol::CommandType::POWER_CONTROL, "MASTER", client_id, payload);
+    protocol::MessageSerializer serializer;
+    std::string data = serializer.Serialize(msg);
+    std::string packet = data + "\n";
+
+    it->second->write(packet.data(), packet.size());
+    it->second->flush();
+    return true;
+  }
+
+  bool sendTextMessage(const std::string &client_id, const std::string &title,
+                       const std::string &message) override {
+    nlohmann::json payload;
+    payload["title"] = title;
+    payload["message"] = message;
+
+    std::lock_guard<std::mutex> lock(clientsMutex_);
+    auto it = clientSockets_.find(client_id);
+    if (it == clientSockets_.end())
+      return false;
+
+    protocol::Message msg = protocol::Message::Create(
+        protocol::CommandType::TEXT_MESSAGE, "MASTER", client_id, payload);
+    protocol::MessageSerializer serializer;
+    std::string data = serializer.Serialize(msg);
+    std::string packet = data + "\n";
+
+    it->second->write(packet.data(), packet.size());
+    it->second->flush();
+    return true;
+  }
+
+  bool sendRemoteExecute(const std::string &client_id,
+                         const std::string &command,
+                         const std::string &args) override {
+    nlohmann::json payload;
+    payload["command"] = command;
+    payload["arguments"] = args;
+
+    std::lock_guard<std::mutex> lock(clientsMutex_);
+    auto it = clientSockets_.find(client_id);
+    if (it == clientSockets_.end())
+      return false;
+
+    protocol::Message msg = protocol::Message::Create(
+        protocol::CommandType::REMOTE_EXECUTE, "MASTER", client_id, payload);
+    protocol::MessageSerializer serializer;
+    std::string data = serializer.Serialize(msg);
+    std::string packet = data + "\n";
+
+    it->second->write(packet.data(), packet.size());
+    it->second->flush();
+    return true;
+  }
+
+  bool startDemoMode() override {
+    isDemoMode_ = true;
+    return true;
+  }
+
+  bool stopDemoMode() override {
+    isDemoMode_ = false;
+    // Send stop command if needed, or simply stop sending frames
+    // For now, let's notify clients to stop
+    std::lock_guard<std::mutex> lock(clientsMutex_);
+    protocol::Message msg = protocol::Message::Create(
+        protocol::CommandType::SCREEN_BROADCAST, "MASTER", "BROADCAST");
+    // Empty payload might signify stop or just no data
+    // We should probably add a "state" field in payload.
+    // But for a simple JPEG stream, stopping the stream is enough.
+    // However, to close the window on client, we need a signal.
+    nlohmann::json payload;
+    payload["active"] = false;
+    msg.payload = payload;
+
+    protocol::MessageSerializer serializer;
+    std::string data = serializer.Serialize(msg);
+    std::string packet = data + "\n";
+
+    for (auto &pair : clientSockets_) {
+      pair.second->write(packet.data(), packet.size());
+      pair.second->flush();
+    }
+    return true;
+  }
+
+  bool isDemoModeActive() const override { return isDemoMode_; }
+
+  bool broadcastScreenFrame(const std::vector<uint8_t> &frameData, int width,
+                            int height) override {
+    if (!isDemoMode_)
+      return false;
+
+    nlohmann::json payload;
+    payload["active"] = true;
+    payload["width"] = width;
+    payload["height"] = height;
+
+    // Convert data to Base64
+    QByteArray bytes(reinterpret_cast<const char *>(frameData.data()),
+                     frameData.size());
+    payload["data"] = bytes.toBase64().toStdString();
+
+    std::lock_guard<std::mutex> lock(clientsMutex_);
+
+    protocol::Message msg =
+        protocol::Message::Create(protocol::CommandType::SCREEN_BROADCAST,
+                                  "MASTER", "BROADCAST", payload);
+    protocol::MessageSerializer serializer;
+    std::string data = serializer.Serialize(msg);
+    std::string packet = data + "\n";
+
+    for (auto &pair : clientSockets_) {
+      pair.second->write(packet.data(), packet.size());
+      pair.second->flush();
+    }
+    return true;
+  }
+
+  bool sendFile(const std::string &client_id, const std::string &filename,
+                const std::vector<uint8_t> &fileContent) override {
+    nlohmann::json payload;
+    payload["filename"] = filename;
+
+    // Convert content to Base64
+    QByteArray bytes(reinterpret_cast<const char *>(fileContent.data()),
+                     fileContent.size());
+    payload["content"] = bytes.toBase64().toStdString();
+
+    std::lock_guard<std::mutex> lock(clientsMutex_);
+    if (client_id.empty()) {
+      // Broadcast to all
+      protocol::Message msg = protocol::Message::Create(
+          protocol::CommandType::FILE_TRANSFER, "MASTER", "ALL", payload);
+      protocol::MessageSerializer serializer;
+      std::string data = serializer.Serialize(msg);
+      std::string packet = data + "\n";
+
+      for (auto &pair : clientSockets_) {
+        pair.second->write(packet.data(), packet.size());
+        pair.second->flush();
+      }
+      return true;
+    } else {
+      auto it = clientSockets_.find(client_id);
+      if (it == clientSockets_.end())
+        return false;
+
+      protocol::Message msg = protocol::Message::Create(
+          protocol::CommandType::FILE_TRANSFER, "MASTER", client_id, payload);
+      protocol::MessageSerializer serializer;
+      std::string data = serializer.Serialize(msg);
+      std::string packet = data + "\n";
+
+      it->second->write(packet.data(), packet.size());
+      it->second->flush();
+      return true;
+    }
+  }
+
   void notifyClientConnected(const ClientInfo &info) {
     std::lock_guard<std::mutex> lock(observers_mutex_);
     for (auto *obs : observers_)
@@ -406,6 +577,8 @@ private:
 
   // Buffers for incoming data
   std::map<QTcpSocket *, std::string> incomingBuffers_;
+
+  bool isDemoMode_ = false;
 };
 
 std::unique_ptr<MasterServer> createMasterServer(const ServerConfig &config) {

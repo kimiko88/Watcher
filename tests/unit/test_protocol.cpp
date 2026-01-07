@@ -37,6 +37,9 @@ TEST_F(ProtocolTest, CommandTypeToString) {
   EXPECT_EQ(CommandTypeToString(CommandType::STATUS_UPDATE), "STATUS_UPDATE");
   EXPECT_EQ(CommandTypeToString(CommandType::PING), "PING");
   EXPECT_EQ(CommandTypeToString(CommandType::DISCONNECT), "DISCONNECT");
+  EXPECT_EQ(CommandTypeToString(CommandType::TEXT_MESSAGE), "TEXT_MESSAGE");
+  EXPECT_EQ(CommandTypeToString(CommandType::REMOTE_EXECUTE), "REMOTE_EXECUTE");
+  EXPECT_EQ(CommandTypeToString(CommandType::FILE_TRANSFER), "FILE_TRANSFER");
 }
 
 TEST_F(ProtocolTest, StringToCommandType) {
@@ -55,6 +58,9 @@ TEST_F(ProtocolTest, StringToCommandType) {
   EXPECT_EQ(StringToCommandType("STATUS_UPDATE"), CommandType::STATUS_UPDATE);
   EXPECT_EQ(StringToCommandType("PING"), CommandType::PING);
   EXPECT_EQ(StringToCommandType("DISCONNECT"), CommandType::DISCONNECT);
+  EXPECT_EQ(StringToCommandType("TEXT_MESSAGE"), CommandType::TEXT_MESSAGE);
+  EXPECT_EQ(StringToCommandType("REMOTE_EXECUTE"), CommandType::REMOTE_EXECUTE);
+  EXPECT_EQ(StringToCommandType("FILE_TRANSFER"), CommandType::FILE_TRANSFER);
 }
 
 TEST_F(ProtocolTest, StringToCommandTypeInvalid) {
@@ -626,4 +632,40 @@ TEST_F(ProtocolTest, RealisticStatusUpdate) {
   EXPECT_TRUE(serializer.Validate(received));
   EXPECT_DOUBLE_EQ(received.payload["cpu_usage"], 45.2);
   EXPECT_EQ(received.payload["active_apps"].size(), 2);
+}
+
+TEST_F(ProtocolTest, RealisticFileTransferFlow) {
+  MessageSerializer serializer;
+
+  // Master sends file
+  nlohmann::json file_payload = {
+      {"filename", "test.txt"},
+      {"content", "SGVsbG8gV29ybGQ="}, // "Hello World" base64
+      {"size", 11}};
+
+  auto msg = Message::Create(CommandType::FILE_TRANSFER, "master", "client-001",
+                             file_payload);
+  auto json_str = serializer.Serialize(msg);
+
+  auto received = serializer.Deserialize(json_str);
+  EXPECT_TRUE(serializer.Validate(received));
+  EXPECT_EQ(received.type, CommandType::FILE_TRANSFER);
+  EXPECT_EQ(received.payload["filename"], "test.txt");
+  EXPECT_EQ(received.payload["size"], 11);
+}
+
+TEST_F(ProtocolTest, RealisticTextMessage) {
+  MessageSerializer serializer;
+
+  nlohmann::json msg_payload = {{"title", "Teacher Message"},
+                                {"message", "Please pay attention."}};
+
+  auto msg = Message::Create(CommandType::TEXT_MESSAGE, "master", "client-001",
+                             msg_payload);
+  auto json_str = serializer.Serialize(msg);
+
+  auto received = serializer.Deserialize(json_str);
+  EXPECT_TRUE(serializer.Validate(received));
+  EXPECT_EQ(received.type, CommandType::TEXT_MESSAGE);
+  EXPECT_EQ(received.payload["message"], "Please pay attention.");
 }

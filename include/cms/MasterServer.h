@@ -82,6 +82,32 @@ public:
   virtual bool sendRemoteInput(const std::string &client_id,
                                const nlohmann::json &input_data) = 0;
 
+  // Power Control
+  virtual bool sendPowerControl(const std::string &client_id,
+                                const std::string &action) = 0;
+
+  // Text Message
+  virtual bool sendTextMessage(const std::string &client_id,
+                               const std::string &title,
+                               const std::string &message) = 0;
+
+  // Remote Execute
+  virtual bool sendRemoteExecute(const std::string &client_id,
+                                 const std::string &command,
+                                 const std::string &args) = 0;
+
+  // Demo Mode
+  virtual bool startDemoMode() = 0;
+  virtual bool stopDemoMode() = 0;
+  virtual bool isDemoModeActive() const = 0;
+  virtual bool broadcastScreenFrame(const std::vector<uint8_t> &frameData,
+                                    int width, int height) = 0;
+
+  // File Transfer
+  virtual bool sendFile(const std::string &client_id,
+                        const std::string &filename,
+                        const std::vector<uint8_t> &fileContent) = 0;
+
   // Observer Interface
   class IServerObserver {
   public:

@@ -710,6 +710,32 @@ public:
   }
 
   // ==========================================================================
+  // SYSTEM OPERATIONS IMPLEMENTATION
+  // ==========================================================================
+
+  void showMessageBox(const std::string &title,
+                      const std::string &message) override {
+    // Show non-blocking message box to avoid freezing the service thread
+    // However, we want it to be visible. usage of MB_SYSTEMMODAL helps.
+    // We should probably run this in a separate thread if we want to not block.
+    std::thread t([title, message]() {
+      MessageBoxA(NULL, message.c_str(), title.c_str(),
+                  MB_OK | MB_ICONINFORMATION | MB_SYSTEMMODAL | MB_TOPMOST);
+    });
+    t.detach();
+  }
+
+  void executeCommand(const std::string &command,
+                      const std::string &args) override {
+    // Use ShellExecute to run commands
+    // open: executes the file
+    // SW_SHOWNORMAL: activates and displays the window
+    ShellExecuteA(NULL, "open", command.c_str(),
+                  args.empty() ? NULL : args.c_str(), NULL, SW_SHOWNORMAL);
+    LOG_INFO("Executed command: " + command + " " + args);
+  }
+
+  // ==========================================================================
   // INPUT SIMULATION IMPLEMENTATION
   // ==========================================================================
 

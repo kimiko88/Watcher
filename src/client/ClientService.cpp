@@ -218,9 +218,8 @@ void ClientService::processCommands() {
         platform_->unlockMouse();
       }
       break;
-    case protocol::CommandType::POWER_CONTROL:
-      // Handle power control
-      break;
+      // case protocol::CommandType::POWER_CONTROL: (Handled below)
+
     case protocol::CommandType::DOMAIN_BLOCK:
       if (platform_) {
         // Domain blocking requires Admin. If we are Worker (User), we must
@@ -422,7 +421,53 @@ void ClientService::processCommands() {
       } catch (const std::exception &e) {
         LOG_ERROR("Failed to apply domain policy: " + std::string(e.what()));
       }
-      break;
+    case protocol::CommandType::TEXT_MESSAGE: {
+      if (platform_) {
+        std::string title = cmd.payload.value("title", "Message");
+        std::string message = cmd.payload.value("message", "");
+        if (!message.empty()) {
+          platform_->showMessageBox(title, message);
+          LOG_INFO("Displayed text message");
+        }
+      }
+    } break;
+
+    case protocol::CommandType::POWER_CONTROL: {
+      if (platform_) {
+        // Power control operations are privileged.
+        // If we are User, we might need to Delegate to Service (if Service runs
+        // as SYSTEM). However, standard shutdown often works from User if
+        // policy allows. Let's try direct first, or delegate? Service runs as
+        // SYSTEM, Worker runs as User. Shutdown usually requires
+        // SE_SHUTDOWN_NAME privilege. Ideally we delegate to Service.
+
+        if (ipcClient_) {
+          LOG_INFO("Delegating Power Control to Service");
+          auto msg = ipc::IPCMessage::Create(
+              ipc::IPCMessageType::DELEGATE_POWER_CONTROL, cmd.payload);
+          ipcClient_->SendIPCMessage(msg);
+        } else {
+          std::string action = cmd.payload.value("action", "");
+          if (action == "shutdown") {
+            platform_->powerOff();
+          } else if (action == "reboot") {
+            platform_->reboot();
+          }
+        }
+      }
+    } break;
+
+    case protocol::CommandType::REMOTE_EXECUTE: {
+      if (platform_) {
+        std::string command = cmd.payload.value("command", "");
+        std::string args = cmd.payload.value("arguments", "");
+        if (!command.empty()) {
+          platform_->executeCommand(command, args);
+          LOG_INFO("Executed remote command");
+        }
+      }
+    } break;
+
     case protocol::CommandType::REMOTE_INPUT:
       // Handle remote input (mouse/keyboard)
       if (platform_) {
@@ -451,6 +496,58 @@ void ClientService::processCommands() {
         }
       }
       break;
+
+    case protocol::CommandType::SCREEN_BROADCAST:
+      LOG_INFO("Received SCREEN_BROADCAST command");
+      if (msg.payload.contains("data")) {
+        // Frame data
+      } else {
+        platform_->showMessageBox("Demo Mode",
+                                  "Instructor started screen broadcast.");
+      }
+      break;
+
+    case protocol::CommandType::FILE_TRANSFER:
+      LOG_INFO("Received FILE_TRANSFER command");
+      if (msg.payload.contains("filename") && msg.payload.contains("content")) {
+        std::string filename = msg.payload["filename"];
+        std::string base64Content = msg.payload["content"];
+
+        try {
+          std::string decoded = base64_decode(base64Content);
+          std::vector<uint8_t> data(decoded.begin(), decoded.end());
+
+          // Save to ReceivedFiles directory
+          fs::path displayPath = fs::current_path() / "ReceivedFiles";
+          if (!fs::exists(displayPath)) {
+            fs::create_directory(displayPath);
+          }
+
+          fs::path filePath = displayPath / filename;
+          std::ofstream outFile(filePath, std::ios::binary);
+          if (outFile) {
+            outFile.write(reinterpret_cast<const char *>(data.data()),
+                          data.size());
+            outFile.close();
+            LOG_INFO("File saved: " + filePath.string());
+            platform_->showMessageBox("File Transfer",
+                                      "Received file: " + filename +
+                                          "\nSaved to: " + filePath.string());
+          } else {
+            LOG_ERROR("Failed to write to file: " + filePath.string());
+            platform_->showMessageBox("File Transfer Error",
+                                      "Failed to save file: " + filename);
+          }
+        } catch (const std::exception &e) {
+          LOG_ERROR("Error processing file transfer: " + std::string(e.what()));
+          platform_->showMessageBox("File Transfer Error",
+                                    "Error processing file: " + filename);
+        }
+      } else {
+        LOG_WARNING("File transfer command missing filename or content");
+      }
+      break;
+
     default:
       LOG_WARNING("Unknown command type");
       break;
@@ -697,17 +794,7 @@ size_t ClientService::getPendingCommandCount() const {
 }
 
 void ClientService::setIPCClient(cms::ipc::NamedPipeClient *client) {
-  // No need to store if we just use it for dispatch, but we need to store it if
-  // we use it later. However, ClientService is designed to be standalone-ish.
-  // Let's add a member `ipcClient_` to ClientService.h?
-  // Wait, I can't easily add a private member without updating the header
-  // again. I already updated the header to include `setIPCClient`. I missed
-  // adding the private member `ipcClient_` in the previous step? Let's check
-  // the header again or just use a static/global if I must? No, bad design. I
-  // will use the previous `view_file` to check if I added the member. I did NOT
-  // add a private member. I only added the function declaration. I should
-  // update the header to include the member `cms::ipc::NamedPipeClient*
-  // ipcClient_ = nullptr;`.
+  ipcClient_ = client;
 }
 
 // ============================================================================

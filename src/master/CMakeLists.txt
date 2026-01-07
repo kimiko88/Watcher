@@ -69,6 +69,9 @@ if (Qt6_FOUND)
         ui/ScreenshotViewerDialog.cpp
         ui/DomainPolicyDialog.cpp
         ui/ApplicationPolicyDialog.cpp
+        ui/ApplicationPolicyDialog.cpp
+        ../auth/LdapAuthProvider.cpp
+        ui/LoginDialog.cpp
         main.cpp
         ${MOC_SOURCES}
     )
@@ -85,6 +88,10 @@ if (Qt6_FOUND)
         Qt6::Widgets
         Qt6::Network
     )
+    
+    if(WIN32)
+        target_link_libraries(cms_master PRIVATE wldap32)
+    endif()
     
     # Link FFmpeg if available for RecordingPlayerWidget
     if(FFMPEG_FOUND)
