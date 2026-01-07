@@ -29,8 +29,14 @@ void LogMain(const std::string &msg) {
     auto now = std::chrono::system_clock::now();
     auto time_t = std::chrono::system_clock::to_time_t(now);
     char buf[64];
+#ifdef _WIN32
+    struct tm tm_info;
+    localtime_s(&tm_info, &time_t);
+    std::strftime(buf, sizeof(buf), "%Y-%m-%d %H:%M:%S", &tm_info);
+#else
     std::strftime(buf, sizeof(buf), "%Y-%m-%d %H:%M:%S",
                   std::localtime(&time_t));
+#endif
     f << "[" << buf << "] [WORKER] " << msg << std::endl;
   }
 }

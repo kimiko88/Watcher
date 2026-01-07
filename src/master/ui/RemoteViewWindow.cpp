@@ -44,8 +44,10 @@ bool RemoteViewWindow::eventFilter(QObject *obj, QEvent *event) {
     if (event->type() == QEvent::MouseMove) {
       QMouseEvent *mouseEvent = static_cast<QMouseEvent *>(event);
       if (image_label_->width() > 0 && image_label_->height() > 0) {
-        float x = static_cast<float>(mouseEvent->x()) / image_label_->width();
-        float y = static_cast<float>(mouseEvent->y()) / image_label_->height();
+        float x = static_cast<float>(mouseEvent->position().x()) /
+                  image_label_->width();
+        float y = static_cast<float>(mouseEvent->position().y()) /
+                  image_label_->height();
 
         nlohmann::json payload;
         payload["type"] = "mouse_move";
@@ -58,8 +60,10 @@ bool RemoteViewWindow::eventFilter(QObject *obj, QEvent *event) {
                event->type() == QEvent::MouseButtonRelease) {
       QMouseEvent *mouseEvent = static_cast<QMouseEvent *>(event);
       if (image_label_->width() > 0 && image_label_->height() > 0) {
-        float x = static_cast<float>(mouseEvent->x()) / image_label_->width();
-        float y = static_cast<float>(mouseEvent->y()) / image_label_->height();
+        float x = static_cast<float>(mouseEvent->position().x()) /
+                  image_label_->width();
+        float y = static_cast<float>(mouseEvent->position().y()) /
+                  image_label_->height();
         bool isDown = (event->type() == QEvent::MouseButtonPress);
         bool isLeft = (mouseEvent->button() == Qt::LeftButton);
 
