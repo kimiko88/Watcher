@@ -349,7 +349,7 @@ void ServiceLauncher::HandleWorkerMessage(const ipc::IPCMessage &message) {
         // Since ServiceLauncher runs as System, it can do this.
         {
           std::string hostsPath = "C:\\Windows\\System32\\drivers\\etc\\hosts";
-          std::ifstrream in(hostsPath);
+          std::ifstream in(hostsPath);
           std::vector<std::string> lines;
           std::string line;
           bool inCMS = false;
@@ -426,7 +426,10 @@ void ServiceLauncher::HandleWorkerMessage(const ipc::IPCMessage &message) {
   case ipc::IPCMessageType::DELEGATE_INPUT_LOCK: {
     LOG_INFO("Received delegation: Input Lock");
     if (platform_) {
-      bool lock = message.payload.value("lock", false);
+      bool lock = false;
+      if (message.payload.contains("lock")) {
+        lock = message.payload["lock"].get<bool>();
+      }
       if (lock) {
         platform_->lockKeyboard();
         platform_->lockMouse();
@@ -434,6 +437,8 @@ void ServiceLauncher::HandleWorkerMessage(const ipc::IPCMessage &message) {
         platform_->unlockKeyboard();
         platform_->unlockMouse();
       }
+    } else {
+      LOG_ERROR("Platform interface not available for input lock");
     }
   } break;
 

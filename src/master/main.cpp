@@ -5,7 +5,7 @@
 #include "cms/ui/MasterWindow.h"
 #include <QApplication>
 #include <QFile>
-
+#include <QMessageBox>
 
 int main(int argc, char *argv[]) {
   // Init Logger

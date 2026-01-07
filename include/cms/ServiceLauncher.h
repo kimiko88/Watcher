@@ -65,7 +65,7 @@ public:
 private:
   WorkerConfig config_;
   std::atomic<LauncherState> state_{LauncherState::Stopped};
-  std::unique_ptr<cms::Platform> platform_;
+  std::unique_ptr<cms::platform::Platform> platform_;
 
   // IPC for communication with worker
   std::unique_ptr<ipc::NamedPipeServer> ipcServer_;

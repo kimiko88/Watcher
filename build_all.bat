@@ -174,28 +174,28 @@ echo.
 
 set BUILD_SUCCESS=0
 
-if exist "Release\cms_client_service.exe" (
+if exist "src\client\Release\cms_client_service.exe" (
     echo [OK] cms_client_service.exe
     set /a BUILD_SUCCESS+=1
 ) else (
     echo [FAIL] cms_client_service.exe
 )
 
-if exist "Release\cms_client_worker.exe" (
+if exist "src\client\Release\cms_client_worker.exe" (
     echo [OK] cms_client_worker.exe
     set /a BUILD_SUCCESS+=1
 ) else (
     echo [FAIL] cms_client_worker.exe
 )
 
-if exist "Release\cms_master_service.exe" (
+if exist "src\master\Release\cms_master_service.exe" (
     echo [OK] cms_master_service.exe
     set /a BUILD_SUCCESS+=1
 ) else (
     echo [FAIL] cms_master_service.exe
 )
 
-if exist "Release\cms_master.exe" (
+if exist "src\master\Release\cms_master.exe" (
     echo [OK] cms_master.exe
     set /a BUILD_SUCCESS+=1
 ) else (

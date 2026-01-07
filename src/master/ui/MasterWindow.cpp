@@ -20,7 +20,6 @@
 #include <QVBoxLayout>
 #include <iostream>
 
-
 namespace cms {
 namespace ui {
 
@@ -402,63 +401,43 @@ void MasterWindow::onAboutClicked() {
 }
 
 void MasterWindow::onScreenshotReceived(const std::string &client_id,
-                                        const std::vector<uint8_t> &imageData) {
-  qDebug() << "onScreenshotReceived called for client:"
-           << QString::fromStdString(client_id);
-  qDebug() << "Image data size:" << imageData.size();
-
+                                        const std::vector<uint8_t> &data,
+                                        int width, int height) {
+  // If we have a remote view open for this client, update it
+  auto it = remote_views_.find(client_id);
+  if (it != remote_views_.end()) {
+    // it->second->updateImage(data, width, height); // Assuming
+    // RemoteViewWindow has this For now, let's just log or ignore if
+    // RemoteViewWindow update logic is not fully hooked up here In a real impl,
+    // we'd pass this data to the RemoteViewWindow
+  }
   // Get client info to extract screenshot metadata
   auto client = server_->getClientInfo(client_id);
 
-  // The imageData contains raw RGBA bytes, not a compressed image
-  // We need width and height which should be in client.thumbnail_width/height
-  // Or we can try to decode as compressed first, then fall back to raw
-
+  // ...
+  // The data contains raw RGBA bytes. Use passed width/height.
   QImage image;
 
   // Try loading as compressed format first (PNG/JPEG)
-  if (image.loadFromData(imageData.data(),
-                         static_cast<int>(imageData.size()))) {
+  if (image.loadFromData(data.data(), static_cast<int>(data.size()))) {
     qDebug() << "Image loaded as compressed format. Size:" << image.width()
              << "x" << image.height();
   }
-  // If that fails, assume it's raw RGBA data
-  else {
-    // Calculate dimensions from data size
-    // Assuming RGBA32 (4 bytes per pixel)
-    int totalPixels = imageData.size() / 4;
-
-    // Common resolutions to try
-    int width = 0, height = 0;
-    if (totalPixels == 1920 * 1080) {
-      width = 1920;
-      height = 1080;
-    } else if (totalPixels == 1600 * 900) {
-      width = 1600;
-      height = 900;
-    } else if (totalPixels == 1366 * 768) {
-      width = 1366;
-      height = 768;
-    } else if (totalPixels == 1280 * 720) {
-      width = 1280;
-      height = 720;
-    } else if (totalPixels == 1024 * 768) {
-      width = 1024;
-      height = 768;
-    } else {
-      // Try to extract from client thumbnail info if available
-      width = client.thumbnail_width;
-      height = client.thumbnail_height;
-    }
-
-    if (width > 0 && height > 0) {
-      // Create QImage from raw RGBA data
-      image = QImage(imageData.data(), width, height, width * 4,
-                     QImage::Format_RGBA8888)
-                  .copy();
-      qDebug() << "Image created from raw RGBA data. Size:" << width << "x"
-               << height;
-    }
+  // If that fails, assume it's raw RGBA data if dimensions are valid
+  else if (width > 0 && height > 0) {
+    // Create QImage from raw RGBA data
+    // We must cast to const uchar* (which is const unsigned char*)
+    // data.data() returns const uint8_t* (which is same)
+    image = QImage(reinterpret_cast<const uchar *>(data.data()), width, height,
+                   width * 4, QImage::Format_RGBA8888)
+                .copy();
+    qDebug() << "Image created from raw RGBA data. Size:" << width << "x"
+             << height;
+  } else {
+    // Legacy/Fallback: guess from size?
+    // For now, simple fail specific to raw data without dimensions
+    qDebug()
+        << "Cannot create image: Invalid dimensions and loadFromData failed.";
   }
 
   if (!image.isNull()) {

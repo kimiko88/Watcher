@@ -24,8 +24,10 @@ public:
   ~MasterWindow();
 
   // IServerObserver overrides
+  // IServerObserver overrides
   void onScreenshotReceived(const std::string &client_id,
-                            const std::vector<uint8_t> &data) override;
+                            const std::vector<uint8_t> &data, int width,
+                            int height) override;
 
 private slots:
   void onRefresh();

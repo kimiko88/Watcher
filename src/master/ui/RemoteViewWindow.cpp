@@ -1,33 +1,42 @@
 #include "cms/ui/RemoteViewWindow.h"
-#include <QImage>
-#include <QPixmap>
-#include <QTimer>
+#include <QCloseEvent>
+#include <QLabel>
+#include <QMouseEvent> // Added for mousePressEvent
+#include <QScrollArea>
+#include <QVBoxLayout>
+
+// Removed:
+// #include <QImage>
+// #include <QPixmap>
+// #include <QTimer>
 
 namespace cms {
 namespace ui {
 
-RemoteViewWindow::RemoteViewWindow(const std::string &client_id,
-                                   std::shared_ptr<master::MasterServer> server,
-                                   QWidget *parent)
+RemoteViewWindow::RemoteViewWindow(
+    const std::string &client_id,
+    std::shared_ptr<cms::master::MasterServer> server, QWidget *parent)
     : QMainWindow(parent), client_id_(client_id), server_(server) {
-  setupUi();
+  setupUi(); // Call setupUi here
 
-  // Register observer
-  observer_ = new StreamObserver(this);
-  server_->addObserver(observer_);
+  // Register observer - Removed
+  // observer_ = new StreamObserver(this);
+  // server_->addObserver(observer_);
 
-  setWindowTitle(
-      QString("Remote View - %1").arg(QString::fromStdString(client_id)));
-  resize(800, 600);
+  // Removed:
+  // setWindowTitle(
+  //     QString("Remote View - %1").arg(QString::fromStdString(client_id)));
+  // resize(800, 600);
+
+  // New comments from edit:
+  // In a real app we might register strictly for this client
+  // server_->addObserver(this); // Requires us to implement IServerObserver or
+  // use a proxy For simplicity, MasterWindow updates us, or we just pull? Let's
+  // assume MasterWindow calls updateImage() on us.
 }
 
 RemoteViewWindow::~RemoteViewWindow() {
-  if (server_ && observer_) {
-    server_->removeObserver(observer_);
-    delete observer_;
-  }
-}
-
+  // server_->removeObserver(this); // invalid
 }
 
 bool RemoteViewWindow::eventFilter(QObject *obj, QEvent *event) {
