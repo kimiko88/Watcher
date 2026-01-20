@@ -1,131 +1,97 @@
-# Guida alla Build e al Deploy di Watcher
+# Guida Completa: Build e Installazione Watcher
 
-Questa guida descrive i passaggi necessari per compilare (build) e installare (deploy) i componenti **Master** e **Client** del sistema Watcher.
+Questa guida illustra come compilare il progetto e installarlo su macchine Client (Studenti) e Master (Docente).
 
-## 📋 Prerequisiti
+## 1. Build (Compilazione)
 
-Prima di iniziare, assicurati di avere installato:
-
-1.  **Visual Studio 2022** (con workload "Sviluppo di applicazioni desktop con C++").
-2.  **CMake 3.15+** (incluso in Visual Studio o installabile a parte).
-3.  **Qt 6.5 o superiore** (Richiesto per la GUI del Master).
-    -   Installare tramite Qt Online Installer.
-    -   Selezionare il kit **MSVC 2019 64-bit** (o compatibile es. MSVC 2022).
-    -   Selezionare "Qt 5 Compatibility Module".
-
-> **Nota**: Il Client può essere compilato anche senza Qt, ma il Master richiede le librerie Qt per l'interfaccia grafica.
-
----
-
-## 🚀 Build Automatica (Consigliata)
-
-Il progetto include uno script che automatizza l'intero processo di compilazione.
-
-1.  Apri un prompt dei comandi (o PowerShell).
-2.  Esegui lo script `build_all.bat` dalla root del progetto:
+### Metodo Automatico (Consigliato)
+Esegui lo script `build_all.bat` dalla cartella principale del progetto.
+Questo script:
+1. Pulisce vecchie build.
+2. Trova automaticamente Qt.
+3. Compila tutti i servizi e l'interfaccia grafica.
 
 ```cmd
 build_all.bat
 ```
 
-Lo script eseguirà le seguenti operazioni:
--   Pulisce la cartella `build/` (se esistente).
--   Cerca automaticamente l'installazione di Qt.
--   Configura il progetto con CMake per Visual Studio 2022 (x64).
--   Compila tutti i componenti:
-    -   `cms_core` (Libreria base)
-    -   `cms_platform` (Libreria specifica OS)
-    -   `cms_client_service` (Servizio Windows Client)
-    -   `cms_client_worker` (Processo utente Client)
-    -   `cms_master_service` (Servizio backend Master)
-    -   `cms_master` (Interfaccia GUI Master - solo se Qt è trovato)
-
-Al termine, troverai gli eseguibili nella cartella `build/Release/`.
+Gli eseguibili verranno generati in:
+- Client: `build\src\client\Release\`
+- Master: `build\src\master\Release\`
 
 ---
 
-## 🛠️ Build Manuale
+## 2. Installazione Client (PC Studente)
 
-Se preferisci controllare ogni passaggio o se lo script automatico fallisce, procedi come segue:
+Il Client include due componenti: un **Servizio** (che gira come SYSTEM) e un **Worker** (che gira come Utente).
 
-### 1. Configurazione
+### Passaggio 1: Preparazione Cartella
+Sul PC studente, crea una cartella (es. `C:\WatcherClient`) e copia al suo interno TUTTI i seguenti file (presi dal tuo PC di sviluppo):
 
-```cmd
-mkdir build
-cd build
-cmake .. -G "Visual Studio 17 2022" -A x64 -DCMAKE_PREFIX_PATH="C:\Qt\6.10.1\msvc2022_64"
-```
+1.  `cms_client_service.exe` (da `build\src\client\Release\`)
+2.  `cms_client_worker.exe` (da `build\src\client\Release\`)
+3.  `install_client_service.bat` (da `scripts\`)
+4.  `client_config.json` (vedi sezione Configurazione)
 
-*Sostituisci `C:\Qt\6.10.1\msvc2022_64` con il percorso reale della tua installazione Qt.*
+**IMPORTANTE**: Tutti i file devono trovarsi nella *stessa cartella* per garantire che il servizio trovi l'eseguibile worker corretto.
 
-### 2. Compilazione
-
-Compila i singoli target in modalità Release:
-
-**Per il Client:**
-```cmd
-cmake --build . --target cms_client_service --config Release
-cmake --build . --target cms_client_worker --config Release
-```
-
-**Per il Master:**
-```cmd
-cmake --build . --target cms_master_service --config Release
-cmake --build . --target cms_master --config Release
-```
-
----
-
-## 📦 Deploy e Installazione
-
-Il sistema utilizza degli script `.bat` situati nella cartella `scripts/` per installare i servizi su Windows.
-
-### Installazione Client (Sui PC Studenti)
-
-1.  Copia i seguenti file dalla cartella `build/Release/` del tuo PC di sviluppo alla cartella `scripts/` (o assicurati che gli script li trovino):
-    > **Nota**: Lo script di installazione `install_client_service.bat` si aspetta di trovare gli eseguibili nella **stessa cartella** da cui viene lanciato.
-    
-    Copia in una cartella di destinazione sul PC studente:
-    -   `install_client_service.bat`
-    -   `cms_client_service.exe`
-    -   `cms_client_worker.exe`
-    -   `client_config.json` (Da creare/configurare prima, vedi sotto)
-    -   `cms_core.dll` (se necessario)
-    
-2.  Apri un prompt dei comandi **come Amministratore** sul PC studente.
-3.  Posizionati nella cartella.
-4.  Esegui l'installazione:
-
-```cmd
-install_client_service.bat
-```
-
-> **Importante**: Assicurati che il file `client_config.json` sia configurato correttamente (vedi sezione Configurazione) e posizionato dove il servizio se lo aspetta (solitamente nella cartella dell'eseguibile o in `../config`).
-
-### Installazione Master (Sul PC Docente)
-
-1.  Assicurati che gli eseguibili `cms_master.exe` e `cms_master_service.exe` siano presenti.
-2.  Per il deploy della GUI Qt (`cms_master.exe`), è necessario includere le DLL di Qt. Puoi usare il tool `windeployqt` per copiare le dipendenze nella stessa cartella dell'eseguibile:
+### Passaggio 2: Installazione Servizio
+1.  Apri un Prompt dei Comandi **come Amministratore**.
+2.  Spostati nella cartella creata: `cd C:\WatcherClient`
+3.  Esegui lo script:
     ```cmd
-    C:\Qt\6.10.1\msvc2022_64\bin\windeployqt.exe --release build\Release\cms_master.exe
+    install_client_service.bat
     ```
-3.  Ora puoi avviare `cms_master.exe`.
+
+Se tutto è corretto, vedrai: *"Service created successfully"* e *"Installation completed successfully"*.
 
 ---
 
-## ⚙️ Configurazione Rapida
+## 3. Installazione Master (PC Docente)
 
-### Client (`config/client_config.json`)
-Modifica questo file e posizionalo insieme agli eseguibili o nella cartella `config` relativa.
+Il Master include il **Servizio di Backend** e l'**Interfaccia Grafica (GUI)**.
+
+### Passaggio 1: Deploy delle Librerie Qt
+Poiché la GUI usa Qt, non puoi semplicemente copiare l'eseguibile. Devi includere le DLL necessarie.
+1.  Sul PC di sviluppo, vai nella cartella di build del master: `cd build\src\master\Release`
+2.  Esegui il tool di deploy di Qt (aggiusta il percorso di Qt se necessario):
+    ```cmd
+    C:\Qt\6.10.1\msvc2022_64\bin\windeployqt.exe cms_master.exe
+    ```
+    Questo copierà tutte le DLL Qt necessarie accanto all'eseguibile.
+
+### Passaggio 2: Preparazione Cartella
+Sul PC Server/Docente, crea una cartella (es. `C:\WatcherMaster`) e copia:
+1.  Tutto il contenuto di `build\src\master\Release\` (inclusi `cms_master.exe` e le DLL create sopra).
+2.  `cms_master_service.exe` (da `build\src\master\Release\`)
+3.  `install_master_service.bat` (da `scripts\`)
+
+### Passaggio 3: Installazione
+1.  Apri Prompt dei Comandi **come Amministratore**.
+2.  Vai nella cartella: `cd C:\WatcherMaster`
+3.  Esegui:
+    ```cmd
+    install_master_service.bat
+    ```
+
+---
+
+## 4. Configurazione (`client_config.json`)
+
+Crea questo file nella stessa cartella degli eseguibili Client:
 
 ```json
 {
-  "master_address": "192.168.1.X",  <-- Inserisci IP del Master
+  "master_address": "192.168.1.100",  <-- IP del PC DOCENTE
   "master_port": 5555,
-  "machine_id": "PC-AULA-01",
+  "machine_id": "AULA-01-PC01",       <-- Nome univoco per questo PC
   "log_level": "INFO"
 }
 ```
 
-### Master
-Il Master ascolta di default sulla porta 5555. Assicurati che il Firewall di Windows permetta il traffico in entrata su questa porta TCP/5555.
+## 5. Troubleshooting (Risoluzione Problemi)
+
+- **Errore 5: Accesso Negato**: Assicurati di eseguire gli script `.bat` come Amministratore.
+- **Servizio non parte**: Controlla i log in `C:\Users\Public\cms_service_log.txt` (Client) o `cms_master_service_log.txt` (Server).
+- **GUI non parte (Master)**: Probabilmente mancano le DLL di Qt. Assicurati di aver eseguito `windeployqt` o di aver copiato manualmente le DLL `Qt6Core.dll`, `Qt6Gui.dll`, `Qt6Widgets.dll` etc.
+- **Errore "File non trovato" durante installazione**: Assicurati che lo script `.bat` e gli `.exe` siano nella **stessa cartella**.

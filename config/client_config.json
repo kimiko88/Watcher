@@ -1,5 +1,5 @@
 {
-    "master_address": "192.168.1.100",
+    "master_address": "192.168.1.46",
     "master_port": 5555,
     "machine_id": "client-abc-123",
     "encryption_enabled": false,

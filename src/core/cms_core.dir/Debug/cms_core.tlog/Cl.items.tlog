@@ -6,4 +6,6 @@ C:\Users\chimi\Desktop\Programmazione\Watcher\src\core\Core.cpp;C:\Users\chimi\D
 C:\Users\chimi\Desktop\Programmazione\Watcher\src\core\Socket.cpp;C:\Users\chimi\Desktop\Programmazione\Watcher\src\core\cms_core.dir\Debug\Socket.obj
 C:\Users\chimi\Desktop\Programmazione\Watcher\src\core\ScreenRecorder.cpp;C:\Users\chimi\Desktop\Programmazione\Watcher\src\core\cms_core.dir\Debug\ScreenRecorder.obj
 C:\Users\chimi\Desktop\Programmazione\Watcher\src\core\DomainPolicy.cpp;C:\Users\chimi\Desktop\Programmazione\Watcher\src\core\cms_core.dir\Debug\DomainPolicy.obj
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\core\IPCProtocol.cpp;C:\Users\chimi\Desktop\Programmazione\Watcher\src\core\cms_core.dir\Debug\IPCProtocol.obj
+C:\Users\chimi\Desktop\Programmazione\Watcher\src\core\IPCChannel.cpp;C:\Users\chimi\Desktop\Programmazione\Watcher\src\core\cms_core.dir\Debug\IPCChannel.obj
 C:\Users\chimi\Desktop\Programmazione\Watcher\src\network\Network.cpp;C:\Users\chimi\Desktop\Programmazione\Watcher\src\core\cms_core.dir\Debug\Network.obj

@@ -1,0 +1,674 @@
+[INFO] === CMS Client Service Starting ===
+[INFO] Initializing CMS Core...
+[INFO] Platform: Windows
+[INFO] Version: 1.0.0
+[INFO] CMS Core initialized
+[INFO] Worker config:
+[INFO]   Executable: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO]   Config: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\client_config.json
+[INFO] Starting ServiceLauncher
+[INFO] Starting NamedPipeServer: \\.\pipe\WatcherClientService
+[INFO] IPC server started
+[INFO] Spawning worker process: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO] Creating named pipe: \\.\pipe\WatcherClientService
+[INFO] Waiting for client connection...
+[INFO] Worker process spawned with PID: 10580
+[INFO] ServiceLauncher started successfully
+[INFO] ServiceLauncher started successfully
+[INFO] Monitor loop started
+[INFO] Heartbeat loop started
+[INFO] Client connected!
+[INFO] Worker process ready
+[WARNING] Worker heartbeat timeout (last: 20016ms ago)
+[INFO] Restarting worker process
+[INFO] Killing worker process
+[WARNING] Failed to read message length
+[INFO] Client disconnected
+[INFO] Creating named pipe: \\.\pipe\WatcherClientService
+[INFO] Waiting for client connection...
+[INFO] Waiting 2000ms before restart
+[WARNING] Worker process died unexpectedly
+[INFO] Restarting worker process
+[INFO] Waiting 4000ms before restart
+[INFO] Spawning worker process: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO] Worker process spawned with PID: 11396
+[INFO] Client connected!
+[INFO] Worker process ready
+[INFO] Spawning worker process: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO] Worker process spawned with PID: 22468
+[WARNING] Worker process died unexpectedly
+[INFO] Restarting worker process
+[INFO] Killing worker process
+[INFO] Waiting 2000ms before restart
+[INFO] Spawning worker process: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO] Worker process spawned with PID: 6424
+[WARNING] Worker process died unexpectedly
+[INFO] Restarting worker process
+[INFO] Killing worker process
+[INFO] Waiting 4000ms before restart
+[INFO] Spawning worker process: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO] Worker process spawned with PID: 24992
+[WARNING] Worker process died unexpectedly
+[INFO] Restarting worker process
+[INFO] Killing worker process
+[INFO] Waiting 6000ms before restart
+[INFO] Service stop requested
+[INFO] Stopping ServiceLauncher
+[INFO] Service main loop exited
+[INFO] === CMS Client Service Stopped ===
+[INFO] Spawning worker process: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO] Worker process spawned with PID: 2988
+[INFO] Monitor loop stopped
+[INFO] Heartbeat loop stopped
+[INFO] === CMS Client Service Starting ===
+[INFO] Initializing CMS Core...
+[INFO] Platform: Windows
+[INFO] Version: 1.0.0
+[INFO] CMS Core initialized
+[INFO] Worker config:
+[INFO]   Executable: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO]   Config: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\client_config.json
+[INFO] Starting ServiceLauncher
+[INFO] Starting NamedPipeServer: \\.\pipe\WatcherClientService
+[INFO] IPC server started
+[INFO] Spawning worker process: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO] Creating named pipe: \\.\pipe\WatcherClientService
+[INFO] Waiting for client connection...
+[INFO] Worker process spawned with PID: 25872
+[INFO] ServiceLauncher started successfully
+[INFO] ServiceLauncher started successfully
+[INFO] Monitor loop started
+[INFO] Heartbeat loop started
+[INFO] Client connected!
+[INFO] Worker process ready
+[WARNING] Worker heartbeat timeout (last: 20028ms ago)
+[INFO] Restarting worker process
+[INFO] Killing worker process
+[WARNING] Failed to read message length
+[INFO] Client disconnected
+[INFO] Creating named pipe: \\.\pipe\WatcherClientService
+[INFO] Waiting for client connection...
+[WARNING] Worker process died unexpectedly
+[INFO] Restarting worker process
+[INFO] Killing worker process
+[INFO] Waiting 4000ms before restart
+[INFO] Waiting 4000ms before restart
+[INFO] Spawning worker process: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO] Spawning worker process: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO] Worker process spawned with PID: 8036
+[INFO] Worker process spawned with PID: 25992
+[INFO] Client connected!
+[INFO] Worker process ready
+[WARNING] Worker process died unexpectedly
+[INFO] Restarting worker process
+[INFO] Killing worker process
+[INFO] Waiting 2000ms before restart
+[INFO] Spawning worker process: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO] Worker process spawned with PID: 15884
+[WARNING] Worker process died unexpectedly
+[INFO] Restarting worker process
+[INFO] Killing worker process
+[INFO] Waiting 4000ms before restart
+[INFO] Spawning worker process: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO] Worker process spawned with PID: 7604
+[WARNING] Worker process died unexpectedly
+[INFO] Restarting worker process
+[INFO] Killing worker process
+[INFO] Waiting 6000ms before restart
+[INFO] Spawning worker process: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO] Worker process spawned with PID: 25712
+[WARNING] Worker process died unexpectedly
+[INFO] Restarting worker process
+[INFO] Killing worker process
+[INFO] Waiting 8000ms before restart
+[INFO] Spawning worker process: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO] Worker process spawned with PID: 10976
+[WARNING] Worker process died unexpectedly
+[INFO] Restarting worker process
+[INFO] Killing worker process
+[INFO] Waiting 10000ms before restart
+[INFO] Spawning worker process: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO] Worker process spawned with PID: 24000
+[WARNING] Worker process died unexpectedly
+[INFO] Restarting worker process
+[ERROR] Too many consecutive restarts (6), giving up
+[INFO] Service main loop exited
+[INFO] === CMS Client Service Stopped ===
+[INFO] === CMS Client Service Starting ===
+[INFO] Initializing CMS Core...
+[INFO] Platform: Windows
+[INFO] Version: 1.0.0
+[INFO] CMS Core initialized
+[INFO] Worker config:
+[INFO]   Executable: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO]   Config: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\client_config.json
+[INFO] Starting ServiceLauncher
+[INFO] Starting NamedPipeServer: \\.\pipe\WatcherClientService
+[INFO] IPC server started
+[INFO] Spawning worker process: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO] Creating named pipe: \\.\pipe\WatcherClientService
+[INFO] Waiting for client connection...
+[INFO] Worker process spawned with PID: 26524
+[INFO] ServiceLauncher started successfully
+[INFO] ServiceLauncher started successfully
+[INFO] Monitor loop started
+[INFO] Heartbeat loop started
+[INFO] Client connected!
+[INFO] Worker process ready
+[WARNING] Worker heartbeat timeout (last: 20011ms ago)
+[INFO] Restarting worker process
+[INFO] Killing worker process
+[WARNING] Failed to read message length
+[INFO] Client disconnected
+[INFO] Creating named pipe: \\.\pipe\WatcherClientService
+[INFO] Waiting for client connection...
+[INFO] Waiting 2000ms before restart
+[WARNING] Worker process died unexpectedly
+[INFO] Restarting worker process
+[INFO] Waiting 4000ms before restart
+[INFO] Spawning worker process: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO] Worker process spawned with PID: 18696
+[INFO] Client connected!
+[INFO] Worker process ready
+[INFO] Spawning worker process: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO] Worker process spawned with PID: 10084
+[WARNING] Worker process died unexpectedly
+[INFO] Restarting worker process
+[INFO] Killing worker process
+[INFO] Waiting 2000ms before restart
+[INFO] Spawning worker process: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO] Worker process spawned with PID: 23300
+[WARNING] Worker process died unexpectedly
+[INFO] Restarting worker process
+[INFO] Killing worker process
+[INFO] Waiting 4000ms before restart
+[INFO] Spawning worker process: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO] Worker process spawned with PID: 27616
+[WARNING] Worker process died unexpectedly
+[INFO] Restarting worker process
+[INFO] Killing worker process
+[INFO] Waiting 6000ms before restart
+[INFO] Spawning worker process: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO] Worker process spawned with PID: 10520
+[WARNING] Worker process died unexpectedly
+[INFO] Restarting worker process
+[INFO] Killing worker process
+[INFO] Waiting 8000ms before restart
+[INFO] Spawning worker process: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO] Worker process spawned with PID: 23112
+[WARNING] Worker process died unexpectedly
+[INFO] Restarting worker process
+[INFO] Killing worker process
+[INFO] Waiting 10000ms before restart
+[INFO] Spawning worker process: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO] Worker process spawned with PID: 25552
+[WARNING] Worker process died unexpectedly
+[INFO] Restarting worker process
+[ERROR] Too many consecutive restarts (6), giving up
+[INFO] Service main loop exited
+[INFO] === CMS Client Service Stopped ===
+[INFO] === CMS Client Service Starting ===
+[INFO] Initializing CMS Core...
+[INFO] Platform: Windows
+[INFO] Version: 1.0.0
+[INFO] CMS Core initialized
+[INFO] Worker config:
+[INFO]   Executable: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO]   Config: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\client_config.json
+[INFO] Starting ServiceLauncher
+[INFO] Starting NamedPipeServer: \\.\pipe\WatcherClientService
+[INFO] IPC server started
+[INFO] Spawning worker process: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO] Creating named pipe: \\.\pipe\WatcherClientService
+[INFO] Waiting for client connection...
+[INFO] Worker process spawned with PID: 24704
+[INFO] ServiceLauncher started successfully
+[INFO] ServiceLauncher started successfully
+[INFO] Monitor loop started
+[INFO] Heartbeat loop started
+[INFO] Client connected!
+[WARNING] Worker heartbeat timeout (last: 20017ms ago)
+[INFO] Restarting worker process
+[INFO] Killing worker process
+[WARNING] Failed to read message length
+[INFO] Client disconnected
+[INFO] Creating named pipe: \\.\pipe\WatcherClientService
+[INFO] Waiting for client connection...
+[INFO] Waiting 2000ms before restart
+[WARNING] Worker process died unexpectedly
+[INFO] Restarting worker process
+[INFO] Waiting 4000ms before restart
+[INFO] Spawning worker process: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO] Worker process spawned with PID: 1764
+[INFO] Client connected!
+[INFO] Worker process ready
+[INFO] Spawning worker process: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO] Worker process spawned with PID: 26780
+[WARNING] Failed to read message length
+[INFO] Client disconnected
+[INFO] Creating named pipe: \\.\pipe\WatcherClientService
+[INFO] Waiting for client connection...
+[WARNING] Worker process died unexpectedly
+[INFO] Restarting worker process
+[INFO] Killing worker process
+[INFO] Waiting 2000ms before restart
+[INFO] Spawning worker process: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO] Worker process spawned with PID: 12196
+[INFO] Client connected!
+[INFO] Worker process ready
+[WARNING] Worker heartbeat timeout (last: 20982ms ago)
+[INFO] Restarting worker process
+[INFO] Killing worker process
+[WARNING] Failed to read message length
+[INFO] Client disconnected
+[INFO] Creating named pipe: \\.\pipe\WatcherClientService
+[INFO] Waiting for client connection...
+[INFO] Waiting 2000ms before restart
+[INFO] Spawning worker process: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO] Worker process spawned with PID: 9520
+[INFO] Client connected!
+[INFO] Worker process ready
+[WARNING] Worker heartbeat timeout (last: 20007ms ago)
+[INFO] Restarting worker process
+[INFO] Killing worker process
+[WARNING] Failed to read message length
+[INFO] Client disconnected
+[INFO] Creating named pipe: \\.\pipe\WatcherClientService
+[INFO] Waiting for client connection...
+[INFO] Waiting 2000ms before restart
+[INFO] Spawning worker process: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO] Worker process spawned with PID: 25072
+[INFO] Client connected!
+[INFO] Worker process ready
+[WARNING] Worker heartbeat timeout (last: 20035ms ago)
+[INFO] Restarting worker process
+[INFO] Killing worker process
+[WARNING] Failed to read message length
+[INFO] Client disconnected
+[INFO] Creating named pipe: \\.\pipe\WatcherClientService
+[INFO] Waiting for client connection...
+[INFO] Waiting 2000ms before restart
+[WARNING] Worker process died unexpectedly
+[INFO] Restarting worker process
+[INFO] Waiting 4000ms before restart
+[INFO] Spawning worker process: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO] Worker process spawned with PID: 21080
+[INFO] Client connected!
+[INFO] Worker process ready
+[INFO] Spawning worker process: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO] Worker process spawned with PID: 8536
+[WARNING] Worker process died unexpectedly
+[INFO] Restarting worker process
+[INFO] Killing worker process
+[INFO] Waiting 2000ms before restart
+[INFO] Spawning worker process: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO] Worker process spawned with PID: 4512
+[WARNING] Worker process died unexpectedly
+[INFO] Restarting worker process
+[INFO] Killing worker process
+[INFO] Waiting 4000ms before restart
+[INFO] Spawning worker process: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO] Worker process spawned with PID: 19692
+[WARNING] Worker process died unexpectedly
+[INFO] Restarting worker process
+[INFO] Killing worker process
+[INFO] Waiting 6000ms before restart
+[INFO] Spawning worker process: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO] Worker process spawned with PID: 14720
+[WARNING] Worker process died unexpectedly
+[INFO] Restarting worker process
+[INFO] Killing worker process
+[INFO] Waiting 8000ms before restart
+[INFO] Spawning worker process: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO] Worker process spawned with PID: 19400
+[WARNING] Worker process died unexpectedly
+[INFO] Restarting worker process
+[INFO] Killing worker process
+[INFO] Waiting 10000ms before restart
+[INFO] Spawning worker process: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO] Worker process spawned with PID: 15384
+[WARNING] Worker process died unexpectedly
+[INFO] Restarting worker process
+[ERROR] Too many consecutive restarts (6), giving up
+[INFO] Service main loop exited
+[INFO] === CMS Client Service Stopped ===
+[INFO] === CMS Client Service Starting ===
+[INFO] Initializing CMS Core...
+[INFO] Platform: Windows
+[INFO] Version: 1.0.0
+[INFO] CMS Core initialized
+[INFO] Worker config:
+[INFO]   Executable: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO]   Config: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\client_config.json
+[INFO] Starting ServiceLauncher
+[INFO] Starting NamedPipeServer: \\.\pipe\WatcherClientService
+[INFO] IPC server started
+[INFO] Spawning worker process: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO] Creating named pipe: \\.\pipe\WatcherClientService
+[INFO] Waiting for client connection...
+[INFO] Worker process spawned with PID: 1968
+[INFO] ServiceLauncher started successfully
+[INFO] ServiceLauncher started successfully
+[INFO] Monitor loop started
+[INFO] Heartbeat loop started
+[INFO] Client connected!
+[WARNING] Worker heartbeat timeout (last: 20023ms ago)
+[INFO] Restarting worker process
+[INFO] Killing worker process
+[WARNING] Failed to read message length
+[INFO] Client disconnected
+[INFO] Creating named pipe: \\.\pipe\WatcherClientService
+[INFO] Waiting for client connection...
+[INFO] Waiting 2000ms before restart
+[WARNING] Worker process died unexpectedly
+[INFO] Restarting worker process
+[INFO] Waiting 4000ms before restart
+[INFO] Spawning worker process: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO] Worker process spawned with PID: 7256
+[INFO] Client connected!
+[INFO] Spawning worker process: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO] Worker process spawned with PID: 4260
+[WARNING] Worker process died unexpectedly
+[INFO] Restarting worker process
+[INFO] Killing worker process
+[INFO] Waiting 6000ms before restart
+[INFO] Spawning worker process: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO] Worker process spawned with PID: 2452
+[WARNING] Worker process died unexpectedly
+[INFO] Restarting worker process
+[INFO] Killing worker process
+[INFO] Waiting 8000ms before restart
+[INFO] Spawning worker process: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO] Worker process spawned with PID: 9036
+[WARNING] Worker process died unexpectedly
+[INFO] Restarting worker process
+[INFO] Killing worker process
+[INFO] Waiting 10000ms before restart
+[INFO] Spawning worker process: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO] Worker process spawned with PID: 9660
+[WARNING] Worker process died unexpectedly
+[INFO] Restarting worker process
+[ERROR] Too many consecutive restarts (6), giving up
+[INFO] Service main loop exited
+[INFO] === CMS Client Service Stopped ===
+[INFO] === CMS Client Service Starting ===
+[INFO] Initializing CMS Core...
+[INFO] Platform: Windows
+[INFO] Version: 1.0.0
+[INFO] CMS Core initialized
+[INFO] Worker config:
+[INFO]   Executable: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO]   Config: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\client_config.json
+[INFO] Starting ServiceLauncher
+[INFO] Starting NamedPipeServer: \\.\pipe\WatcherClientService
+[INFO] IPC server started
+[INFO] Spawning worker process: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO] Creating named pipe: \\.\pipe\WatcherClientService
+[ERROR] CreateNamedPipe failed: 231
+[INFO] Worker process spawned with PID: 23492
+[INFO] ServiceLauncher started successfully
+[INFO] ServiceLauncher started successfully
+[INFO] Monitor loop started
+[INFO] Heartbeat loop started
+[INFO] Creating named pipe: \\.\pipe\WatcherClientService
+[ERROR] CreateNamedPipe failed: 231
+[INFO] Creating named pipe: \\.\pipe\WatcherClientService
+[ERROR] CreateNamedPipe failed: 231
+[INFO] Creating named pipe: \\.\pipe\WatcherClientService
+[ERROR] CreateNamedPipe failed: 231
+[INFO] Creating named pipe: \\.\pipe\WatcherClientService
+[ERROR] CreateNamedPipe failed: 231
+[INFO] Creating named pipe: \\.\pipe\WatcherClientService
+[ERROR] CreateNamedPipe failed: 231
+[INFO] Creating named pipe: \\.\pipe\WatcherClientService
+[ERROR] CreateNamedPipe failed: 231
+[INFO] Creating named pipe: \\.\pipe\WatcherClientService
+[ERROR] CreateNamedPipe failed: 231
+[INFO] Creating named pipe: \\.\pipe\WatcherClientService
+[ERROR] CreateNamedPipe failed: 231
+[INFO] Creating named pipe: \\.\pipe\WatcherClientService
+[INFO] Waiting for client connection...
+[WARNING] Worker process died unexpectedly
+[INFO] Restarting worker process
+[INFO] Killing worker process
+[INFO] Waiting 2000ms before restart
+[INFO] Spawning worker process: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO] Worker process spawned with PID: 14868
+[INFO] Client connected!
+[INFO] Worker process ready
+[WARNING] Worker heartbeat timeout (last: 28011ms ago)
+[INFO] Restarting worker process
+[INFO] Killing worker process
+[WARNING] Failed to read message length
+[INFO] Client disconnected
+[INFO] Creating named pipe: \\.\pipe\WatcherClientService
+[INFO] Waiting for client connection...
+[INFO] Waiting 2000ms before restart
+[INFO] Spawning worker process: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO] Worker process spawned with PID: 3136
+[INFO] Client connected!
+[INFO] Worker process ready
+[WARNING] Worker heartbeat timeout (last: 20019ms ago)
+[INFO] Restarting worker process
+[INFO] Killing worker process
+[WARNING] Failed to read message length
+[INFO] Client disconnected
+[INFO] Creating named pipe: \\.\pipe\WatcherClientService
+[INFO] Waiting for client connection...
+[INFO] Waiting 2000ms before restart
+[WARNING] Worker process died unexpectedly
+[INFO] Restarting worker process
+[INFO] Waiting 4000ms before restart
+[INFO] Spawning worker process: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO] Worker process spawned with PID: 19556
+[INFO] Client connected!
+[INFO] Worker process ready
+[INFO] Spawning worker process: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO] Worker process spawned with PID: 8900
+[WARNING] Worker process died unexpectedly
+[INFO] Restarting worker process
+[INFO] Killing worker process
+[INFO] Waiting 2000ms before restart
+[INFO] Spawning worker process: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO] Worker process spawned with PID: 21204
+[WARNING] Worker process died unexpectedly
+[INFO] Restarting worker process
+[INFO] Killing worker process
+[INFO] Waiting 4000ms before restart
+[INFO] Spawning worker process: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO] Worker process spawned with PID: 15228
+[WARNING] Worker process died unexpectedly
+[INFO] Restarting worker process
+[INFO] Killing worker process
+[INFO] Waiting 6000ms before restart
+[INFO] Spawning worker process: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO] Worker process spawned with PID: 19484
+[INFO] Service stop requested
+[INFO] Stopping ServiceLauncher
+[INFO] Service main loop exited
+[INFO] === CMS Client Service Stopped ===
+[INFO] Monitor loop stopped
+[INFO] Heartbeat loop stopped
+[INFO] === CMS Client Service Starting ===
+[INFO] Initializing CMS Core...
+[INFO] Platform: Windows
+[INFO] Version: 1.0.0
+[INFO] CMS Core initialized
+[INFO] Worker config:
+[INFO]   Executable: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO]   Config: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\client_config.json
+[INFO] Starting ServiceLauncher
+[INFO] Starting NamedPipeServer: \\.\pipe\WatcherClientService
+[INFO] IPC server started
+[INFO] Spawning worker process: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO] Creating named pipe: \\.\pipe\WatcherClientService
+[INFO] Waiting for client connection...
+[INFO] Worker process spawned with PID: 21064
+[INFO] ServiceLauncher started successfully
+[INFO] ServiceLauncher started successfully
+[INFO] Monitor loop started
+[INFO] Heartbeat loop started
+[INFO] Client connected!
+[INFO] Worker process ready
+[WARNING] Worker heartbeat timeout (last: 20018ms ago)
+[INFO] Restarting worker process
+[INFO] Killing worker process
+[WARNING] Failed to read message length
+[INFO] Client disconnected
+[INFO] Creating named pipe: \\.\pipe\WatcherClientService
+[INFO] Waiting for client connection...
+[INFO] Waiting 2000ms before restart
+[WARNING] Worker process died unexpectedly
+[INFO] Restarting worker process
+[INFO] Waiting 4000ms before restart
+[INFO] Spawning worker process: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO] Worker process spawned with PID: 25016
+[INFO] Client connected!
+[INFO] Spawning worker process: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO] Worker process spawned with PID: 26560
+[WARNING] Worker process died unexpectedly
+[INFO] Restarting worker process
+[INFO] Killing worker process
+[INFO] Waiting 6000ms before restart
+[INFO] Spawning worker process: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO] Worker process spawned with PID: 16004
+[WARNING] Worker process died unexpectedly
+[INFO] Restarting worker process
+[INFO] Killing worker process
+[INFO] Waiting 8000ms before restart
+[INFO] Spawning worker process: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO] Worker process spawned with PID: 25908
+[WARNING] Worker process died unexpectedly
+[INFO] Restarting worker process
+[INFO] Killing worker process
+[INFO] Waiting 10000ms before restart
+[INFO] Spawning worker process: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO] Worker process spawned with PID: 24540
+[WARNING] Worker process died unexpectedly
+[INFO] Restarting worker process
+[ERROR] Too many consecutive restarts (6), giving up
+[INFO] Service main loop exited
+[INFO] === CMS Client Service Stopped ===
+[INFO] === CMS Client Service Starting ===
+[INFO] Initializing CMS Core...
+[INFO] Platform: Windows
+[INFO] Version: 1.0.0
+[INFO] CMS Core initialized
+[INFO] Worker config:
+[INFO]   Executable: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO]   Config: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\client_config.json
+[INFO] Starting ServiceLauncher
+[INFO] Starting NamedPipeServer: \\.\pipe\WatcherClientService
+[INFO] IPC server started
+[INFO] Spawning worker process: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO] Creating named pipe: \\.\pipe\WatcherClientService
+[ERROR] CreateNamedPipe failed: 231
+[INFO] Worker process spawned with PID: 23632
+[INFO] ServiceLauncher started successfully
+[INFO] ServiceLauncher started successfully
+[INFO] Monitor loop started
+[INFO] Heartbeat loop started
+[INFO] Creating named pipe: \\.\pipe\WatcherClientService
+[ERROR] CreateNamedPipe failed: 231
+[INFO] Creating named pipe: \\.\pipe\WatcherClientService
+[ERROR] CreateNamedPipe failed: 231
+[INFO] Creating named pipe: \\.\pipe\WatcherClientService
+[ERROR] CreateNamedPipe failed: 231
+[INFO] Creating named pipe: \\.\pipe\WatcherClientService
+[ERROR] CreateNamedPipe failed: 231
+[INFO] Creating named pipe: \\.\pipe\WatcherClientService
+[ERROR] CreateNamedPipe failed: 231
+[INFO] Creating named pipe: \\.\pipe\WatcherClientService
+[ERROR] CreateNamedPipe failed: 231
+[INFO] Creating named pipe: \\.\pipe\WatcherClientService
+[ERROR] CreateNamedPipe failed: 231
+[INFO] Creating named pipe: \\.\pipe\WatcherClientService
+[ERROR] CreateNamedPipe failed: 231
+[INFO] Creating named pipe: \\.\pipe\WatcherClientService
+[ERROR] CreateNamedPipe failed: 231
+[WARNING] Worker process died unexpectedly
+[INFO] Restarting worker process
+[INFO] Killing worker process
+[INFO] Waiting 2000ms before restart
+[INFO] Creating named pipe: \\.\pipe\WatcherClientService
+[ERROR] CreateNamedPipe failed: 231
+[INFO] Creating named pipe: \\.\pipe\WatcherClientService
+[ERROR] CreateNamedPipe failed: 231
+[INFO] Spawning worker process: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO] Worker process spawned with PID: 10512
+[INFO] Creating named pipe: \\.\pipe\WatcherClientService
+[ERROR] CreateNamedPipe failed: 231
+[INFO] Creating named pipe: \\.\pipe\WatcherClientService
+[ERROR] CreateNamedPipe failed: 231
+[INFO] Creating named pipe: \\.\pipe\WatcherClientService
+[ERROR] CreateNamedPipe failed: 231
+[INFO] Creating named pipe: \\.\pipe\WatcherClientService
+[ERROR] CreateNamedPipe failed: 231
+[INFO] Creating named pipe: \\.\pipe\WatcherClientService
+[ERROR] CreateNamedPipe failed: 231
+[INFO] Creating named pipe: \\.\pipe\WatcherClientService
+[ERROR] CreateNamedPipe failed: 231
+[INFO] Creating named pipe: \\.\pipe\WatcherClientService
+[ERROR] CreateNamedPipe failed: 231
+[INFO] Creating named pipe: \\.\pipe\WatcherClientService
+[INFO] Waiting for client connection...
+[WARNING] Worker process died unexpectedly
+[INFO] Restarting worker process
+[INFO] Killing worker process
+[INFO] Waiting 4000ms before restart
+[INFO] Spawning worker process: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO] Worker process spawned with PID: 12424
+[INFO] Client connected!
+[INFO] Worker process ready
+[WARNING] Worker heartbeat timeout (last: 23985ms ago)
+[INFO] Restarting worker process
+[INFO] Killing worker process
+[WARNING] Failed to read message length
+[INFO] Client disconnected
+[INFO] Creating named pipe: \\.\pipe\WatcherClientService
+[INFO] Waiting for client connection...
+[INFO] Waiting 2000ms before restart
+[WARNING] Worker process died unexpectedly
+[INFO] Restarting worker process
+[INFO] Waiting 4000ms before restart
+[INFO] Spawning worker process: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO] Worker process spawned with PID: 15424
+[INFO] Client connected!
+[INFO] Worker process ready
+[INFO] Spawning worker process: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO] Worker process spawned with PID: 12024
+[WARNING] Worker process died unexpectedly
+[INFO] Restarting worker process
+[INFO] Killing worker process
+[INFO] Waiting 2000ms before restart
+[INFO] Spawning worker process: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO] Worker process spawned with PID: 23240
+[WARNING] Worker process died unexpectedly
+[INFO] Restarting worker process
+[INFO] Killing worker process
+[INFO] Waiting 4000ms before restart
+[INFO] Spawning worker process: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO] Worker process spawned with PID: 2240
+[WARNING] Worker process died unexpectedly
+[INFO] Restarting worker process
+[INFO] Killing worker process
+[INFO] Waiting 6000ms before restart
+[INFO] Spawning worker process: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO] Worker process spawned with PID: 25516
+[WARNING] Worker process died unexpectedly
+[INFO] Restarting worker process
+[INFO] Killing worker process
+[INFO] Waiting 8000ms before restart
+[INFO] Spawning worker process: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO] Worker process spawned with PID: 6864
+[WARNING] Worker process died unexpectedly
+[INFO] Restarting worker process
+[INFO] Killing worker process
+[INFO] Waiting 10000ms before restart
+[INFO] Spawning worker process: C:\Users\chimi\Desktop\Programmazione\Watcher\scripts\cms_client_worker.exe
+[INFO] Worker process spawned with PID: 2208
+[WARNING] Worker process died unexpectedly
+[INFO] Restarting worker process
+[ERROR] Too many consecutive restarts (6), giving up
+[INFO] Service main loop exited
+[INFO] === CMS Client Service Stopped ===

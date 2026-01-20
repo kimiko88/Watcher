@@ -54,19 +54,24 @@ TEST_F(ApplicationPolicyProtocolTest, SerializeAppPolicySyncMessage) {
   std::string json_str = serializer.Serialize(msg);
 
   EXPECT_FALSE(json_str.empty());
-  // Parse back and verify
+  // Parse back and verify - now using header format
   auto parsed = nlohmann::json::parse(json_str);
-  EXPECT_EQ(parsed["type"], "APP_POLICY_SYNC");
-  EXPECT_EQ(parsed["source"], "master");
+  EXPECT_TRUE(parsed.contains("header"));
+  EXPECT_EQ(parsed["header"]["type"], "APP_POLICY_SYNC");
+  EXPECT_EQ(parsed["header"]["source"], "master");
+  EXPECT_TRUE(parsed.contains("checksum"));
 }
 
 // Test 3: APP_POLICY_SYNC Deserialization
 TEST_F(ApplicationPolicyProtocolTest, DeserializeAppPolicySyncMessage) {
   std::string json_str = R"({
-    "type": "APP_POLICY_SYNC",
-    "source": "master",
-    "destination": "client_001",
-    "timestamp": 1234567890,
+    "header": {
+      "message_id": "test-msg-001",
+      "type": "APP_POLICY_SYNC",
+      "source": "master",
+      "destination": "client_001",
+      "timestamp": 1234567890
+    },
     "payload": {
       "mode": "blacklist",
       "rules": [
@@ -80,7 +85,8 @@ TEST_F(ApplicationPolicyProtocolTest, DeserializeAppPolicySyncMessage) {
           "created_at": 1234567890
         }
       ]
-    }
+    },
+    "checksum": "12345678"
   })";
 
   MessageSerializer serializer;
@@ -164,13 +170,17 @@ TEST_F(ApplicationPolicyProtocolTest, InvalidJsonHandling) {
 // Test 8: Missing Required Fields
 TEST_F(ApplicationPolicyProtocolTest, MissingModeField) {
   std::string json_str = R"({
-    "type": "APP_POLICY_SYNC",
-    "source": "master",
-    "destination": "client_001",
-    "timestamp": 1234567890,
+    "header": {
+      "message_id": "test-msg-002",
+      "type": "APP_POLICY_SYNC",
+      "source": "master",
+      "destination": "client_001",
+      "timestamp": 1234567890
+    },
     "payload": {
       "rules": []
-    }
+    },
+    "checksum": "87654321"
   })";
 
   MessageSerializer serializer;
